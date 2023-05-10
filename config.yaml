@@ -1,0 +1,159 @@
+baseURL: https://githubuser.github.io
+languageCode: en-us
+title: Shaishav Kumar
+paginate: 5
+theme: "PaperMod"
+
+
+assetDir: ./assets
+
+enableRobotsTXT: true
+
+buildDrafts: false
+buildFuture: false
+buildExpired: false
+
+minify:
+  disableXML: true
+  minifyOutput: true
+
+
+params:
+  env: production # to enable go
+
+  author: "Shaishav Kumar"
+  contact: "kr.shaishav@gmail.com"
+  feedlinks: true
+  copyright: "<!--Creative Commons License-->This site is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/).<!--/Creative Commons License-->"
+  mobileMenu: true
+  
+  DateFormat: "January 2, 2006"
+  defaultTheme: auto # dark, light
+  disableThemeToggle: true
+
+
+
+  
+
+  ShowReadingTime: true
+  ShowShareButtons: true
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: false
+  ShowWordCount: true
+  ShowRssButtonInSectionTermList: true
+  UseHugoToc: true
+  disableSpecial1stPost: false
+  disableScrollToTop: false
+  comments: false
+  hidemeta: false
+  hideSummary: false
+  showtoc: true
+  tocopen: false
+
+  cover:
+    hiddenInList: true # hide on list pages and home
+    hiddenInSingle: false # hide on single page
+  
+  fuseOpts: 
+    isCaseSensitive: false
+    shouldSort: true
+    minMatchCharLength: 3
+    
+  
+  
+  label:
+    text: "Shaishav Kumar | Blog"
+    icon: /img/shaishav-logo-bw.png
+  
+  homeInfoParams:
+    Title: |
+      ![Shaishav Kumar profile pic](./img/profile-pic.jpg "Shaishav.kr")
+
+      # Shaishav Kumar
+      `Engineering, Startups, Photography, IoT, AI & ML`
+    Content: |
+        `Hey there! Thanks for dropping by 👋. `
+
+        `I use this space to express my views on`
+        1. 👷‍♂️ Engineering
+            1. 🌐 IoT,  🤖 Robotics, 🖥️🧠 Machine Learning and AI 
+            3. Golang, ☸ Kubernetes, Docker 🐳 and friends.   
+        2. 💼 Management and Strategy
+            1. 🚀 Startups & Strategy
+            3. 🧩 Product Management
+            3. 🙇 Engineering Leadership
+        3. 🧠 Right brain musings (in small, infrequent doses)
+            1. ⌚Productivty , 📸 Photography, 📖 Philosophy, and 🥳 Happiness 
+          
+        `For the curious, these are my current and previous avataars, `
+        1. Robotics @ [Rapyuta Robotics](https://www.rapyuta-robotics.com/) | 
+        2. Reneable energy & Industrial IoT @ [Atria Power](http://atriapower.com/about-us/) | Solar, Wind Power, Industrial and Building Automation
+        3. Co-founder @ [Pinclick](https://www.pinclick.com/) | Property Management and Real Estate Marketing
+        4. Machine Learning @ [Microsoft Research](https://www.researchgate.net/scientific-contributions/Shaishav-Kumar-70607230)  | Natural Language Processing, Hashing Techqniques
+
+        
+        
+        
+        ## My way of sharing what I have learned
+
+        ` I mentor young engineers in navigating their careers. `  mentoring@shaishav.kr 
+        
+        ` I coach startups in building Skunkworks™️ like pods to deliver speedy innovation.` leadership@shaishav.kr
+        
+        ` I advise traditional business owners/startup founders with technical & AI strategy.` strategy@shaishav.kr 
+  
+
+  socialIcons: # optional
+    - name: "github"
+      url: "https://github.com/wiresurfer"
+    # - name: "youtube"
+    #   url: "https://www.youtube.com/channel/XXX"
+    - name: "twitter"
+      url: "https://twitter.com/wiresurfer"
+    - name: "linkedin"
+      url: "https://www.linkedin.com/in/shaishavkr/"
+      
+    # - name: "kofi"
+    #   url: "https://buymeacoffee.com/XXX"
+    # - name: "rss"
+    #   url: "https://XXX.github.io/index.xml"
+  
+  
+  custom_css:
+    - "css/custom.css"
+  custom_js:
+    - "js/jquery.js"
+    - "js/mermaid.js"
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON # is necessary
+  section:
+    - HTML
+    - RSS
+    - JSON
+
+taxonomies:
+  category: categories
+  tag: tags
+
+menu:
+  main:
+    - identifier: categories
+      name: Categories
+      url: /categories/
+      weight: 10
+    - identifier: tags
+      name: Tags
+      url: /tags/
+      weight: 20
+    - identifier: search
+      name: Search
+      url: /search/
+      weight: 20
+    - identifier: archive
+      name: Archive
+      url: /archives/
+      weight: 20

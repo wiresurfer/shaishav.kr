@@ -4,4 +4,5 @@ layout: "search" # is necessary
 # url: "/archive"
 # description: "Description for Search"
 summary: "search"
+placeholder: "go on. type something. or try: 'whoami' "
 ---
