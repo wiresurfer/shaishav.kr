@@ -3,7 +3,9 @@
 $re .File.BaseFileName)) }} {{ $backlinks = $backlinks | append . }} {{ end }}
 {{ end }} {{ if gt (len $backlinks) 0 }}
 <aside>
-  <h3>Backlinks</h3>
+  <h4 class="cm-header-4">BACK LINKS</h4>
+  <hr class="gradient" />
+  
   <div class="backlinks">
     <ul>
       {{ range $backlinks }}

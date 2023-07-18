@@ -1,9 +1,16 @@
-h1, h2, h3, h4, h5, h6 {
+body {
+    --content-width: min(calc(75%), 1280px);
+    --gradient: radial-gradient(circle at 12.3% 19.3%,#3e3fcb 0%,#027ea9 100.2%);
+}
+
+
+
+.entry-content h2 {
     margin: 3rem 0 16px!important;
 }
 
 .main {
-    --main-width: calc(75%);
+    --main-width: var(--content-width);
     max-width: calc(var(--main-width) + var(--gap) * 2)!important;
 }
 

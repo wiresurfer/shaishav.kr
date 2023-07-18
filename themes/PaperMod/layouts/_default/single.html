@@ -1,58 +1,83 @@
 {{- define "main" }}
 
-<article class="post-single">
-   {{ partial "breadcrumbs.html" . }}
+{{- $isHidden := .Params.cover.hidden | default .Site.Params.cover.hiddenInSingle | default .Site.Params.cover.hidden }}
+ 
+{{ partial "breadcrumbs.html" . }}
+<article class="post-single grid grid-cols-12 gap-4">
+
+  <!-- {{ partial "cover.html"}} -->
   
-  {{- $isHidden := .Params.cover.hidden | default .Site.Params.cover.hiddenInSingle | default .Site.Params.cover.hidden }}
-  <header class="post-header">
+  <!-- <header class="post-header"> -->
  
-    {{- partial "cover.html" (dict "cxt" . "IsHome" false "isHidden" $isHidden) }}
- 
-    {{- if .Description }}
+    
+    <!-- {{- if .Description }}
     <div class="post-description">
       {{ .Description }}
     </div>
-    {{- end }}
-    {{- if not (.Param "hideMeta") }}
+    {{- end }} -->
+    <!-- {{- if not (.Param "hideMeta") }}
     <div class="post-meta">
       {{- partial "post_meta.html" . -}}
       {{- partial "translation_list.html" . -}}
       {{- partial "edit_post.html" . -}}
       {{- partial "post_canonical.html" . -}}
     </div>
-    {{- end }}
-  </header>
-  {{- if (.Param "ShowToc") }}
-  {{- partial "toc.html" . }}
-  {{- end }}
-
+    {{- end }} -->
+  <!-- </header> -->
+  
   {{- if .Content }}
-  <div class="post-content">
+  <div class="post-content col-span-9">
+    
+    <hr class="gradient"/>
+    {{- partial "cover.html" (dict "cxt" . "IsHome" false "isHidden" $isHidden) }}
+    
+    
+    {{- partial "post_meta.html" . -}}
+    <hr class="gradient"/>
+    
     {{- if not (.Param "disableAnchoredHeadings") }}
     {{- partial "anchored_headings.html" .Content -}}
     {{- else }}{{ .Content }}{{ end }}
+    
   </div>
   {{- end }}
-  {{ partial "backlinks.html" . }}
-  <footer class="post-footer">
+  
+  <div class="sidebar col-span-3"> 
+      
+    <div class="readtime"> 
+      
+    </div>
+    
+    {{- if (.Param "ShowToc") }}
+      {{- partial "toc.html" . }}
+    {{- end }}
+    
     {{- if .Params.tags }}
+    <h4 class="cm-header-4">TAGS</h4>
+    <hr class="gradient" />
+    
     <ul class="post-tags">
       {{- range ($.GetTerms "tags") }}
       <li><a href="{{ .Permalink }}">{{ .LinkTitle }}</a></li>
       {{- end }}
     </ul>
     {{- end }}
-    {{- if (.Param "ShowPostNavLinks") }}
-    {{- partial "post_nav_links.html" . }}
-    {{- end }}
-    {{- if (and .Site.Params.ShowShareButtons (ne .Params.disableShare true)) }}
-    {{- partial "share_icons.html" . -}}
-    {{- end }}
-  </footer>
+    
+    {{ partial "backlinks.html" . }}
+  </div>
+  
 
+</article>
+<footer class="post-footer">
   {{- if (.Param "comments") }}
   {{- partial "comments.html" . }}
+  {{- end }}    
+  {{- if (.Param "ShowPostNavLinks") }}
+  {{- partial "post_nav_links.html" . }}
   {{- end }}
-</article>
+  {{- if (and .Site.Params.ShowShareButtons (ne .Params.disableShare true)) }}
+  {{- partial "share_icons.html" . -}}
+  {{- end }}
+</footer>
 
 {{- end }}{{/* end main */}}

@@ -1,5 +1,11 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!-- <script src="https://cdn.tailwindcss.com"></script> -->
+<link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+<meta name="twitter:widgets:theme" content="dark">
+<meta http-equiv="Content-Security-Policy" content="frame-src 'self' https://syndication.twitter.com/;frame-src 'self' https://cdn.syndication.twimg.com/;frame-src 'self' http://platform.twitter.com/">
+
+<meta name="twitter:widgets:border-color" content="#55acee">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 {{- if hugo.IsProduction | or (eq .Site.Params.env "production") }}
 <meta name="robots" content="index, follow">
@@ -22,6 +28,7 @@
     {{- .Summary | default (printf "%s - %s" .Title  .Site.Title) }}{{- else }}
     {{- with .Site.Params.description }}{{ . }}{{- end }}{{- end }}{{- end -}}">
 <meta name="author" content="{{ (partial "author.html" . ) }}">
+
 <link rel="canonical" href="{{ if .Params.canonicalURL -}} {{ trim .Params.canonicalURL " " }} {{- else -}} {{ .Permalink }} {{- end }}" />
 {{- if .Site.Params.analytics.google.SiteVerificationTag }}
 <meta name="google-site-verification" content="{{ .Site.Params.analytics.google.SiteVerificationTag }}" />

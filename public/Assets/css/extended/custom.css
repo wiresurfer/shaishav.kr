@@ -1,0 +1,140 @@
+body {
+    --content-width: min(calc(75%), 1280px);
+    --gradient: radial-gradient(circle at 12.3% 19.3%,#3e3fcb 0%,#027ea9 100.2%);
+}
+
+
+
+.entry-content h2 {
+    margin: 3rem 0 16px!important;
+}
+
+.main {
+    --main-width: var(--content-width);
+    max-width: calc(var(--main-width) + var(--gap) * 2)!important;
+}
+
+
+
+.dark {
+    --code-bg: rgb(13 13 13);
+    --theme: var(--code-bg);
+}
+.logo {
+    flex-wrap: inherit;
+    width: 50%;
+}
+
+nav.nav {
+    background: var(--code-bg);
+    justify-content: center;
+    width: 100%;
+    max-width: 100%;
+}
+.logo a img {
+    height: 50px;
+    margin-top: 0.5rem;
+}
+
+
+
+article.post-entry{
+    background-color: var(--code-bg);
+}
+.entry-header h2 {
+    margin: 0.5rem 0 16px!important;
+}
+
+
+
+figure.entry-cover > img {
+    /* max-height: 139px; */
+    display: block;
+    max-width: 100%;
+    max-height: 720px;
+    width: auto;
+    height: auto;
+    position: relative;
+    margin-top: 0px;
+}
+
+.entry-cover {
+    overflow: hidden;
+    max-height: 360px;
+    position: relative;
+    height: 360px;
+}
+
+
+div.social-icons {
+    background: #1d1d1d;
+    display: flex;
+    justify-content: center;
+    align-content: space-evenly;
+}
+
+div.social-icons a:not(:last-of-type) {
+    width:48px;
+
+}
+
+
+
+
+
+
+.post-tags a, .share-buttons, .paginav {
+    background: rgb(74 74 74);
+}
+
+
+
+article.post-entry h1.post-title {
+    margin: 1px!important;
+    font-size: 20px;
+    font-weight: 900;
+}
+figure h1.post-title{
+    margin-bottom: 2px;
+    font-size: 40px;
+    /* margin-top: 0rem !important; */
+    /* margin-bottom: -68px!important; */
+    /* z-index: 1; */
+    background: rgb(0 0 0 / 95%);
+    padding: 1rem 1rem;
+    position: relative;
+    /* top: -75px; */
+    /* bottom: -88px; */
+    /* line-height: 70px; */
+    /* height: 0px; */
+    text-align: left;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    color: white;
+    margin: 0px!important;
+    opacity: 1;
+}
+
+
+
+img[src$='profile-pic.jpg'] {
+    position: absolute;
+    right: 80px;
+    top: 58px;
+    border-radius: 2rem;
+}
+@media only screen and (max-width: 1200px) {
+    img[src$='profile-pic.jpg'] {
+        position: relative;
+        left: 0px;
+        top: 0px;
+        border-radius: 2rem;
+        margin: 0 auto;
+    }
+    .entry-header {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+  }
