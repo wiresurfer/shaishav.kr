@@ -2,28 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://blog.shaishav.kr/pages/ai-checklist-for-startups/</loc>
+  </url><url>
     <loc>https://blog.shaishav.kr/archives/</loc>
   </url><url>
-    <loc>https://blog.shaishav.kr/tags/awesome-logseq/</loc>
-  </url><url>
-    <loc>https://blog.shaishav.kr/categories/</loc>
-  </url><url>
-    <loc>https://blog.shaishav.kr/categories/logseq/</loc>
-  </url><url>
-    <loc>https://blog.shaishav.kr/pages/machine-learning/</loc>
+    <loc>https://blog.shaishav.kr/tags/devops/</loc>
   </url><url>
     <loc>https://blog.shaishav.kr/pages/</loc>
   </url><url>
-    <loc>https://blog.shaishav.kr/categories/productivity/</loc>
+    <loc>https://blog.shaishav.kr/tags/platform-engineering/</loc>
   </url><url>
-    <loc>https://blog.shaishav.kr/tags/quick-start/</loc>
+    <loc>https://blog.shaishav.kr/pages/rise-of-internal-developer-portals-idp-part-1/</loc>
   </url><url>
     <loc>https://blog.shaishav.kr/search/</loc>
   </url><url>
     <loc>https://blog.shaishav.kr/</loc>
   </url><url>
-    <loc>https://blog.shaishav.kr/pages/supercharge-your-logseq-workflow/</loc>
-  </url><url>
     <loc>https://blog.shaishav.kr/tags/</loc>
+  </url><url>
+    <loc>https://blog.shaishav.kr/categories/</loc>
   </url>
 </urlset>

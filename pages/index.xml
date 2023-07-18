@@ -5,49 +5,26 @@
     <link>https://blog.shaishav.kr/pages/</link>
     <description>Recent content in Pages on Shaishav Kumar</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://blog.shaishav.kr/pages/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language>
+    <lastBuildDate>Tue, 18 Jul 2023 19:24:15 +0000</lastBuildDate><atom:link href="https://blog.shaishav.kr/pages/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Machine Learning</title>
-      <link>https://blog.shaishav.kr/pages/machine-learning/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <title>AI Checklist for Startups</title>
+      <link>https://blog.shaishav.kr/pages/ai-checklist-for-startups/</link>
+      <pubDate>Tue, 18 Jul 2023 19:24:15 +0000</pubDate>
       
-      <guid>https://blog.shaishav.kr/pages/machine-learning/</guid>
-      <description>Introduction Predicting the future: as old as Civilization
-Machines and Clearical record keeping
-Advent of connected machines
-Commoditized Storage and compute
-Data Hoarding
-Statistical Modelling for Business Data
-From human percievable statistics to abstract high dimension modelling
-Machine learning at scale
-Advent of self supervizied models
-Taking learning by example to the extreme
-Supersizing Training data as well as model weigts.
-Generative/ Adversarial Learning
-General Intelligence
-Statistics 101 Regression and curve fitting</description>
+      <guid>https://blog.shaishav.kr/pages/ai-checklist-for-startups/</guid>
+      <description>AI Checklist for Startups Introduction Predicting the future: as old as Civilization Machines and Clearical record keeping Advent of connected machines Commoditized Storage and compute Data Hoarding Statistical Modelling for Business Data From human percievable statistics to abstract high dimension modelling Machine learning at scale Advent of self supervizied models Taking learning by example to the extreme Supersizing Training data as well as model weigts. Generative/ Adversarial Learning General Intelligence Statistics 101 Regression and curve fitting Classification Clustering Nearest Neighbour Searching Dimensions and data modelling Exploratory Data Analysis Disciplines NLP Image Audio Time Series User Behaviour Use Cases User behavior analysis Think of a retail experience.</description>
     </item>
     
     <item>
-      <title>Supercharge your Logseq workflow</title>
-      <link>https://blog.shaishav.kr/pages/supercharge-your-logseq-workflow/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <title>Rise of Internal Developer Portals (iDp) - Part 1</title>
+      <link>https://blog.shaishav.kr/pages/rise-of-internal-developer-portals-idp-part-1/</link>
+      <pubDate>Tue, 18 Jul 2023 19:24:15 +0000</pubDate>
       
-      <guid>https://blog.shaishav.kr/pages/supercharge-your-logseq-workflow/</guid>
-      <description>Logseq Overview
-Plugins
-habit tracker
-Bookmarklets
-Tab manger
-Todo Status Master
-Highlighting H1
-Copy Ref to Journal
-Doc Snippets
-Adding Tags
-#+TAGS: @work @home @tennisclub #+TAGS: laptop car pc sailboat ``` Heirarchy with tags
-* Meeting with the French group :work: ** Summary by Frank :boss:notes: *** TODO Prepare slides for him :action: ``` Videos
-https://www.youtube.com/watch?v=43PKm0TfyNk Blog Posts
-https://phonetonote.com/blog/my-personal-note-taking-journey/ </description>
+      <guid>https://blog.shaishav.kr/pages/rise-of-internal-developer-portals-idp-part-1/</guid>
+      <description>Rise of Internal Developer Portals (iDp) - Part 1 Introduction In today&amp;rsquo;s rapidly evolving software development landscape, staying ahead of the curve is crucial for success. One emerging trend that has gained significant traction is the adoption of Internal Developer Portals (iDp).
+In this introductory blog post, we will explore the concept of iDp, its growing popularity in 2023, and why it is essential for modern software development.
+Whether you are a startup founder, a cloud-native enthusiast, or a Kubernetes aficionado, this blog series will provide you with practical insights to leverage the power of internal developer portals and maximize your team&amp;rsquo;s productivity.</description>
     </item>
     
   </channel>
