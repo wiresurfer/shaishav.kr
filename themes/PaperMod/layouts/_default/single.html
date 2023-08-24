@@ -1,21 +1,21 @@
 {{- define "main" }}
 
 {{- $isHidden := .Params.cover.hidden | default .Site.Params.cover.hiddenInSingle | default .Site.Params.cover.hidden }}
- 
+
 {{ partial "breadcrumbs.html" . }}
 <article class="post-single grid grid-cols-12 gap-4">
 
   <!-- {{ partial "cover.html"}} -->
-  
+
   <!-- <header class="post-header"> -->
- 
-    
-    <!-- {{- if .Description }}
+
+
+  <!-- {{- if .Description }}
     <div class="post-description">
       {{ .Description }}
     </div>
     {{- end }} -->
-    <!-- {{- if not (.Param "hideMeta") }}
+  <!-- {{- if not (.Param "hideMeta") }}
     <div class="post-meta">
       {{- partial "post_meta.html" . -}}
       {{- partial "translation_list.html" . -}}
@@ -24,60 +24,67 @@
     </div>
     {{- end }} -->
   <!-- </header> -->
-  
+
   {{- if .Content }}
-  <div class="post-content col-span-9">
-    
-    <hr class="gradient"/>
+  <div class="post-content col-span-12 lg:col-span-9 sm:col-span-12">
+
+    <hr class="gradient" />
     {{- partial "cover.html" (dict "cxt" . "IsHome" false "isHidden" $isHidden) }}
-    
-    
+
+
     {{- partial "post_meta.html" . -}}
-    <hr class="gradient"/>
-    
+    <hr class="gradient" />
+
     {{- if not (.Param "disableAnchoredHeadings") }}
     {{- partial "anchored_headings.html" .Content -}}
     {{- else }}{{ .Content }}{{ end }}
-    
+
   </div>
   {{- end }}
-  
-  <div class="sidebar col-span-3"> 
-      
-    <div class="readtime"> 
-      
+
+  <div class="sidebar col-span-12 lg:col-span-3  sm:col-span-12">
+
+    <div class="readtime">
+
     </div>
-    
+
     {{- if (.Param "ShowToc") }}
-      {{- partial "toc.html" . }}
+    {{- partial "toc.html" . }}
     {{- end }}
-    
+
     {{- if .Params.tags }}
     <h4 class="cm-header-4">TAGS</h4>
     <hr class="gradient" />
-    
+
     <ul class="post-tags">
       {{- range ($.GetTerms "tags") }}
       <li><a href="{{ .Permalink }}">{{ .LinkTitle }}</a></li>
       {{- end }}
     </ul>
     {{- end }}
-    
-    {{ partial "backlinks.html" . }}
+
+    {{- if (and .Site.Params.ShowShareButtons (ne .Params.disableShare true)) }}
+    <br />
+    <br />
+    <h4 class="cm-header-4">SHARE</h4>
+    <hr class="gradient" />
+    {{- partial "share_icons.html" . -}}
+    {{- end }}
+    <!-- {{ partial "backlinks.html" . }} -->
+    {{- partial "subscribe_card.html"}}
   </div>
-  
+
 
 </article>
-<footer class="post-footer">
-  {{- if (.Param "comments") }}
-  {{- partial "comments.html" . }}
-  {{- end }}    
+<hr class="gradient" />
+<!-- <footer class="post-footer">
   {{- if (.Param "ShowPostNavLinks") }}
   {{- partial "post_nav_links.html" . }}
   {{- end }}
-  {{- if (and .Site.Params.ShowShareButtons (ne .Params.disableShare true)) }}
-  {{- partial "share_icons.html" . -}}
-  {{- end }}
 </footer>
+<hr class="gradient" /> -->
+<script src="https://utteranc.es/client.js" repo="wiresurfer/wiresurfer.github.io" issue-term="pathname"
+  label="comments" theme="dark-blue" crossorigin="anonymous" async>
+  </script>
 
 {{- end }}{{/* end main */}}

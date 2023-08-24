@@ -1,13 +1,46 @@
 {{- with $.Site.Params.homeInfoParams }}
+
 <article class="first-entry home-info">
+
+
     <header class="entry-header">
         {{ $.Page.RenderString .Title }}
     </header>
-    <section class="entry-content">
-        <p>{{ .Content | markdownify }}</p>
-    </section>
-    <footer class="entry-footer">
-        {{ partial "social_icons.html" $.Site.Params.socialIcons }}
-    </footer>
+    <div class="grid lg:grid-cols-3 md:grid-cols-2 gap-4">
+        <section class="entry-content col-span-3 md:col-span2">
+            <p>{{ .Content | markdownify }}</p>
+        </section>
+    </div>
+    <hr class="gradient" />
+    <div class="grid lg:grid-cols-3 md:grid-cols-2 gap-4">
+
+        <div class="lg:col-span-2 mx-auto lg:p-16 md:col-span-2 md:p-2">
+            <h2 id="giving-back-and-helping">Giving Back to the tech-community by,</h2>
+            <ul style="
+            font-size: 16px;
+            padding: 1rem 0rem;
+            letter-spacing: 0px;
+        ">
+                <li>
+                    <p>Mentoring young engineers in navigating their careers. <a
+                            href="mailto:mentoring@shaishav.kr">mentoring@shaishav.kr</a></p>
+                </li>
+                <li>
+                    <p>Coaching startups in building Skunkworks™️ like pods to deliver speedy innovation. <a
+                            href="mailto:leadership@shaishav.kr">leadership@shaishav.kr</a></p>
+                </li>
+                <li>
+                    <p>Advising traditional business owners/startup founders with technical &amp; AI strategy. <a
+                            href="mailto:strategy@shaishav.kr">strategy@shaishav.kr</a></p>
+                </li>
+            </ul>
+        </div>
+        <div class="lg:col-span-1 md:col-span-2">
+            {{- partial "subscribe_card.html"}}
+        </div>
+    </div>
+    <hr class="gradient" />
+
 </article>
+
 {{- end -}}

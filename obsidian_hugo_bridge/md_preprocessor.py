@@ -30,3 +30,14 @@ def remove_starting_hyphen(frontmatter, content):
 def remove_slide_markers(frontmatter, contents):
     contents = re.sub(r'\s---\s', '\n', contents)
     return frontmatter, contents
+
+
+def img_src_absolute(frontmatter, contents):
+    contents = re.sub(r"!\[(.*?)\]\(Assets/(.*)\)", '![\\1](/Assets/\\2)', contents)
+    return frontmatter, contents
+
+
+def clean_excalidraw_editlinks(frontmatter, contents):
+    contents = re.sub(r"^\%\%(.*)$", "",contents, 0, re.MULTILINE)
+    return frontmatter, contents
+

@@ -41,7 +41,11 @@ class ObsidianHugoExporter:
         self.OBSIDIAN_CONTENT_ROOT = f"{self.OBSIDIAN_ROOT}{content_root}"
         super().__init__()
    
-   
+    def assets_folder(self):
+        return [
+            f"{self.OBSIDIAN_CONTENT_ROOT}\\Assets",
+        ]
+
     def start(self, ):
         print("Moving Assets")
         self.move_assets()
@@ -55,11 +59,12 @@ class ObsidianHugoExporter:
         self.convert_to_hugo()
         
     def move_assets(self):
-        for dir in self.OBSIDIAN_ASSET_FOLDERS:
+
+        for dir in self.assets_folder():
             for file in all_files(dir):
                 src = file
                 dir = eval("f'{dir}'")
-                dest = file.replace(f"{self.OBSIDIAN_ROOT}\\Assets", self.HUGO_ASSET_ROOT)  
+                dest = file.replace(f"{self.OBSIDIAN_CONTENT_ROOT}\\Assets", self.HUGO_ASSET_ROOT)  
                 print(src, dest)
                 move_file(src,dest)
     
@@ -83,6 +88,8 @@ class ObsidianHugoExporter:
         root_dir = self.STAGING_DIR
         output_dir = self.HUGO_CONTENT_FOLDER
         for input_md in all_files(root_dir, "md"):
+            if 'excalidraw.md' in input_md:
+                continue
             filename = os.path.basename(input_md)
             output_md = f"{output_dir}\\{filename}"
             
@@ -93,6 +100,8 @@ class ObsidianHugoExporter:
     def preprocess_md(self, input_file):
         mutate_file(input_file, [
                 md_preprocessor.remove_slide_markup,
+                md_preprocessor.img_src_absolute,
+                md_preprocessor.clean_excalidraw_editlinks,
                 md_preprocessor.remove_starting_hyphen, 
                 md_preprocessor.split_fm_tags, 
                 md_preprocessor.remove_slide_markers 

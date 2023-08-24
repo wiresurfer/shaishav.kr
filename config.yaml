@@ -72,7 +72,7 @@ params:
   hideSummary: false
   UseHugoToc: true
   showtoc: true
-  tocopen: false
+  tocopen: true
 
   cover:
     hiddenInList: false # hide on list pages and home
@@ -86,58 +86,57 @@ params:
   
   
   label:
-    text: "@wiresurfer | Shaishav Kumar"
+    text: "<mark>@wiresurfer</mark> | Shaishav Kumar"
     # icon: /img/shaishav-logo-bw.png
   
   homeInfoParams:
     Title: |
-      ![Shaishav Kumar profile pic](./img/profile-pic.jpg "Shaishav.kr")
+      ![Shaishav Kumar profile pic](./img/profile-pic.png "Shaishav.kr")
 
-
-      `Engineering, Startups, Photography, IoT, AI & ML`
+    Cta: |
+    
     Content: |
-        `Voila, you've stumbled upon this nook of the interwebs`
-
-        `let me introduce myself and thank you for dropping by 👋 `
+        <sup>Voila, you've stumbled upon this nook of the interwebs</sup>
+        <sup>let me introduce myself and thank you for dropping by 👋</sup>
+        <br />
+        <br />
+        
+        ### My Journey 
         
         ```
-        I have been a Technologist for over 2 decades.
-        Having witnessed first hand seismic changes in the way humans interact with 
-        technology over the years, I now focus exclusively at the intersection of 
-        software, hardware, realworld applications and the improvement of human condition.
+        With 15+ years or expereince working in Machine Learning, Cloud and Distributed Systems Engineering, 
+        and Enterprise Fullstack Web and Mobile development, I have a treasure trove of knowledge, 
+        expereince and real word case studies worth sharing. 
+        
+        More recently, I have spent 9+ years successfully running small, high-paced, high-performance
+        engineering teams in 0-to-1 & 1-scale startups. 
         ```
-
+        <br />
         
-
+        ### My Mission
+        ```
+        1. Solving "hard" engineering problems, not confined to software running inside the "box"
+        2. At the intersection of Computer Science and the Physical World via "Smart Hardware"
+        3. In domains which can have a measurable impact in the "betterment" of "human condition"
+        ```
+        <br />
         
-        `I use this space to express my views on`
+        ### My Writing usually talks about
+        ```
         1. 👷‍♂️ Engineering
             1. 🌐 IoT,  🤖 Robotics, 🖥️🧠 Machine Learning and AI 
-            3. Golang, ☸ Kubernetes, Docker 🐳 and friends.   
+            3. Golang, ☸ Kubernetes, 🐳Docker & friends.   
         2. 💼 Management and Strategy
-            1. 🚀 Startups & Strategy
-            3. 🧩 Product Management
-            3. 🙇 Engineering Leadership
+            1. 🙇 Learnings on Engineering leadership for small yet high-impact teams
+            2. 🌎 Practices for managing high-output remote-first global teams.
+            3. 🚀 Startups & Strategy & Tips on Building Great Technical B2B Products
         3. 🧠 Right brain musings (in small, infrequent doses)
             1. ⌚Productivty , 📸 Photography, 📖 Philosophy, and 🥳 Happiness 
-          
-        `For the curious, these are my current and previous avataars, `
-        1. Robotics @ [Rapyuta Robotics](https://www.rapyuta-robotics.com/) | 
-        2. Reneable energy & Industrial IoT @ [Atria Power](http://atriapower.com/about-us/) | Solar, Wind Power, Industrial and Building Automation
-        3. Co-founder @ [Pinclick](https://www.pinclick.com/) | Property Management and Real Estate Marketing
-        4. Machine Learning @ [Microsoft Research](https://www.researchgate.net/scientific-contributions/Shaishav-Kumar-70607230)  | Natural Language Processing, Hashing Techqniques
+        ```  
 
-        
-        
-        
-        ## Giving Back what I've Learned
+        <br />
+        <br />
 
-        - I mentor young engineers in navigating their careers.   [mentoring@shaishav.kr](mailto:mentoring@shaishav.kr)
-        
-        - I coach startups in building Skunkworks™️ like pods to deliver speedy innovation. [leadership@shaishav.kr](mailto:leadership@shaishav.kr)
-        
-        - I advise traditional business owners/startup founders with technical & AI strategy. [strategy@shaishav.kr](mailto:strategy@shaishav.kr)
-  
 
   socialIcons: # optional
     - name: "github"
