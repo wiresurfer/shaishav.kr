@@ -6,11 +6,7 @@
   </url><url>
     <loc>https://blog.shaishav.kr/archives/</loc>
   </url><url>
-    <loc>https://blog.shaishav.kr/tags/devops/</loc>
-  </url><url>
     <loc>https://blog.shaishav.kr/pages/</loc>
-  </url><url>
-    <loc>https://blog.shaishav.kr/tags/platform-engineering/</loc>
   </url><url>
     <loc>https://blog.shaishav.kr/pages/rise-of-internal-developer-portals-idp-part-1/</loc>
   </url><url>
@@ -18,8 +14,14 @@
   </url><url>
     <loc>https://blog.shaishav.kr/</loc>
   </url><url>
-    <loc>https://blog.shaishav.kr/tags/</loc>
+    <loc>https://blog.shaishav.kr/pages/test-page/</loc>
   </url><url>
     <loc>https://blog.shaishav.kr/categories/</loc>
+  </url><url>
+    <loc>https://blog.shaishav.kr/tags/</loc>
+  </url><url>
+    <loc>https://blog.shaishav.kr/tags/topic/devops/</loc>
+  </url><url>
+    <loc>https://blog.shaishav.kr/tags/topic/platform-engineering/</loc>
   </url>
 </urlset>

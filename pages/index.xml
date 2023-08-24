@@ -6,11 +6,11 @@
     <description>Recent content in Pages on Shaishav Kumar</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 22 Aug 2023 21:35:00 +0000</lastBuildDate><atom:link href="https://blog.shaishav.kr/pages/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 24 Aug 2023 23:25:00 +0000</lastBuildDate><atom:link href="https://blog.shaishav.kr/pages/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>AI Checklist for Startups</title>
       <link>https://blog.shaishav.kr/pages/ai-checklist-for-startups/</link>
-      <pubDate>Tue, 22 Aug 2023 21:35:00 +0000</pubDate>
+      <pubDate>Thu, 24 Aug 2023 23:25:00 +0000</pubDate>
       
       <guid>https://blog.shaishav.kr/pages/ai-checklist-for-startups/</guid>
       <description>AI Checklist for Startups Introduction Predicting the future: as old as Civilization Machines and Clearical record keeping Advent of connected machines Commoditized Storage and compute Data Hoarding Statistical Modelling for Business Data From human percievable statistics to abstract high dimension modelling Machine learning at scale Advent of self supervizied models Taking learning by example to the extreme Supersizing Training data as well as model weigts. Generative/ Adversarial Learning General Intelligence Statistics 101 Regression and curve fitting Classification Clustering Nearest Neighbour Searching Dimensions and data modelling Exploratory Data Analysis Disciplines NLP Image Audio Time Series User Behaviour Use Cases User behavior analysis Think of a retail experience.</description>
@@ -19,12 +19,23 @@
     <item>
       <title>Rise of Internal Developer Portals (iDp) - Part 1</title>
       <link>https://blog.shaishav.kr/pages/rise-of-internal-developer-portals-idp-part-1/</link>
-      <pubDate>Tue, 22 Aug 2023 21:35:00 +0000</pubDate>
+      <pubDate>Thu, 24 Aug 2023 23:25:00 +0000</pubDate>
       
       <guid>https://blog.shaishav.kr/pages/rise-of-internal-developer-portals-idp-part-1/</guid>
       <description>Rise of Internal Developer Portals (iDp) - Part 1 Introduction In today&amp;rsquo;s rapidly evolving software development landscape, staying ahead of the curve is crucial for success. One emerging trend that has gained significant traction is the adoption of Internal Developer Portals (iDp).
 In this introductory blog post, we will explore the concept of iDp, its growing popularity in 2023, and why it is essential for modern software development.
 Whether you are a startup founder, a cloud-native enthusiast, or a Kubernetes aficionado, this blog series will provide you with practical insights to leverage the power of internal developer portals and maximize your team&amp;rsquo;s productivity.</description>
+    </item>
+    
+    <item>
+      <title>Test Page</title>
+      <link>https://blog.shaishav.kr/pages/test-page/</link>
+      <pubDate>Thu, 24 Aug 2023 23:25:00 +0000</pubDate>
+      
+      <guid>https://blog.shaishav.kr/pages/test-page/</guid>
+      <description>Test Page Introduction In today&amp;rsquo;s rapidly evolving software development landscape, staying ahead of the curve is crucial for success. One emerging trend that has gained significant traction is the adoption of Internal Developer Portals (iDp).
+In this introductory blog post, we will explore the concept of iDp, its growing popularity in 2023, and why it is essential for modern software development.
+Image Embed Code Embed import os import json print(json.load(&amp;#34;a,txt&amp;#34;)) Mermaid Embed sequenceDiagram autonumber participant user as User participant HT as Handy Terminal participant WMS as WMS participant RCS as RCS %% link convertIntoEpicUIAction: Convert into Epic @ https://dev168935.</description>
     </item>
     
   </channel>
