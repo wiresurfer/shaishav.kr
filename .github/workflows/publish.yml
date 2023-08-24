@@ -23,7 +23,9 @@ jobs:
           # extended: true
 
       - name: Build
-        run: hugo --minify
+        run:  |
+          hugo --minify
+          echo "blog.shaishav.kr" > ./public/CNAME
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
