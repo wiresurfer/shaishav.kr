@@ -29,9 +29,10 @@
   <div class="post-content col-span-12 lg:col-span-9 sm:col-span-12">
 
     <hr class="gradient" />
-    {{- partial "cover.html" (dict "cxt" . "IsHome" false "isHidden" $isHidden) }}
-
-
+    <div class="h-48 max-h-48">
+      {{- partial "cover.html" (dict "cxt" . "IsHome" false "isHidden" $isHidden) }}
+    </div>
+    <br />
     {{- partial "post_meta.html" . -}}
     <hr class="gradient" />
 
