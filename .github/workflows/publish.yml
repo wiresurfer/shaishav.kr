@@ -19,11 +19,11 @@ jobs:
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
-          hugo-version: "latest"
+          hugo-version: "0.115.3"
           # extended: true
 
       - name: Build
-        run:  |
+        run: |
           hugo --minify
           echo "blog.shaishav.kr" > ./public/CNAME
 
