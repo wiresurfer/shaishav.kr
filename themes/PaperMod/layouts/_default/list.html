@@ -50,7 +50,12 @@
 
 
 <article class="{{ $class }} grid grid-cols-12 gap-4">
-  <div class="col-span-9 p-8">
+  {{- $isHidden := (.Site.Params.cover.hidden | default .Site.Params.cover.hiddenInList) }}
+  <div class="col-span-12 md:col-span-3 h-48 md:h-auto" >
+    {{- partial "cover.html" (dict "cxt" . "IsHome" true "isHidden" $isHidden) }}
+  </div>
+
+  <div class="col-span-12 md:col-span-9 md:p-8 p-4">
     <h1 class="cm-header-2"> {{ .Title }} </h2>
       {{- if (ne (.Param "hideSummary") true) }}
       <section class="entry-content">
@@ -64,11 +69,7 @@
       {{- end }}
       <a class="entry-link" aria-label="post link to {{ .Title | plainify }}" href="{{ .Permalink }}"></a>
   </div>
-  {{- $isHidden := (.Site.Params.cover.hidden | default .Site.Params.cover.hiddenInList) }}
-  <div class="col-span-3 h-full">
-    {{- partial "cover.html" (dict "cxt" . "IsHome" true "isHidden" $isHidden) }}
-  </div>
-
+  
 </article>
 {{- end }}
 

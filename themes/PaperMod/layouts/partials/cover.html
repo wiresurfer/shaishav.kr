@@ -4,7 +4,7 @@
 {{- $cover := (.Resources.ByType "image").GetMatch (printf "*%s*" (.Params.coverImage)) }}
 {{- $alt := (.Params.cover.alt | default .Params.cover.caption | plainify) }}
 {{- if .Params.coverImage }}
-<div class="post-cover-image max-h-48 h-full ">
+<div class="post-cover-image min-h-48 max-h-96 h-full ">
         <div style='max-height:20em;background-size:cover; background-position-y:50%;background-image: url("{{ (.Params.coverImage | absURL) }}")'
                 class="cover-bg h-full">
                 &nbsp;

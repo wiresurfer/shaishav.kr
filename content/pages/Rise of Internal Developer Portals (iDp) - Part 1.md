@@ -2,8 +2,9 @@
 category:
 - Engineering
 coverImage: "https://www.epsglobal.com/getattachment/20c59b9b-abe3-4375-8210-366f6d8e9a7a/Containers,-Docker-and-Kubernetes-A-beginner-s-guide-Part-2.jpg?maxsidesize=780&width=780"
+public: true
+ShowToc: true
 tags:
-- 
 - topic/platform-engineering
 - topic/devops
 title: Rise of Internal Developer Portals (iDp) - Part 1

@@ -3,10 +3,9 @@ category:
 - Engineering
 coverImage: "https://www.epsglobal.com/getattachment/20c59b9b-abe3-4375-8210-366f6d8e9a7a/Containers,-Docker-and-Kubernetes-A-beginner-s-guide-Part-2.jpg?maxsidesize=780&width=780"
 tags:
-- 
 - topic/platform-engineering
 - topic/devops
-title: Test Page
+title: Blog Embed Test
 ---
 
 # Blog Embed Test
@@ -23,7 +22,9 @@ In this introductory blog post, we will explore the concept of iDp, its growing 
 
 #### Audio
 
-![](/Assets/media/Blog%20Embed%20Test/Recording%2020230825050446.webm)
+<audio controls src="/Assets/media/Blog%20Embed%20Test/Recording%2020230825050446.webm">
+<a href="/Assets/media/Blog%20Embed%20Test/Recording%2020230825050446.webm"> Download audio </a>
+</audio>
 
 #### Code Embed
 
