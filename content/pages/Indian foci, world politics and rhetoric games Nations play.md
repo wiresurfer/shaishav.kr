@@ -2,6 +2,7 @@
 category:
 - Engineering
 coverImage: "https://www.youtube.com/watch?v=lAUc1Gr_uDo"
+draft: true
 public: false
 ShowToc: true
 tags:

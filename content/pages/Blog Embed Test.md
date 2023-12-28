@@ -2,6 +2,9 @@
 category:
 - Engineering
 coverImage: "https://www.epsglobal.com/getattachment/20c59b9b-abe3-4375-8210-366f6d8e9a7a/Containers,-Docker-and-Kubernetes-A-beginner-s-guide-Part-2.jpg?maxsidesize=780&width=780"
+draft: true
+expiryDate: 2023-01-01
+public: false
 tags:
 - topic/platform-engineering
 - topic/devops
@@ -16,15 +19,83 @@ In today's rapidly evolving software development landscape, staying ahead of the
 
 In this introductory blog post, we will explore the concept of iDp, its growing popularity in 2023, and why it is essential for modern software development.
 
-#### Image
+#### Excalidraw
 
-![](/Assets/media/Blog%20Embed%20Test/Blog%20Embed%20Support-image-20230825032830918.png)
+![](/Assets/media/AI%20Checklist%20for%20Startups/AI%20Checklist%20for%20Startups%202023-12-28%2019.38.11.excalidraw.svg)
+
+#### Code
+
+``` python
+import re
+re.sub(a, b, c)
+```
+
+``` mermaid
+  
+
+   sequenceDiagram
+
+      participant Desktop UI as Desktop UI / <br> External App
+
+      participant Handy Terminal
+
+      participant WMS
+
+      participant OWM
+
+      participant RCS
+
+      participant Station Manager
+
+      participant SVS as Station Verification <br> System
+
+      participant Station UI
+
+    %%   participant LED
+
+      participant Scanner
+
+      participant Button
+
+      actor Picker
+
+      Desktop UI ->> WMS: POST WMS Order Batch
+
+      Picker -->> Handy Terminal: Select current station
+
+      Picker -->> Handy Terminal: Select picking process
+
+      Picker -->> Handy Terminal: Select batch
+
+      WMS ->> Handy Terminal: Process Completed
+```
 
 #### Audio
 
-<audio controls src="/Assets/media/Blog%20Embed%20Test/Recording%2020230825050446.webm">
-<a href="/Assets/media/Blog%20Embed%20Test/Recording%2020230825050446.webm"> Download audio </a>
+\<audio controls src="/Assets/media/AI%20Checklist%20for%20Startups/Recording%202023122<audio controls src="/Assets/media/Blog%20Embed%20Test/Recording%2020231229033158.webm"><a href="/Assets/media/Blog%20Embed%20Test/Recording%2020231229033158.webm"> Download audio </a></audio>ecording%2020231228185105.webm"\> Download audio </a></audio>
+
+<audio controls src="/Assets/media/Blog%20Embed%20Test/Recording%2020231229033158.webm">
+<a href="/Assets/media/Blog%20Embed%20Test/Recording%2020231229033158.webm"> Download audio </a>
 </audio>
+
+#### Youtube
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/mAo7dgOF9hw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+
+#### Image
+
+![Assets/media/AI Checklist for Startups/AI Checklist for Startups-image-20231228195339051.png](/Assets/media/AI%20Checklist%20for%20Startups/AI%20Checklist%20for%20Startups-image-20231228195339051.png)
+
+Internal
+![](/Assets/media/AI%20Checklist%20for%20Startups/AI%20Checklist%20for%20Startups-image-20231228183546666.png)
+
+!\[Assets/media/AI Checklist for Startups/AI Checklist for<audio controls src="/Assets/media/Blog%20Embed%20Test/Recording%2020230825050446.webm"><a href="/Assets/media/Blog%20Embed%20Test/Recording%2020230825050446.webm"> Download audio </a></audio>Startups/AI Checklist for Startups-image-20231228183546666.png)
+<audio controls src="/Assets/media/Blog%20Embed%20Test/Recording%2020230825050446.webm"><a href="/Assets/media/Blog%20Embed%20Test/Recording%2020230825050446.webm"> Download audio </a></audio>pport-image-20230825032830918.png)
+
+#### Audio
+
+![](/Assets/media/Blog%20Embed%20Test/Recording%2020230825050446.webm)
 
 #### Code Embed
 
