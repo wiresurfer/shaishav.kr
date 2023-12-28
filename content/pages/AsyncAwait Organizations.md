@@ -1,7 +1,7 @@
 ---
 category:
 - Engineering
-coverImage: "https://www.epsglobal.com/getattachment/20c59b9b-abe3-4375-8210-366f6d8e9a7a/Containers,-Docker-and-Kubernetes-A-beginner-s-guide-Part-2.jpg?maxsidesize=780&width=780"
+coverImage: "https://assets-global.website-files.com/5faf10d476faf1616f168497/61084dafced47654ac95a129_header.png"
 ShowToc: true
 tags:
 - topic/platform-engineering
