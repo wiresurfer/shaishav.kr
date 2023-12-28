@@ -6,20 +6,20 @@
     <description>Recent content in Pages on Shaishav Kumar</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 28 Dec 2023 21:57:24 +0000</lastBuildDate><atom:link href="https://blog.shaishav.kr/pages/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 28 Dec 2023 22:15:34 +0000</lastBuildDate><atom:link href="https://blog.shaishav.kr/pages/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>AI Checklist for Startups</title>
       <link>https://blog.shaishav.kr/pages/ai-checklist-for-startups/</link>
-      <pubDate>Thu, 28 Dec 2023 21:57:24 +0000</pubDate>
+      <pubDate>Thu, 28 Dec 2023 22:15:34 +0000</pubDate>
       
       <guid>https://blog.shaishav.kr/pages/ai-checklist-for-startups/</guid>
-      <description>AI Checklist for Startups Introduction Predicting the future: as old as Civilization Machines and Clerical record keeping Advent of connected machines Commoditized Storage and compute Data Hoarding Statistical Modelling for Business Data From human perceivable statistics to abstract high dimension modelling Machine learning at scale Advent of self supervised models Taking learning by example to the extreme Supersizing Training data as well as model weights. Generative/ Adversarial Learning General Intelligence Statistics 101 Regression and curve fitting Classification Clustering Nearest Neighbor Searching Dimensions and data modelling Exploratory Data Analysis Excalidraw Code import re re.</description>
+      <description>AI Checklist for Startups Introduction Predicting the future: as old as Civilization Machines and Clerical record keeping Advent of connected machines Commoditized Storage and compute Data Hoarding Statistical Modelling for Business Data From human perceivable statistics to abstract high dimension modelling Machine learning at scale Advent of self supervised models Taking learning by example to the extreme Supersizing Training data as well as model weights. Generative/ Adversarial Learning General Intelligence Statistics 101 Regression and curve fitting Classification Clustering Nearest Neighbor Searching Dimensions and data modelling Exploratory Data Analysis # Disciplines NLP Image Audio Time Series User Behavior Use Cases User behavior analysis Think of a retail experience.</description>
     </item>
     
     <item>
       <title>AsyncAwait Organizations</title>
       <link>https://blog.shaishav.kr/pages/asyncawait-organizations/</link>
-      <pubDate>Thu, 28 Dec 2023 21:57:24 +0000</pubDate>
+      <pubDate>Thu, 28 Dec 2023 22:15:34 +0000</pubDate>
       
       <guid>https://blog.shaishav.kr/pages/asyncawait-organizations/</guid>
       <description>AsyncAwait Organizations Illustrate the problem Talk about the Core Idea of the Solution Evidence about the Solution Approach Solution Playbook Call to Action Footnotes Decision Framework
@@ -27,39 +27,18 @@ Is it easy to explain the solution? Is it easy to roll out? within a team? can b
     </item>
     
     <item>
-      <title>Blog Embed Test</title>
-      <link>https://blog.shaishav.kr/pages/blog-embed-test/</link>
-      <pubDate>Thu, 28 Dec 2023 21:57:24 +0000</pubDate>
-      
-      <guid>https://blog.shaishav.kr/pages/blog-embed-test/</guid>
-      <description>Blog Embed Test Introduction In today&amp;rsquo;s rapidly evolving software development landscape, staying ahead of the curve is crucial for success. One emerging trend that has gained significant traction is the adoption of Internal Developer Portals (iDp).
-In this introductory blog post, we will explore the concept of iDp, its growing popularity in 2023, and why it is essential for modern software development.
-Image Audio Download audio Code Embed import os import json print(json.</description>
-    </item>
-    
-    <item>
       <title>Efficient Git Workflow with Stacked PRs</title>
       <link>https://blog.shaishav.kr/pages/efficient-git-workflow-with-stacked-prs/</link>
-      <pubDate>Thu, 28 Dec 2023 21:57:24 +0000</pubDate>
+      <pubDate>Thu, 28 Dec 2023 22:15:34 +0000</pubDate>
       
       <guid>https://blog.shaishav.kr/pages/efficient-git-workflow-with-stacked-prs/</guid>
       <description>Efficient Git Workflow with Stacked PRs Illustrate the problem Big PRs %% statistics about time spent by senior devs in PR reviews. short 2-3lines. quote with reference+statistics from mid sized startups %% %% why big PRs are harder to make sense of . general intro - 2 lines. %% %% define BIG PR. 400line changes as per google&amp;rsquo;s guidelines. short , 2 lines %% %% types of PR changes. chore vs feature, vs hotfix vs bugfix vs improvement.</description>
     </item>
     
     <item>
-      <title>Indian foci, world politics and rhetoric games Nations play</title>
-      <link>https://blog.shaishav.kr/pages/indian-foci-world-politics-and-rhetoric-games-nations-play/</link>
-      <pubDate>Thu, 28 Dec 2023 21:57:24 +0000</pubDate>
-      
-      <guid>https://blog.shaishav.kr/pages/indian-foci-world-politics-and-rhetoric-games-nations-play/</guid>
-      <description>Indian foci, world politics and rhetoric games Nations play Narratives are everywhere. Corporations use it to sell you goods, country use it to boster their political, economic and international stature.
-Have a look at these plots. The good folks at OECD compile macro economic indicators for various countries meticulously. Its interesting to note &amp;ldquo;flattening of the curve&amp;rdquo; when it comes to developed nations like japan and USA. While China is tapering off slightly, India has been projected to be on an upwards trajectory, and a steep one at that.</description>
-    </item>
-    
-    <item>
       <title>Practitioners Guide to Great Project Documentation feat. ReadTheDocs</title>
       <link>https://blog.shaishav.kr/pages/practitioners-guide-to-great-project-documentation-feat.-readthedocs/</link>
-      <pubDate>Thu, 28 Dec 2023 21:57:24 +0000</pubDate>
+      <pubDate>Thu, 28 Dec 2023 22:15:34 +0000</pubDate>
       
       <guid>https://blog.shaishav.kr/pages/practitioners-guide-to-great-project-documentation-feat.-readthedocs/</guid>
       <description>markdown - Python docstrings to GitHub README.md - Stack Overflow python - Read The Docs not working with automodule - Stack Overflow
@@ -70,7 +49,7 @@ docs</description>
     <item>
       <title>Productivity Audits &amp; the Fine art of Mastering Your Day</title>
       <link>https://blog.shaishav.kr/pages/productivity-audits-the-fine-art-of-mastering-your-day/</link>
-      <pubDate>Thu, 28 Dec 2023 21:57:24 +0000</pubDate>
+      <pubDate>Thu, 28 Dec 2023 22:15:34 +0000</pubDate>
       
       <guid>https://blog.shaishav.kr/pages/productivity-audits-the-fine-art-of-mastering-your-day/</guid>
       <description>Productivity Audits &amp;amp; the Fine art of Mastering Your Day Hot take: Download audio Are you ready to take control of your day and boost your productivity as an engineer or programmer? In this article, we&amp;rsquo;ll dive deep into the art of managing your day effectively, especially in a high-performance, remote work environment. Let&amp;rsquo;s explore how understanding your productivity cycle, tackling interruptions, and practicing leadership in your work can make all the difference.</description>
@@ -79,7 +58,7 @@ docs</description>
     <item>
       <title>Rise of Internal Developer Portals (iDp) - Part 1</title>
       <link>https://blog.shaishav.kr/pages/rise-of-internal-developer-portals-idp-part-1/</link>
-      <pubDate>Thu, 28 Dec 2023 21:57:24 +0000</pubDate>
+      <pubDate>Thu, 28 Dec 2023 22:15:34 +0000</pubDate>
       
       <guid>https://blog.shaishav.kr/pages/rise-of-internal-developer-portals-idp-part-1/</guid>
       <description>Rise of Internal Developer Portals (iDp) - Part 1 Introduction In today&amp;rsquo;s rapidly evolving software development landscape, staying ahead of the curve is crucial for success. One emerging trend that has gained significant traction is the adoption of Internal Developer Portals (iDp).
