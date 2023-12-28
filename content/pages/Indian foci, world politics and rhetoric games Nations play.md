@@ -1,7 +1,7 @@
 ---
 category:
 - Engineering
-coverImage: "https://www.youtube.com/watch?v=lAUc1Gr_uDo"
+coverImage: "https://diplomatist.com/wp-content/uploads/2022/06/quad.png"
 draft: true
 public: false
 ShowToc: true
