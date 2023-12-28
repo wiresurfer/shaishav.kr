@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>topic/engineering-management on Shaishav Kumar</title>
+    <link>https://blog.shaishav.kr/tags/topic/engineering-management/</link>
+    <description>Recent content in topic/engineering-management on Shaishav Kumar</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="https://blog.shaishav.kr/tags/topic/engineering-management/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Practitioners Guide to Great Project Documentation feat. ReadTheDocs</title>
+      <link>https://blog.shaishav.kr/pages/practitioners-guide-to-great-project-documentation-feat.-readthedocs/</link>
+      <pubDate>Thu, 28 Dec 2023 21:26:51 +0000</pubDate>
+      
+      <guid>https://blog.shaishav.kr/pages/practitioners-guide-to-great-project-documentation-feat.-readthedocs/</guid>
+      <description>markdown - Python docstrings to GitHub README.md - Stack Overflow python - Read The Docs not working with automodule - Stack Overflow
+reStructuredText vs Markdown for documentation
+docs</description>
+    </item>
+    
+  </channel>
+</rss>
