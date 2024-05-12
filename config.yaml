@@ -4,6 +4,14 @@ title: Shaishav Kumar
 paginate: 10
 theme: "PaperMod"
 
+imaging:
+  bgColor: '#ffffff'
+  hint: photo
+  quality: 75
+  resampleFilter: box
+  targetFormat: webp
+  dimensions: 640x
+  anchor: smart
 markup:
   # defaultMarkdownHandler: pandoc
   # pandoc:

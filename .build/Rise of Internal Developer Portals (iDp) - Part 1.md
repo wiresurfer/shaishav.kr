@@ -19,8 +19,13 @@ In this introductory blog post, we will explore the concept of iDp, its growing 
 
 Whether you are a startup founder, a cloud-native enthusiast, or a Kubernetes aficionado, this blog series will provide you with practical insights to leverage the power of internal developer portals and maximize your team's productivity.
 
-
+```python
+import os 
+def main()
+    print("hello amigos")
+```
     
+
 ### What are Internal Developer Portals (iDp)?
 
 Internal Developer Portals, or iDp, are centralized platforms designed to streamline the workflows of software developers within an organization. They provide developers with a unified and easily accessible interface to access tools, documentation, resources, and collaborate effectively. With managed Kubernetes and edge computing becoming increasingly prevalent, iDp plays a vital role in supporting the development of cloud-native applications and distributed systems.
