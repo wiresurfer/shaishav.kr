@@ -11,13 +11,10 @@ def convert_to_hugo(root_dir):
 
 class ObsidianHugoExporter:
     OBSIDIAN_ROOT = r".\\obsidian-notes"
-    OBSIDIAN_CONTENT_ROOT = f"{OBSIDIAN_ROOT}\\Notes\Work"
+    OBSIDIAN_CONTENT_ROOT = f"{OBSIDIAN_ROOT}\\Write\\Blog"
 
     OBSIDIAN_ASSET_FOLDERS = [
-        f"{OBSIDIAN_ROOT}\\Writing\\Assets",
-        # f"{OBSIDIAN_ROOT}\\Assets\\Excalidraw",
-        f"{OBSIDIAN_ROOT}\\Assets",
-        # f"{OBSIDIAN_ROOT}\\Notes\\Work\\OKS"
+        f"{OBSIDIAN_ROOT}\\Write\\Blog\\Assets",
     ]
 
     HUGO_ROOT = r".\\wiresurfer.github.io"
