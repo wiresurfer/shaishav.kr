@@ -2,38 +2,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://blog.shaishav.kr/pages/ai-checklist-for-startups/</loc>
-  </url><url>
     <loc>https://blog.shaishav.kr/archives/</loc>
-  </url><url>
-    <loc>https://blog.shaishav.kr/pages/asyncawait-organizations/</loc>
-  </url><url>
-    <loc>https://blog.shaishav.kr/pages/efficient-git-workflow-with-stacked-prs/</loc>
-  </url><url>
-    <loc>https://blog.shaishav.kr/pages/</loc>
-  </url><url>
-    <loc>https://blog.shaishav.kr/pages/practitioners-guide-to-great-project-documentation-feat.-readthedocs/</loc>
-  </url><url>
-    <loc>https://blog.shaishav.kr/pages/productivity-audits-the-fine-art-of-mastering-your-day/</loc>
-  </url><url>
-    <loc>https://blog.shaishav.kr/pages/rise-of-internal-developer-portals-idp-part-1/</loc>
   </url><url>
     <loc>https://blog.shaishav.kr/search/</loc>
   </url><url>
-    <loc>https://blog.shaishav.kr/</loc>
-  </url><url>
     <loc>https://blog.shaishav.kr/categories/</loc>
   </url><url>
+    <loc>https://blog.shaishav.kr/</loc>
+  </url><url>
     <loc>https://blog.shaishav.kr/tags/</loc>
-  </url><url>
-    <loc>https://blog.shaishav.kr/tags/topic/devops/</loc>
-  </url><url>
-    <loc>https://blog.shaishav.kr/tags/topic/engineering-management/</loc>
-  </url><url>
-    <loc>https://blog.shaishav.kr/tags/topic/pkm/</loc>
-  </url><url>
-    <loc>https://blog.shaishav.kr/tags/topic/platform-engineering/</loc>
-  </url><url>
-    <loc>https://blog.shaishav.kr/tags/topic/productivity/</loc>
   </url>
 </urlset>
