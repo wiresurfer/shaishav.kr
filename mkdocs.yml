@@ -1,0 +1,27 @@
+site_name: Digital Library | shaishav.kr | @wiresurfer
+site_description: required. Used as feed mandatory channel description.
+site_name: required. Used as feed mandatory channel title and items source URL label.
+site_url: https://blog.shaishav.kr
+
+
+theme:
+  name: material
+  palette:
+    scheme: slate
+    primary: red
+plugins: 
+  - search
+  - autolinks
+  - awesome-pages
+  - git-revision-date-localized:
+      type: timeago
+  - mkdocs-newsletter
+  - rss
+  - pub-debugger
+  - pub-blog
+  - pub-obsidian
+  - pub-social
+  - pub-meta
+  - pub-minifier
+
+

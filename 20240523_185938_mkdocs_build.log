@@ -1,0 +1,243 @@
+[1716490779.024][INFO ][mkdocs/commands/serve.py:62] Building documentation...
+[1716490779.024][INFO ][mkdocs_publisher/meta/plugin.py:71] Read files and directories metadata
+[1716490779.028][WARNI][mkdocs_publisher/meta/meta_files.py:180] Missing "publish" value in file "01_Projects/011_Consulting/Action Items.md". Setting to default value: "False".
+[1716490779.029][WARNI][mkdocs_publisher/meta/meta_files.py:120] Title value from "title" meta data is missing for file: "01_Projects/011_Consulting/Action Items.md"
+[1716490779.029][WARNI][mkdocs_publisher/meta/meta_files.py:133] Title value from first heading is missing for file: "01_Projects/011_Consulting/Action Items.md"
+[1716490779.029][WARNI][mkdocs_publisher/meta/meta_files.py:180] Missing "publish" value in file "01_Projects/012_Social/Social Presence.md". Setting to default value: "False".
+[1716490779.030][WARNI][mkdocs_publisher/meta/meta_files.py:120] Title value from "title" meta data is missing for file: "01_Projects/012_Social/Social Presence.md"
+[1716490779.030][WARNI][mkdocs_publisher/meta/meta_files.py:133] Title value from first heading is missing for file: "01_Projects/012_Social/Social Presence.md"
+[1716490779.030][WARNI][mkdocs_publisher/meta/meta_files.py:180] Missing "publish" value in file "01_Projects/012_Social/shaishav.kr.md". Setting to default value: "False".
+[1716490779.031][WARNI][mkdocs_publisher/meta/meta_files.py:120] Title value from "title" meta data is missing for file: "01_Projects/012_Social/shaishav.kr.md"
+[1716490779.031][WARNI][mkdocs_publisher/meta/meta_files.py:133] Title value from first heading is missing for file: "01_Projects/012_Social/shaishav.kr.md"
+[1716490779.032][WARNI][mkdocs_publisher/meta/meta_files.py:180] Missing "publish" value in file "01_Projects/013_ProgrammersJournal/Ideation.md". Setting to default value: "False".
+[1716490779.032][WARNI][mkdocs_publisher/meta/meta_files.py:120] Title value from "title" meta data is missing for file: "01_Projects/013_ProgrammersJournal/Ideation.md"
+[1716490779.033][WARNI][mkdocs_publisher/meta/meta_files.py:133] Title value from first heading is missing for file: "01_Projects/013_ProgrammersJournal/Ideation.md"
+[1716490779.033][WARNI][mkdocs_publisher/meta/meta_files.py:180] Missing "publish" value in file "02_Areas/BizIdeas/Furniture Business.md". Setting to default value: "False".
+[1716490779.034][WARNI][mkdocs_publisher/meta/meta_files.py:120] Title value from "title" meta data is missing for file: "02_Areas/BizIdeas/Furniture Business.md"
+[1716490779.034][WARNI][mkdocs_publisher/meta/meta_files.py:133] Title value from first heading is missing for file: "02_Areas/BizIdeas/Furniture Business.md"
+[1716490779.034][WARNI][mkdocs_publisher/meta/meta_files.py:180] Missing "publish" value in file "02_Areas/BizIdeas/income-streams.md". Setting to default value: "False".
+[1716490779.035][WARNI][mkdocs_publisher/meta/meta_files.py:120] Title value from "title" meta data is missing for file: "02_Areas/BizIdeas/income-streams.md"
+[1716490779.035][WARNI][mkdocs_publisher/meta/meta_files.py:133] Title value from first heading is missing for file: "02_Areas/BizIdeas/income-streams.md"
+[1716490779.035][WARNI][mkdocs_publisher/meta/meta_files.py:180] Missing "publish" value in file "02_Areas/BizProcess/Product Management.md". Setting to default value: "False".
+[1716490779.036][WARNI][mkdocs_publisher/meta/meta_files.py:120] Title value from "title" meta data is missing for file: "02_Areas/BizProcess/Product Management.md"
+[1716490779.036][WARNI][mkdocs_publisher/meta/meta_files.py:133] Title value from first heading is missing for file: "02_Areas/BizProcess/Product Management.md"
+[1716490779.037][WARNI][mkdocs_publisher/meta/meta_files.py:180] Missing "publish" value in file "02_Areas/Cars/SecondhandCars.md". Setting to default value: "False".
+[1716490779.037][WARNI][mkdocs_publisher/meta/meta_files.py:120] Title value from "title" meta data is missing for file: "02_Areas/Cars/SecondhandCars.md"
+[1716490779.037][WARNI][mkdocs_publisher/meta/meta_files.py:133] Title value from first heading is missing for file: "02_Areas/Cars/SecondhandCars.md"
+[1716490779.038][WARNI][mkdocs_publisher/meta/meta_files.py:180] Missing "publish" value in file "02_Areas/Finance/FIRE.md". Setting to default value: "False".
+[1716490779.039][WARNI][mkdocs_publisher/meta/meta_files.py:120] Title value from "title" meta data is missing for file: "02_Areas/Finance/FIRE.md"
+[1716490779.039][WARNI][mkdocs_publisher/meta/meta_files.py:133] Title value from first heading is missing for file: "02_Areas/Finance/FIRE.md"
+[1716490779.040][WARNI][mkdocs_publisher/meta/meta_files.py:180] Missing "publish" value in file "02_Areas/Finance/InvenstmentPhilosophy.md". Setting to default value: "False".
+[1716490779.040][WARNI][mkdocs_publisher/meta/meta_files.py:120] Title value from "title" meta data is missing for file: "02_Areas/Finance/InvenstmentPhilosophy.md"
+[1716490779.040][WARNI][mkdocs_publisher/meta/meta_files.py:133] Title value from first heading is missing for file: "02_Areas/Finance/InvenstmentPhilosophy.md"
+[1716490779.040][WARNI][mkdocs_publisher/meta/meta_files.py:180] Missing "publish" value in file "02_Areas/Finance/Investment System.md". Setting to default value: "False".
+[1716490779.041][WARNI][mkdocs_publisher/meta/meta_files.py:120] Title value from "title" meta data is missing for file: "02_Areas/Finance/Investment System.md"
+[1716490779.041][WARNI][mkdocs_publisher/meta/meta_files.py:133] Title value from first heading is missing for file: "02_Areas/Finance/Investment System.md"
+[1716490779.042][WARNI][mkdocs_publisher/meta/meta_files.py:180] Missing "publish" value in file "02_Areas/Finance/Stocks/ERIS-ErisLifesciencesLtd.md". Setting to default value: "False".
+[1716490779.042][WARNI][mkdocs_publisher/meta/meta_files.py:120] Title value from "title" meta data is missing for file: "02_Areas/Finance/Stocks/ERIS-ErisLifesciencesLtd.md"
+[1716490779.042][WARNI][mkdocs_publisher/meta/meta_files.py:133] Title value from first heading is missing for file: "02_Areas/Finance/Stocks/ERIS-ErisLifesciencesLtd.md"
+[1716490779.043][WARNI][mkdocs_publisher/meta/meta_files.py:180] Missing "publish" value in file "02_Areas/Finance/Stocks/SBCL_ShivalikBimetal.md". Setting to default value: "False".
+[1716490779.043][WARNI][mkdocs_publisher/meta/meta_files.py:120] Title value from "title" meta data is missing for file: "02_Areas/Finance/Stocks/SBCL_ShivalikBimetal.md"
+[1716490779.043][WARNI][mkdocs_publisher/meta/meta_files.py:133] Title value from first heading is missing for file: "02_Areas/Finance/Stocks/SBCL_ShivalikBimetal.md"
+[1716490779.044][WARNI][mkdocs_publisher/meta/meta_files.py:180] Missing "publish" value in file "02_Areas/Finance/Trading & Finanace.md". Setting to default value: "False".
+[1716490779.044][WARNI][mkdocs_publisher/meta/meta_files.py:120] Title value from "title" meta data is missing for file: "02_Areas/Finance/Trading & Finanace.md"
+[1716490779.044][WARNI][mkdocs_publisher/meta/meta_files.py:133] Title value from first heading is missing for file: "02_Areas/Finance/Trading & Finanace.md"
+[1716490779.045][WARNI][mkdocs_publisher/meta/meta_files.py:180] Missing "publish" value in file "02_Areas/Geo-politics/Geo-politics.md". Setting to default value: "False".
+[1716490779.045][WARNI][mkdocs_publisher/meta/meta_files.py:120] Title value from "title" meta data is missing for file: "02_Areas/Geo-politics/Geo-politics.md"
+[1716490779.046][WARNI][mkdocs_publisher/meta/meta_files.py:133] Title value from first heading is missing for file: "02_Areas/Geo-politics/Geo-politics.md"
+[1716490779.046][WARNI][mkdocs_publisher/meta/meta_files.py:180] Missing "publish" value in file "02_Areas/Geo-politics/Indo-China War prospects.md". Setting to default value: "False".
+[1716490779.046][WARNI][mkdocs_publisher/meta/meta_files.py:120] Title value from "title" meta data is missing for file: "02_Areas/Geo-politics/Indo-China War prospects.md"
+[1716490779.046][WARNI][mkdocs_publisher/meta/meta_files.py:133] Title value from first heading is missing for file: "02_Areas/Geo-politics/Indo-China War prospects.md"
+[1716490779.047][WARNI][mkdocs_publisher/meta/meta_files.py:180] Missing "publish" value in file "02_Areas/LinuxKernel/06.Networking/06.01 Life of a Packet.md". Setting to default value: "False".
+[1716490779.048][WARNI][mkdocs_publisher/meta/meta_files.py:120] Title value from "title" meta data is missing for file: "02_Areas/LinuxKernel/06.Networking/06.01 Life of a Packet.md"
+[1716490779.048][WARNI][mkdocs_publisher/meta/meta_files.py:133] Title value from first heading is missing for file: "02_Areas/LinuxKernel/06.Networking/06.01 Life of a Packet.md"
+[1716490779.048][WARNI][mkdocs_publisher/meta/meta_files.py:180] Missing "publish" value in file "02_Areas/LinuxKernel/06.Networking/06.02 Kernel High Performance Networking.md". Setting to default value: "False".
+[1716490779.048][WARNI][mkdocs_publisher/meta/meta_files.py:120] Title value from "title" meta data is missing for file: "02_Areas/LinuxKernel/06.Networking/06.02 Kernel High Performance Networking.md"
+[1716490779.049][WARNI][mkdocs_publisher/meta/meta_files.py:133] Title value from first heading is missing for file: "02_Areas/LinuxKernel/06.Networking/06.02 Kernel High Performance Networking.md"
+[1716490779.049][WARNI][mkdocs_publisher/meta/meta_files.py:180] Missing "publish" value in file "02_Areas/LinuxKernel/06.Networking/06.03 Bypassing the Kernel.md". Setting to default value: "False".
+[1716490779.050][WARNI][mkdocs_publisher/meta/meta_files.py:120] Title value from "title" meta data is missing for file: "02_Areas/LinuxKernel/06.Networking/06.03 Bypassing the Kernel.md"
+[1716490779.050][WARNI][mkdocs_publisher/meta/meta_files.py:133] Title value from first heading is missing for file: "02_Areas/LinuxKernel/06.Networking/06.03 Bypassing the Kernel.md"
+[1716490779.050][WARNI][mkdocs_publisher/meta/meta_files.py:180] Missing "publish" value in file "02_Areas/LinuxKernel/06.Networking/06.04 What Should I use.md". Setting to default value: "False".
+[1716490779.051][WARNI][mkdocs_publisher/meta/meta_files.py:120] Title value from "title" meta data is missing for file: "02_Areas/LinuxKernel/06.Networking/06.04 What Should I use.md"
+[1716490779.051][WARNI][mkdocs_publisher/meta/meta_files.py:133] Title value from first heading is missing for file: "02_Areas/LinuxKernel/06.Networking/06.04 What Should I use.md"
+[1716490779.053][WARNI][mkdocs_publisher/meta/meta_files.py:180] Missing "publish" value in file "02_Areas/LinuxKernel/09.Tracing/09.xx Performance Monitoring.md". Setting to default value: "False".
+[1716490779.053][WARNI][mkdocs_publisher/meta/meta_files.py:120] Title value from "title" meta data is missing for file: "02_Areas/LinuxKernel/09.Tracing/09.xx Performance Monitoring.md"
+[1716490779.053][WARNI][mkdocs_publisher/meta/meta_files.py:133] Title value from first heading is missing for file: "02_Areas/LinuxKernel/09.Tracing/09.xx Performance Monitoring.md"
+[1716490779.054][WARNI][mkdocs_publisher/meta/meta_files.py:180] Missing "publish" value in file "02_Areas/LinuxKernel/10.eBPF/10.01 eBPF History, Motivation and Design.md". Setting to default value: "False".
+[1716490779.055][WARNI][mkdocs_publisher/meta/meta_files.py:120] Title value from "title" meta data is missing for file: "02_Areas/LinuxKernel/10.eBPF/10.01 eBPF History, Motivation and Design.md"
+[1716490779.055][WARNI][mkdocs_publisher/meta/meta_files.py:133] Title value from first heading is missing for file: "02_Areas/LinuxKernel/10.eBPF/10.01 eBPF History, Motivation and Design.md"
+[1716490779.055][WARNI][mkdocs_publisher/meta/meta_files.py:180] Missing "publish" value in file "02_Areas/LinuxKernel/10.eBPF/10.02 Hello eBPF.md". Setting to default value: "False".
+[1716490779.056][WARNI][mkdocs_publisher/meta/meta_files.py:120] Title value from "title" meta data is missing for file: "02_Areas/LinuxKernel/10.eBPF/10.02 Hello eBPF.md"
+[1716490779.056][WARNI][mkdocs_publisher/meta/meta_files.py:133] Title value from first heading is missing for file: "02_Areas/LinuxKernel/10.eBPF/10.02 Hello eBPF.md"
+[1716490779.057][WARNI][mkdocs_publisher/meta/meta_files.py:180] Missing "publish" value in file "02_Areas/LinuxKernel/10.eBPF/10.03 eBPF Maps.md". Setting to default value: "False".
+[1716490779.057][WARNI][mkdocs_publisher/meta/meta_files.py:120] Title value from "title" meta data is missing for file: "02_Areas/LinuxKernel/10.eBPF/10.03 eBPF Maps.md"
+[1716490779.057][WARNI][mkdocs_publisher/meta/meta_files.py:133] Title value from first heading is missing for file: "02_Areas/LinuxKernel/10.eBPF/10.03 eBPF Maps.md"
+[1716490779.058][WARNI][mkdocs_publisher/meta/meta_files.py:180] Missing "publish" value in file "02_Areas/LinuxKernel/10.eBPF/10.04 XDP.md". Setting to default value: "False".
+[1716490779.058][WARNI][mkdocs_publisher/meta/meta_files.py:120] Title value from "title" meta data is missing for file: "02_Areas/LinuxKernel/10.eBPF/10.04 XDP.md"
+[1716490779.059][WARNI][mkdocs_publisher/meta/meta_files.py:133] Title value from first heading is missing for file: "02_Areas/LinuxKernel/10.eBPF/10.04 XDP.md"
+[1716490779.059][WARNI][mkdocs_publisher/meta/meta_files.py:180] Missing "publish" value in file "02_Areas/LinuxKernel/10.eBPF/10.05 eBPF & Tracing.md". Setting to default value: "False".
+[1716490779.059][WARNI][mkdocs_publisher/meta/meta_files.py:120] Title value from "title" meta data is missing for file: "02_Areas/LinuxKernel/10.eBPF/10.05 eBPF & Tracing.md"
+[1716490779.059][WARNI][mkdocs_publisher/meta/meta_files.py:133] Title value from first heading is missing for file: "02_Areas/LinuxKernel/10.eBPF/10.05 eBPF & Tracing.md"
+[1716490779.061][WARNI][mkdocs_publisher/meta/meta_files.py:180] Missing "publish" value in file "02_Areas/LinuxKernel/Linux Internals MOOC.md". Setting to default value: "False".
+[1716490779.062][WARNI][mkdocs_publisher/meta/meta_files.py:120] Title value from "title" meta data is missing for file: "02_Areas/LinuxKernel/Linux Internals MOOC.md"
+[1716490779.062][WARNI][mkdocs_publisher/meta/meta_files.py:133] Title value from first heading is missing for file: "02_Areas/LinuxKernel/Linux Internals MOOC.md"
+[1716490779.063][WARNI][mkdocs_publisher/meta/meta_files.py:180] Missing "publish" value in file "02_Areas/Photography/Photography.md". Setting to default value: "False".
+[1716490779.063][WARNI][mkdocs_publisher/meta/meta_files.py:120] Title value from "title" meta data is missing for file: "02_Areas/Photography/Photography.md"
+[1716490779.063][WARNI][mkdocs_publisher/meta/meta_files.py:133] Title value from first heading is missing for file: "02_Areas/Photography/Photography.md"
+[1716490779.064][WARNI][mkdocs_publisher/meta/meta_files.py:180] Missing "publish" value in file "02_Areas/Photography/Video and Photography.md". Setting to default value: "False".
+[1716490779.064][WARNI][mkdocs_publisher/meta/meta_files.py:120] Title value from "title" meta data is missing for file: "02_Areas/Photography/Video and Photography.md"
+[1716490779.064][WARNI][mkdocs_publisher/meta/meta_files.py:133] Title value from first heading is missing for file: "02_Areas/Photography/Video and Photography.md"
+[1716490779.065][WARNI][mkdocs_publisher/meta/meta_files.py:180] Missing "publish" value in file "02_Areas/Spirituality/Vedanta/Geeta Readings.md". Setting to default value: "False".
+[1716490779.065][WARNI][mkdocs_publisher/meta/meta_files.py:120] Title value from "title" meta data is missing for file: "02_Areas/Spirituality/Vedanta/Geeta Readings.md"
+[1716490779.066][WARNI][mkdocs_publisher/meta/meta_files.py:133] Title value from first heading is missing for file: "02_Areas/Spirituality/Vedanta/Geeta Readings.md"
+[1716490779.066][WARNI][mkdocs_publisher/meta/meta_files.py:180] Missing "publish" value in file "03_Resources/KindleHilights/BarZohar-Mishal-Mossad.md". Setting to default value: "False".
+[1716490779.067][WARNI][mkdocs_publisher/meta/meta_files.py:120] Title value from "title" meta data is missing for file: "03_Resources/KindleHilights/BarZohar-Mishal-Mossad.md"
+[1716490779.067][WARNI][mkdocs_publisher/meta/meta_files.py:133] Title value from first heading is missing for file: "03_Resources/KindleHilights/BarZohar-Mishal-Mossad.md"
+[1716490779.067][WARNI][mkdocs_publisher/meta/meta_files.py:180] Missing "publish" value in file "03_Resources/KindleHilights/Carnegie-How to Win Friends and Influence People.md". Setting to default value: "False".
+[1716490779.068][WARNI][mkdocs_publisher/meta/meta_files.py:120] Title value from "title" meta data is missing for file: "03_Resources/KindleHilights/Carnegie-How to Win Friends and Influence People.md"
+[1716490779.068][WARNI][mkdocs_publisher/meta/meta_files.py:133] Title value from first heading is missing for file: "03_Resources/KindleHilights/Carnegie-How to Win Friends and Influence People.md"
+[1716490779.068][WARNI][mkdocs_publisher/meta/meta_files.py:180] Missing "publish" value in file "03_Resources/KindleHilights/Debroy-THE BHAGAVAD GITA FOR MILLENNIALS.md". Setting to default value: "False".
+[1716490779.069][WARNI][mkdocs_publisher/meta/meta_files.py:120] Title value from "title" meta data is missing for file: "03_Resources/KindleHilights/Debroy-THE BHAGAVAD GITA FOR MILLENNIALS.md"
+[1716490779.069][WARNI][mkdocs_publisher/meta/meta_files.py:133] Title value from first heading is missing for file: "03_Resources/KindleHilights/Debroy-THE BHAGAVAD GITA FOR MILLENNIALS.md"
+[1716490779.069][WARNI][mkdocs_publisher/meta/meta_files.py:180] Missing "publish" value in file "03_Resources/KindleHilights/Mossad.md". Setting to default value: "False".
+[1716490779.070][WARNI][mkdocs_publisher/meta/meta_files.py:120] Title value from "title" meta data is missing for file: "03_Resources/KindleHilights/Mossad.md"
+[1716490779.070][WARNI][mkdocs_publisher/meta/meta_files.py:133] Title value from first heading is missing for file: "03_Resources/KindleHilights/Mossad.md"
+[1716490779.071][WARNI][mkdocs_publisher/meta/meta_files.py:180] Missing "publish" value in file "03_Resources/KindleHilights/PersonalMBA.md". Setting to default value: "False".
+[1716490779.071][WARNI][mkdocs_publisher/meta/meta_files.py:120] Title value from "title" meta data is missing for file: "03_Resources/KindleHilights/PersonalMBA.md"
+[1716490779.071][WARNI][mkdocs_publisher/meta/meta_files.py:133] Title value from first heading is missing for file: "03_Resources/KindleHilights/PersonalMBA.md"
+[1716490779.072][WARNI][mkdocs_publisher/meta/meta_files.py:180] Missing "publish" value in file "03_Resources/KindleHilights/The Bhagavad Gita for Millennials.md". Setting to default value: "False".
+[1716490779.072][WARNI][mkdocs_publisher/meta/meta_files.py:120] Title value from "title" meta data is missing for file: "03_Resources/KindleHilights/The Bhagavad Gita for Millennials.md"
+[1716490779.072][WARNI][mkdocs_publisher/meta/meta_files.py:133] Title value from first heading is missing for file: "03_Resources/KindleHilights/The Bhagavad Gita for Millennials.md"
+[1716490779.073][WARNI][mkdocs_publisher/meta/meta_files.py:180] Missing "publish" value in file "03_Resources/KindleHilights/Yadav-Raw.md". Setting to default value: "False".
+[1716490779.073][WARNI][mkdocs_publisher/meta/meta_files.py:120] Title value from "title" meta data is missing for file: "03_Resources/KindleHilights/Yadav-Raw.md"
+[1716490779.073][WARNI][mkdocs_publisher/meta/meta_files.py:133] Title value from first heading is missing for file: "03_Resources/KindleHilights/Yadav-Raw.md"
+[1716490779.074][WARNI][mkdocs_publisher/meta/meta_files.py:180] Missing "publish" value in file "03_Resources/Omnivore/2024-01-11/Rebuilding Netflix Video Processing Pipeline with Microservices.md". Setting to default value: "False".
+[1716490779.074][WARNI][mkdocs_publisher/meta/meta_files.py:120] Title value from "title" meta data is missing for file: "03_Resources/Omnivore/2024-01-11/Rebuilding Netflix Video Processing Pipeline with Microservices.md"
+[1716490779.074][WARNI][mkdocs_publisher/meta/meta_files.py:133] Title value from first heading is missing for file: "03_Resources/Omnivore/2024-01-11/Rebuilding Netflix Video Processing Pipeline with Microservices.md"
+[1716490779.075][WARNI][mkdocs_publisher/meta/meta_files.py:180] Missing "publish" value in file "03_Resources/Omnivore/2024-01-31/COVID Test Data Breach- 1.3 Million Patient Records Exposed Online.md". Setting to default value: "False".
+[1716490779.076][WARNI][mkdocs_publisher/meta/meta_files.py:120] Title value from "title" meta data is missing for file: "03_Resources/Omnivore/2024-01-31/COVID Test Data Breach- 1.3 Million Patient Records Exposed Online.md"
+[1716490779.076][WARNI][mkdocs_publisher/meta/meta_files.py:133] Title value from first heading is missing for file: "03_Resources/Omnivore/2024-01-31/COVID Test Data Breach- 1.3 Million Patient Records Exposed Online.md"
+[1716490779.077][WARNI][mkdocs_publisher/meta/meta_files.py:180] Missing "publish" value in file "03_Resources/Omnivore/2024-01-31/I Just Wanted Emacs to Look Nice — Using 24-Bit Color in Terminals  Chad Austin.md". Setting to default value: "False".
+[1716490779.077][WARNI][mkdocs_publisher/meta/meta_files.py:120] Title value from "title" meta data is missing for file: "03_Resources/Omnivore/2024-01-31/I Just Wanted Emacs to Look Nice — Using 24-Bit Color in Terminals  Chad Austin.md"
+[1716490779.078][WARNI][mkdocs_publisher/meta/meta_files.py:133] Title value from first heading is missing for file: "03_Resources/Omnivore/2024-01-31/I Just Wanted Emacs to Look Nice — Using 24-Bit Color in Terminals  Chad Austin.md"
+[1716490779.078][WARNI][mkdocs_publisher/meta/meta_files.py:180] Missing "publish" value in file "03_Resources/Omnivore/2024-01-31/I Just Wanted Emacs to Look Nice — Using 24-Bit Color in Terminals - Chad Austin.md". Setting to default value: "False".
+[1716490779.079][WARNI][mkdocs_publisher/meta/meta_files.py:120] Title value from "title" meta data is missing for file: "03_Resources/Omnivore/2024-01-31/I Just Wanted Emacs to Look Nice — Using 24-Bit Color in Terminals - Chad Austin.md"
+[1716490779.079][WARNI][mkdocs_publisher/meta/meta_files.py:133] Title value from first heading is missing for file: "03_Resources/Omnivore/2024-01-31/I Just Wanted Emacs to Look Nice — Using 24-Bit Color in Terminals - Chad Austin.md"
+[1716490779.079][WARNI][mkdocs_publisher/meta/meta_files.py:180] Missing "publish" value in file "03_Resources/Omnivore/2024-01-31/Preface - LSM in a Week.md". Setting to default value: "False".
+[1716490779.080][WARNI][mkdocs_publisher/meta/meta_files.py:120] Title value from "title" meta data is missing for file: "03_Resources/Omnivore/2024-01-31/Preface - LSM in a Week.md"
+[1716490779.080][WARNI][mkdocs_publisher/meta/meta_files.py:133] Title value from first heading is missing for file: "03_Resources/Omnivore/2024-01-31/Preface - LSM in a Week.md"
+[1716490779.080][WARNI][mkdocs_publisher/meta/meta_files.py:180] Missing "publish" value in file "03_Resources/Omnivore/2024-02-08/How we got fine-tuning Mistral-7B to not suck- Helix Project Report, Feb 2024.md". Setting to default value: "False".
+[1716490779.081][WARNI][mkdocs_publisher/meta/meta_files.py:120] Title value from "title" meta data is missing for file: "03_Resources/Omnivore/2024-02-08/How we got fine-tuning Mistral-7B to not suck- Helix Project Report, Feb 2024.md"
+[1716490779.081][WARNI][mkdocs_publisher/meta/meta_files.py:133] Title value from first heading is missing for file: "03_Resources/Omnivore/2024-02-08/How we got fine-tuning Mistral-7B to not suck- Helix Project Report, Feb 2024.md"
+[1716490779.081][WARNI][mkdocs_publisher/meta/meta_files.py:180] Missing "publish" value in file "03_Resources/Omnivore/2024-02-08/Simple Precision Time Protocol at Meta - Engineering at Meta.md". Setting to default value: "False".
+[1716490779.082][WARNI][mkdocs_publisher/meta/meta_files.py:120] Title value from "title" meta data is missing for file: "03_Resources/Omnivore/2024-02-08/Simple Precision Time Protocol at Meta - Engineering at Meta.md"
+[1716490779.082][WARNI][mkdocs_publisher/meta/meta_files.py:133] Title value from first heading is missing for file: "03_Resources/Omnivore/2024-02-08/Simple Precision Time Protocol at Meta - Engineering at Meta.md"
+[1716490779.082][WARNI][mkdocs_publisher/meta/meta_files.py:180] Missing "publish" value in file "03_Resources/Omnivore/2024-02-26/Excalidraw.md". Setting to default value: "False".
+[1716490779.083][WARNI][mkdocs_publisher/meta/meta_files.py:120] Title value from "title" meta data is missing for file: "03_Resources/Omnivore/2024-02-26/Excalidraw.md"
+[1716490779.083][WARNI][mkdocs_publisher/meta/meta_files.py:133] Title value from first heading is missing for file: "03_Resources/Omnivore/2024-02-26/Excalidraw.md"
+[1716490779.083][WARNI][mkdocs_publisher/meta/meta_files.py:180] Missing "publish" value in file "03_Resources/Omnivore/2024-02-27/@ASmartBear.md". Setting to default value: "False".
+[1716490779.083][WARNI][mkdocs_publisher/meta/meta_files.py:120] Title value from "title" meta data is missing for file: "03_Resources/Omnivore/2024-02-27/@ASmartBear.md"
+[1716490779.084][WARNI][mkdocs_publisher/meta/meta_files.py:133] Title value from first heading is missing for file: "03_Resources/Omnivore/2024-02-27/@ASmartBear.md"
+[1716490779.084][WARNI][mkdocs_publisher/meta/meta_files.py:180] Missing "publish" value in file "03_Resources/Omnivore/2024-02-27/Apache Superset - Hacker News.md". Setting to default value: "False".
+[1716490779.084][WARNI][mkdocs_publisher/meta/meta_files.py:120] Title value from "title" meta data is missing for file: "03_Resources/Omnivore/2024-02-27/Apache Superset - Hacker News.md"
+[1716490779.085][WARNI][mkdocs_publisher/meta/meta_files.py:133] Title value from first heading is missing for file: "03_Resources/Omnivore/2024-02-27/Apache Superset - Hacker News.md"
+[1716490779.085][WARNI][mkdocs_publisher/meta/meta_files.py:180] Missing "publish" value in file "03_Resources/Omnivore/2024-02-27/https---zeck.app.md". Setting to default value: "False".
+[1716490779.085][WARNI][mkdocs_publisher/meta/meta_files.py:120] Title value from "title" meta data is missing for file: "03_Resources/Omnivore/2024-02-27/https---zeck.app.md"
+[1716490779.085][WARNI][mkdocs_publisher/meta/meta_files.py:133] Title value from first heading is missing for file: "03_Resources/Omnivore/2024-02-27/https---zeck.app.md"
+[1716490779.086][WARNI][mkdocs_publisher/meta/meta_files.py:180] Missing "publish" value in file "03_Resources/Omnivore/2024-02-28/Start a Profitable Side Project in 2024 - Indie Hackers.md". Setting to default value: "False".
+[1716490779.086][WARNI][mkdocs_publisher/meta/meta_files.py:120] Title value from "title" meta data is missing for file: "03_Resources/Omnivore/2024-02-28/Start a Profitable Side Project in 2024 - Indie Hackers.md"
+[1716490779.086][WARNI][mkdocs_publisher/meta/meta_files.py:133] Title value from first heading is missing for file: "03_Resources/Omnivore/2024-02-28/Start a Profitable Side Project in 2024 - Indie Hackers.md"
+[1716490779.087][WARNI][mkdocs_publisher/meta/meta_files.py:180] Missing "publish" value in file "03_Resources/Omnivore/2024-03-05/a16z Consumer Abundance Agenda.md". Setting to default value: "False".
+[1716490779.087][WARNI][mkdocs_publisher/meta/meta_files.py:120] Title value from "title" meta data is missing for file: "03_Resources/Omnivore/2024-03-05/a16z Consumer Abundance Agenda.md"
+[1716490779.087][WARNI][mkdocs_publisher/meta/meta_files.py:133] Title value from first heading is missing for file: "03_Resources/Omnivore/2024-03-05/a16z Consumer Abundance Agenda.md"
+[1716490779.088][WARNI][mkdocs_publisher/meta/meta_files.py:180] Missing "publish" value in file "03_Resources/Omnivore/2024-03-11/Rogo.md". Setting to default value: "False".
+[1716490779.088][WARNI][mkdocs_publisher/meta/meta_files.py:120] Title value from "title" meta data is missing for file: "03_Resources/Omnivore/2024-03-11/Rogo.md"
+[1716490779.089][WARNI][mkdocs_publisher/meta/meta_files.py:133] Title value from first heading is missing for file: "03_Resources/Omnivore/2024-03-11/Rogo.md"
+[1716490779.089][WARNI][mkdocs_publisher/meta/meta_files.py:180] Missing "publish" value in file "03_Resources/Omnivore/2024-03-11/Voxel.md". Setting to default value: "False".
+[1716490779.089][WARNI][mkdocs_publisher/meta/meta_files.py:120] Title value from "title" meta data is missing for file: "03_Resources/Omnivore/2024-03-11/Voxel.md"
+[1716490779.090][WARNI][mkdocs_publisher/meta/meta_files.py:133] Title value from first heading is missing for file: "03_Resources/Omnivore/2024-03-11/Voxel.md"
+[1716490779.090][WARNI][mkdocs_publisher/meta/meta_files.py:180] Missing "publish" value in file "03_Resources/Omnivore/2024-03-12/Chief AI Decks.md". Setting to default value: "False".
+[1716490779.091][WARNI][mkdocs_publisher/meta/meta_files.py:120] Title value from "title" meta data is missing for file: "03_Resources/Omnivore/2024-03-12/Chief AI Decks.md"
+[1716490779.091][WARNI][mkdocs_publisher/meta/meta_files.py:133] Title value from first heading is missing for file: "03_Resources/Omnivore/2024-03-12/Chief AI Decks.md"
+[1716490779.092][WARNI][mkdocs_publisher/meta/meta_files.py:180] Missing "publish" value in file "03_Resources/Omnivore/2024-03-12/Personal Branding—Most Important Thing You Do. Full Video AdobeMAX 2023.md". Setting to default value: "False".
+[1716490779.092][WARNI][mkdocs_publisher/meta/meta_files.py:120] Title value from "title" meta data is missing for file: "03_Resources/Omnivore/2024-03-12/Personal Branding—Most Important Thing You Do. Full Video AdobeMAX 2023.md"
+[1716490779.092][WARNI][mkdocs_publisher/meta/meta_files.py:133] Title value from first heading is missing for file: "03_Resources/Omnivore/2024-03-12/Personal Branding—Most Important Thing You Do. Full Video AdobeMAX 2023.md"
+[1716490779.093][WARNI][mkdocs_publisher/meta/meta_files.py:180] Missing "publish" value in file "03_Resources/Omnivore/2024-03-12/Please Stop Using Google Analytics.md". Setting to default value: "False".
+[1716490779.093][WARNI][mkdocs_publisher/meta/meta_files.py:120] Title value from "title" meta data is missing for file: "03_Resources/Omnivore/2024-03-12/Please Stop Using Google Analytics.md"
+[1716490779.093][WARNI][mkdocs_publisher/meta/meta_files.py:133] Title value from first heading is missing for file: "03_Resources/Omnivore/2024-03-12/Please Stop Using Google Analytics.md"
+[1716490779.094][WARNI][mkdocs_publisher/meta/meta_files.py:180] Missing "publish" value in file "03_Resources/Omnivore/2024-03-12/ULTRA.VC.md". Setting to default value: "False".
+[1716490779.094][WARNI][mkdocs_publisher/meta/meta_files.py:120] Title value from "title" meta data is missing for file: "03_Resources/Omnivore/2024-03-12/ULTRA.VC.md"
+[1716490779.095][WARNI][mkdocs_publisher/meta/meta_files.py:133] Title value from first heading is missing for file: "03_Resources/Omnivore/2024-03-12/ULTRA.VC.md"
+[1716490779.095][WARNI][mkdocs_publisher/meta/meta_files.py:180] Missing "publish" value in file "03_Resources/Omnivore/2024-03-12/ron0studios-C-Plus-Plus- Collection of various algorithms in mathematics, machine learning, compu....md". Setting to default value: "False".
+[1716490779.095][WARNI][mkdocs_publisher/meta/meta_files.py:120] Title value from "title" meta data is missing for file: "03_Resources/Omnivore/2024-03-12/ron0studios-C-Plus-Plus- Collection of various algorithms in mathematics, machine learning, compu....md"
+[1716490779.096][WARNI][mkdocs_publisher/meta/meta_files.py:133] Title value from first heading is missing for file: "03_Resources/Omnivore/2024-03-12/ron0studios-C-Plus-Plus- Collection of various algorithms in mathematics, machine learning, compu....md"
+[1716490779.097][WARNI][mkdocs_publisher/meta/meta_files.py:180] Missing "publish" value in file "03_Resources/Omnivore/2024-03-17/Wait... PostgreSQL can do WHAT-.md". Setting to default value: "False".
+[1716490779.097][WARNI][mkdocs_publisher/meta/meta_files.py:120] Title value from "title" meta data is missing for file: "03_Resources/Omnivore/2024-03-17/Wait... PostgreSQL can do WHAT-.md"
+[1716490779.097][WARNI][mkdocs_publisher/meta/meta_files.py:133] Title value from first heading is missing for file: "03_Resources/Omnivore/2024-03-17/Wait... PostgreSQL can do WHAT-.md"
+[1716490779.098][WARNI][mkdocs_publisher/meta/meta_files.py:180] Missing "publish" value in file "03_Resources/Omnivore/2024-03-18/Building Meta’s GenAI Infrastructure - Engineering at Meta.md". Setting to default value: "False".
+[1716490779.098][WARNI][mkdocs_publisher/meta/meta_files.py:120] Title value from "title" meta data is missing for file: "03_Resources/Omnivore/2024-03-18/Building Meta’s GenAI Infrastructure - Engineering at Meta.md"
+[1716490779.098][WARNI][mkdocs_publisher/meta/meta_files.py:133] Title value from first heading is missing for file: "03_Resources/Omnivore/2024-03-18/Building Meta’s GenAI Infrastructure - Engineering at Meta.md"
+[1716490779.099][WARNI][mkdocs_publisher/meta/meta_files.py:180] Missing "publish" value in file "03_Resources/Omnivore/2024-03-18/Logarithm- A logging engine for AI training workflows and services - Engineering at Meta.md". Setting to default value: "False".
+[1716490779.099][WARNI][mkdocs_publisher/meta/meta_files.py:120] Title value from "title" meta data is missing for file: "03_Resources/Omnivore/2024-03-18/Logarithm- A logging engine for AI training workflows and services - Engineering at Meta.md"
+[1716490779.099][WARNI][mkdocs_publisher/meta/meta_files.py:133] Title value from first heading is missing for file: "03_Resources/Omnivore/2024-03-18/Logarithm- A logging engine for AI training workflows and services - Engineering at Meta.md"
+[1716490779.100][WARNI][mkdocs_publisher/meta/meta_files.py:180] Missing "publish" value in file "03_Resources/Omnivore/2024-03-18/Next.js Commerce – Vercel.md". Setting to default value: "False".
+[1716490779.100][WARNI][mkdocs_publisher/meta/meta_files.py:120] Title value from "title" meta data is missing for file: "03_Resources/Omnivore/2024-03-18/Next.js Commerce – Vercel.md"
+[1716490779.100][WARNI][mkdocs_publisher/meta/meta_files.py:133] Title value from first heading is missing for file: "03_Resources/Omnivore/2024-03-18/Next.js Commerce – Vercel.md"
+[1716490779.101][WARNI][mkdocs_publisher/meta/meta_files.py:180] Missing "publish" value in file "03_Resources/Omnivore/2024-03-18/sanity-io-hydrogen-sanity-demo- A starter for Hydrogen + Sanity projects.md". Setting to default value: "False".
+[1716490779.101][WARNI][mkdocs_publisher/meta/meta_files.py:120] Title value from "title" meta data is missing for file: "03_Resources/Omnivore/2024-03-18/sanity-io-hydrogen-sanity-demo- A starter for Hydrogen + Sanity projects.md"
+[1716490779.101][WARNI][mkdocs_publisher/meta/meta_files.py:133] Title value from first heading is missing for file: "03_Resources/Omnivore/2024-03-18/sanity-io-hydrogen-sanity-demo- A starter for Hydrogen + Sanity projects.md"
+[1716490779.102][WARNI][mkdocs_publisher/meta/meta_files.py:180] Missing "publish" value in file "03_Resources/Omnivore/2024-03-26/failsafe-go-failsafe-go- Fault tolerance and resilience patterns for Go.md". Setting to default value: "False".
+[1716490779.102][WARNI][mkdocs_publisher/meta/meta_files.py:120] Title value from "title" meta data is missing for file: "03_Resources/Omnivore/2024-03-26/failsafe-go-failsafe-go- Fault tolerance and resilience patterns for Go.md"
+[1716490779.102][WARNI][mkdocs_publisher/meta/meta_files.py:133] Title value from first heading is missing for file: "03_Resources/Omnivore/2024-03-26/failsafe-go-failsafe-go- Fault tolerance and resilience patterns for Go.md"
+[1716490779.103][WARNI][mkdocs_publisher/meta/meta_files.py:180] Missing "publish" value in file "03_Resources/Podcast/The_Morning_Brief__[2023-06-06].md". Setting to default value: "False".
+[1716490779.103][WARNI][mkdocs_publisher/meta/meta_files.py:120] Title value from "title" meta data is missing for file: "03_Resources/Podcast/The_Morning_Brief__[2023-06-06].md"
+[1716490779.104][WARNI][mkdocs_publisher/meta/meta_files.py:133] Title value from first heading is missing for file: "03_Resources/Podcast/The_Morning_Brief__[2023-06-06].md"
+[1716490779.104][WARNI][mkdocs_publisher/meta/meta_files.py:180] Missing "publish" value in file "03_Resources/Podcast/Vedanta_Talks__[2019-01-26].md". Setting to default value: "False".
+[1716490779.105][WARNI][mkdocs_publisher/meta/meta_files.py:180] Missing "publish" value in file "03_Resources/YT/Aakrit-Haptik-Varun-Mayya.md". Setting to default value: "False".
+[1716490779.105][WARNI][mkdocs_publisher/meta/meta_files.py:120] Title value from "title" meta data is missing for file: "03_Resources/YT/Aakrit-Haptik-Varun-Mayya.md"
+[1716490779.105][WARNI][mkdocs_publisher/meta/meta_files.py:133] Title value from first heading is missing for file: "03_Resources/YT/Aakrit-Haptik-Varun-Mayya.md"
+[1716490779.106][WARNI][mkdocs_publisher/meta/meta_files.py:180] Missing "publish" value in file "Blog/AI Checklist for Startups.md". Setting to default value: "False".
+[1716490779.106][WARNI][mkdocs_publisher/meta/meta_files.py:180] Missing "publish" value in file "Blog/Assets/media/AI Checklist for Startups/AI Checklist for Startups 2023-12-28 19.29.01.excalidraw.md". Setting to default value: "False".
+[1716490779.107][WARNI][mkdocs_publisher/meta/meta_files.py:120] Title value from "title" meta data is missing for file: "Blog/Assets/media/AI Checklist for Startups/AI Checklist for Startups 2023-12-28 19.29.01.excalidraw.md"
+[1716490779.107][WARNI][mkdocs_publisher/meta/meta_files.py:133] Title value from first heading is missing for file: "Blog/Assets/media/AI Checklist for Startups/AI Checklist for Startups 2023-12-28 19.29.01.excalidraw.md"
+[1716490779.107][WARNI][mkdocs_publisher/meta/meta_files.py:180] Missing "publish" value in file "Blog/Assets/media/AI Checklist for Startups/AI Checklist for Startups 2023-12-28 19.31.31.excalidraw.md". Setting to default value: "False".
+[1716490779.108][WARNI][mkdocs_publisher/meta/meta_files.py:120] Title value from "title" meta data is missing for file: "Blog/Assets/media/AI Checklist for Startups/AI Checklist for Startups 2023-12-28 19.31.31.excalidraw.md"
+[1716490779.108][WARNI][mkdocs_publisher/meta/meta_files.py:133] Title value from first heading is missing for file: "Blog/Assets/media/AI Checklist for Startups/AI Checklist for Startups 2023-12-28 19.31.31.excalidraw.md"
+[1716490779.109][WARNI][mkdocs_publisher/meta/meta_files.py:180] Missing "publish" value in file "Blog/Assets/media/AI Checklist for Startups/AI Checklist for Startups 2023-12-28 19.36.35.excalidraw.md". Setting to default value: "False".
+[1716490779.109][WARNI][mkdocs_publisher/meta/meta_files.py:120] Title value from "title" meta data is missing for file: "Blog/Assets/media/AI Checklist for Startups/AI Checklist for Startups 2023-12-28 19.36.35.excalidraw.md"
+[1716490779.110][WARNI][mkdocs_publisher/meta/meta_files.py:133] Title value from first heading is missing for file: "Blog/Assets/media/AI Checklist for Startups/AI Checklist for Startups 2023-12-28 19.36.35.excalidraw.md"
+[1716490779.110][WARNI][mkdocs_publisher/meta/meta_files.py:180] Missing "publish" value in file "Blog/Assets/media/AI Checklist for Startups/AI Checklist for Startups 2023-12-28 19.38.11.excalidraw.md". Setting to default value: "False".
+[1716490779.111][WARNI][mkdocs_publisher/meta/meta_files.py:120] Title value from "title" meta data is missing for file: "Blog/Assets/media/AI Checklist for Startups/AI Checklist for Startups 2023-12-28 19.38.11.excalidraw.md"
+[1716490779.111][WARNI][mkdocs_publisher/meta/meta_files.py:133] Title value from first heading is missing for file: "Blog/Assets/media/AI Checklist for Startups/AI Checklist for Startups 2023-12-28 19.38.11.excalidraw.md"
+[1716490779.112][WARNI][mkdocs_publisher/meta/meta_files.py:180] Missing "publish" value in file "Blog/Assets/media/Blog Embed Test/Test Page 2023-08-25 03.21.28.excalidraw.md". Setting to default value: "False".
+[1716490779.112][WARNI][mkdocs_publisher/meta/meta_files.py:120] Title value from "title" meta data is missing for file: "Blog/Assets/media/Blog Embed Test/Test Page 2023-08-25 03.21.28.excalidraw.md"
+[1716490779.113][WARNI][mkdocs_publisher/meta/meta_files.py:133] Title value from first heading is missing for file: "Blog/Assets/media/Blog Embed Test/Test Page 2023-08-25 03.21.28.excalidraw.md"
+[1716490779.113][WARNI][mkdocs_publisher/meta/meta_files.py:180] Missing "publish" value in file "Blog/Assets/media/Blog Embed Test/Test Page 2023-08-25 03.29.05.excalidraw.md". Setting to default value: "False".
+[1716490779.113][WARNI][mkdocs_publisher/meta/meta_files.py:120] Title value from "title" meta data is missing for file: "Blog/Assets/media/Blog Embed Test/Test Page 2023-08-25 03.29.05.excalidraw.md"
+[1716490779.114][WARNI][mkdocs_publisher/meta/meta_files.py:133] Title value from first heading is missing for file: "Blog/Assets/media/Blog Embed Test/Test Page 2023-08-25 03.29.05.excalidraw.md"
+[1716490779.114][WARNI][mkdocs_publisher/meta/meta_files.py:180] Missing "publish" value in file "Blog/Assets/media/Blog Embed Test/Test Page 2023-08-25 04.39.01.excalidraw.md". Setting to default value: "False".
+[1716490779.114][WARNI][mkdocs_publisher/meta/meta_files.py:120] Title value from "title" meta data is missing for file: "Blog/Assets/media/Blog Embed Test/Test Page 2023-08-25 04.39.01.excalidraw.md"
+[1716490779.115][WARNI][mkdocs_publisher/meta/meta_files.py:133] Title value from first heading is missing for file: "Blog/Assets/media/Blog Embed Test/Test Page 2023-08-25 04.39.01.excalidraw.md"
+[1716490779.115][WARNI][mkdocs_publisher/meta/meta_files.py:180] Missing "publish" value in file "Blog/Assets/media/Blog Embed Test/Test Page 2023-08-25 04.41.44.excalidraw.md". Setting to default value: "False".
+[1716490779.115][WARNI][mkdocs_publisher/meta/meta_files.py:120] Title value from "title" meta data is missing for file: "Blog/Assets/media/Blog Embed Test/Test Page 2023-08-25 04.41.44.excalidraw.md"
+[1716490779.116][WARNI][mkdocs_publisher/meta/meta_files.py:133] Title value from first heading is missing for file: "Blog/Assets/media/Blog Embed Test/Test Page 2023-08-25 04.41.44.excalidraw.md"
+[1716490779.116][WARNI][mkdocs_publisher/meta/meta_files.py:180] Missing "publish" value in file "Blog/AsyncAwait Organizations.md". Setting to default value: "False".
+[1716490779.117][WARNI][mkdocs_publisher/meta/meta_files.py:180] Missing "publish" value in file "Blog/Bits-n-bytes/Ghost in a shell - What the heck is a Terminal,Shell and TTY.md". Setting to default value: "False".
+[1716490779.118][WARNI][mkdocs_publisher/meta/meta_files.py:180] Missing "publish" value in file "Blog/Blog Embed Test.md". Setting to default value: "False".
+[1716490779.118][WARNI][mkdocs_publisher/meta/meta_files.py:180] Missing "publish" value in file "Blog/Efficient Git Workflow with Stacked PRs.md". Setting to default value: "False".
+[1716490779.119][WARNI][mkdocs_publisher/meta/meta_files.py:180] Missing "publish" value in file "Blog/Indian foci, world politics and rhetoric games Nations play.md". Setting to default value: "False".
+[1716490779.120][WARNI][mkdocs_publisher/meta/meta_files.py:180] Missing "publish" value in file "Blog/Practitioners Guide to Great Project Documentation feat. ReadTheDocs.md". Setting to default value: "False".
+[1716490779.120][WARNI][mkdocs_publisher/meta/meta_files.py:180] Missing "publish" value in file "Blog/Productivity Audits & the Fine art of Mastering Your Day.md". Setting to default value: "False".
+[1716490779.121][WARNI][mkdocs_publisher/meta/meta_files.py:180] Missing "publish" value in file "Blog/Rise of Internal Developer Portals (iDp) - Part 1.md". Setting to default value: "False".
+[1716490779.122][WARNI][mkdocs_publisher/meta/meta_files.py:180] Missing "publish" value in file "Blog/Startup CTO  Impatient , Lazy and how I learned the habit of plan-sprint-ship-document.md". Setting to default value: "False".
+[1716490779.122][WARNI][mkdocs_publisher/meta/meta_files.py:180] Missing "publish" value in file "index.md". Setting to default value: "False".
+[1716490779.123][WARNI][mkdocs_publisher/meta/meta_files.py:120] Title value from "title" meta data is missing for file: "index.md"
+[1716490779.123][WARNI][mkdocs_publisher/meta/meta_files.py:133] Title value from first heading is missing for file: "index.md"
+[1716490779.123][INFO ][mkdocs_publisher/meta/plugin.py:86] Ignored directories: ['.obsidian', '_templates']
+[1716490779.124][INFO ][mkdocs_publisher/meta/plugin.py:90] Draft files and directories: []
+[1716490779.124][INFO ][mkdocs_publisher/meta/plugin.py:91] Hidden files and directories: []
+[1716490779.168][ERROR][mkdocs_git_revision_date_localized_plugin/util.py:120] [git-revision-date-localized-plugin] Unable to read git logs of '/home/shaishav/devlog/docs'.  To ignore this error, set option 'fallback_to_build_date: true'
+[1716490779.170][INFO ][mkdocs_publisher/debugger/plugin.py:113] Platform: Linux-6.1.21.2-microsoft-standard-WSL2+-x86_64-with-glibc2.27
+[1716490779.171][INFO ][mkdocs_publisher/debugger/plugin.py:114] Python version: 3.11.3 (using virtual environment: true)
+[1716490779.171][INFO ][mkdocs_publisher/debugger/plugin.py:118] Build log file: /home/shaishav/devlog/20240523_185938_mkdocs_build.log
+[1716490779.579][INFO ][mkdocs_publisher/debugger/plugin.py:151] Debugger ZIP file: 20240523_185938_mkdocs_debug.zip
