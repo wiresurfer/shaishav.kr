@@ -1,27 +1,111 @@
-site_name: Digital Library | shaishav.kr | @wiresurfer
+site_name: wiresurfer's library | © shaishav.kr
 site_description: required. Used as feed mandatory channel description.
-site_name: required. Used as feed mandatory channel title and items source URL label.
 site_url: https://blog.shaishav.kr
+copyright: Copyright &copy; 2012 - 2024 Shaishav Kr | @wiresurfer
 
+
+plugins: 
+  - awesome-pages
+  - tags
+  - search
+  - toggle-sidebar
+  #- git-revision-date-localized:
+  #    type: timeago
+  #- mkdocs-newsletter
+  - pub-debugger
+  - blog:
+      blog_dir: .
+      post_dir: "{blog}/Articles"
+  #- pub-blog
+  - pub-social
+  #- pub-meta
+    #- pub-minifier
+    #- pub-obsidian
+  - social:
+      cards_layout_options:
+        background_image: assets/images/wiresurfer-logo.jpeg
+
+
+extra: 
+  generator: false
+  social:
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/shaishavkr 
+      name: LinkedIn @shaishavkr
+    - icon: fontawesome/brands/instagram
+      link: https://instagram.com/wiresurfer
+      name: Instagram @wiresurfer
+    - icon: fontawesome/brands/github
+      link: https://github.com/wiresurfer
+      name: Github @wiresurfer
+    - icon: fontawesome/brands/x-twitter
+      link: https://twitter.com/wiresurfer
+      name: X @ wiresurfer
 
 theme:
+  logo: assets/images/wiresurfer-logo.jpeg
+  custom_dir: overrides
   name: material
+  font:
+    code: Roboto Mono
+  features:
+    - navigation.instant
+    - navigation.instant.progress
+    - navigation.tracking
+    # - navigation.sections
+    - navigation.path
+    - navigation.indexes
+    - toc.follow
+
   palette:
     scheme: slate
     primary: red
-plugins: 
-  - search
-  - autolinks
-  - awesome-pages
-  - git-revision-date-localized:
-      type: timeago
-  - mkdocs-newsletter
-  - rss
-  - pub-debugger
-  - pub-blog
-  - pub-obsidian
-  - pub-social
-  - pub-meta
-  - pub-minifier
 
 
+pub-obsidian:
+    backlinks:
+      enabled: true
+    callouts:
+      enabled: true
+    comments:
+      enabled: true
+      inject_as_html: false
+    links:
+      wikilinks_enabled: true 
+      img_lazy: true
+
+
+exclude:
+  #- 'Assets.*'
+  - '/templates'
+
+extra_css:
+  - "assets/css/tailwing.min.css"
+  - "assets/css/fonts.css"
+  - "assets/css/override.css"
+  - "assets/css/typography.css"
+  #- "assets/css/flowbite.min.css"
+
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - attr_list
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - tables
+  - footnotes
+  - def_list
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - toc:
+      title: On This Page

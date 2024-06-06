@@ -1,0 +1,2193 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1" name="viewport"/>
+  <meta content="required. Used as feed mandatory channel description." name="description"/>
+  <link href="https://blog.shaishav.kr/" rel="canonical"/>
+  <link href="Articles/" rel="next"/>
+  <link href="assets/images/favicon.png" rel="icon"/>
+  <meta content="mkdocs-1.6.0, mkdocs-material-9.5.24" name="generator"/>
+  <title>
+   $ whoami - wiresurfer's library | © shaishav.kr
+  </title>
+  <link href="assets/stylesheets/main.6543a935.min.css" rel="stylesheet"/>
+  <link href="assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+  <style>
+   :root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}
+  </style>
+  <link href="css/timeago.css" rel="stylesheet"/>
+  <link href="assets/css/tailwing.min.css" rel="stylesheet"/>
+  <link href="assets/css/fonts.css" rel="stylesheet"/>
+  <link href="assets/css/override.css" rel="stylesheet"/>
+  <link href="assets/css/typography.css" rel="stylesheet"/>
+  <link href="assets/stylesheets/obsidian.min.css" rel="stylesheet"/>
+  <link href="assets/stylesheets/obsidian.min.css.map" rel="stylesheet"/>
+  <script>
+   __md_scope=new URL(".",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}
+  </script>
+  <meta content="website" property="og:type"/>
+  <meta content="$ whoami" property="og:title"/>
+  <meta content="required. Used as feed mandatory channel description." property="og:description"/>
+  <meta content="https://blog.shaishav.kr/assets/images/social/index.png" property="og:image"/>
+  <meta content="image/png" property="og:image:type"/>
+  <meta content="1200" property="og:image:width"/>
+  <meta content="630" property="og:image:height"/>
+  <meta content="https://blog.shaishav.kr/" property="og:url"/>
+  <meta content="summary_large_image" name="twitter:card"/>
+  <meta content="$ whoami" name="twitter:title"/>
+  <meta content="required. Used as feed mandatory channel description." name="twitter:description"/>
+  <meta content="https://blog.shaishav.kr/assets/images/social/index.png" name="twitter:image"/>
+ </head>
+ <body data-md-color-accent="indigo" data-md-color-primary="red" data-md-color-scheme="slate" dir="ltr">
+  <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+  <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+  <label class="md-overlay" for="__drawer">
+  </label>
+  <div data-md-component="skip">
+  </div>
+  <div data-md-component="announce">
+  </div>
+  <!--
+  Copyright (c) 2016-2024 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+  <!-- Determine classes -->
+  <!-- Header -->
+  <header class="md-header md-header--shadow" data-md-component="header">
+   <nav aria-label="Header" class="md-header__inner md-grid">
+    <!-- Link to home -->
+    <a aria-label="wiresurfer's library | © shaishav.kr" class="md-header__button md-logo" data-md-component="logo" href="." title="wiresurfer's library | © shaishav.kr">
+     <img alt="logo" src="assets/images/wiresurfer-logo.jpeg"/>
+    </a>
+    <!-- Button to open drawer -->
+    <label class="md-header__button md-icon" for="__drawer">
+     <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z">
+      </path>
+     </svg>
+    </label>
+    <!-- Header title -->
+    <div class="md-header__title" data-md-component="header-title">
+     <div class="md-header__ellipsis">
+      <div class="md-header__topic">
+      </div>
+      <div class="md-header__topic" data-md-component="header-topic">
+       <span class="md-ellipsis">
+        $ whoami
+       </span>
+      </div>
+     </div>
+    </div>
+    <!-- Color palette toggle -->
+    <!-- User preference: color palette -->
+    <!-- Site language selector -->
+    <!-- Button to open search modal -->
+    <label class="md-header__button md-icon" for="__search">
+     <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z">
+      </path>
+     </svg>
+    </label>
+    <!-- Search interface -->
+    <div class="md-search" data-md-component="search" role="dialog">
+     <label class="md-search__overlay" for="__search">
+     </label>
+     <div class="md-search__inner" role="search">
+      <form class="md-search__form" name="search">
+       <input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+       <label class="md-search__icon md-icon" for="__search">
+        <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+         <path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z">
+         </path>
+        </svg>
+        <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+         <path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z">
+         </path>
+        </svg>
+       </label>
+       <nav aria-label="Search" class="md-search__options">
+        <button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+         <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z">
+          </path>
+         </svg>
+        </button>
+       </nav>
+      </form>
+      <div class="md-search__output">
+       <div class="md-search__scrollwrap" data-md-scrollfix="">
+        <div class="md-search-result" data-md-component="search-result">
+         <div class="md-search-result__meta">
+          Initializing search
+         </div>
+         <ol class="md-search-result__list" role="presentation">
+         </ol>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <!-- Repository information -->
+   </nav>
+   <!-- Navigation tabs (sticky) -->
+  </header>
+  <div class="md-container" data-md-component="container">
+   <style>
+    hr.gradient, hr.gradient {
+    background-image: radial-gradient(circle at 12.3% 19.3%, #3e3fcb 0%, #027ea9 100.2%);
+    height: 1px;
+    border: 0;
+    margin: .5rem 0;
+}
+.md-typeset h3 { margin:1em 0 0px;}
+article.home-info code { background: none; font-size:16px!important; line-height:24px!important}
+.md-header{position:initial}.md-main__inner{margin:0}
+.md-content{display:none}
+.text-lg.pr-5 {
+    font-size: 0.8rem;
+    color: slategray;
+}
+
+.bg-cover {
+    min-height: 240px;
+}
+
+a.block.group {}
+
+a.block.group {
+    margin: 0.5rem 0 2rem;
+}
+
+.md-typeset .grid {
+    grid-gap: 1rem;
+}
+
+.hero-text {
+   
+    font-size: 16px;
+    word-break: break-word;
+    font-family: monospace;
+    line-height: 24px;
+    width: 80%;
+    color: var(--text-normal);
+
+}
+.md-grid {
+    max-width: 70%;
+}
+   </style>
+   <section class="mdx-container">
+    <div class="md-grid">
+     <article class="first-entry home-info">
+      <div class="grid lg:grid-cols-3 md:grid-cols-2 gap-4">
+       <section class="entry-content col-span-2 md:col-span2 px-2">
+        <img alt="Shaishav Kumar profile pic" loading="lazy" src="assets/images/profile-pic.png" style="
+    position: relative;
+    right: 0;
+    margin: 0 auto;
+    top: 0;
+    margin-bottom: 6px;
+    width: 89px;
+" title="Shaishav.kr"/>
+        <h2 id="my-journey" style="margin:0!important;margin-bottom:6px;">
+         $ whoami
+        </h2>
+        <div class="hero-text">
+         <br/>
+         Hello there! I'm
+         <strong style="color:var(--text-sub-accent)">
+          Shaishav Kr
+         </strong>
+         , often known by my internet alias
+         <strong style="color:var(--text-sub-accent);">
+          @wiresufer
+         </strong>
+         <br/>
+         <br/>
+         Seasoned technology professional with over 15 years of hands-on experience in Machine Learning, Cloud, IoT, Robotics, Platform Engineering and Enterprise PaaS/SaaS.
+         <br/>
+         <br/>
+         My journey has been a roller coaster filled with valuable learnings, real-world case studies, and practical insights that I'm excited to share.
+         <br/>
+         In the past 9+ years, I've also been a driving force behind small, high-paced engineering teams in both 0-to-1 and 1-to-Scale startups.
+         <br/>
+         <br/>
+        </div>
+        <br/>
+        <h3 id="my-mission">
+         My Mission
+        </h3>
+        <div class="hero-text">
+         <ol>
+          <li>
+           Solving "hard" inter-disciplinary engineering problems using  software, data science and  AI as force multipliers,
+          </li>
+          <li>
+           at the intersection of Computer Science and the Physical World,
+          </li>
+          <li>
+           in business domains with measurable impact towards "betterment" of "human condition"
+          </li>
+         </ol>
+        </div>
+        <br/>
+        <br/>
+       </section>
+       <header class="entry-header col-span-1" style="
+    overflow: visible;
+    word-wrap: break-word;
+    text-wrap: wrap;
+    padding: 0;
+    width: 100%;
+    margin-top:7rem;
+">
+        <h3 id="my-writing-usually-talks-about">
+         My Writing covers...
+        </h3>
+        <pre tabindex="0">
+            <code>
+1. 👷 Engineering
+    1. 🌐 IoT,  🤖 Robotics, 
+    2. 🖥️🧠 Machine Learning and AI 
+    3. Golang, ☸ Kubernetes, 🐳Docker &amp; friends.
+    4. Linux Kernel Internals
+2. 💼 Management and Strategy
+    1. 🙇 Engineering leadership for small + high-impact teams
+    2. 🌎 Managing Remote-first global teams.
+    3. 🚀 Product Management
+    4. B2b SaaS/PaaS overview
+3. 🧠 Right brain musings (in small, infrequent doses)
+    1. ⌚Productivty  
+    2. 📸 Photography 
+    3. 📖 Philosophy, and 🥳 Happiness 
+            </code>
+        </pre>
+       </header>
+      </div>
+     </article>
+     <div class="conatiner mx-auto">
+      <hr class="gradient"/>
+      <div class="grid lg:grid-cols-3 md:grid-cols-2 gap-4">
+       <div class="lg:col-span-2 mx-auto lg:py-16 md:col-span-2 md:p-1">
+        <h2 id="giving-back-and-helping">
+         Giving Back to the tech-community by,
+        </h2>
+        <ul style="font-size:16px;padding:1rem 0;letter-spacing:0">
+         <li>
+          <p>
+           Mentoring young engineers in navigating their careers.
+           <a href="mailto:mentoring@shaishav.kr">
+            mentoring@shaishav.kr
+           </a>
+          </p>
+         </li>
+         <li>
+          <p>
+           Coaching startups in building Skunkworks™️ like pods to deliver speedy innovation.
+           <a href="mailto:leadership@shaishav.kr">
+            leadership@shaishav.kr
+           </a>
+          </p>
+         </li>
+         <li>
+          <p>
+           Advising traditional business owners/startup founders with technical &amp; AI strategy.
+           <a href="mailto:strategy@shaishav.kr">
+            strategy@shaishav.kr
+           </a>
+          </p>
+         </li>
+        </ul>
+       </div>
+       <div class="lg:col-span-1 md:col-span-2">
+        <div class="relative isolate overflow-hidden lg:py-2 my-2 md:py-2">
+         <script src="https://f.convertkit.com/ckjs/ck.5.js">
+         </script>
+         <form action="https://app.convertkit.com/forms/5528921/subscriptions" class="seva-form formkit-form" data-format="inline" data-sv-form="5528921" data-uid="0326db49cb" data-version="5" method="post" min-width="400" style="background-color:#0f1923;border-radius:8px">
+          <div class="formkit-background" style="background-image:url(https://embed.filekitcdn.com/e/8JcqXr3RtE3jWqT8f9DPc1/oANJsiZumvaLM9wGQmbGyi);opacity:.2">
+          </div>
+          <div data-style="minimal" style="border-color:transparent">
+           <div class="formkit-header" data-element="header" style="font-size:20px;font-weight:700">
+            <h2>
+             Join the Newsletter
+            </h2>
+           </div>
+           <div class="formkit-subheader" data-element="subheader" style="font-size:14px">
+            Weekly roundup of curated content for aspiring CTOs and Thought Leaders.
+           </div>
+           <ul class="formkit-alert formkit-alert-error" data-element="errors" data-group="alert">
+           </ul>
+           <div class="seva-fields formkit-fields w-full justify-center" data-element="fields" data-stacked="false">
+            <div class="grid grid-cols-4 gap-1">
+             <div class="formkit-field col-span-3" style="margin-bottom:6px">
+              <input aria-label="Email Address" class="formkit-input" name="email_address" placeholder="Email Address" required="" style="border-color:#4c4459;color:#000;border-radius:4px;font-weight:400" type="email"/>
+             </div>
+             <button class="col-span-1 formkit-submit formkit-submit" data-element="submit" style="background-color:#597093;color:#fff;border-radius:4px;font-weight:400;margin-bottom:6px">
+              <div class="formkit-spinner">
+               <div>
+               </div>
+               <div>
+               </div>
+               <div>
+               </div>
+              </div>
+              <span>
+               🚀
+              </span>
+             </button>
+            </div>
+           </div>
+           <div class="formkit-guarantee" data-element="guarantee" style="color:#b0a9bc;font-size:13px;font-weight:400">
+            We won't send you spam.
+Unsubscribe at any time.
+           </div>
+          </div>
+         </form>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="container mx-auto">
+      <hr class="gradient"/>
+      <h2 style="text-align:center; margin:1rem; font-family:monospace; font-size:2rem;">
+       Featured Posts
+      </h2>
+      <hr class="gradient mb-4"/>
+      <div class="grid lg:grid-cols-2 gap-10">
+       <a class="block group" href="/blog/fiery-frontier">
+        <div class="bg-cover bg-gray-900 relative bg-center rounded-md pb-[56%] mb-5 overflow-hidden transition-transform group-hover:scale-[97.5%]" style='background-image: url("https://assets.originrealms.com/cdn-cgi/image/format=webp,quality=90,fit=scale-down,width=1920/2024/05/nether-blog.jpeg");'>
+        </div>
+        <h3 class="text-xl font-bold text-white mb-2">
+         1.11.0 - Fiery Frontier
+        </h3>
+        <div class="meta flex items-center text-gray-600 font-bold mb-2">
+         <div style="color: rgb(245, 183, 43);">
+          Update
+         </div>
+         <div class="px-2">
+          –
+         </div>
+         <time>
+          May 22nd, 2024
+         </time>
+        </div>
+        <div class="text-lg pr-5">
+         Hey there, everyone!
+            We're beyond excited to launch our first major release since the stage event: the Nether Overhaul! Until now, Origin Realms has been using vanilla generation ...
+        </div>
+       </a>
+       <a class="block group" href="/blog/bloom-boom">
+        <div class="bg-cover bg-gray-900 relative bg-center rounded-md pb-[56%] mb-5 overflow-hidden transition-transform group-hover:scale-[97.5%]" style='background-image: url("https://assets.originrealms.com/cdn-cgi/image/format=webp,quality=90,fit=scale-down,width=1920/2024/04/Garden_Blog.jpg");'>
+        </div>
+        <h3 class="text-xl font-bold text-white mb-2">
+         1.10.8 - Bloom Boom
+        </h3>
+        <div class="meta flex items-center text-gray-600 font-bold mb-2">
+         <div style="color: rgb(67, 204, 218);">
+          Event
+         </div>
+         <div class="px-2">
+          –
+         </div>
+         <time>
+          Apr 19th, 2024
+         </time>
+        </div>
+        <div class="text-lg pr-5">
+         Spring is blooming, and your favorite bouncing bunny Hoppers is back in town!
+            The Origin Realms team has been hard at work preparing for our biggest year of content yet, however w...
+        </div>
+       </a>
+       <a class="block group" href="/blog/year-of-the-dragon">
+        <div class="bg-cover bg-gray-900 relative bg-center rounded-md pb-[56%] mb-5 overflow-hidden transition-transform group-hover:scale-[97.5%]" style='background-image: url("https://assets.originrealms.com/cdn-cgi/image/format=webp,quality=90,fit=scale-down,width=1920/2024/02/Lunar_Blog.jpg");'>
+        </div>
+        <h3 class="text-xl font-bold text-white mb-2">
+         1.10.0 - Year Of The Dragon
+        </h3>
+        <div class="meta flex items-center text-gray-600 font-bold mb-2">
+         <div style="color: rgb(67, 204, 218);">
+          Event
+         </div>
+         <div class="px-2">
+          –
+         </div>
+         <time>
+          Feb 11th, 2024
+         </time>
+        </div>
+        <div class="text-lg pr-5">
+         Happy Lunar New Year from the Origin Realms team! The time has come again for one of our favorite seasonal events of the year, and this one is jam-packed with some of the coolest t...
+        </div>
+       </a>
+       <a class="block group" href="/blog/3rd-anniversary">
+        <div class="bg-cover bg-gray-900 relative bg-center rounded-md pb-[56%] mb-5 overflow-hidden transition-transform group-hover:scale-[97.5%]" style='background-image: url("https://assets.originrealms.com/cdn-cgi/image/format=webp,quality=90,fit=scale-down,width=1920/2024/01/Anniversary_Blog.jpg");'>
+        </div>
+        <h3 class="text-xl font-bold text-white mb-2">
+         Three Years With Origin Realms
+        </h3>
+        <div class="meta flex items-center text-gray-600 font-bold mb-2">
+         <div style="color: rgb(245, 183, 43);">
+          Update
+         </div>
+         <div class="px-2">
+          –
+         </div>
+         <time>
+          Jan 5th, 2024
+         </time>
+        </div>
+        <div class="text-lg pr-5">
+         It's hard to believe, but we've just completed our third year at Origin Realms! This journey, filled with many challenges and wins, has been incredible thanks to our amazing commun...
+        </div>
+       </a>
+       <a class="block group" href="/blog/merry-mysteries">
+        <div class="bg-cover bg-gray-900 relative bg-center rounded-md pb-[56%] mb-5 overflow-hidden transition-transform group-hover:scale-[97.5%]" style='background-image: url("https://assets.originrealms.com/cdn-cgi/image/format=webp,quality=90,fit=scale-down,width=1920/2023/12/23Christmas_Blog.jpg");'>
+        </div>
+        <h3 class="text-xl font-bold text-white mb-2">
+         1.9.4 - Merry Mysteries Update
+        </h3>
+        <div class="meta flex items-center text-gray-600 font-bold mb-2">
+         <div style="color: rgb(67, 204, 218);">
+          Event
+         </div>
+         <div class="px-2">
+          –
+         </div>
+         <time>
+          Dec 21st, 2023
+         </time>
+        </div>
+        <div class="text-lg pr-5">
+         Happy holidays from the Origin Realms team! We hope everyone is gearing up to have a happy and safe holiday, and to kick things off with a festive bang, we're excited to share our ...
+        </div>
+       </a>
+       <a class="block group" href="/blog/fossils-and-findings">
+        <div class="bg-cover bg-gray-900 relative bg-center rounded-md pb-[56%] mb-5 overflow-hidden transition-transform group-hover:scale-[97.5%]" style='background-image: url("https://assets.originrealms.com/cdn-cgi/image/format=webp,quality=90,fit=scale-down,width=1920/2023/12/Stonehenge_Blog.jpg");'>
+        </div>
+        <h3 class="text-xl font-bold text-white mb-2">
+         1.9.0 - Fossils &amp; Findings Update
+        </h3>
+        <div class="meta flex items-center text-gray-600 font-bold mb-2">
+         <div style="color: rgb(245, 183, 43);">
+          Update
+         </div>
+         <div class="px-2">
+          –
+         </div>
+         <time>
+          Dec 20th, 2023
+         </time>
+        </div>
+        <div class="text-lg pr-5">
+         Big news, Origin Realms is ending the year with a bang! Today, we're kicking off the Fossils &amp; Findings Update, our eagerly awaited archeology release. Over December, you can expec...
+        </div>
+       </a>
+       <a class="block group" href="/blog/autumn-gathering">
+        <div class="bg-cover bg-gray-900 relative bg-center rounded-md pb-[56%] mb-5 overflow-hidden transition-transform group-hover:scale-[97.5%]" style='background-image: url("https://assets.originrealms.com/cdn-cgi/image/format=webp,quality=90,fit=scale-down,width=1920/2023/11/Thanksgiving_Blog.jpg");'>
+        </div>
+        <h3 class="text-xl font-bold text-white mb-2">
+         1.8.6 - Autumn Gathering
+        </h3>
+        <div class="meta flex items-center text-gray-600 font-bold mb-2">
+         <div style="color: rgb(67, 204, 218);">
+          Event
+         </div>
+         <div class="px-2">
+          –
+         </div>
+         <time>
+          Nov 23rd, 2023
+         </time>
+        </div>
+        <div class="text-lg pr-5">
+         Happy Thanksgiving, adventurers!
+            Leaves are starting to fall at Origin Realms, and Thanksgiving has arrived! We're feeling thankful this year for having such an amazing community,...
+        </div>
+       </a>
+       <a class="block group" href="/blog/fearful-festival">
+        <div class="bg-cover bg-gray-900 relative bg-center rounded-md pb-[56%] mb-5 overflow-hidden transition-transform group-hover:scale-[97.5%]" style='background-image: url("https://assets.originrealms.com/cdn-cgi/image/format=webp,quality=90,fit=scale-down,width=1920/2023/10/DotD_Blog--1-.jpg");'>
+        </div>
+        <h3 class="text-xl font-bold text-white mb-2">
+         1.8.0 - Fearful Festival Update
+        </h3>
+        <div class="meta flex items-center text-gray-600 font-bold mb-2">
+         <div style="color: rgb(67, 204, 218);">
+          Event
+         </div>
+         <div class="px-2">
+          –
+         </div>
+         <time>
+          Oct 16th, 2023
+         </time>
+        </div>
+        <div class="text-lg pr-5">
+         The 2023 Minecraft Mob Vote has officially concluded, and the Armadillo wins! For the third year in a row, we're incredibly excited to announce that all 3 mob vote options are live...
+        </div>
+       </a>
+       <a class="block group" href="/blog/2023-mob-vote">
+        <div class="bg-cover bg-gray-900 relative bg-center rounded-md pb-[56%] mb-5 overflow-hidden transition-transform group-hover:scale-[97.5%]" style='background-image: url("https://assets.originrealms.com/cdn-cgi/image/format=webp,quality=90,fit=scale-down,width=1920/2023/10/Mob_Vote_Blog.jpg");'>
+        </div>
+        <h3 class="text-xl font-bold text-white mb-2">
+         1.7.5 - 2023 Mob Vote Event
+        </h3>
+        <div class="meta flex items-center text-gray-600 font-bold mb-2">
+         <div style="color: rgb(67, 204, 218);">
+          Event
+         </div>
+         <div class="px-2">
+          –
+         </div>
+         <time>
+          Oct 8th, 2023
+         </time>
+        </div>
+        <div class="text-lg pr-5">
+         Hey there, everyone!
+            It's that time of year again when the Mob Vote brings all the hype out of the Minecraft community. We're always excited to be a part of this awesome event, an...
+        </div>
+       </a>
+       <a class="block group" href="/blog/blight-and-fight">
+        <div class="bg-cover bg-gray-900 relative bg-center rounded-md pb-[56%] mb-5 overflow-hidden transition-transform group-hover:scale-[97.5%]" style='background-image: url("https://assets.originrealms.com/cdn-cgi/image/format=webp,quality=90,fit=scale-down,width=1920/2023/08/Arena_Blog.jpg");'>
+        </div>
+        <h3 class="text-xl font-bold text-white mb-2">
+         1.7.0 - Blight &amp; Fight Update
+        </h3>
+        <div class="meta flex items-center text-gray-600 font-bold mb-2">
+         <div style="color: rgb(245, 183, 43);">
+          Update
+         </div>
+         <div class="px-2">
+          –
+         </div>
+         <time>
+          Aug 31st, 2023
+         </time>
+        </div>
+        <div class="text-lg pr-5">
+         What a time to be alive! The long-awaited Blight &amp; Fight update will soon arrive, with an official release time set in stone. We are beyond excited to share an early look at the up...
+        </div>
+       </a>
+       <a class="block group" href="/blog/summer-splashdown">
+        <div class="bg-cover bg-gray-900 relative bg-center rounded-md pb-[56%] mb-5 overflow-hidden transition-transform group-hover:scale-[97.5%]" style='background-image: url("https://assets.originrealms.com/cdn-cgi/image/format=webp,quality=90,fit=scale-down,width=1920/2023/07/Icecream_Blog.jpg");'>
+        </div>
+        <h3 class="text-xl font-bold text-white mb-2">
+         1.6.0 - Summer Splashdown
+        </h3>
+        <div class="meta flex items-center text-gray-600 font-bold mb-2">
+         <div style="color: rgb(67, 204, 218);">
+          Event
+         </div>
+         <div class="px-2">
+          –
+         </div>
+         <time>
+          Jul 29th, 2023
+         </time>
+        </div>
+        <div class="text-lg pr-5">
+         Hey everyone, welcome back to another blog! It has been some time since our last major update, but there's so much cool stuff to share - let's dive in!
+            Blighted Badlands Public T...
+        </div>
+       </a>
+       <a class="block group" href="/blog/parties-and-petals">
+        <div class="bg-cover bg-gray-900 relative bg-center rounded-md pb-[56%] mb-5 overflow-hidden transition-transform group-hover:scale-[97.5%]" style='background-image: url("https://assets.originrealms.com/cdn-cgi/image/format=webp,quality=90,fit=scale-down,width=1920/2023/04/Party_Blog.jpeg");'>
+        </div>
+        <h3 class="text-xl font-bold text-white mb-2">
+         1.5.0 - Parties &amp; Petals Update
+        </h3>
+        <div class="meta flex items-center text-gray-600 font-bold mb-2">
+         <div style="color: rgb(245, 183, 43);">
+          Update
+         </div>
+         <div class="px-2">
+          –
+         </div>
+         <time>
+          Apr 11th, 2023
+         </time>
+        </div>
+        <div class="text-lg pr-5">
+         Welcome adventurer! It's time to party up as we enable the latest social feature on Origin Realms. As we continue developing more important systems in the background such as the bl...
+        </div>
+       </a>
+       <a class="block group" href="/blog/odds-and-ends">
+        <div class="bg-cover bg-gray-900 relative bg-center rounded-md pb-[56%] mb-5 overflow-hidden transition-transform group-hover:scale-[97.5%]" style='background-image: url("https://assets.originrealms.com/cdn-cgi/image/format=webp,quality=90,fit=scale-down,width=1920/2023/03/Tool_Skin_Blog.jpeg");'>
+        </div>
+        <h3 class="text-xl font-bold text-white mb-2">
+         1.4.0 - The Odds and Ends Update
+        </h3>
+        <div class="meta flex items-center text-gray-600 font-bold mb-2">
+         <div style="color: rgb(245, 183, 43);">
+          Update
+         </div>
+         <div class="px-2">
+          –
+         </div>
+         <time>
+          Mar 9th, 2023
+         </time>
+        </div>
+        <div class="text-lg pr-5">
+         Badges Reimagined
+            As discussed in our community stage event in January, we have been eager to make some changes to how badges and levels work on Origin Realms. We have become incr...
+        </div>
+       </a>
+       <a class="block group" href="/blog/pink-and-pretty">
+        <div class="bg-cover bg-gray-900 relative bg-center rounded-md pb-[56%] mb-5 overflow-hidden transition-transform group-hover:scale-[97.5%]" style='background-image: url("https://assets.originrealms.com/cdn-cgi/image/format=webp,quality=90,fit=scale-down,width=1920/2023/02/Park_Blog.jpeg");'>
+        </div>
+        <h3 class="text-xl font-bold text-white mb-2">
+         1.3.0 - Pink &amp; Pretty Update
+        </h3>
+        <div class="meta flex items-center text-gray-600 font-bold mb-2">
+         <div style="color: rgb(67, 204, 218);">
+          Event
+         </div>
+         <div class="px-2">
+          –
+         </div>
+         <time>
+          Feb 13th, 2023
+         </time>
+        </div>
+        <div class="text-lg pr-5">
+         Happy Valentine's Day, adventurers!
+            Love is in the air at Origin Isles, with one of our most beautiful seasonal events yet! Valentine's is typically only a minor seasonal event, a...
+        </div>
+       </a>
+       <a class="block group" href="/blog/year-of-the-rabbit">
+        <div class="bg-cover bg-gray-900 relative bg-center rounded-md pb-[56%] mb-5 overflow-hidden transition-transform group-hover:scale-[97.5%]" style='background-image: url("https://assets.originrealms.com/cdn-cgi/image/format=webp,quality=90,fit=scale-down,width=1920/2023/01/Lunar2023_Blog.jpeg");'>
+        </div>
+        <h3 class="text-xl font-bold text-white mb-2">
+         1.2.0 - Year Of The Rabbit
+        </h3>
+        <div class="meta flex items-center text-gray-600 font-bold mb-2">
+         <div style="color: rgb(67, 204, 218);">
+          Event
+         </div>
+         <div class="px-2">
+          –
+         </div>
+         <time>
+          Feb 1th, 2023
+         </time>
+        </div>
+        <div class="text-lg pr-5">
+         A year has gone by since our last Lunar seasonal event, and the time flew by! We hope you all have been enjoying our recent 1.19 update, and while the Lunar New year officially sta...
+        </div>
+       </a>
+       <a class="block group" href="/blog/echoes-of-darkness">
+        <div class="bg-cover bg-gray-900 relative bg-center rounded-md pb-[56%] mb-5 overflow-hidden transition-transform group-hover:scale-[97.5%]" style='background-image: url("https://assets.originrealms.com/cdn-cgi/image/format=webp,quality=90,fit=scale-down,width=1920/2023/01/Deep_Dark_Blog.jpeg");'>
+        </div>
+        <h3 class="text-xl font-bold text-white mb-2">
+         1.1.0 - Echoes of Darkness Update
+        </h3>
+        <div class="meta flex items-center text-gray-600 font-bold mb-2">
+         <div style="color: rgb(245, 183, 43);">
+          Update
+         </div>
+         <div class="px-2">
+          –
+         </div>
+         <time>
+          Jan 24th, 2023
+         </time>
+        </div>
+        <div class="text-lg pr-5">
+         Greetings adventurers!
+            At last, 1.19 has arrived at our door and we're excited for you to check it out! As with any update, we couldn't quite help but give it the special Origin R...
+        </div>
+       </a>
+      </div>
+     </div>
+    </div>
+   </section>
+   <main class="md-main" data-md-component="main">
+    <div class="md-main__inner md-grid">
+     <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+      <div class="md-sidebar__scrollwrap">
+       <div class="md-sidebar__inner">
+        <!--
+  Copyright (c) 2016-2024 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+        <!-- Determine classes -->
+        <!-- Navigation -->
+        <nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
+         <!-- Navigation list -->
+         <ul class="md-nav__list" data-md-scrollfix="">
+          <li class="md-nav__item md-nav__item--active">
+           <input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+           <a class="md-nav__link md-nav__link--active" href=".">
+            <span class="md-ellipsis">
+             $ whoami
+            </span>
+           </a>
+          </li>
+          <li class="md-nav__item md-nav__item--nested">
+           <input class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+           <div class="md-nav__link md-nav__container">
+            <a class="md-nav__link" href="Articles/">
+             <span class="md-ellipsis">
+              Articles
+             </span>
+            </a>
+            <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+             <span class="md-nav__icon md-icon">
+             </span>
+            </label>
+           </div>
+           <nav aria-expanded="false" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+            <label class="md-nav__title" for="__nav_2">
+             <span class="md-nav__icon md-icon">
+             </span>
+             Articles
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix="">
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="Articles/AI%20Checklist%20for%20Startups/">
+               <span class="md-ellipsis">
+                AI Checklist for Startups
+               </span>
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="Articles/AsyncAwait%20Organizations/">
+               <span class="md-ellipsis">
+                AsyncAwait Organizations
+               </span>
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="Articles/Blog%20Embed%20Test/">
+               <span class="md-ellipsis">
+                Blog Embed Test
+               </span>
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="Articles/Efficient%20Git%20Workflow%20with%20Stacked%20PRs/">
+               <span class="md-ellipsis">
+                Efficient Git Workflow with Stacked PRs
+               </span>
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="Articles/Indian%20foci%2C%20world%20politics%20and%20rhetoric%20games%20Nations%20play/">
+               <span class="md-ellipsis">
+                Indian foci, world politics and rhetoric games Nations play
+               </span>
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="Articles/Linux%20Kernel%20Explained%20-%20Deep%20Dive%20Series%20for%20System%20Engineers/">
+               <span class="md-ellipsis">
+                Linux Kernel Explained - Deep Dive Series for System Engineers
+               </span>
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="Articles/Practitioners%20Guide%20to%20Great%20Project%20Documentation%20feat.%20ReadTheDocs/">
+               <span class="md-ellipsis">
+                Practitioners Guide to Great Project Documentation feat. ReadTheDocs
+               </span>
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="Articles/Productivity%20Audits%20%26%20the%20Fine%20art%20of%20Mastering%20Your%20Day/">
+               <span class="md-ellipsis">
+                Productivity Audits &amp; the Fine art of Mastering Your Day
+               </span>
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="Articles/Rise%20of%20Internal%20Developer%20Portals%20%28iDp%29%20-%20Part%201/">
+               <span class="md-ellipsis">
+                Rise of Internal Developer Portals (iDp) - Part 1
+               </span>
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="Articles/Startup%20CTO%20%20Impatient%20%2C%20Lazy%20and%20how%20I%20learned%20the%20habit%20of%20plan-sprint-ship-document/">
+               <span class="md-ellipsis">
+                Startup CTO : Impatient , Lazy and how I learned the habit of plan-sprint-ship-document
+               </span>
+              </a>
+             </li>
+             <li class="md-nav__item md-nav__item--nested">
+              <input class="md-nav__toggle md-toggle" id="__nav_2_12" type="checkbox"/>
+              <label class="md-nav__link" for="__nav_2_12" id="__nav_2_12_label" tabindex="0">
+               <span class="md-ellipsis">
+                2024
+               </span>
+               <span class="md-nav__icon md-icon">
+               </span>
+              </label>
+              <nav aria-expanded="false" aria-labelledby="__nav_2_12_label" class="md-nav" data-md-level="2">
+               <label class="md-nav__title" for="__nav_2_12">
+                <span class="md-nav__icon md-icon">
+                </span>
+                2024
+               </label>
+               <ul class="md-nav__list" data-md-scrollfix="">
+                <li class="md-nav__item md-nav__item--nested">
+                 <input class="md-nav__toggle md-toggle" id="__nav_2_12_1" type="checkbox"/>
+                 <label class="md-nav__link" for="__nav_2_12_1" id="__nav_2_12_1_label" tabindex="0">
+                  <span class="md-ellipsis">
+                   May
+                  </span>
+                  <span class="md-nav__icon md-icon">
+                  </span>
+                 </label>
+                 <nav aria-expanded="false" aria-labelledby="__nav_2_12_1_label" class="md-nav" data-md-level="3">
+                  <label class="md-nav__title" for="__nav_2_12_1">
+                   <span class="md-nav__icon md-icon">
+                   </span>
+                   May
+                  </label>
+                  <ul class="md-nav__list" data-md-scrollfix="">
+                   <li class="md-nav__item">
+                    <a class="md-nav__link" href="Articles/2024/May/Anatomy%20of%20Linux%20Kernel%20-%20Linux%20Kernel%20for%20System%20Engineers%20%232/">
+                     <span class="md-ellipsis">
+                      Linux Kernel Explained - Deep Dive Series for System Engineers
+                     </span>
+                    </a>
+                   </li>
+                   <li class="md-nav__item">
+                    <a class="md-nav__link" href="Articles/2024/May/Booting%20up%20Linux%20Kernel%20-%20Linux%20for%20Engineers%201/">
+                     <span class="md-ellipsis">
+                      Linux Kernel Explained - Deep Dive Series for System Engineers
+                     </span>
+                    </a>
+                   </li>
+                   <li class="md-nav__item">
+                    <a class="md-nav__link" href="Articles/2024/May/Future%20of%20Organizations%20-%20Post%20GenAI%20Outlook%20and%20Trends/">
+                     <span class="md-ellipsis">
+                      Future of Organizations - Post GenAI Outlook and Trends
+                     </span>
+                    </a>
+                   </li>
+                  </ul>
+                 </nav>
+                </li>
+               </ul>
+              </nav>
+             </li>
+             <li class="md-nav__item md-nav__item--nested">
+              <input class="md-nav__toggle md-toggle" id="__nav_2_13" type="checkbox"/>
+              <label class="md-nav__link" for="__nav_2_13" id="__nav_2_13_label" tabindex="0">
+               <span class="md-ellipsis">
+                Assets
+               </span>
+               <span class="md-nav__icon md-icon">
+               </span>
+              </label>
+              <nav aria-expanded="false" aria-labelledby="__nav_2_13_label" class="md-nav" data-md-level="2">
+               <label class="md-nav__title" for="__nav_2_13">
+                <span class="md-nav__icon md-icon">
+                </span>
+                Assets
+               </label>
+               <ul class="md-nav__list" data-md-scrollfix="">
+                <li class="md-nav__item md-nav__item--nested">
+                 <input class="md-nav__toggle md-toggle" id="__nav_2_13_1" type="checkbox"/>
+                 <label class="md-nav__link" for="__nav_2_13_1" id="__nav_2_13_1_label" tabindex="0">
+                  <span class="md-ellipsis">
+                   Media
+                  </span>
+                  <span class="md-nav__icon md-icon">
+                  </span>
+                 </label>
+                 <nav aria-expanded="false" aria-labelledby="__nav_2_13_1_label" class="md-nav" data-md-level="3">
+                  <label class="md-nav__title" for="__nav_2_13_1">
+                   <span class="md-nav__icon md-icon">
+                   </span>
+                   Media
+                  </label>
+                  <ul class="md-nav__list" data-md-scrollfix="">
+                   <li class="md-nav__item md-nav__item--nested">
+                    <input class="md-nav__toggle md-toggle" id="__nav_2_13_1_1" type="checkbox"/>
+                    <label class="md-nav__link" for="__nav_2_13_1_1" id="__nav_2_13_1_1_label" tabindex="0">
+                     <span class="md-ellipsis">
+                      AI Checklist for Startups
+                     </span>
+                     <span class="md-nav__icon md-icon">
+                     </span>
+                    </label>
+                    <nav aria-expanded="false" aria-labelledby="__nav_2_13_1_1_label" class="md-nav" data-md-level="4">
+                     <label class="md-nav__title" for="__nav_2_13_1_1">
+                      <span class="md-nav__icon md-icon">
+                      </span>
+                      AI Checklist for Startups
+                     </label>
+                     <ul class="md-nav__list" data-md-scrollfix="">
+                      <li class="md-nav__item">
+                       <a class="md-nav__link" href="Articles/Assets/media/AI%20Checklist%20for%20Startups/AI%20Checklist%20for%20Startups%202023-12-28%2019.29.01.excalidraw/">
+                        <span class="md-ellipsis">
+                         AI Checklist for Startups 2023 12 28 19.29.01.excalidraw
+                        </span>
+                       </a>
+                      </li>
+                      <li class="md-nav__item">
+                       <a class="md-nav__link" href="Articles/Assets/media/AI%20Checklist%20for%20Startups/AI%20Checklist%20for%20Startups%202023-12-28%2019.31.31.excalidraw/">
+                        <span class="md-ellipsis">
+                         AI Checklist for Startups 2023 12 28 19.31.31.excalidraw
+                        </span>
+                       </a>
+                      </li>
+                      <li class="md-nav__item">
+                       <a class="md-nav__link" href="Articles/Assets/media/AI%20Checklist%20for%20Startups/AI%20Checklist%20for%20Startups%202023-12-28%2019.36.35.excalidraw/">
+                        <span class="md-ellipsis">
+                         AI Checklist for Startups 2023 12 28 19.36.35.excalidraw
+                        </span>
+                       </a>
+                      </li>
+                      <li class="md-nav__item">
+                       <a class="md-nav__link" href="Articles/Assets/media/AI%20Checklist%20for%20Startups/AI%20Checklist%20for%20Startups%202023-12-28%2019.38.11.excalidraw/">
+                        <span class="md-ellipsis">
+                         AI Checklist for Startups 2023 12 28 19.38.11.excalidraw
+                        </span>
+                       </a>
+                      </li>
+                     </ul>
+                    </nav>
+                   </li>
+                   <li class="md-nav__item md-nav__item--nested">
+                    <input class="md-nav__toggle md-toggle" id="__nav_2_13_1_2" type="checkbox"/>
+                    <label class="md-nav__link" for="__nav_2_13_1_2" id="__nav_2_13_1_2_label" tabindex="0">
+                     <span class="md-ellipsis">
+                      Blog Embed Test
+                     </span>
+                     <span class="md-nav__icon md-icon">
+                     </span>
+                    </label>
+                    <nav aria-expanded="false" aria-labelledby="__nav_2_13_1_2_label" class="md-nav" data-md-level="4">
+                     <label class="md-nav__title" for="__nav_2_13_1_2">
+                      <span class="md-nav__icon md-icon">
+                      </span>
+                      Blog Embed Test
+                     </label>
+                     <ul class="md-nav__list" data-md-scrollfix="">
+                      <li class="md-nav__item">
+                       <a class="md-nav__link" href="Articles/Assets/media/Blog%20Embed%20Test/Test%20Page%202023-08-25%2003.21.28.excalidraw/">
+                        <span class="md-ellipsis">
+                         Test Page 2023 08 25 03.21.28.excalidraw
+                        </span>
+                       </a>
+                      </li>
+                      <li class="md-nav__item">
+                       <a class="md-nav__link" href="Articles/Assets/media/Blog%20Embed%20Test/Test%20Page%202023-08-25%2003.29.05.excalidraw/">
+                        <span class="md-ellipsis">
+                         Test Page 2023 08 25 03.29.05.excalidraw
+                        </span>
+                       </a>
+                      </li>
+                      <li class="md-nav__item">
+                       <a class="md-nav__link" href="Articles/Assets/media/Blog%20Embed%20Test/Test%20Page%202023-08-25%2004.39.01.excalidraw/">
+                        <span class="md-ellipsis">
+                         Test Page 2023 08 25 04.39.01.excalidraw
+                        </span>
+                       </a>
+                      </li>
+                      <li class="md-nav__item">
+                       <a class="md-nav__link" href="Articles/Assets/media/Blog%20Embed%20Test/Test%20Page%202023-08-25%2004.41.44.excalidraw/">
+                        <span class="md-ellipsis">
+                         Test Page 2023 08 25 04.41.44.excalidraw
+                        </span>
+                       </a>
+                      </li>
+                     </ul>
+                    </nav>
+                   </li>
+                  </ul>
+                 </nav>
+                </li>
+               </ul>
+              </nav>
+             </li>
+             <li class="md-nav__item md-nav__item--nested">
+              <input class="md-nav__toggle md-toggle" id="__nav_2_14" type="checkbox"/>
+              <label class="md-nav__link" for="__nav_2_14" id="__nav_2_14_label" tabindex="0">
+               <span class="md-ellipsis">
+                Bits n bytes
+               </span>
+               <span class="md-nav__icon md-icon">
+               </span>
+              </label>
+              <nav aria-expanded="false" aria-labelledby="__nav_2_14_label" class="md-nav" data-md-level="2">
+               <label class="md-nav__title" for="__nav_2_14">
+                <span class="md-nav__icon md-icon">
+                </span>
+                Bits n bytes
+               </label>
+               <ul class="md-nav__list" data-md-scrollfix="">
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="Articles/Bits-n-bytes/Ghost%20in%20a%20shell%20-%20What%20the%20heck%20is%20a%20Terminal%2CShell%20and%20TTY/">
+                  <span class="md-ellipsis">
+                   Ghost in a shell - What the heck is a Terminal/Shell/TTY?
+                  </span>
+                 </a>
+                </li>
+               </ul>
+              </nav>
+             </li>
+             <li class="md-nav__item md-nav__item--nested">
+              <input class="md-nav__toggle md-toggle" id="__nav_2_15" type="checkbox"/>
+              <label class="md-nav__link" for="__nav_2_15" id="__nav_2_15_label" tabindex="0">
+               <span class="md-ellipsis">
+                Draft
+               </span>
+               <span class="md-nav__icon md-icon">
+               </span>
+              </label>
+              <nav aria-expanded="false" aria-labelledby="__nav_2_15_label" class="md-nav" data-md-level="2">
+               <label class="md-nav__title" for="__nav_2_15">
+                <span class="md-nav__icon md-icon">
+                </span>
+                Draft
+               </label>
+               <ul class="md-nav__list" data-md-scrollfix="">
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="Articles/Draft/ContextSwitching/">
+                  <span class="md-ellipsis">
+                   Real Cost of Context Switching
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="Articles/Draft/Django%20FK%20with%20UUID%20vs%20to_field/">
+                  <span class="md-ellipsis">
+                   Django FK with UUID vs to_field
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="Articles/Draft/Langchain%20%2B%20ChatGPT/">
+                  <span class="md-ellipsis">
+                   Langchain + ChatGPT
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="Articles/Draft/Mental%20Health%20and%20Startup%20Culture/">
+                  <span class="md-ellipsis">
+                   Mental Health and Startups
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="Articles/Draft/Navigating%20the%20Consultant%20Trap%20in%20Startup%20World/">
+                  <span class="md-ellipsis">
+                   Navigating the Consultant Trap in Startup World
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="Articles/Draft/PMxEM%20Relationships/">
+                  <span class="md-ellipsis">
+                   PMxEM Relationships
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="Articles/Draft/Personal%20Productivity/">
+                  <span class="md-ellipsis">
+                   Personal Productivity
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="Articles/Draft/Split%20Keyboard%20-%20Hardware/">
+                  <span class="md-ellipsis">
+                   Split Keyboard - Hardware
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="Articles/Draft/Writing%20Topic%20Map/">
+                  <span class="md-ellipsis">
+                   Writing Topic Map
+                  </span>
+                 </a>
+                </li>
+               </ul>
+              </nav>
+             </li>
+            </ul>
+           </nav>
+          </li>
+          <li class="md-nav__item md-nav__item--nested">
+           <input class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
+           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            <span class="md-ellipsis">
+             Interests
+            </span>
+            <span class="md-nav__icon md-icon">
+            </span>
+           </label>
+           <nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+            <label class="md-nav__title" for="__nav_3">
+             <span class="md-nav__icon md-icon">
+             </span>
+             Interests
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix="">
+             <li class="md-nav__item md-nav__item--nested">
+              <input class="md-nav__toggle md-toggle" id="__nav_3_1" type="checkbox"/>
+              <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+               <span class="md-ellipsis">
+                Finance
+               </span>
+               <span class="md-nav__icon md-icon">
+               </span>
+              </label>
+              <nav aria-expanded="false" aria-labelledby="__nav_3_1_label" class="md-nav" data-md-level="2">
+               <label class="md-nav__title" for="__nav_3_1">
+                <span class="md-nav__icon md-icon">
+                </span>
+                Finance
+               </label>
+               <ul class="md-nav__list" data-md-scrollfix="">
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="Interests/Finance/FIRE/">
+                  <span class="md-ellipsis">
+                   FIRE
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="Interests/Finance/InvenstmentPhilosophy/">
+                  <span class="md-ellipsis">
+                   InvenstmentPhilosophy
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="Interests/Finance/Investment%20System/">
+                  <span class="md-ellipsis">
+                   Investment System
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="Interests/Finance/Trading%20%26%20Finanace/">
+                  <span class="md-ellipsis">
+                   Trading &amp; Finanace
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item md-nav__item--nested">
+                 <input class="md-nav__toggle md-toggle" id="__nav_3_1_5" type="checkbox"/>
+                 <label class="md-nav__link" for="__nav_3_1_5" id="__nav_3_1_5_label" tabindex="0">
+                  <span class="md-ellipsis">
+                   Stocks
+                  </span>
+                  <span class="md-nav__icon md-icon">
+                  </span>
+                 </label>
+                 <nav aria-expanded="false" aria-labelledby="__nav_3_1_5_label" class="md-nav" data-md-level="3">
+                  <label class="md-nav__title" for="__nav_3_1_5">
+                   <span class="md-nav__icon md-icon">
+                   </span>
+                   Stocks
+                  </label>
+                  <ul class="md-nav__list" data-md-scrollfix="">
+                   <li class="md-nav__item">
+                    <a class="md-nav__link" href="Interests/Finance/Stocks/ERIS-ErisLifesciencesLtd/">
+                     <span class="md-ellipsis">
+                      ERIS-ErisLifesciencesLtd
+                     </span>
+                    </a>
+                   </li>
+                   <li class="md-nav__item">
+                    <a class="md-nav__link" href="Interests/Finance/Stocks/SBCL_ShivalikBimetal/">
+                     <span class="md-ellipsis">
+                      SBCL_ShivalikBimetal
+                     </span>
+                    </a>
+                   </li>
+                  </ul>
+                 </nav>
+                </li>
+               </ul>
+              </nav>
+             </li>
+             <li class="md-nav__item md-nav__item--nested">
+              <input class="md-nav__toggle md-toggle" id="__nav_3_2" type="checkbox"/>
+              <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+               <span class="md-ellipsis">
+                Geo politics
+               </span>
+               <span class="md-nav__icon md-icon">
+               </span>
+              </label>
+              <nav aria-expanded="false" aria-labelledby="__nav_3_2_label" class="md-nav" data-md-level="2">
+               <label class="md-nav__title" for="__nav_3_2">
+                <span class="md-nav__icon md-icon">
+                </span>
+                Geo politics
+               </label>
+               <ul class="md-nav__list" data-md-scrollfix="">
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="Interests/Geo-politics/Geo-politics/">
+                  <span class="md-ellipsis">
+                   Geo-politics
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="Interests/Geo-politics/Indo-China%20War%20prospects/">
+                  <span class="md-ellipsis">
+                   Indo-China War prospects
+                  </span>
+                 </a>
+                </li>
+               </ul>
+              </nav>
+             </li>
+             <li class="md-nav__item md-nav__item--nested">
+              <input class="md-nav__toggle md-toggle" id="__nav_3_3" type="checkbox"/>
+              <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+               <span class="md-ellipsis">
+                LinuxKernel
+               </span>
+               <span class="md-nav__icon md-icon">
+               </span>
+              </label>
+              <nav aria-expanded="false" aria-labelledby="__nav_3_3_label" class="md-nav" data-md-level="2">
+               <label class="md-nav__title" for="__nav_3_3">
+                <span class="md-nav__icon md-icon">
+                </span>
+                LinuxKernel
+               </label>
+               <ul class="md-nav__list" data-md-scrollfix="">
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="Interests/LinuxKernel/Linux%20Internals%20MOOC/">
+                  <span class="md-ellipsis">
+                   Linux Internals MOOC
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item md-nav__item--nested">
+                 <input class="md-nav__toggle md-toggle" id="__nav_3_3_2" type="checkbox"/>
+                 <label class="md-nav__link" for="__nav_3_3_2" id="__nav_3_3_2_label" tabindex="0">
+                  <span class="md-ellipsis">
+                   06.Networking
+                  </span>
+                  <span class="md-nav__icon md-icon">
+                  </span>
+                 </label>
+                 <nav aria-expanded="false" aria-labelledby="__nav_3_3_2_label" class="md-nav" data-md-level="3">
+                  <label class="md-nav__title" for="__nav_3_3_2">
+                   <span class="md-nav__icon md-icon">
+                   </span>
+                   06.Networking
+                  </label>
+                  <ul class="md-nav__list" data-md-scrollfix="">
+                   <li class="md-nav__item">
+                    <a class="md-nav__link" href="Interests/LinuxKernel/06.Networking/06.01%20Life%20of%20a%20Packet/">
+                     <span class="md-ellipsis">
+                      06.01 Life of a Packet
+                     </span>
+                    </a>
+                   </li>
+                   <li class="md-nav__item">
+                    <a class="md-nav__link" href="Interests/LinuxKernel/06.Networking/06.02%20Kernel%20High%20Performance%20Networking/">
+                     <span class="md-ellipsis">
+                      06.02 Kernel High Performance Networking
+                     </span>
+                    </a>
+                   </li>
+                   <li class="md-nav__item">
+                    <a class="md-nav__link" href="Interests/LinuxKernel/06.Networking/06.03%20Bypassing%20the%20Kernel/">
+                     <span class="md-ellipsis">
+                      06.03 Bypassing the Kernel
+                     </span>
+                    </a>
+                   </li>
+                   <li class="md-nav__item">
+                    <a class="md-nav__link" href="Interests/LinuxKernel/06.Networking/06.04%20What%20Should%20I%20use/">
+                     <span class="md-ellipsis">
+                      06.04 What Should I use
+                     </span>
+                    </a>
+                   </li>
+                  </ul>
+                 </nav>
+                </li>
+                <li class="md-nav__item md-nav__item--nested">
+                 <input class="md-nav__toggle md-toggle" id="__nav_3_3_3" type="checkbox"/>
+                 <label class="md-nav__link" for="__nav_3_3_3" id="__nav_3_3_3_label" tabindex="0">
+                  <span class="md-ellipsis">
+                   09.Tracing
+                  </span>
+                  <span class="md-nav__icon md-icon">
+                  </span>
+                 </label>
+                 <nav aria-expanded="false" aria-labelledby="__nav_3_3_3_label" class="md-nav" data-md-level="3">
+                  <label class="md-nav__title" for="__nav_3_3_3">
+                   <span class="md-nav__icon md-icon">
+                   </span>
+                   09.Tracing
+                  </label>
+                  <ul class="md-nav__list" data-md-scrollfix="">
+                   <li class="md-nav__item">
+                    <a class="md-nav__link" href="Interests/LinuxKernel/09.Tracing/09.xx%20Performance%20Monitoring/">
+                     <span class="md-ellipsis">
+                      09.xx Performance Monitoring
+                     </span>
+                    </a>
+                   </li>
+                  </ul>
+                 </nav>
+                </li>
+                <li class="md-nav__item md-nav__item--nested">
+                 <input class="md-nav__toggle md-toggle" id="__nav_3_3_4" type="checkbox"/>
+                 <label class="md-nav__link" for="__nav_3_3_4" id="__nav_3_3_4_label" tabindex="0">
+                  <span class="md-ellipsis">
+                   10.eBPF
+                  </span>
+                  <span class="md-nav__icon md-icon">
+                  </span>
+                 </label>
+                 <nav aria-expanded="false" aria-labelledby="__nav_3_3_4_label" class="md-nav" data-md-level="3">
+                  <label class="md-nav__title" for="__nav_3_3_4">
+                   <span class="md-nav__icon md-icon">
+                   </span>
+                   10.eBPF
+                  </label>
+                  <ul class="md-nav__list" data-md-scrollfix="">
+                   <li class="md-nav__item">
+                    <a class="md-nav__link" href="Interests/LinuxKernel/10.eBPF/10.01%20eBPF%20History%2C%20Motivation%20and%20Design/">
+                     <span class="md-ellipsis">
+                      10.01 eBPF History, Motivation and Design
+                     </span>
+                    </a>
+                   </li>
+                   <li class="md-nav__item">
+                    <a class="md-nav__link" href="Interests/LinuxKernel/10.eBPF/10.02%20Hello%20eBPF/">
+                     <span class="md-ellipsis">
+                      10.02 Hello eBPF
+                     </span>
+                    </a>
+                   </li>
+                   <li class="md-nav__item">
+                    <a class="md-nav__link" href="Interests/LinuxKernel/10.eBPF/10.03%20eBPF%20Maps/">
+                     <span class="md-ellipsis">
+                      10.03 eBPF Maps
+                     </span>
+                    </a>
+                   </li>
+                   <li class="md-nav__item">
+                    <a class="md-nav__link" href="Interests/LinuxKernel/10.eBPF/10.04%20XDP/">
+                     <span class="md-ellipsis">
+                      10.04 XDP
+                     </span>
+                    </a>
+                   </li>
+                   <li class="md-nav__item">
+                    <a class="md-nav__link" href="Interests/LinuxKernel/10.eBPF/10.05%20eBPF%20%26%20Tracing/">
+                     <span class="md-ellipsis">
+                      10.05 eBPF &amp; Tracing
+                     </span>
+                    </a>
+                   </li>
+                  </ul>
+                 </nav>
+                </li>
+               </ul>
+              </nav>
+             </li>
+             <li class="md-nav__item md-nav__item--nested">
+              <input class="md-nav__toggle md-toggle" id="__nav_3_4" type="checkbox"/>
+              <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+               <span class="md-ellipsis">
+                Photography
+               </span>
+               <span class="md-nav__icon md-icon">
+               </span>
+              </label>
+              <nav aria-expanded="false" aria-labelledby="__nav_3_4_label" class="md-nav" data-md-level="2">
+               <label class="md-nav__title" for="__nav_3_4">
+                <span class="md-nav__icon md-icon">
+                </span>
+                Photography
+               </label>
+               <ul class="md-nav__list" data-md-scrollfix="">
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="Interests/Photography/Photography/">
+                  <span class="md-ellipsis">
+                   Photography
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="Interests/Photography/Video%20and%20Photography/">
+                  <span class="md-ellipsis">
+                   Video and Photography
+                  </span>
+                 </a>
+                </li>
+               </ul>
+              </nav>
+             </li>
+             <li class="md-nav__item md-nav__item--nested">
+              <input class="md-nav__toggle md-toggle" id="__nav_3_5" type="checkbox"/>
+              <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+               <span class="md-ellipsis">
+                Spirituality
+               </span>
+               <span class="md-nav__icon md-icon">
+               </span>
+              </label>
+              <nav aria-expanded="false" aria-labelledby="__nav_3_5_label" class="md-nav" data-md-level="2">
+               <label class="md-nav__title" for="__nav_3_5">
+                <span class="md-nav__icon md-icon">
+                </span>
+                Spirituality
+               </label>
+               <ul class="md-nav__list" data-md-scrollfix="">
+                <li class="md-nav__item md-nav__item--nested">
+                 <input class="md-nav__toggle md-toggle" id="__nav_3_5_1" type="checkbox"/>
+                 <label class="md-nav__link" for="__nav_3_5_1" id="__nav_3_5_1_label" tabindex="0">
+                  <span class="md-ellipsis">
+                   Vedanta
+                  </span>
+                  <span class="md-nav__icon md-icon">
+                  </span>
+                 </label>
+                 <nav aria-expanded="false" aria-labelledby="__nav_3_5_1_label" class="md-nav" data-md-level="3">
+                  <label class="md-nav__title" for="__nav_3_5_1">
+                   <span class="md-nav__icon md-icon">
+                   </span>
+                   Vedanta
+                  </label>
+                  <ul class="md-nav__list" data-md-scrollfix="">
+                   <li class="md-nav__item">
+                    <a class="md-nav__link" href="Interests/Spirituality/Vedanta/Geeta%20Readings/">
+                     <span class="md-ellipsis">
+                      Geeta Readings
+                     </span>
+                    </a>
+                   </li>
+                  </ul>
+                 </nav>
+                </li>
+               </ul>
+              </nav>
+             </li>
+            </ul>
+           </nav>
+          </li>
+          <li class="md-nav__item md-nav__item--nested">
+           <input class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
+           <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            <span class="md-ellipsis">
+             Notes
+            </span>
+            <span class="md-nav__icon md-icon">
+            </span>
+           </label>
+           <nav aria-expanded="false" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+            <label class="md-nav__title" for="__nav_4">
+             <span class="md-nav__icon md-icon">
+             </span>
+             Notes
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix="">
+             <li class="md-nav__item md-nav__item--nested">
+              <input class="md-nav__toggle md-toggle" id="__nav_4_1" type="checkbox"/>
+              <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+               <span class="md-ellipsis">
+                KindleHilights
+               </span>
+               <span class="md-nav__icon md-icon">
+               </span>
+              </label>
+              <nav aria-expanded="false" aria-labelledby="__nav_4_1_label" class="md-nav" data-md-level="2">
+               <label class="md-nav__title" for="__nav_4_1">
+                <span class="md-nav__icon md-icon">
+                </span>
+                KindleHilights
+               </label>
+               <ul class="md-nav__list" data-md-scrollfix="">
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="Notes/KindleHilights/BarZohar-Mishal-Mossad/">
+                  <span class="md-ellipsis">
+                   BarZohar-Mishal-Mossad
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="Notes/KindleHilights/Carnegie-How%20to%20Win%20Friends%20and%20Influence%20People/">
+                  <span class="md-ellipsis">
+                   How to Win Friends and Influence People
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="Notes/KindleHilights/Debroy-THE%20BHAGAVAD%20GITA%20FOR%20MILLENNIALS/">
+                  <span class="md-ellipsis">
+                   Debroy-THE BHAGAVAD GITA FOR MILLENNIALS
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="Notes/KindleHilights/Mossad/">
+                  <span class="md-ellipsis">
+                   Mossad
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="Notes/KindleHilights/PersonalMBA/">
+                  <span class="md-ellipsis">
+                   PersonalMBA
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="Notes/KindleHilights/The%20Bhagavad%20Gita%20for%20Millennials/">
+                  <span class="md-ellipsis">
+                   The Bhagavad Gita for Millennials
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="Notes/KindleHilights/Yadav-Raw/">
+                  <span class="md-ellipsis">
+                   Yadav-Raw
+                  </span>
+                 </a>
+                </li>
+               </ul>
+              </nav>
+             </li>
+             <li class="md-nav__item md-nav__item--nested">
+              <input class="md-nav__toggle md-toggle" id="__nav_4_2" type="checkbox"/>
+              <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+               <span class="md-ellipsis">
+                Omnivore
+               </span>
+               <span class="md-nav__icon md-icon">
+               </span>
+              </label>
+              <nav aria-expanded="false" aria-labelledby="__nav_4_2_label" class="md-nav" data-md-level="2">
+               <label class="md-nav__title" for="__nav_4_2">
+                <span class="md-nav__icon md-icon">
+                </span>
+                Omnivore
+               </label>
+               <ul class="md-nav__list" data-md-scrollfix="">
+                <li class="md-nav__item md-nav__item--nested">
+                 <input class="md-nav__toggle md-toggle" id="__nav_4_2_1" type="checkbox"/>
+                 <label class="md-nav__link" for="__nav_4_2_1" id="__nav_4_2_1_label" tabindex="0">
+                  <span class="md-ellipsis">
+                   2024 01 11
+                  </span>
+                  <span class="md-nav__icon md-icon">
+                  </span>
+                 </label>
+                 <nav aria-expanded="false" aria-labelledby="__nav_4_2_1_label" class="md-nav" data-md-level="3">
+                  <label class="md-nav__title" for="__nav_4_2_1">
+                   <span class="md-nav__icon md-icon">
+                   </span>
+                   2024 01 11
+                  </label>
+                  <ul class="md-nav__list" data-md-scrollfix="">
+                   <li class="md-nav__item">
+                    <a class="md-nav__link" href="Notes/Omnivore/2024-01-11/Rebuilding%20Netflix%20Video%20Processing%20Pipeline%20with%20Microservices/">
+                     <span class="md-ellipsis">
+                      Rebuilding Netflix Video Processing Pipeline with Microservices
+                     </span>
+                    </a>
+                   </li>
+                  </ul>
+                 </nav>
+                </li>
+                <li class="md-nav__item md-nav__item--nested">
+                 <input class="md-nav__toggle md-toggle" id="__nav_4_2_2" type="checkbox"/>
+                 <label class="md-nav__link" for="__nav_4_2_2" id="__nav_4_2_2_label" tabindex="0">
+                  <span class="md-ellipsis">
+                   2024 01 31
+                  </span>
+                  <span class="md-nav__icon md-icon">
+                  </span>
+                 </label>
+                 <nav aria-expanded="false" aria-labelledby="__nav_4_2_2_label" class="md-nav" data-md-level="3">
+                  <label class="md-nav__title" for="__nav_4_2_2">
+                   <span class="md-nav__icon md-icon">
+                   </span>
+                   2024 01 31
+                  </label>
+                  <ul class="md-nav__list" data-md-scrollfix="">
+                   <li class="md-nav__item">
+                    <a class="md-nav__link" href="Notes/Omnivore/2024-01-31/COVID%20Test%20Data%20Breach-%201.3%20Million%20Patient%20Records%20Exposed%20Online/">
+                     <span class="md-ellipsis">
+                      COVID Test Data Breach: 1.3 Million Patient Records Exposed Online
+                     </span>
+                    </a>
+                   </li>
+                   <li class="md-nav__item">
+                    <a class="md-nav__link" href="Notes/Omnivore/2024-01-31/I%20Just%20Wanted%20Emacs%20to%20Look%20Nice%20%E2%80%94%20Using%2024-Bit%20Color%20in%20Terminals%20%20Chad%20Austin/">
+                     <span class="md-ellipsis">
+                      I Just Wanted Emacs to Look Nice — Using 24 Bit Color in Terminals  Chad Austin
+                     </span>
+                    </a>
+                   </li>
+                   <li class="md-nav__item">
+                    <a class="md-nav__link" href="Notes/Omnivore/2024-01-31/I%20Just%20Wanted%20Emacs%20to%20Look%20Nice%20%E2%80%94%20Using%2024-Bit%20Color%20in%20Terminals%20-%20Chad%20Austin/">
+                     <span class="md-ellipsis">
+                      I Just Wanted Emacs to Look Nice — Using 24-Bit Color in Terminals | Chad Austin
+                     </span>
+                    </a>
+                   </li>
+                   <li class="md-nav__item">
+                    <a class="md-nav__link" href="Notes/Omnivore/2024-01-31/Preface%20-%20LSM%20in%20a%20Week/">
+                     <span class="md-ellipsis">
+                      Preface - LSM in a Week
+                     </span>
+                    </a>
+                   </li>
+                  </ul>
+                 </nav>
+                </li>
+                <li class="md-nav__item md-nav__item--nested">
+                 <input class="md-nav__toggle md-toggle" id="__nav_4_2_3" type="checkbox"/>
+                 <label class="md-nav__link" for="__nav_4_2_3" id="__nav_4_2_3_label" tabindex="0">
+                  <span class="md-ellipsis">
+                   2024 02 08
+                  </span>
+                  <span class="md-nav__icon md-icon">
+                  </span>
+                 </label>
+                 <nav aria-expanded="false" aria-labelledby="__nav_4_2_3_label" class="md-nav" data-md-level="3">
+                  <label class="md-nav__title" for="__nav_4_2_3">
+                   <span class="md-nav__icon md-icon">
+                   </span>
+                   2024 02 08
+                  </label>
+                  <ul class="md-nav__list" data-md-scrollfix="">
+                   <li class="md-nav__item">
+                    <a class="md-nav__link" href="Notes/Omnivore/2024-02-08/How%20we%20got%20fine-tuning%20Mistral-7B%20to%20not%20suck-%20Helix%20Project%20Report%2C%20Feb%202024/">
+                     <span class="md-ellipsis">
+                      How we got fine-tuning Mistral-7B to not suck: Helix Project Report, Feb 2024
+                     </span>
+                    </a>
+                   </li>
+                   <li class="md-nav__item">
+                    <a class="md-nav__link" href="Notes/Omnivore/2024-02-08/Simple%20Precision%20Time%20Protocol%20at%20Meta%20-%20Engineering%20at%20Meta/">
+                     <span class="md-ellipsis">
+                      Simple Precision Time Protocol at Meta - Engineering at Meta
+                     </span>
+                    </a>
+                   </li>
+                  </ul>
+                 </nav>
+                </li>
+                <li class="md-nav__item md-nav__item--nested">
+                 <input class="md-nav__toggle md-toggle" id="__nav_4_2_4" type="checkbox"/>
+                 <label class="md-nav__link" for="__nav_4_2_4" id="__nav_4_2_4_label" tabindex="0">
+                  <span class="md-ellipsis">
+                   2024 02 26
+                  </span>
+                  <span class="md-nav__icon md-icon">
+                  </span>
+                 </label>
+                 <nav aria-expanded="false" aria-labelledby="__nav_4_2_4_label" class="md-nav" data-md-level="3">
+                  <label class="md-nav__title" for="__nav_4_2_4">
+                   <span class="md-nav__icon md-icon">
+                   </span>
+                   2024 02 26
+                  </label>
+                  <ul class="md-nav__list" data-md-scrollfix="">
+                   <li class="md-nav__item">
+                    <a class="md-nav__link" href="Notes/Omnivore/2024-02-26/Excalidraw/">
+                     <span class="md-ellipsis">
+                      Excalidraw
+                     </span>
+                    </a>
+                   </li>
+                  </ul>
+                 </nav>
+                </li>
+                <li class="md-nav__item md-nav__item--nested">
+                 <input class="md-nav__toggle md-toggle" id="__nav_4_2_5" type="checkbox"/>
+                 <label class="md-nav__link" for="__nav_4_2_5" id="__nav_4_2_5_label" tabindex="0">
+                  <span class="md-ellipsis">
+                   2024 02 27
+                  </span>
+                  <span class="md-nav__icon md-icon">
+                  </span>
+                 </label>
+                 <nav aria-expanded="false" aria-labelledby="__nav_4_2_5_label" class="md-nav" data-md-level="3">
+                  <label class="md-nav__title" for="__nav_4_2_5">
+                   <span class="md-nav__icon md-icon">
+                   </span>
+                   2024 02 27
+                  </label>
+                  <ul class="md-nav__list" data-md-scrollfix="">
+                   <li class="md-nav__item">
+                    <a class="md-nav__link" href="Notes/Omnivore/2024-02-27/%40ASmartBear/">
+                     <span class="md-ellipsis">
+                      @ASmartBear
+                     </span>
+                    </a>
+                   </li>
+                   <li class="md-nav__item">
+                    <a class="md-nav__link" href="Notes/Omnivore/2024-02-27/Apache%20Superset%20-%20Hacker%20News/">
+                     <span class="md-ellipsis">
+                      Apache Superset | Hacker News
+                     </span>
+                    </a>
+                   </li>
+                   <li class="md-nav__item">
+                    <a class="md-nav__link" href="Notes/Omnivore/2024-02-27/https---zeck.app/">
+                     <span class="md-ellipsis">
+                      https://zeck.app
+                     </span>
+                    </a>
+                   </li>
+                  </ul>
+                 </nav>
+                </li>
+                <li class="md-nav__item md-nav__item--nested">
+                 <input class="md-nav__toggle md-toggle" id="__nav_4_2_6" type="checkbox"/>
+                 <label class="md-nav__link" for="__nav_4_2_6" id="__nav_4_2_6_label" tabindex="0">
+                  <span class="md-ellipsis">
+                   2024 02 28
+                  </span>
+                  <span class="md-nav__icon md-icon">
+                  </span>
+                 </label>
+                 <nav aria-expanded="false" aria-labelledby="__nav_4_2_6_label" class="md-nav" data-md-level="3">
+                  <label class="md-nav__title" for="__nav_4_2_6">
+                   <span class="md-nav__icon md-icon">
+                   </span>
+                   2024 02 28
+                  </label>
+                  <ul class="md-nav__list" data-md-scrollfix="">
+                   <li class="md-nav__item">
+                    <a class="md-nav__link" href="Notes/Omnivore/2024-02-28/Start%20a%20Profitable%20Side%20Project%20in%202024%20-%20Indie%20Hackers/">
+                     <span class="md-ellipsis">
+                      Start a Profitable Side Project in 2024 - Indie Hackers
+                     </span>
+                    </a>
+                   </li>
+                  </ul>
+                 </nav>
+                </li>
+                <li class="md-nav__item md-nav__item--nested">
+                 <input class="md-nav__toggle md-toggle" id="__nav_4_2_7" type="checkbox"/>
+                 <label class="md-nav__link" for="__nav_4_2_7" id="__nav_4_2_7_label" tabindex="0">
+                  <span class="md-ellipsis">
+                   2024 03 05
+                  </span>
+                  <span class="md-nav__icon md-icon">
+                  </span>
+                 </label>
+                 <nav aria-expanded="false" aria-labelledby="__nav_4_2_7_label" class="md-nav" data-md-level="3">
+                  <label class="md-nav__title" for="__nav_4_2_7">
+                   <span class="md-nav__icon md-icon">
+                   </span>
+                   2024 03 05
+                  </label>
+                  <ul class="md-nav__list" data-md-scrollfix="">
+                   <li class="md-nav__item">
+                    <a class="md-nav__link" href="Notes/Omnivore/2024-03-05/a16z%20Consumer%20Abundance%20Agenda/">
+                     <span class="md-ellipsis">
+                      a16z Consumer Abundance Agenda
+                     </span>
+                    </a>
+                   </li>
+                  </ul>
+                 </nav>
+                </li>
+                <li class="md-nav__item md-nav__item--nested">
+                 <input class="md-nav__toggle md-toggle" id="__nav_4_2_8" type="checkbox"/>
+                 <label class="md-nav__link" for="__nav_4_2_8" id="__nav_4_2_8_label" tabindex="0">
+                  <span class="md-ellipsis">
+                   2024 03 11
+                  </span>
+                  <span class="md-nav__icon md-icon">
+                  </span>
+                 </label>
+                 <nav aria-expanded="false" aria-labelledby="__nav_4_2_8_label" class="md-nav" data-md-level="3">
+                  <label class="md-nav__title" for="__nav_4_2_8">
+                   <span class="md-nav__icon md-icon">
+                   </span>
+                   2024 03 11
+                  </label>
+                  <ul class="md-nav__list" data-md-scrollfix="">
+                   <li class="md-nav__item">
+                    <a class="md-nav__link" href="Notes/Omnivore/2024-03-11/Rogo/">
+                     <span class="md-ellipsis">
+                      Rogo
+                     </span>
+                    </a>
+                   </li>
+                   <li class="md-nav__item">
+                    <a class="md-nav__link" href="Notes/Omnivore/2024-03-11/Voxel/">
+                     <span class="md-ellipsis">
+                      Voxel
+                     </span>
+                    </a>
+                   </li>
+                  </ul>
+                 </nav>
+                </li>
+                <li class="md-nav__item md-nav__item--nested">
+                 <input class="md-nav__toggle md-toggle" id="__nav_4_2_9" type="checkbox"/>
+                 <label class="md-nav__link" for="__nav_4_2_9" id="__nav_4_2_9_label" tabindex="0">
+                  <span class="md-ellipsis">
+                   2024 03 12
+                  </span>
+                  <span class="md-nav__icon md-icon">
+                  </span>
+                 </label>
+                 <nav aria-expanded="false" aria-labelledby="__nav_4_2_9_label" class="md-nav" data-md-level="3">
+                  <label class="md-nav__title" for="__nav_4_2_9">
+                   <span class="md-nav__icon md-icon">
+                   </span>
+                   2024 03 12
+                  </label>
+                  <ul class="md-nav__list" data-md-scrollfix="">
+                   <li class="md-nav__item">
+                    <a class="md-nav__link" href="Notes/Omnivore/2024-03-12/Chief%20AI%20Decks/">
+                     <span class="md-ellipsis">
+                      Chief AI Decks
+                     </span>
+                    </a>
+                   </li>
+                   <li class="md-nav__item">
+                    <a class="md-nav__link" href="Notes/Omnivore/2024-03-12/Personal%20Branding%E2%80%94Most%20Important%20Thing%20You%20Do.%20Full%20Video%20AdobeMAX%202023/">
+                     <span class="md-ellipsis">
+                      Personal Branding—Most Important Thing You Do. Full Video AdobeMAX 2023
+                     </span>
+                    </a>
+                   </li>
+                   <li class="md-nav__item">
+                    <a class="md-nav__link" href="Notes/Omnivore/2024-03-12/Please%20Stop%20Using%20Google%20Analytics/">
+                     <span class="md-ellipsis">
+                      Please Stop Using Google Analytics
+                     </span>
+                    </a>
+                   </li>
+                   <li class="md-nav__item">
+                    <a class="md-nav__link" href="Notes/Omnivore/2024-03-12/ULTRA.VC/">
+                     <span class="md-ellipsis">
+                      ULTRA.VC
+                     </span>
+                    </a>
+                   </li>
+                   <li class="md-nav__item">
+                    <a class="md-nav__link" href="Notes/Omnivore/2024-03-12/ron0studios-C-Plus-Plus-%20Collection%20of%20various%20algorithms%20in%20mathematics%2C%20machine%20learning%2C%20compu.../">
+                     <span class="md-ellipsis">
+                      ron0studios/C-Plus-Plus: Collection of various algorithms in mathematics, machine learning, computer science and physics implemented in C++ for educational purposes.
+                     </span>
+                    </a>
+                   </li>
+                  </ul>
+                 </nav>
+                </li>
+                <li class="md-nav__item md-nav__item--nested">
+                 <input class="md-nav__toggle md-toggle" id="__nav_4_2_10" type="checkbox"/>
+                 <label class="md-nav__link" for="__nav_4_2_10" id="__nav_4_2_10_label" tabindex="0">
+                  <span class="md-ellipsis">
+                   2024 03 17
+                  </span>
+                  <span class="md-nav__icon md-icon">
+                  </span>
+                 </label>
+                 <nav aria-expanded="false" aria-labelledby="__nav_4_2_10_label" class="md-nav" data-md-level="3">
+                  <label class="md-nav__title" for="__nav_4_2_10">
+                   <span class="md-nav__icon md-icon">
+                   </span>
+                   2024 03 17
+                  </label>
+                  <ul class="md-nav__list" data-md-scrollfix="">
+                   <li class="md-nav__item">
+                    <a class="md-nav__link" href="Notes/Omnivore/2024-03-17/Wait...%20PostgreSQL%20can%20do%20WHAT-/">
+                     <span class="md-ellipsis">
+                      Wait... PostgreSQL can do WHAT?
+                     </span>
+                    </a>
+                   </li>
+                  </ul>
+                 </nav>
+                </li>
+                <li class="md-nav__item md-nav__item--nested">
+                 <input class="md-nav__toggle md-toggle" id="__nav_4_2_11" type="checkbox"/>
+                 <label class="md-nav__link" for="__nav_4_2_11" id="__nav_4_2_11_label" tabindex="0">
+                  <span class="md-ellipsis">
+                   2024 03 18
+                  </span>
+                  <span class="md-nav__icon md-icon">
+                  </span>
+                 </label>
+                 <nav aria-expanded="false" aria-labelledby="__nav_4_2_11_label" class="md-nav" data-md-level="3">
+                  <label class="md-nav__title" for="__nav_4_2_11">
+                   <span class="md-nav__icon md-icon">
+                   </span>
+                   2024 03 18
+                  </label>
+                  <ul class="md-nav__list" data-md-scrollfix="">
+                   <li class="md-nav__item">
+                    <a class="md-nav__link" href="Notes/Omnivore/2024-03-18/Building%20Meta%E2%80%99s%20GenAI%20Infrastructure%20-%20Engineering%20at%20Meta/">
+                     <span class="md-ellipsis">
+                      Building Meta’s GenAI Infrastructure - Engineering at Meta
+                     </span>
+                    </a>
+                   </li>
+                   <li class="md-nav__item">
+                    <a class="md-nav__link" href="Notes/Omnivore/2024-03-18/Logarithm-%20A%20logging%20engine%20for%20AI%20training%20workflows%20and%20services%20-%20Engineering%20at%20Meta/">
+                     <span class="md-ellipsis">
+                      Logarithm: A logging engine for AI training workflows and services - Engineering at Meta
+                     </span>
+                    </a>
+                   </li>
+                   <li class="md-nav__item">
+                    <a class="md-nav__link" href="Notes/Omnivore/2024-03-18/Next.js%20Commerce%20%E2%80%93%20Vercel/">
+                     <span class="md-ellipsis">
+                      Next.js Commerce – Vercel
+                     </span>
+                    </a>
+                   </li>
+                   <li class="md-nav__item">
+                    <a class="md-nav__link" href="Notes/Omnivore/2024-03-18/sanity-io-hydrogen-sanity-demo-%20A%20starter%20for%20Hydrogen%20%2B%20Sanity%20projects/">
+                     <span class="md-ellipsis">
+                      sanity-io/hydrogen-sanity-demo: A starter for Hydrogen + Sanity projects
+                     </span>
+                    </a>
+                   </li>
+                  </ul>
+                 </nav>
+                </li>
+                <li class="md-nav__item md-nav__item--nested">
+                 <input class="md-nav__toggle md-toggle" id="__nav_4_2_12" type="checkbox"/>
+                 <label class="md-nav__link" for="__nav_4_2_12" id="__nav_4_2_12_label" tabindex="0">
+                  <span class="md-ellipsis">
+                   2024 03 26
+                  </span>
+                  <span class="md-nav__icon md-icon">
+                  </span>
+                 </label>
+                 <nav aria-expanded="false" aria-labelledby="__nav_4_2_12_label" class="md-nav" data-md-level="3">
+                  <label class="md-nav__title" for="__nav_4_2_12">
+                   <span class="md-nav__icon md-icon">
+                   </span>
+                   2024 03 26
+                  </label>
+                  <ul class="md-nav__list" data-md-scrollfix="">
+                   <li class="md-nav__item">
+                    <a class="md-nav__link" href="Notes/Omnivore/2024-03-26/failsafe-go-failsafe-go-%20Fault%20tolerance%20and%20resilience%20patterns%20for%20Go/">
+                     <span class="md-ellipsis">
+                      failsafe-go/failsafe-go: Fault tolerance and resilience patterns for Go
+                     </span>
+                    </a>
+                   </li>
+                  </ul>
+                 </nav>
+                </li>
+               </ul>
+              </nav>
+             </li>
+             <li class="md-nav__item md-nav__item--nested">
+              <input class="md-nav__toggle md-toggle" id="__nav_4_3" type="checkbox"/>
+              <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+               <span class="md-ellipsis">
+                Podcast
+               </span>
+               <span class="md-nav__icon md-icon">
+               </span>
+              </label>
+              <nav aria-expanded="false" aria-labelledby="__nav_4_3_label" class="md-nav" data-md-level="2">
+               <label class="md-nav__title" for="__nav_4_3">
+                <span class="md-nav__icon md-icon">
+                </span>
+                Podcast
+               </label>
+               <ul class="md-nav__list" data-md-scrollfix="">
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="Notes/Podcast/The_Morning_Brief__%5B2023-06-06%5D/">
+                  <span class="md-ellipsis">
+                   The Morning Brief  [2023 06 06]
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="Notes/Podcast/Vedanta_Talks__%5B2019-01-26%5D/">
+                  <span class="md-ellipsis">
+                   16. Bhagavad Gita | Chapter 2 Verse 45 - 47 | Swami Sarvapriyananda
+                  </span>
+                 </a>
+                </li>
+               </ul>
+              </nav>
+             </li>
+             <li class="md-nav__item md-nav__item--nested">
+              <input class="md-nav__toggle md-toggle" id="__nav_4_4" type="checkbox"/>
+              <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+               <span class="md-ellipsis">
+                YT
+               </span>
+               <span class="md-nav__icon md-icon">
+               </span>
+              </label>
+              <nav aria-expanded="false" aria-labelledby="__nav_4_4_label" class="md-nav" data-md-level="2">
+               <label class="md-nav__title" for="__nav_4_4">
+                <span class="md-nav__icon md-icon">
+                </span>
+                YT
+               </label>
+               <ul class="md-nav__list" data-md-scrollfix="">
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="Notes/YT/Aakrit-Haptik-Varun-Mayya/">
+                  <span class="md-ellipsis">
+                   Aakrit-Haptik-Varun-Mayya
+                  </span>
+                 </a>
+                </li>
+               </ul>
+              </nav>
+             </li>
+            </ul>
+           </nav>
+          </li>
+          <li class="md-nav__item md-nav__item--nested">
+           <input class="md-nav__toggle md-toggle" id="__nav_5" type="checkbox"/>
+           <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            <span class="md-ellipsis">
+             Docs
+            </span>
+            <span class="md-nav__icon md-icon">
+            </span>
+           </label>
+           <nav aria-expanded="false" aria-labelledby="__nav_5_label" class="md-nav" data-md-level="1">
+            <label class="md-nav__title" for="__nav_5">
+             <span class="md-nav__icon md-icon">
+             </span>
+             Docs
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix="">
+             <li class="md-nav__item md-nav__item--nested">
+              <input class="md-nav__toggle md-toggle" id="__nav_5_1" type="checkbox"/>
+              <div class="md-nav__link md-nav__container">
+               <a class="md-nav__link" href="docs/Articles/">
+                <span class="md-ellipsis">
+                 Articles
+                </span>
+               </a>
+              </div>
+              <nav aria-expanded="false" aria-labelledby="__nav_5_1_label" class="md-nav" data-md-level="2">
+               <label class="md-nav__title" for="__nav_5_1">
+                <span class="md-nav__icon md-icon">
+                </span>
+                Articles
+               </label>
+               <ul class="md-nav__list" data-md-scrollfix="">
+               </ul>
+              </nav>
+             </li>
+            </ul>
+           </nav>
+          </li>
+         </ul>
+        </nav>
+       </div>
+      </div>
+     </div>
+     <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+      <div class="md-sidebar__scrollwrap">
+       <div class="md-sidebar__inner">
+        <nav aria-label="On This Page" class="md-nav md-nav--secondary">
+        </nav>
+       </div>
+      </div>
+     </div>
+     <div class="md-content" data-md-component="content">
+      <article class="md-content__inner md-typeset">
+       <h1>
+        $ whoami
+       </h1>
+       <aside class="md-source-file">
+        <span class="md-source-file__fact">
+         <span class="md-icon" title="Last update">
+          <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+           <path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z">
+           </path>
+          </svg>
+         </span>
+         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago">
+          <span class="timeago" datetime="2024-05-23T18:59:56+00:00" locale="en">
+          </span>
+         </span>
+         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">
+          2024-05-23
+         </span>
+        </span>
+       </aside>
+      </article>
+     </div>
+     <script>
+      var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))
+     </script>
+    </div>
+   </main>
+  </div>
+  <div class="md-dialog" data-md-component="dialog">
+   <div class="md-dialog__inner md-typeset">
+   </div>
+  </div>
+  <div class="md-progress" data-md-component="progress" role="progressbar">
+  </div>
+  <script id="__config" type="application/json">
+   {"base": ".", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.path", "navigation.indexes", "toc.follow"], "search": "assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}
+  </script>
+  <script src="assets/javascripts/bundle.081f42fc.min.js">
+  </script>
+  <script src="js/timeago.min.js">
+  </script>
+  <script src="js/timeago_mkdocs_material.js">
+  </script>
+  <script async="" src="assets/javascripts/toggle-sidebar.js">
+  </script>
+ </body>
+</html>
