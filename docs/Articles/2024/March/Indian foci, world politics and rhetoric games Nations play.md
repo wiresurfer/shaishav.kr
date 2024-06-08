@@ -1,18 +1,19 @@
 ---
 tags:
   - topic/opinion/polictics
-category:
+categories:
   - Engineering
 title: Indian foci, world politics and rhetoric games Nations play
 coverImage: https://diplomatist.com/wp-content/uploads/2022/06/quad.png
 public: false
 ShowToc: true
 draft: true
+date: 2024-03-03
 ---
 # Indian foci, world politics and rhetoric games Nations play
 
 Narratives are everywhere. Corporations use it to sell you goods, country use it to boster their political, economic and international stature. 
-
+<!-- more -->
 Have a look at these plots. 
 The good folks at OECD compile macro economic indicators for various countries meticulously. 
 Its interesting to note "flattening of the curve" when it comes to developed nations like japan and USA. 

@@ -2,18 +2,25 @@
 tags:
   - topic/platform-engineering
   - topic/devops
-category:
+categories:
   - Engineering
 title: Efficient Git Workflow with Stacked PRs
 coverImage: https://upload.wikimedia.org/wikipedia/commons/2/2e/Sport-Stacking.jpg
 public: true
 ShowToc: true
+date: 2024-05-11
 ---
 # Efficient Git Workflow with Stacked PRs
 
+Engineering teams are only as fast as their PR merges. As seasoned engineers, its our task to streamling the process of merging PRs as smoothly as possible. 
+This challege becomes multiple folds when we factor in code ownership, large meta repos and non-negotiable need for good code reviews. 
+Today I want to share a stacked PR worflow which has worked great for our teams specially in context of remote first organizations. 
+
+<!-- more -->
 ## Illustrate the problem
 
 ![Efficient Git Workflow with Stacked PRs-image-20231228203144373](Assets/media/Efficient%20Git%20Workflow%20with%20Stacked%20PRs/Efficient%20Git%20Workflow%20with%20Stacked%20PRs-image-20231228203144373.png)
+
 
 ### Big PRs
 - %% statistics about time spent by senior devs in PR reviews. short 2-3lines. quote with reference+statistics from mid sized startups %%

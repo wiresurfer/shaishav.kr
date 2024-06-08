@@ -2,13 +2,13 @@
 tags:
   - topic/platform-engineering
   - topic/devops
-category:
+categories:
   - Engineering
 title: Blog Embed Test
 coverImage: https://www.epsglobal.com/getattachment/20c59b9b-abe3-4375-8210-366f6d8e9a7a/Containers,-Docker-and-Kubernetes-A-beginner-s-guide-Part-2.jpg?maxsidesize=780&width=780
 draft: true
 public: true
-expiryDate: 2023-01-01
+date: 2023-01-01
 ---
 # Blog Embed Test
 
@@ -18,7 +18,7 @@ In today's rapidly evolving software development landscape, staying ahead of the
 
 In this introductory blog post, we will explore the concept of iDp, its growing popularity in 2023, and why it is essential for modern software development. 
 
-
+<!-- more -->
 #### Excalidraw
 ![](Assets/media/AI%20Checklist%20for%20Startups/AI%20Checklist%20for%20Startups%202023-12-28%2019.38.11.excalidraw.svg)
 

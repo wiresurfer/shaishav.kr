@@ -3,9 +3,10 @@ public: true
 ShowToc: true
 coverImage: https://images.unsplash.com/photo-1570304815928-ef0771059599
 title: AI Checklist for Startups
+date: 2024-05-08
 ---
 # AI Checklist for Startups
-
+<!-- more -->
 ## Introduction
 - Predicting the future:  as old as Civilization
 - Machines and Clerical record keeping

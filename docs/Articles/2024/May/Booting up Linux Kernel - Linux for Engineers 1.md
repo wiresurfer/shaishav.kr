@@ -2,7 +2,7 @@
 title: Linux Kernel Explained - Deep Dive Series for System Engineers
 created: 2024-04-28 14:46
 public: true
-category:
+categories:
   - Engineering
 tags:
   - series/bits-n-bytes
@@ -14,6 +14,10 @@ date: 2024-04-28
 description: Deep dive into Linux Kernel for system engineers by @wiresurfer | Learn about BIOS, GRUB, Linux Kernel, Initramfs and Root file system.
 ---
 # Booting up Linux Kernel - Linux for Engineers #1
+
+Ever wondered what happens when your Linux machine starts? There is a fascinating song and dance between different components which brings a machine to life. 
+Lets dive into the world of booting Linux Kernel. 
+<!-- more -->
 
 > Linux kernel is a monumental achievement of collaboration in the world of open-source software.  
   It has resulted in a powerful, versatile operating system base that powers an estimated 80-90% of the modern tech world  

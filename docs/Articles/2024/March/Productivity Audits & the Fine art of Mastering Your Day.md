@@ -1,12 +1,13 @@
 ---
 tags:
   - topic/productivity
-category:
+categories:
   - Management
 title: Productivity Audits & the Fine art of Mastering Your Day
 coverImage: https://images.unsplash.com/photo-1542123491-63f422a5f45e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 public: true
 ShowToc: true
+date: 2024-03-19
 ---
 
 
@@ -17,7 +18,7 @@ Hot take:
 ![](Recording%2020230904032416.webm) 
 
 Are you ready to take control of your day and boost your productivity as an engineer or programmer? In this article, we'll dive deep into the art of managing your day effectively, especially in a high-performance, remote work environment. Let's explore how understanding your productivity cycle, tackling interruptions, and practicing leadership in your work can make all the difference.
-
+<!-- more -->
 %% ## Table of Contents
 
 1. Understanding Your Productivity Cycle

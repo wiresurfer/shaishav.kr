@@ -79,3 +79,31 @@
     font-weight: 300;
 }
 
+.line-clamp-2, .card-text > h1,h2,h3 {
+   display: -webkit-box;
+   -webkit-line-clamp: 2;
+   line-clamp: 2;
+   -webkit-box-orient: vertical;
+   overflow: hidden;
+   margin-bottom: 1rem;
+}
+.cart-text > h1,h2{
+  font-size: 18px!important;
+}
+
+.card-text > p {
+  font-family: monospace;
+  letter-spacing: normal;
+   display: -webkit-box;
+   -webkit-line-clamp: 4;
+   line-clamp: 4;
+   -webkit-box-orient: vertical;
+   overflow: hidden;
+   font-size: 14px;
+   letter-spacing: 0px;
+   line-height: 18px;
+   margin-top: 8px;
+}
+.md-post.md-post--excerpt a.block.group {
+    margin: 4px 0 0px;
+}

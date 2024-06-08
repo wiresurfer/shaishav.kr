@@ -2,7 +2,7 @@
 title: Linux Kernel Explained - Deep Dive Series for System Engineers
 created: 2024-04-28 14:46
 public: true
-category:
+categories:
   - Engineering
 tags:
   - series/bits-n-bytes
@@ -17,7 +17,7 @@ description: Deep dive into Linux Kernel for system engineers by @wiresurfer | L
 
 The Linux kernel is a monumental achievement in the world of open-source software, driven by a passionate community of contributors.  
 This collaborative effort has resulted in a powerful, versatile operating system that powers an estimated 80-90% of the internet. From the smartphones in our pockets to the vast cloud infrastructure, Linux is the backbone of many technologies we rely on daily.
-
+<!-- more -->
 Linux is not just for servers and desktops. Here is a short list of places where the Linux kernel is chugging along.
 
 - **Smartphones**: Android, the most widely used mobile operating system, is built on the Linux kernel.

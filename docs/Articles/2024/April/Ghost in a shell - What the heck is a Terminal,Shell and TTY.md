@@ -4,17 +4,18 @@ tags:
   - topic/devops
   - topic/deep-dives
   - series/bits-n-bytes
-category:
+categories:
   - Engineering
 title: Ghost in a shell - What the heck is a Terminal/Shell/TTY?
 coverImage: https://i.gifer.com/embedded/download/ALh3.gif
 public: 
 ShowToc:
+date: 2024-04-07
 ---
 # Ghost in a shell - What the heck is a Terminal/Shell/TTY?
 
 Long ago, in the early days of computing, when machines were vast and mysterious entities hidden behind layers of complexity, the world of Unix was emerging. It was a time when interactions with these computing behemoths were facilitated by peculiar devices known as terminals.
-
+<!-- more -->
 ![](Assets/media/Ghost%20in%20a%20shell%20-%20What%20the%20heck%20is%20a%20Terminal,Shell%20and%20TTY/Ghost%20in%20a%20shell%20-%20What%20the%20heck%20is%20a%20Terminal,Shell%20and%20TTY-image-20240116000635848.png)
 
 

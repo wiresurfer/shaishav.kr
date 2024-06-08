@@ -3,27 +3,95 @@ site_description: required. Used as feed mandatory channel description.
 site_url: https://blog.shaishav.kr
 copyright: Copyright &copy; 2012 - 2024 Shaishav Kr | @wiresurfer
 
+nav:
+  - Home: 'index.md'
+  - About 🔗: 'https://shaishav.kr"  target="_blank'
+  - ... 
+  - Photography 🔗: 'https://photos.shaishav.kr/grid"  target="_blank'
+
+
+exclude:
+  #- 'Assets.*'
+  - '/templates'
+
+theme:
+  name: material
+  logo: assets/images/wiresurfer-logo.jpeg
+  favicon: images/favicon.png
+  custom_dir: overrides
+  font:
+    code: Roboto Mono
+  features:
+    - navigation.instant
+    - navigation.instant.progress
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.tabs.sticky
+    # - navigation.sections
+    - navigation.path
+    - navigation.indexes
+    - toc.follow
+
+  palette:
+    scheme: slate
+    primary: red
+
+
 
 plugins: 
-  - awesome-pages
-  - tags
-  - search
+  - search 
+  - pub-debugger
+  - awesome-pages:
+      collapse_single_pages: false 
+  - tags:
+      tags_file: tags.md
+  - exclude:
+      glob:
+        - "*excalidraw.md*"
+        - "Draft/*"
   - toggle-sidebar
+  - pub-social
+  - blog:
+      blog_dir: . 
+      post_dir: "{blog}/Articles"
+      post_url_date_format: yyyy/MM/dd
+
+      archive: true 
+      archive_name: Archive
+      archive_url_date_format: yyyy
+      archive_date_format: yyyy
+
+      categories: true
+      categories_name: 'Categories'
+
+      authors: true 
+      authors_file: "{blog}/.authors.yaml"
+      pagination_per_page: 16
+  - rss:
+      json_feed_enabled: true
+      rss_feed_enabled: true
+      url_parameters:
+        utm_source: "documentation"
+        utm_medium: "RSS"
+        utm_campaign: "feed-syndication"
+        #date_from_meta:
+        #as_creation: "date"
+        #as_update: false
+        #datetime_format: "%Y-%m-%d"
+        #default_timezone: Asia/Kolkata
+      categories:
+      - tags        # will look into page.meta.tags
+      - categories  # will also look into page.meta.categori
+  - social:
+      cards_layout_options:
+        background_image: assets/images/parallax-bg.jpg
+  #- pub-blog
   #- git-revision-date-localized:
   #    type: timeago
   #- mkdocs-newsletter
-  - pub-debugger
-  - blog:
-      blog_dir: .
-      post_dir: "{blog}/Articles"
-  #- pub-blog
-  - pub-social
   #- pub-meta
     #- pub-minifier
     #- pub-obsidian
-  - social:
-      cards_layout_options:
-        background_image: assets/images/wiresurfer-logo.jpeg
 
 
 extra: 
@@ -42,26 +110,6 @@ extra:
       link: https://twitter.com/wiresurfer
       name: X @ wiresurfer
 
-theme:
-  logo: assets/images/wiresurfer-logo.jpeg
-  custom_dir: overrides
-  name: material
-  font:
-    code: Roboto Mono
-  features:
-    - navigation.instant
-    - navigation.instant.progress
-    - navigation.tracking
-    # - navigation.sections
-    - navigation.path
-    - navigation.indexes
-    - toc.follow
-
-  palette:
-    scheme: slate
-    primary: red
-
-
 pub-obsidian:
     backlinks:
       enabled: true
@@ -75,16 +123,13 @@ pub-obsidian:
       img_lazy: true
 
 
-exclude:
-  #- 'Assets.*'
-  - '/templates'
-
 extra_css:
   - "assets/css/tailwing.min.css"
   - "assets/css/fonts.css"
   - "assets/css/override.css"
   - "assets/css/typography.css"
   #- "assets/css/flowbite.min.css"
+  - "assets/css/nav.css"
 
 
 markdown_extensions:
@@ -109,3 +154,4 @@ markdown_extensions:
           format: !!python/name:pymdownx.superfences.fence_code_format
   - toc:
       title: On This Page
+

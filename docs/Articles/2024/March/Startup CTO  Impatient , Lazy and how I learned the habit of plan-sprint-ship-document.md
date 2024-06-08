@@ -2,18 +2,20 @@
 tags:
   - topic/engineering-management
   - topic/leadership
-category:
+categories:
+  - Management
   - Engineering
 title: "Startup CTO : Impatient , Lazy and how I learned the habit of plan-sprint-ship-document"
 coverImage: https://cdn-images-1.medium.com/max/800/1*pXY33WWBSZ9Kkf3vu5_a1w.png
 public: true
 ShowToc:
+date: 2024-03-01
 ---
 # Startup CTO : Impatient , Lazy and how I learned the habit of plan-sprint-ship-document
 
 ---
 I have an admission to make. I, as a person, am impatient and lazy. Impatient because I can’t stop myself from jumping from one problem to the other with absolutely no time. And lazy, well, lazy in the oddest of ways. Let me explain what I mean by walking you through some of my learnings in the last few years. This article would resonate with hands-on tech engineers who are graduating into more rounded/demanding/business/founder roles.
-
+<!-- more -->
 ![](https://cdn-images-1.medium.com/max/800/1*pXY33WWBSZ9Kkf3vu5_a1w.png)
 
 credit: memecrunch.com

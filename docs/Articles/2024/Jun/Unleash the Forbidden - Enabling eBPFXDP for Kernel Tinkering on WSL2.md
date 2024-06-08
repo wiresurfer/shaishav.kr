@@ -2,7 +2,7 @@
 public: true
 title: Unleash the Forbidden - Enabling eBPF/XDP for Kernel Tinkering on WSL2
 description: We'll focus on enabling eBPF on Ubuntu 20.04 running on WSL2. You can try it on 18.04, but your mileage may vary. Here’s a high-level overview of what we’ll do:1. Recompile the WSL2 kernel with specific eBPF-related flags enabled.2. Change the WSL2 configuration in Windows to point to our newly compiled kernel.3. Restart WSL2.4. Verify the new kernel is running and eBPF is enabled.
-category:
+categories:
   - Engineering
 tags:
   - topic/platform-engineering
@@ -10,11 +10,14 @@ topic:
   - linux
 created: 2024-06-04 03:06
 modified: 2024-06-04
-date: Jun 4th, 2024
+date: 2024-06-04
 coverImage: https://c4.wallpaperflare.com/wallpaper/226/682/452/minecraft-waterfall-video-games-wallpaper-preview.jpg
 ---
 
 # Unleash the Forbidden - Enabling eBPF/XDP for Kernel Tinkering on WSL2
+
+Running eBPF on WSl2 running on Windows 10 feels forbidden. And yet, that's the entire premise of this blog. 
+<!-- more -->
 
 ## Why the Heck Would We Do That?
 

@@ -2,19 +2,20 @@
 tags:
   - topic/platform-engineering
   - topic/devops
-category:
+categories:
   - Engineering
 title: Rise of Internal Developer Portals (iDp) - Part 1
 coverImage: https://www.epsglobal.com/getattachment/20c59b9b-abe3-4375-8210-366f6d8e9a7a/Containers,-Docker-and-Kubernetes-A-beginner-s-guide-Part-2.jpg?maxsidesize=780&width=780
 public: true
 ShowToc: true
+date: 2024-04-18
 ---
 # Rise of Internal Developer Portals (iDp) - Part 1
 
 ## Introduction
 
 In today's rapidly evolving software development landscape, staying ahead of the curve is crucial for success. One emerging trend that has gained significant traction is the adoption of Internal Developer Portals (iDp). 
-
+<!-- more -->
 In this introductory blog post, we will explore the concept of iDp, its growing popularity in 2023, and why it is essential for modern software development. 
 
 Whether you are a startup founder, a cloud-native enthusiast, or a Kubernetes aficionado, this blog series will provide you with practical insights to leverage the power of internal developer portals and maximize your team's productivity.
