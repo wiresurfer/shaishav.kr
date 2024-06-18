@@ -173,49 +173,22 @@
 {% block footer %}
     <div class="container mx-auto">
 
-    <hr class="gradient" />
-    <iframe src="https://photos.shaishav.kr/grid" width="100%" height="640px"></iframe>
-    <hr class="gradient" />
-    <div class="grid lg:grid-cols-3 md:grid-cols-2 gap-4">
+        <hr class="gradient" />
+        <iframe src="https://photos.shaishav.kr/grid" width="100%" height="640px"></iframe>
+        <hr class="gradient" />
+        <div class="grid lg:grid-cols-3 md:grid-cols-2 gap-4">
 
-         <div class="lg:col-span-2 mx-auto lg:py-16 md:col-span-2 md:p-1">
+          <div class="lg:col-span-2 mx-auto lg:py-16 md:col-span-2 md:p-1">
              <h2 id="giving-back-and-helping">Giving Back to the tech-community by,</h2>
              <ul style="font-size:16px;padding:1rem 0;letter-spacing:0">
                  <li><p>Mentoring young engineers in navigating their careers. <a href="mailto:mentoring@shaishav.kr">mentoring@shaishav.kr</a></p></li>
                  <li><p>Coaching startups in building Skunkworks™️ like pods to deliver speedy innovation. <a href="mailto:leadership@shaishav.kr">leadership@shaishav.kr</a></p></li>
                  <li><p>Advising traditional business owners/startup founders with technical &amp; AI strategy. <a href="mailto:strategy@shaishav.kr">strategy@shaishav.kr</a></p></li>
              </ul>
-         </div>
-         <div class="lg:col-span-1 md:col-span-2">
+          </div>
+        <div class="lg:col-span-1 md:col-span-2">
              <div class="relative isolate overflow-hidden lg:py-2 my-2 md:py-2">
-                 <script src="https://f.convertkit.com/ckjs/ck.5.js"></script>
-                 <form action="https://app.convertkit.com/forms/5528921/subscriptions" class="seva-form formkit-form" method="post" data-sv-form="5528921" data-uid="0326db49cb" data-format="inline" data-version="5" min-width="400" style="background-color:#0f1923;border-radius:8px">
-                     <div class="formkit-background" style="background-image:url(https://embed.filekitcdn.com/e/8JcqXr3RtE3jWqT8f9DPc1/oANJsiZumvaLM9wGQmbGyi);opacity:.2"></div>
-                     <div data-style="minimal" style="border-color:transparent">
-                         <div class="formkit-header" data-element="header" style="font-size:20px;font-weight:700">
-                             <h2>Join the Newsletter</h2>
-                         </div>
-                         <div class="formkit-subheader" data-element="subheader" style="font-size:14px">Weekly roundup of curated content for aspiring CTOs and Thought Leaders.</div>
-                         <ul class="formkit-alert formkit-alert-error" data-element="errors" data-group="alert"></ul>
-                         <div data-element="fields" data-stacked="false" class="seva-fields formkit-fields w-full justify-center">
-                             <div class="grid grid-cols-4 gap-1">
-                                 <div class="formkit-field col-span-3" style="margin-bottom:6px">
-                                     <input class="formkit-input" name="email_address" aria-label="Email Address" placeholder="Email Address" required="" type="email" style="border-color:#4c4459;color:#000;border-radius:4px;font-weight:400">
-                                 </div>
-                                 <button data-element="submit" class="col-span-1 formkit-submit formkit-submit" style="background-color:#597093;color:#fff;border-radius:4px;font-weight:400;margin-bottom:6px">
-                                     <div class="formkit-spinner">
-                                         <div></div>
-                                         <div></div>
-                                         <div></div>
-                                     </div>
-                                     <span>🚀</span>
-                                 </button>
-                             </div>
-                         </div>
-                         <div class="formkit-guarantee" data-element="guarantee" style="color:#b0a9bc;font-size:13px;font-weight:400">We won't send you spam.
-        Unsubscribe at any time.</div>
-                     </div>
-                 </form>
+                 {% include "partials/convertkit.html" %}
              </div>
          </div>
     </div>

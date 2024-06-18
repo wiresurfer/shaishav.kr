@@ -4,18 +4,25 @@ kindle-sync:
   title: THE BHAGAVAD GITA FOR MILLENNIALS
   author: Bibek Debroy
   asin: B08M9RZXTP
-  lastAnnotatedDate: '2024-04-07'
+  lastAnnotatedDate: '2024-06-08'
   bookImageUrl: 'https://m.media-amazon.com/images/I/91g9RmYxqmL._SY160.jpg'
   highlightsCount: 23
 ---
-# Debroy-THE BHAGAVAD GITA FOR MILLENNIALS
+
+# The Bhagavad Gita For Millenials
+
+![THE BHAGAVAD GITA FOR MILLENNIALStitle-book-cover](https://m.media-amazon.com/images/I/91g9RmYxqmL._SY160.jpg)
+
 ## Metadata
-* Author: [Bibek Debroy](https://www.amazon.comundefined)
-* ASIN: B08M9RZXTP
-* Reference: https://www.amazon.com/dp/B08M9RZXTP
-* [Kindle link](kindle://book?action=open&asin=B08M9RZXTP)
+- Full Title: THE BHAGAVAD GITA FOR MILLENNIALS
+- Author: [Bibek Debroy](https://www.amazon.comundefined)
+- ASIN: B08M9RZXTP
+- Reference: https://www.amazon.com/dp/B08M9RZXTP
+- [Kindle link](kindle://book?action=open&asin=B08M9RZXTP)
 
 ## Highlights
+---
+
 that the war lasted for eighteen days and that Bhishma was the general of the Kaurava army for the first ten days. After that, he was brought down and Dronacharya took over as general. Bhishma Parva covers the period when Bhishma was the general, and the Bhagavad Gita is part of Bhishma Parva. — location: [119](kindle://book?action=open&asin=B08M9RZXTP&location=119) ^ref-13491
 
 Thi means the point of krishna taking to ARJUN was during the first10 day itself
@@ -33,7 +40,6 @@ King Kuru performed extremely difficult austerities in that region, desiring tha
 Gurgaon (Gurugram) is named after Dronacharya’s hermitage. — location: [472](kindle://book?action=open&asin=B08M9RZXTP&location=472) ^ref-50774
 
 ---
-
 Did people eat fish? Were brahmanas allowed to eat fish? The Manu Samhita tells us brahmanas were allowed to eat a type of fish known as rohita. This is a carp, familiar by the name of rohu. — location: [995](kindle://book?action=open&asin=B08M9RZXTP&location=995) ^ref-40471
 
 so it's possible to eat rohu for a long time. who would have thought

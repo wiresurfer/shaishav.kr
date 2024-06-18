@@ -4,19 +4,26 @@ kindle-sync:
   title: 'Raw : A History Of India''s Covert Operations'
   author: Yatish Yadav
   asin: B0BR2MRZ81
-  lastAnnotatedDate: '2023-11-15'
+  lastAnnotatedDate: '2023-12-28'
   bookImageUrl: 'https://m.media-amazon.com/images/I/81+slPpE26L._SY160.jpg'
   highlightsCount: 10
 ---
-# Yadav-Raw
+
+# Raw : A History Of India's Covert Operations
+
+![Rawtitle-book-cover](https://m.media-amazon.com/images/I/81+slPpE26L._SY160.jpg)
+
 ## Metadata
-* Author: [Yatish Yadav](https://www.amazon.comundefined)
-* ASIN: B0BR2MRZ81
-* ISBN: 9389648092
-* Reference: https://www.amazon.com/dp/B0BR2MRZ81
-* [Kindle link](kindle://book?action=open&asin=B0BR2MRZ81)
+- Full Title: Raw
+- Author: [Yatish Yadav](https://www.amazon.comundefined)
+- ASIN: B0BR2MRZ81
+- ISBN: 9389648092
+- Reference: https://www.amazon.com/dp/B0BR2MRZ81
+- [Kindle link](kindle://book?action=open&asin=B0BR2MRZ81)
 
 ## Highlights
+---
+
 But it took almost four years for the agency to recuperate from the deep wounds inflicted by Morarji Desai and, subsequently, by his former comrade Chaudhary Charan Singh. — location: [90](kindle://book?action=open&asin=B0BR2MRZ81&location=90) ^ref-21361
 
 If we took stock of the vins2 losses of each Prime minister the facts would shope a healthy

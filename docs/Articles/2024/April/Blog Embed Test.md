@@ -12,13 +12,11 @@ date: 2023-01-01
 ---
 # Blog Embed Test
 
-## Introduction
-
 In today's rapidly evolving software development landscape, staying ahead of the curve is crucial for success. One emerging trend that has gained significant traction is the adoption of Internal Developer Portals (iDp). 
 
+<!-- more -->
 In this introductory blog post, we will explore the concept of iDp, its growing popularity in 2023, and why it is essential for modern software development. 
 
-<!-- more -->
 #### Excalidraw
 ![](Assets/media/AI%20Checklist%20for%20Startups/AI%20Checklist%20for%20Startups%202023-12-28%2019.38.11.excalidraw.svg)
 

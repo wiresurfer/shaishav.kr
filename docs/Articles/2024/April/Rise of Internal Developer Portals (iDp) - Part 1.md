@@ -12,8 +12,6 @@ date: 2024-04-18
 ---
 # Rise of Internal Developer Portals (iDp) - Part 1
 
-## Introduction
-
 In today's rapidly evolving software development landscape, staying ahead of the curve is crucial for success. One emerging trend that has gained significant traction is the adoption of Internal Developer Portals (iDp). 
 <!-- more -->
 In this introductory blog post, we will explore the concept of iDp, its growing popularity in 2023, and why it is essential for modern software development. 

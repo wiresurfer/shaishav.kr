@@ -17,7 +17,7 @@ exclude:
 theme:
   name: material
   logo: assets/images/wiresurfer-logo.jpeg
-  favicon: images/favicon.png
+  favicon: assets/images/favicon.png
   custom_dir: overrides
   font:
     code: Roboto Mono
@@ -68,6 +68,11 @@ plugins:
       authors_file: "{blog}/.authors.yaml"
       pagination_per_page: 16
   - rss:
+      feeds_filenames:
+        json_created: feed.json
+        json_updated: feed-updated.json
+        rss_created: rss.xml
+        rss_updated: rss-updated.xml
       json_feed_enabled: true
       rss_feed_enabled: true
       url_parameters:
@@ -80,8 +85,8 @@ plugins:
         #datetime_format: "%Y-%m-%d"
         #default_timezone: Asia/Kolkata
       categories:
-      - tags        # will look into page.meta.tags
-      - categories  # will also look into page.meta.categori
+       - tags        # will look into page.meta.tags
+       - categories  # will also look into page.meta.categori
   - social:
       cards_layout_options:
         background_image: assets/images/parallax-bg.jpg
@@ -110,6 +115,17 @@ extra:
       link: https://twitter.com/wiresurfer
       name: X @ wiresurfer
 
+extra_css:
+  - "assets/css/tailwing.min.css"
+  - "assets/css/fonts.css"
+  - "assets/css/nav.css"
+  - "assets/css/typography.css"
+  - "assets/css/hero.css"
+  - "assets/css/article.css"
+  - "assets/css/list.css"
+  - "assets/css/override.css"
+  - "assets/css/responsive.css"
+  #- "assets/css/flowbite.min.css"
 pub-obsidian:
     backlinks:
       enabled: true
@@ -123,13 +139,6 @@ pub-obsidian:
       img_lazy: true
 
 
-extra_css:
-  - "assets/css/tailwing.min.css"
-  - "assets/css/fonts.css"
-  - "assets/css/override.css"
-  - "assets/css/typography.css"
-  #- "assets/css/flowbite.min.css"
-  - "assets/css/nav.css"
 
 
 markdown_extensions:
