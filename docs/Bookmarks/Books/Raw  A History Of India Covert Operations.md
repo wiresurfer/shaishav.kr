@@ -1,7 +1,7 @@
 ---
 kindle-sync:
   bookId: '61746'
-  title: 'Raw : A History Of India''s Covert Operations'
+  title: 'Raw : A History Of Indias Covert Operations'
   author: Yatish Yadav
   asin: B0BR2MRZ81
   lastAnnotatedDate: '2023-12-28'

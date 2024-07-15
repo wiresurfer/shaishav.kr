@@ -18,9 +18,14 @@
     text-rendering: optimizelegibility !important;
 }
 
+.md-sidebar--secondary {
+    margin-left: 10ch;
+    left: 5ch;
+}
+
 @media screen and (max-width:1080px) {
     article.md-content__inner.md-typeset {
-        max-width: 95%!important;
+        max-width: 80ch!important;
         margin: 0 auto!important;
     }
     
@@ -28,14 +33,14 @@
 
 @media screen and (min-width:1080px) and (max-width: 1440px) {
     article.md-content__inner.md-typeset {
-        max-width: 980px!important;
+        max-width: 80ch!important;
         margin: 0 auto!important;
     }
 }
 
 @media screen and (min-width:1440px) {
     article.md-content__inner.md-typeset {
-        max-width: 980px!important;
+        max-width: 80ch!important;
         margin: 0 auto!important;
     }
 }
