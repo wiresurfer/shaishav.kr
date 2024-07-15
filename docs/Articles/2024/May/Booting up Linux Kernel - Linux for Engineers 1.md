@@ -1,5 +1,5 @@
 ---
-title: Linux Kernel Explained - Deep Dive Series for System Engineers
+title: Booting up Linux Kernel - Linux for Engineers #1
 created: 2024-04-28 14:46
 public: true
 categories:

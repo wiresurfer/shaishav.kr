@@ -1472,3 +1472,28 @@ mark {
     }
 }
 
+
+p {
+    font-size: 1em; /* Silence is golden; implicity 1em. */
+    line-height: 1.5;
+    hyphens: auto;
+    text-align: justify;
+    margin-top: 0.75em;
+  font-weight: 200; /* Regular weight for better readability on dark screens */
+  letter-spacing: 0.01em; /* Slight increase in letter spacing */
+  word-spacing: 0.05em; /* Improved word spacing */
+  text-rendering: optimizeLegibility; /* Enables kerning and optional ligatures */
+  -webkit-font-smoothing: antialiased; /* Smooth font rendering for WebKit browsers */
+  -moz-osx-font-smoothing: grayscale; /* Smooth font rendering for macOS Firefox */
+  hanging-punctuation: first; /* Allows punctuation to hang in the margin for optical alignment */
+}
+
+p + p {
+    text-indent: 1.5em ;
+    
+}
+
+h1 + p:first-letter {
+   font-size: 2em;
+   line-height: 0;  /* The line-height must be adjusted to compensate for the increased font size, otherwise the leading for the overall line is disrupted. I find that any values below 0.4 work. */
+}
