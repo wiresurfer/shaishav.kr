@@ -86,14 +86,21 @@ h2#further-reading + ul, h2#further-reading + ol
 }
 .md-typeset b, strong {
     font-family: monospace;
-    font-weight: revert;
-    letter-spacing: -1px;
-    color: #dddddd;
+    font-weight: 100;
+    font-size: 16px;
+    letter-spacing: 0px;
+    color: #a6da95;
 }
 
 
 a {
-    text-decoration: none
+    text-decoration: none;
+
+}
+.md-typeset a {
+  color: #7dc4e4;
+    word-break: break-word;
+    font-family: monospace;
 }
 
 table {
@@ -1503,13 +1510,14 @@ mark {
 
 
 p {
+  color: #cdd6f4;
     font-size: 1em; /* Silence is golden; implicity 1em. */
     line-height: 1.5;
     hyphens: auto;
     text-align: justify;
     margin-top: 0.75em;
-  font-weight: 200; /* Regular weight for better readability on dark screens */
-  letter-spacing: 0.01em; /* Slight increase in letter spacing */
+  font-weight: 100; /* Regular weight for better readability on dark screens */
+  /* letter-spacing: 0.01em; /* Slight increase in letter spacing */ 
   word-spacing: 0.05em; /* Improved word spacing */
   text-rendering: optimizeLegibility; /* Enables kerning and optional ligatures */
   -webkit-font-smoothing: antialiased; /* Smooth font rendering for WebKit browsers */
