@@ -16,7 +16,8 @@ In the fast-paced world of software development, the speed of your engineering t
 
 <!-- more -->
 
-It's not uncommon to come across discussions like [this where someone is unhappy with PR review times in their org](https://www.reddit.com/r/softwaredevelopment/comments/y7xsp4/is_my_company_slow_at_reviewing_pull_requests/), or [this, where there is data to measure PR review wait times rising in Open source projects](https://levelup.gitconnected.com/how-does-pr-review-wait-time-affect-your-open-source-project-d79bd0af0ea3).
+It's not uncommon to come across discussions like [this](https://www.reddit.com/r/softwaredevelopment/comments/y7xsp4/is_my_company_slow_at_reviewing_pull_requests/)
+where someone is unhappy with PR review times in their org, or [this](https://levelup.gitconnected.com/how-does-pr-review-wait-time-affect-your-open-source-project-d79bd0af0ea3), where there is data to measure PR review wait times rising in Open source projects.
 
 ## The PR Predicament: Big, Bloated, and Bottlenecked
 
@@ -204,8 +205,8 @@ Now, let's dive into the implementation checklist:
 	- [ ] Prompt reviewers to consider the impact on subsequent PRs in the stack
 
 - [ ] Set up review assignment automation
-	- [ ]Configure tools to automatically assign the same reviewers to all PRs in a stack
-	- [ ]Ensure primary reviewers are consistent across the stack for context retention
+	- [ ] Configure tools to automatically assign the same reviewers to all PRs in a stack
+	- [ ] Ensure primary reviewers are consistent across the stack for context retention
 
 By following this expanded playbook, teams can more effectively implement and maintain a stacked PR workflow. Remember, the key to success is continuous improvement – regularly solicit feedback from your team and iterate on the process to find what works best in your specific context.
 
@@ -234,7 +235,6 @@ Let's continue this conversation and push the boundaries of efficient software d
 - [A Better Model for Stacked (GitHub) Pull Requests • Timothy Andrew](https://timothya.com/blog/git-stack/)
 
 
----
 
 
 [^1]: [GitClear Study on Code Review Time](https://www.gitclear.com/blog/new_data_reveals_the_hidden_costs_of_context_switching_and_meetings_for_developers) This study provides insights into developer time allocation, highlighting the significant portion dedicated to code reviews.
