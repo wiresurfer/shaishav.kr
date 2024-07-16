@@ -12,7 +12,7 @@
    overflow: hidden;
    margin-bottom: 1rem;
 }
-.cart-text > h1{
+.card-text > h1{
   font-size: 18px!important;
   margin-bottom: 4px;
   min-height: 2rem;
@@ -25,19 +25,27 @@
  padding: 0!important;
 }
 
-.card-text > p {
-  font-family: monospace;
-  letter-spacing: normal;
-   display: -webkit-box;
-   -webkit-line-clamp: 4;
-   line-clamp: 4;
-   -webkit-box-orient: vertical;
-   overflow: hidden;
-   font-size: 14px;
-   letter-spacing: 0px;
-   line-height: 18px;
-   margin-top: 8px;
+div.container > h2,
+div.card-text > h2 {
+    border-left: none;
+    min-height: 2rem;
 }
+.card-text > p {
+    /* font-family: monospace; */
+    /* letter-spacing: normal; */
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    /* font-size: 14px; */
+    /* letter-spacing: 0px; */
+    line-height: 18px;
+    margin-top: 8px;
+    color: #7c7d85;
+    font-weight: 400;
+}
+
 .md-post.md-post--excerpt a.block.group {
     margin: 4px 0 0px;
 }

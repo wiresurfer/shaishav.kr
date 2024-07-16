@@ -26,21 +26,34 @@
     {% endif %}
 
     <!-- Post metadata -->
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
+    <div class="md-post__meta md-meta" style="width: 100%;">
+      <ul class="md-meta__list" style="display: flex; flex-grow:1;">
 
         <!-- Post date -->
         <li class="md-meta__item">
+          <div>
           <time datetime="{{ post.config.date.created }}">
             {{- post.config.date.created | date -}}
           </time>
           {#- Collapse whitespace -#}
+          {% if post.config.readtime %}
+            {% set time = post.config.readtime %}
+            <time>
+              {% if time == 1 %}
+                {{ lang.t("readtime.one") }}
+              {% else %}
+                {{ lang.t("readtime.other") | replace("#", time) }}
+              {% endif %}
+            </time>
+          {% endif %}
+          </div>
+
         </li>
 
         <!-- Post categories -->
         {% if post.categories %}
-          <li class="md-meta__item">
-            {{ lang.t("blog.categories.in") }}
+          <li class="md-meta__item" style="display:flex;flex-grow:1; align-items:baseline; align-content:end;justify-content:flex-end;">
+            <!-- {{ lang.t("blog.categories.in") }} -->
             {% for category in post.categories %}
               <a
                 href="{{ category.url | url }}"
@@ -54,16 +67,6 @@
         {% endif %}
 
         <!-- Post readtime -->
-        {% if post.config.readtime %}
-          {% set time = post.config.readtime %}
-          <li class="md-meta__item">
-            {% if time == 1 %}
-              {{ lang.t("readtime.one") }}
-            {% else %}
-              {{ lang.t("readtime.other") | replace("#", time) }}
-            {% endif %}
-          </li>
-        {% endif %}
       </ul>
 
       <!-- Draft marker -->

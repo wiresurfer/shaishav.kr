@@ -64,7 +64,6 @@ h1,h2,h3,h4,h5,h6,p {
 h2#footnotes + ul, h3#footnotes + ul,  h4#footnotes + ul,
 h2#footnotes + ol, h3#footnotes + ol,  h4#footnotes + ol,
 h2#further-reading + ul, h2#further-reading + ol
-
 {
   font-size: 0.8rem;
     font-family: monospace;
