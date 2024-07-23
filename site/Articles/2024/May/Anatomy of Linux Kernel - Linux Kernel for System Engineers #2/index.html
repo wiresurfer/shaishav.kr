@@ -1,0 +1,2501 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1" name="viewport"/>
+  <meta content="Deep dive into Linux Kernel for system engineers by @wiresurfer | Learn about BIOS, GRUB, Linux Kernel, Initramfs and Root file system." name="description"/>
+  <link href="https://blog.shaishav.kr/Articles/2024/May/Anatomy%20of%20Linux%20Kernel%20-%20Linux%20Kernel%20for%20System%20Engineers%20%232/" rel="canonical"/>
+  <link href="../../../Startup%20CTO%20%20Impatient%20%2C%20Lazy%20and%20how%20I%20learned%20the%20habit%20of%20plan-sprint-ship-document/" rel="prev"/>
+  <link href="../Booting%20up%20Linux%20Kernel%20-%20Linux%20for%20Engineers%201/" rel="next"/>
+  <link href="../../../../assets/images/favicon.png" rel="icon"/>
+  <meta content="mkdocs-1.6.0, mkdocs-material-9.5.24" name="generator"/>
+  <title>
+   Linux Kernel Explained - Deep Dive Series for System Engineers - wiresurfer's library | © shaishav.kr
+  </title>
+  <link href="../../../../assets/stylesheets/main.6543a935.min.css" rel="stylesheet"/>
+  <link href="../../../../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+  <style>
+   :root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}
+  </style>
+  <link href="../../../../css/timeago.css" rel="stylesheet"/>
+  <link href="../../../../assets/css/tailwing.min.css" rel="stylesheet"/>
+  <link href="../../../../assets/css/fonts.css" rel="stylesheet"/>
+  <link href="../../../../assets/css/override.css" rel="stylesheet"/>
+  <link href="../../../../assets/css/typography.css" rel="stylesheet"/>
+  <link href="../../../../assets/stylesheets/obsidian.min.css" rel="stylesheet"/>
+  <link href="../../../../assets/stylesheets/obsidian.min.css.map" rel="stylesheet"/>
+  <script>
+   __md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}
+  </script>
+  <meta content="website" property="og:type"/>
+  <meta content="Linux Kernel Explained - Deep Dive Series for System Engineers - wiresurfer's library | © shaishav.kr" property="og:title"/>
+  <meta content="Deep dive into Linux Kernel for system engineers by @wiresurfer | Learn about BIOS, GRUB, Linux Kernel, Initramfs and Root file system." property="og:description"/>
+  <meta content="https://blog.shaishav.kr/assets/images/social/Articles/2024/May/Anatomy of Linux Kernel - Linux Kernel for System Engineers #2.png" property="og:image"/>
+  <meta content="image/png" property="og:image:type"/>
+  <meta content="1200" property="og:image:width"/>
+  <meta content="630" property="og:image:height"/>
+  <meta content="https://blog.shaishav.kr/Articles/2024/May/Anatomy%20of%20Linux%20Kernel%20-%20Linux%20Kernel%20for%20System%20Engineers%20%232/" property="og:url"/>
+  <meta content="summary_large_image" name="twitter:card"/>
+  <meta content="Linux Kernel Explained - Deep Dive Series for System Engineers - wiresurfer's library | © shaishav.kr" name="twitter:title"/>
+  <meta content="Deep dive into Linux Kernel for system engineers by @wiresurfer | Learn about BIOS, GRUB, Linux Kernel, Initramfs and Root file system." name="twitter:description"/>
+  <meta content="https://blog.shaishav.kr/assets/images/social/Articles/2024/May/Anatomy of Linux Kernel - Linux Kernel for System Engineers #2.png" name="twitter:image"/>
+  <meta content="article" property="og:type"/>
+  <meta content="Linux Kernel Explained - Deep Dive Series for System Engineers" property="og:title"/>
+  <meta content="Deep dive into Linux Kernel for system engineers by @wiresurfer | Learn about BIOS, GRUB, Linux Kernel, Initramfs and Root file system." property="og:description"/>
+  <meta content="wiresurfer's library | © shaishav.kr" property="og:site_name"/>
+  <meta content="en_US" property="og:locale"/>
+  <meta content="https://blog.shaishav.kr/Articles/2024/May/Anatomy%20of%20Linux%20Kernel%20-%20Linux%20Kernel%20for%20System%20Engineers%20%232/" property="og:url"/>
+  <meta content="summary" property="twitter:card"/>
+  <meta content="Linux Kernel Explained - Deep Dive Series for System Engineers" property="twitter:title"/>
+  <meta content="Deep dive into Linux Kernel for system engineers by @wiresurfer | Learn about BIOS, GRUB, Linux Kernel, Initramfs and Root file system." property="twitter:description"/>
+ </head>
+ <body data-md-color-accent="indigo" data-md-color-primary="red" data-md-color-scheme="slate" dir="ltr">
+  <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+  <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+  <label class="md-overlay" for="__drawer">
+  </label>
+  <div data-md-component="skip">
+   <a class="md-skip" href="#linux-kernel-explained-deep-dive-series-for-system-engineers">
+    Skip to content
+   </a>
+  </div>
+  <div data-md-component="announce">
+  </div>
+  <!--
+  Copyright (c) 2016-2024 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+  <!-- Determine classes -->
+  <!-- Header -->
+  <header class="md-header md-header--shadow" data-md-component="header">
+   <nav aria-label="Header" class="md-header__inner md-grid">
+    <!-- Link to home -->
+    <a aria-label="wiresurfer's library | © shaishav.kr" class="md-header__button md-logo" data-md-component="logo" href="../../../.." title="wiresurfer's library | © shaishav.kr">
+     <img alt="logo" src="../../../../assets/images/wiresurfer-logo.jpeg"/>
+    </a>
+    <!-- Button to open drawer -->
+    <label class="md-header__button md-icon" for="__drawer">
+     <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z">
+      </path>
+     </svg>
+    </label>
+    <!-- Header title -->
+    <div class="md-header__title" data-md-component="header-title">
+     <div class="md-header__ellipsis">
+      <div class="md-header__topic">
+      </div>
+      <div class="md-header__topic" data-md-component="header-topic">
+       <span class="md-ellipsis">
+        Linux Kernel Explained - Deep Dive Series for System Engineers
+       </span>
+      </div>
+     </div>
+    </div>
+    <!-- Color palette toggle -->
+    <!-- User preference: color palette -->
+    <!-- Site language selector -->
+    <!-- Button to open search modal -->
+    <label class="md-header__button md-icon" for="__search">
+     <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z">
+      </path>
+     </svg>
+    </label>
+    <!-- Search interface -->
+    <div class="md-search" data-md-component="search" role="dialog">
+     <label class="md-search__overlay" for="__search">
+     </label>
+     <div class="md-search__inner" role="search">
+      <form class="md-search__form" name="search">
+       <input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+       <label class="md-search__icon md-icon" for="__search">
+        <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+         <path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z">
+         </path>
+        </svg>
+        <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+         <path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z">
+         </path>
+        </svg>
+       </label>
+       <nav aria-label="Search" class="md-search__options">
+        <button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+         <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z">
+          </path>
+         </svg>
+        </button>
+       </nav>
+      </form>
+      <div class="md-search__output">
+       <div class="md-search__scrollwrap" data-md-scrollfix="">
+        <div class="md-search-result" data-md-component="search-result">
+         <div class="md-search-result__meta">
+          Initializing search
+         </div>
+         <ol class="md-search-result__list" role="presentation">
+         </ol>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <!-- Repository information -->
+   </nav>
+   <!-- Navigation tabs (sticky) -->
+  </header>
+  <div class="md-container" data-md-component="container">
+   <main class="md-main" data-md-component="main">
+    <div class="md-main__inner md-grid">
+     <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden="">
+      <div class="md-sidebar__scrollwrap">
+       <div class="md-sidebar__inner">
+        <!--
+  Copyright (c) 2016-2024 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+        <!-- Determine classes -->
+        <!-- Navigation -->
+        <nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
+         <!-- Navigation list -->
+         <ul class="md-nav__list" data-md-scrollfix="">
+          <li class="md-nav__item">
+           <a class="md-nav__link" href="../../../..">
+            <span class="md-ellipsis">
+             $ whoami
+            </span>
+           </a>
+          </li>
+          <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+           <input checked="" class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+           <div class="md-nav__link md-nav__container">
+            <a class="md-nav__link" href="../../../">
+             <span class="md-ellipsis">
+              Articles
+             </span>
+            </a>
+            <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+             <span class="md-nav__icon md-icon">
+             </span>
+            </label>
+           </div>
+           <nav aria-expanded="true" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+            <label class="md-nav__title" for="__nav_2">
+             <span class="md-nav__icon md-icon">
+             </span>
+             Articles
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix="">
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="../../../AI%20Checklist%20for%20Startups/">
+               <span class="md-ellipsis">
+                AI Checklist for Startups
+               </span>
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="../../../AsyncAwait%20Organizations/">
+               <span class="md-ellipsis">
+                AsyncAwait Organizations
+               </span>
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="../../../Blog%20Embed%20Test/">
+               <span class="md-ellipsis">
+                Blog Embed Test
+               </span>
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="../../../Efficient%20Git%20Workflow%20with%20Stacked%20PRs/">
+               <span class="md-ellipsis">
+                Efficient Git Workflow with Stacked PRs
+               </span>
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="../../../Indian%20foci%2C%20world%20politics%20and%20rhetoric%20games%20Nations%20play/">
+               <span class="md-ellipsis">
+                Indian foci, world politics and rhetoric games Nations play
+               </span>
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="../../../Linux%20Kernel%20Explained%20-%20Deep%20Dive%20Series%20for%20System%20Engineers/">
+               <span class="md-ellipsis">
+                Linux Kernel Explained - Deep Dive Series for System Engineers
+               </span>
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="../../../Practitioners%20Guide%20to%20Great%20Project%20Documentation%20feat.%20ReadTheDocs/">
+               <span class="md-ellipsis">
+                Practitioners Guide to Great Project Documentation feat. ReadTheDocs
+               </span>
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="../../../Productivity%20Audits%20%26%20the%20Fine%20art%20of%20Mastering%20Your%20Day/">
+               <span class="md-ellipsis">
+                Productivity Audits &amp; the Fine art of Mastering Your Day
+               </span>
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="../../../Rise%20of%20Internal%20Developer%20Portals%20%28iDp%29%20-%20Part%201/">
+               <span class="md-ellipsis">
+                Rise of Internal Developer Portals (iDp) - Part 1
+               </span>
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="../../../Startup%20CTO%20%20Impatient%20%2C%20Lazy%20and%20how%20I%20learned%20the%20habit%20of%20plan-sprint-ship-document/">
+               <span class="md-ellipsis">
+                Startup CTO : Impatient , Lazy and how I learned the habit of plan-sprint-ship-document
+               </span>
+              </a>
+             </li>
+             <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+              <input checked="" class="md-nav__toggle md-toggle" id="__nav_2_12" type="checkbox"/>
+              <label class="md-nav__link" for="__nav_2_12" id="__nav_2_12_label" tabindex="0">
+               <span class="md-ellipsis">
+                2024
+               </span>
+               <span class="md-nav__icon md-icon">
+               </span>
+              </label>
+              <nav aria-expanded="true" aria-labelledby="__nav_2_12_label" class="md-nav" data-md-level="2">
+               <label class="md-nav__title" for="__nav_2_12">
+                <span class="md-nav__icon md-icon">
+                </span>
+                2024
+               </label>
+               <ul class="md-nav__list" data-md-scrollfix="">
+                <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+                 <input checked="" class="md-nav__toggle md-toggle" id="__nav_2_12_1" type="checkbox"/>
+                 <label class="md-nav__link" for="__nav_2_12_1" id="__nav_2_12_1_label" tabindex="0">
+                  <span class="md-ellipsis">
+                   May
+                  </span>
+                  <span class="md-nav__icon md-icon">
+                  </span>
+                 </label>
+                 <nav aria-expanded="true" aria-labelledby="__nav_2_12_1_label" class="md-nav" data-md-level="3">
+                  <label class="md-nav__title" for="__nav_2_12_1">
+                   <span class="md-nav__icon md-icon">
+                   </span>
+                   May
+                  </label>
+                  <ul class="md-nav__list" data-md-scrollfix="">
+                   <li class="md-nav__item md-nav__item--active">
+                    <input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+                    <label class="md-nav__link md-nav__link--active" for="__toc">
+                     <span class="md-ellipsis">
+                      Linux Kernel Explained - Deep Dive Series for System Engineers
+                     </span>
+                     <span class="md-nav__icon md-icon">
+                     </span>
+                    </label>
+                    <a class="md-nav__link md-nav__link--active" href="./">
+                     <span class="md-ellipsis">
+                      Linux Kernel Explained - Deep Dive Series for System Engineers
+                     </span>
+                    </a>
+                    <nav aria-label="On This Page" class="md-nav md-nav--secondary">
+                     <label class="md-nav__title" for="__toc">
+                      <span class="md-nav__icon md-icon">
+                      </span>
+                      On This Page
+                     </label>
+                     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+                      <li class="md-nav__item">
+                       <a class="md-nav__link" href="#why-write-about-the-linux-kernel">
+                        <span class="md-ellipsis">
+                         Why write about the Linux Kernel?
+                        </span>
+                       </a>
+                      </li>
+                      <li class="md-nav__item">
+                       <a class="md-nav__link" href="#what-happens-when-you-press-the-power-button-on-a-machine">
+                        <span class="md-ellipsis">
+                         What Happens When You Press the Power Button on a Machine?
+                        </span>
+                       </a>
+                      </li>
+                      <li class="md-nav__item">
+                       <a class="md-nav__link" href="#bios-and-power-on-self-test-post">
+                        <span class="md-ellipsis">
+                         BIOS and Power-On Self Test (POST)
+                        </span>
+                       </a>
+                       <nav aria-label="BIOS and Power-On Self Test (POST)" class="md-nav">
+                        <ul class="md-nav__list">
+                         <li class="md-nav__item">
+                          <a class="md-nav__link" href="#the-role-of-bios-and-bootloader">
+                           <span class="md-ellipsis">
+                            The Role of BIOS and Bootloader
+                           </span>
+                          </a>
+                         </li>
+                        </ul>
+                       </nav>
+                      </li>
+                      <li class="md-nav__item">
+                       <a class="md-nav__link" href="#bootloader-and-grub">
+                        <span class="md-ellipsis">
+                         Bootloader and GRUB
+                        </span>
+                       </a>
+                      </li>
+                      <li class="md-nav__item">
+                       <a class="md-nav__link" href="#linux-kernel-bootup-sequence">
+                        <span class="md-ellipsis">
+                         Linux Kernel Bootup Sequence
+                        </span>
+                       </a>
+                      </li>
+                      <li class="md-nav__item">
+                       <a class="md-nav__link" href="#bare-minimum-linux-kernel">
+                        <span class="md-ellipsis">
+                         Bare Minimum Linux Kernel?
+                        </span>
+                       </a>
+                      </li>
+                      <li class="md-nav__item">
+                       <a class="md-nav__link" href="#root-file-system-linux-kernel-directory-structure">
+                        <span class="md-ellipsis">
+                         Root File System : Linux Kernel Directory Structure
+                        </span>
+                       </a>
+                       <nav aria-label="Root File System : Linux Kernel Directory Structure" class="md-nav">
+                        <ul class="md-nav__list">
+                         <li class="md-nav__item">
+                          <a class="md-nav__link" href="#init-process-and-the-role-of-pid-1-systemd-and-upstart-in-modern-linux-distros">
+                           <span class="md-ellipsis">
+                            Init Process and the Role of PID 1: systemd and upstart in modern linux distros
+                           </span>
+                          </a>
+                          <nav aria-label="Init Process and the Role of PID 1: systemd and upstart in modern linux distros" class="md-nav">
+                           <ul class="md-nav__list">
+                            <li class="md-nav__item">
+                             <a class="md-nav__link" href="#systemd-as-init">
+                              <span class="md-ellipsis">
+                               systemd as init
+                              </span>
+                             </a>
+                            </li>
+                            <li class="md-nav__item">
+                             <a class="md-nav__link" href="#how-systemd-works">
+                              <span class="md-ellipsis">
+                               How systemd Works?
+                              </span>
+                             </a>
+                            </li>
+                           </ul>
+                          </nav>
+                         </li>
+                        </ul>
+                       </nav>
+                      </li>
+                      <li class="md-nav__item">
+                       <a class="md-nav__link" href="#kernel-privilege-rings-and-security-pid-1s-security-implications">
+                        <span class="md-ellipsis">
+                         Kernel Privilege rings and security. PID 1's security implications
+                        </span>
+                       </a>
+                       <nav aria-label="Kernel Privilege rings and security. PID 1's security implications" class="md-nav">
+                        <ul class="md-nav__list">
+                         <li class="md-nav__item">
+                          <a class="md-nav__link" href="#privilege-rings-explained">
+                           <span class="md-ellipsis">
+                            Privilege Rings Explained
+                           </span>
+                          </a>
+                         </li>
+                        </ul>
+                       </nav>
+                      </li>
+                     </ul>
+                    </nav>
+                   </li>
+                   <li class="md-nav__item">
+                    <a class="md-nav__link" href="../Booting%20up%20Linux%20Kernel%20-%20Linux%20for%20Engineers%201/">
+                     <span class="md-ellipsis">
+                      Linux Kernel Explained - Deep Dive Series for System Engineers
+                     </span>
+                    </a>
+                   </li>
+                   <li class="md-nav__item">
+                    <a class="md-nav__link" href="../Future%20of%20Organizations%20-%20Post%20GenAI%20Outlook%20and%20Trends/">
+                     <span class="md-ellipsis">
+                      Future of Organizations - Post GenAI Outlook and Trends
+                     </span>
+                    </a>
+                   </li>
+                  </ul>
+                 </nav>
+                </li>
+               </ul>
+              </nav>
+             </li>
+             <li class="md-nav__item md-nav__item--nested">
+              <input class="md-nav__toggle md-toggle" id="__nav_2_13" type="checkbox"/>
+              <label class="md-nav__link" for="__nav_2_13" id="__nav_2_13_label" tabindex="0">
+               <span class="md-ellipsis">
+                Assets
+               </span>
+               <span class="md-nav__icon md-icon">
+               </span>
+              </label>
+              <nav aria-expanded="false" aria-labelledby="__nav_2_13_label" class="md-nav" data-md-level="2">
+               <label class="md-nav__title" for="__nav_2_13">
+                <span class="md-nav__icon md-icon">
+                </span>
+                Assets
+               </label>
+               <ul class="md-nav__list" data-md-scrollfix="">
+                <li class="md-nav__item md-nav__item--nested">
+                 <input class="md-nav__toggle md-toggle" id="__nav_2_13_1" type="checkbox"/>
+                 <label class="md-nav__link" for="__nav_2_13_1" id="__nav_2_13_1_label" tabindex="0">
+                  <span class="md-ellipsis">
+                   Media
+                  </span>
+                  <span class="md-nav__icon md-icon">
+                  </span>
+                 </label>
+                 <nav aria-expanded="false" aria-labelledby="__nav_2_13_1_label" class="md-nav" data-md-level="3">
+                  <label class="md-nav__title" for="__nav_2_13_1">
+                   <span class="md-nav__icon md-icon">
+                   </span>
+                   Media
+                  </label>
+                  <ul class="md-nav__list" data-md-scrollfix="">
+                   <li class="md-nav__item md-nav__item--nested">
+                    <input class="md-nav__toggle md-toggle" id="__nav_2_13_1_1" type="checkbox"/>
+                    <label class="md-nav__link" for="__nav_2_13_1_1" id="__nav_2_13_1_1_label" tabindex="0">
+                     <span class="md-ellipsis">
+                      AI Checklist for Startups
+                     </span>
+                     <span class="md-nav__icon md-icon">
+                     </span>
+                    </label>
+                    <nav aria-expanded="false" aria-labelledby="__nav_2_13_1_1_label" class="md-nav" data-md-level="4">
+                     <label class="md-nav__title" for="__nav_2_13_1_1">
+                      <span class="md-nav__icon md-icon">
+                      </span>
+                      AI Checklist for Startups
+                     </label>
+                     <ul class="md-nav__list" data-md-scrollfix="">
+                      <li class="md-nav__item">
+                       <a class="md-nav__link" href="../../../Assets/media/AI%20Checklist%20for%20Startups/AI%20Checklist%20for%20Startups%202023-12-28%2019.29.01.excalidraw/">
+                        <span class="md-ellipsis">
+                         AI Checklist for Startups 2023 12 28 19.29.01.excalidraw
+                        </span>
+                       </a>
+                      </li>
+                      <li class="md-nav__item">
+                       <a class="md-nav__link" href="../../../Assets/media/AI%20Checklist%20for%20Startups/AI%20Checklist%20for%20Startups%202023-12-28%2019.31.31.excalidraw/">
+                        <span class="md-ellipsis">
+                         AI Checklist for Startups 2023 12 28 19.31.31.excalidraw
+                        </span>
+                       </a>
+                      </li>
+                      <li class="md-nav__item">
+                       <a class="md-nav__link" href="../../../Assets/media/AI%20Checklist%20for%20Startups/AI%20Checklist%20for%20Startups%202023-12-28%2019.36.35.excalidraw/">
+                        <span class="md-ellipsis">
+                         AI Checklist for Startups 2023 12 28 19.36.35.excalidraw
+                        </span>
+                       </a>
+                      </li>
+                      <li class="md-nav__item">
+                       <a class="md-nav__link" href="../../../Assets/media/AI%20Checklist%20for%20Startups/AI%20Checklist%20for%20Startups%202023-12-28%2019.38.11.excalidraw/">
+                        <span class="md-ellipsis">
+                         AI Checklist for Startups 2023 12 28 19.38.11.excalidraw
+                        </span>
+                       </a>
+                      </li>
+                     </ul>
+                    </nav>
+                   </li>
+                   <li class="md-nav__item md-nav__item--nested">
+                    <input class="md-nav__toggle md-toggle" id="__nav_2_13_1_2" type="checkbox"/>
+                    <label class="md-nav__link" for="__nav_2_13_1_2" id="__nav_2_13_1_2_label" tabindex="0">
+                     <span class="md-ellipsis">
+                      Blog Embed Test
+                     </span>
+                     <span class="md-nav__icon md-icon">
+                     </span>
+                    </label>
+                    <nav aria-expanded="false" aria-labelledby="__nav_2_13_1_2_label" class="md-nav" data-md-level="4">
+                     <label class="md-nav__title" for="__nav_2_13_1_2">
+                      <span class="md-nav__icon md-icon">
+                      </span>
+                      Blog Embed Test
+                     </label>
+                     <ul class="md-nav__list" data-md-scrollfix="">
+                      <li class="md-nav__item">
+                       <a class="md-nav__link" href="../../../Assets/media/Blog%20Embed%20Test/Test%20Page%202023-08-25%2003.21.28.excalidraw/">
+                        <span class="md-ellipsis">
+                         Test Page 2023 08 25 03.21.28.excalidraw
+                        </span>
+                       </a>
+                      </li>
+                      <li class="md-nav__item">
+                       <a class="md-nav__link" href="../../../Assets/media/Blog%20Embed%20Test/Test%20Page%202023-08-25%2003.29.05.excalidraw/">
+                        <span class="md-ellipsis">
+                         Test Page 2023 08 25 03.29.05.excalidraw
+                        </span>
+                       </a>
+                      </li>
+                      <li class="md-nav__item">
+                       <a class="md-nav__link" href="../../../Assets/media/Blog%20Embed%20Test/Test%20Page%202023-08-25%2004.39.01.excalidraw/">
+                        <span class="md-ellipsis">
+                         Test Page 2023 08 25 04.39.01.excalidraw
+                        </span>
+                       </a>
+                      </li>
+                      <li class="md-nav__item">
+                       <a class="md-nav__link" href="../../../Assets/media/Blog%20Embed%20Test/Test%20Page%202023-08-25%2004.41.44.excalidraw/">
+                        <span class="md-ellipsis">
+                         Test Page 2023 08 25 04.41.44.excalidraw
+                        </span>
+                       </a>
+                      </li>
+                     </ul>
+                    </nav>
+                   </li>
+                  </ul>
+                 </nav>
+                </li>
+               </ul>
+              </nav>
+             </li>
+             <li class="md-nav__item md-nav__item--nested">
+              <input class="md-nav__toggle md-toggle" id="__nav_2_14" type="checkbox"/>
+              <label class="md-nav__link" for="__nav_2_14" id="__nav_2_14_label" tabindex="0">
+               <span class="md-ellipsis">
+                Bits n bytes
+               </span>
+               <span class="md-nav__icon md-icon">
+               </span>
+              </label>
+              <nav aria-expanded="false" aria-labelledby="__nav_2_14_label" class="md-nav" data-md-level="2">
+               <label class="md-nav__title" for="__nav_2_14">
+                <span class="md-nav__icon md-icon">
+                </span>
+                Bits n bytes
+               </label>
+               <ul class="md-nav__list" data-md-scrollfix="">
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../../Bits-n-bytes/Ghost%20in%20a%20shell%20-%20What%20the%20heck%20is%20a%20Terminal%2CShell%20and%20TTY/">
+                  <span class="md-ellipsis">
+                   Ghost in a shell - What the heck is a Terminal/Shell/TTY?
+                  </span>
+                 </a>
+                </li>
+               </ul>
+              </nav>
+             </li>
+             <li class="md-nav__item md-nav__item--nested">
+              <input class="md-nav__toggle md-toggle" id="__nav_2_15" type="checkbox"/>
+              <label class="md-nav__link" for="__nav_2_15" id="__nav_2_15_label" tabindex="0">
+               <span class="md-ellipsis">
+                Draft
+               </span>
+               <span class="md-nav__icon md-icon">
+               </span>
+              </label>
+              <nav aria-expanded="false" aria-labelledby="__nav_2_15_label" class="md-nav" data-md-level="2">
+               <label class="md-nav__title" for="__nav_2_15">
+                <span class="md-nav__icon md-icon">
+                </span>
+                Draft
+               </label>
+               <ul class="md-nav__list" data-md-scrollfix="">
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../../Draft/ContextSwitching/">
+                  <span class="md-ellipsis">
+                   Real Cost of Context Switching
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../../Draft/Django%20FK%20with%20UUID%20vs%20to_field/">
+                  <span class="md-ellipsis">
+                   Django FK with UUID vs to_field
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../../Draft/Langchain%20%2B%20ChatGPT/">
+                  <span class="md-ellipsis">
+                   Langchain + ChatGPT
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../../Draft/Mental%20Health%20and%20Startup%20Culture/">
+                  <span class="md-ellipsis">
+                   Mental Health and Startups
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../../Draft/Navigating%20the%20Consultant%20Trap%20in%20Startup%20World/">
+                  <span class="md-ellipsis">
+                   Navigating the Consultant Trap in Startup World
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../../Draft/PMxEM%20Relationships/">
+                  <span class="md-ellipsis">
+                   PMxEM Relationships
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../../Draft/Personal%20Productivity/">
+                  <span class="md-ellipsis">
+                   Personal Productivity
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../../Draft/Split%20Keyboard%20-%20Hardware/">
+                  <span class="md-ellipsis">
+                   Split Keyboard - Hardware
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../../Draft/Writing%20Topic%20Map/">
+                  <span class="md-ellipsis">
+                   Writing Topic Map
+                  </span>
+                 </a>
+                </li>
+               </ul>
+              </nav>
+             </li>
+            </ul>
+           </nav>
+          </li>
+          <li class="md-nav__item md-nav__item--nested">
+           <input class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
+           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            <span class="md-ellipsis">
+             Interests
+            </span>
+            <span class="md-nav__icon md-icon">
+            </span>
+           </label>
+           <nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+            <label class="md-nav__title" for="__nav_3">
+             <span class="md-nav__icon md-icon">
+             </span>
+             Interests
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix="">
+             <li class="md-nav__item md-nav__item--nested">
+              <input class="md-nav__toggle md-toggle" id="__nav_3_1" type="checkbox"/>
+              <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+               <span class="md-ellipsis">
+                Finance
+               </span>
+               <span class="md-nav__icon md-icon">
+               </span>
+              </label>
+              <nav aria-expanded="false" aria-labelledby="__nav_3_1_label" class="md-nav" data-md-level="2">
+               <label class="md-nav__title" for="__nav_3_1">
+                <span class="md-nav__icon md-icon">
+                </span>
+                Finance
+               </label>
+               <ul class="md-nav__list" data-md-scrollfix="">
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../../../Interests/Finance/FIRE/">
+                  <span class="md-ellipsis">
+                   FIRE
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../../../Interests/Finance/InvenstmentPhilosophy/">
+                  <span class="md-ellipsis">
+                   InvenstmentPhilosophy
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../../../Interests/Finance/Investment%20System/">
+                  <span class="md-ellipsis">
+                   Investment System
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../../../Interests/Finance/Trading%20%26%20Finanace/">
+                  <span class="md-ellipsis">
+                   Trading &amp; Finanace
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item md-nav__item--nested">
+                 <input class="md-nav__toggle md-toggle" id="__nav_3_1_5" type="checkbox"/>
+                 <label class="md-nav__link" for="__nav_3_1_5" id="__nav_3_1_5_label" tabindex="0">
+                  <span class="md-ellipsis">
+                   Stocks
+                  </span>
+                  <span class="md-nav__icon md-icon">
+                  </span>
+                 </label>
+                 <nav aria-expanded="false" aria-labelledby="__nav_3_1_5_label" class="md-nav" data-md-level="3">
+                  <label class="md-nav__title" for="__nav_3_1_5">
+                   <span class="md-nav__icon md-icon">
+                   </span>
+                   Stocks
+                  </label>
+                  <ul class="md-nav__list" data-md-scrollfix="">
+                   <li class="md-nav__item">
+                    <a class="md-nav__link" href="../../../../Interests/Finance/Stocks/ERIS-ErisLifesciencesLtd/">
+                     <span class="md-ellipsis">
+                      ERIS-ErisLifesciencesLtd
+                     </span>
+                    </a>
+                   </li>
+                   <li class="md-nav__item">
+                    <a class="md-nav__link" href="../../../../Interests/Finance/Stocks/SBCL_ShivalikBimetal/">
+                     <span class="md-ellipsis">
+                      SBCL_ShivalikBimetal
+                     </span>
+                    </a>
+                   </li>
+                  </ul>
+                 </nav>
+                </li>
+               </ul>
+              </nav>
+             </li>
+             <li class="md-nav__item md-nav__item--nested">
+              <input class="md-nav__toggle md-toggle" id="__nav_3_2" type="checkbox"/>
+              <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+               <span class="md-ellipsis">
+                Geo politics
+               </span>
+               <span class="md-nav__icon md-icon">
+               </span>
+              </label>
+              <nav aria-expanded="false" aria-labelledby="__nav_3_2_label" class="md-nav" data-md-level="2">
+               <label class="md-nav__title" for="__nav_3_2">
+                <span class="md-nav__icon md-icon">
+                </span>
+                Geo politics
+               </label>
+               <ul class="md-nav__list" data-md-scrollfix="">
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../../../Interests/Geo-politics/Geo-politics/">
+                  <span class="md-ellipsis">
+                   Geo-politics
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../../../Interests/Geo-politics/Indo-China%20War%20prospects/">
+                  <span class="md-ellipsis">
+                   Indo-China War prospects
+                  </span>
+                 </a>
+                </li>
+               </ul>
+              </nav>
+             </li>
+             <li class="md-nav__item md-nav__item--nested">
+              <input class="md-nav__toggle md-toggle" id="__nav_3_3" type="checkbox"/>
+              <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+               <span class="md-ellipsis">
+                LinuxKernel
+               </span>
+               <span class="md-nav__icon md-icon">
+               </span>
+              </label>
+              <nav aria-expanded="false" aria-labelledby="__nav_3_3_label" class="md-nav" data-md-level="2">
+               <label class="md-nav__title" for="__nav_3_3">
+                <span class="md-nav__icon md-icon">
+                </span>
+                LinuxKernel
+               </label>
+               <ul class="md-nav__list" data-md-scrollfix="">
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../../../Interests/LinuxKernel/Linux%20Internals%20MOOC/">
+                  <span class="md-ellipsis">
+                   Linux Internals MOOC
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item md-nav__item--nested">
+                 <input class="md-nav__toggle md-toggle" id="__nav_3_3_2" type="checkbox"/>
+                 <label class="md-nav__link" for="__nav_3_3_2" id="__nav_3_3_2_label" tabindex="0">
+                  <span class="md-ellipsis">
+                   06.Networking
+                  </span>
+                  <span class="md-nav__icon md-icon">
+                  </span>
+                 </label>
+                 <nav aria-expanded="false" aria-labelledby="__nav_3_3_2_label" class="md-nav" data-md-level="3">
+                  <label class="md-nav__title" for="__nav_3_3_2">
+                   <span class="md-nav__icon md-icon">
+                   </span>
+                   06.Networking
+                  </label>
+                  <ul class="md-nav__list" data-md-scrollfix="">
+                   <li class="md-nav__item">
+                    <a class="md-nav__link" href="../../../../Interests/LinuxKernel/06.Networking/06.01%20Life%20of%20a%20Packet/">
+                     <span class="md-ellipsis">
+                      06.01 Life of a Packet
+                     </span>
+                    </a>
+                   </li>
+                   <li class="md-nav__item">
+                    <a class="md-nav__link" href="../../../../Interests/LinuxKernel/06.Networking/06.02%20Kernel%20High%20Performance%20Networking/">
+                     <span class="md-ellipsis">
+                      06.02 Kernel High Performance Networking
+                     </span>
+                    </a>
+                   </li>
+                   <li class="md-nav__item">
+                    <a class="md-nav__link" href="../../../../Interests/LinuxKernel/06.Networking/06.03%20Bypassing%20the%20Kernel/">
+                     <span class="md-ellipsis">
+                      06.03 Bypassing the Kernel
+                     </span>
+                    </a>
+                   </li>
+                   <li class="md-nav__item">
+                    <a class="md-nav__link" href="../../../../Interests/LinuxKernel/06.Networking/06.04%20What%20Should%20I%20use/">
+                     <span class="md-ellipsis">
+                      06.04 What Should I use
+                     </span>
+                    </a>
+                   </li>
+                  </ul>
+                 </nav>
+                </li>
+                <li class="md-nav__item md-nav__item--nested">
+                 <input class="md-nav__toggle md-toggle" id="__nav_3_3_3" type="checkbox"/>
+                 <label class="md-nav__link" for="__nav_3_3_3" id="__nav_3_3_3_label" tabindex="0">
+                  <span class="md-ellipsis">
+                   09.Tracing
+                  </span>
+                  <span class="md-nav__icon md-icon">
+                  </span>
+                 </label>
+                 <nav aria-expanded="false" aria-labelledby="__nav_3_3_3_label" class="md-nav" data-md-level="3">
+                  <label class="md-nav__title" for="__nav_3_3_3">
+                   <span class="md-nav__icon md-icon">
+                   </span>
+                   09.Tracing
+                  </label>
+                  <ul class="md-nav__list" data-md-scrollfix="">
+                   <li class="md-nav__item">
+                    <a class="md-nav__link" href="../../../../Interests/LinuxKernel/09.Tracing/09.xx%20Performance%20Monitoring/">
+                     <span class="md-ellipsis">
+                      09.xx Performance Monitoring
+                     </span>
+                    </a>
+                   </li>
+                  </ul>
+                 </nav>
+                </li>
+                <li class="md-nav__item md-nav__item--nested">
+                 <input class="md-nav__toggle md-toggle" id="__nav_3_3_4" type="checkbox"/>
+                 <label class="md-nav__link" for="__nav_3_3_4" id="__nav_3_3_4_label" tabindex="0">
+                  <span class="md-ellipsis">
+                   10.eBPF
+                  </span>
+                  <span class="md-nav__icon md-icon">
+                  </span>
+                 </label>
+                 <nav aria-expanded="false" aria-labelledby="__nav_3_3_4_label" class="md-nav" data-md-level="3">
+                  <label class="md-nav__title" for="__nav_3_3_4">
+                   <span class="md-nav__icon md-icon">
+                   </span>
+                   10.eBPF
+                  </label>
+                  <ul class="md-nav__list" data-md-scrollfix="">
+                   <li class="md-nav__item">
+                    <a class="md-nav__link" href="../../../../Interests/LinuxKernel/10.eBPF/10.01%20eBPF%20History%2C%20Motivation%20and%20Design/">
+                     <span class="md-ellipsis">
+                      10.01 eBPF History, Motivation and Design
+                     </span>
+                    </a>
+                   </li>
+                   <li class="md-nav__item">
+                    <a class="md-nav__link" href="../../../../Interests/LinuxKernel/10.eBPF/10.02%20Hello%20eBPF/">
+                     <span class="md-ellipsis">
+                      10.02 Hello eBPF
+                     </span>
+                    </a>
+                   </li>
+                   <li class="md-nav__item">
+                    <a class="md-nav__link" href="../../../../Interests/LinuxKernel/10.eBPF/10.03%20eBPF%20Maps/">
+                     <span class="md-ellipsis">
+                      10.03 eBPF Maps
+                     </span>
+                    </a>
+                   </li>
+                   <li class="md-nav__item">
+                    <a class="md-nav__link" href="../../../../Interests/LinuxKernel/10.eBPF/10.04%20XDP/">
+                     <span class="md-ellipsis">
+                      10.04 XDP
+                     </span>
+                    </a>
+                   </li>
+                   <li class="md-nav__item">
+                    <a class="md-nav__link" href="../../../../Interests/LinuxKernel/10.eBPF/10.05%20eBPF%20%26%20Tracing/">
+                     <span class="md-ellipsis">
+                      10.05 eBPF &amp; Tracing
+                     </span>
+                    </a>
+                   </li>
+                  </ul>
+                 </nav>
+                </li>
+               </ul>
+              </nav>
+             </li>
+             <li class="md-nav__item md-nav__item--nested">
+              <input class="md-nav__toggle md-toggle" id="__nav_3_4" type="checkbox"/>
+              <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+               <span class="md-ellipsis">
+                Photography
+               </span>
+               <span class="md-nav__icon md-icon">
+               </span>
+              </label>
+              <nav aria-expanded="false" aria-labelledby="__nav_3_4_label" class="md-nav" data-md-level="2">
+               <label class="md-nav__title" for="__nav_3_4">
+                <span class="md-nav__icon md-icon">
+                </span>
+                Photography
+               </label>
+               <ul class="md-nav__list" data-md-scrollfix="">
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../../../Interests/Photography/Photography/">
+                  <span class="md-ellipsis">
+                   Photography
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../../../Interests/Photography/Video%20and%20Photography/">
+                  <span class="md-ellipsis">
+                   Video and Photography
+                  </span>
+                 </a>
+                </li>
+               </ul>
+              </nav>
+             </li>
+             <li class="md-nav__item md-nav__item--nested">
+              <input class="md-nav__toggle md-toggle" id="__nav_3_5" type="checkbox"/>
+              <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+               <span class="md-ellipsis">
+                Spirituality
+               </span>
+               <span class="md-nav__icon md-icon">
+               </span>
+              </label>
+              <nav aria-expanded="false" aria-labelledby="__nav_3_5_label" class="md-nav" data-md-level="2">
+               <label class="md-nav__title" for="__nav_3_5">
+                <span class="md-nav__icon md-icon">
+                </span>
+                Spirituality
+               </label>
+               <ul class="md-nav__list" data-md-scrollfix="">
+                <li class="md-nav__item md-nav__item--nested">
+                 <input class="md-nav__toggle md-toggle" id="__nav_3_5_1" type="checkbox"/>
+                 <label class="md-nav__link" for="__nav_3_5_1" id="__nav_3_5_1_label" tabindex="0">
+                  <span class="md-ellipsis">
+                   Vedanta
+                  </span>
+                  <span class="md-nav__icon md-icon">
+                  </span>
+                 </label>
+                 <nav aria-expanded="false" aria-labelledby="__nav_3_5_1_label" class="md-nav" data-md-level="3">
+                  <label class="md-nav__title" for="__nav_3_5_1">
+                   <span class="md-nav__icon md-icon">
+                   </span>
+                   Vedanta
+                  </label>
+                  <ul class="md-nav__list" data-md-scrollfix="">
+                   <li class="md-nav__item">
+                    <a class="md-nav__link" href="../../../../Interests/Spirituality/Vedanta/Geeta%20Readings/">
+                     <span class="md-ellipsis">
+                      Geeta Readings
+                     </span>
+                    </a>
+                   </li>
+                  </ul>
+                 </nav>
+                </li>
+               </ul>
+              </nav>
+             </li>
+            </ul>
+           </nav>
+          </li>
+          <li class="md-nav__item md-nav__item--nested">
+           <input class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
+           <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            <span class="md-ellipsis">
+             Notes
+            </span>
+            <span class="md-nav__icon md-icon">
+            </span>
+           </label>
+           <nav aria-expanded="false" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+            <label class="md-nav__title" for="__nav_4">
+             <span class="md-nav__icon md-icon">
+             </span>
+             Notes
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix="">
+             <li class="md-nav__item md-nav__item--nested">
+              <input class="md-nav__toggle md-toggle" id="__nav_4_1" type="checkbox"/>
+              <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+               <span class="md-ellipsis">
+                KindleHilights
+               </span>
+               <span class="md-nav__icon md-icon">
+               </span>
+              </label>
+              <nav aria-expanded="false" aria-labelledby="__nav_4_1_label" class="md-nav" data-md-level="2">
+               <label class="md-nav__title" for="__nav_4_1">
+                <span class="md-nav__icon md-icon">
+                </span>
+                KindleHilights
+               </label>
+               <ul class="md-nav__list" data-md-scrollfix="">
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../../../Notes/KindleHilights/BarZohar-Mishal-Mossad/">
+                  <span class="md-ellipsis">
+                   BarZohar-Mishal-Mossad
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../../../Notes/KindleHilights/Carnegie-How%20to%20Win%20Friends%20and%20Influence%20People/">
+                  <span class="md-ellipsis">
+                   How to Win Friends and Influence People
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../../../Notes/KindleHilights/Debroy-THE%20BHAGAVAD%20GITA%20FOR%20MILLENNIALS/">
+                  <span class="md-ellipsis">
+                   Debroy-THE BHAGAVAD GITA FOR MILLENNIALS
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../../../Notes/KindleHilights/Mossad/">
+                  <span class="md-ellipsis">
+                   Mossad
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../../../Notes/KindleHilights/PersonalMBA/">
+                  <span class="md-ellipsis">
+                   PersonalMBA
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../../../Notes/KindleHilights/The%20Bhagavad%20Gita%20for%20Millennials/">
+                  <span class="md-ellipsis">
+                   The Bhagavad Gita for Millennials
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../../../Notes/KindleHilights/Yadav-Raw/">
+                  <span class="md-ellipsis">
+                   Yadav-Raw
+                  </span>
+                 </a>
+                </li>
+               </ul>
+              </nav>
+             </li>
+             <li class="md-nav__item md-nav__item--nested">
+              <input class="md-nav__toggle md-toggle" id="__nav_4_2" type="checkbox"/>
+              <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+               <span class="md-ellipsis">
+                Omnivore
+               </span>
+               <span class="md-nav__icon md-icon">
+               </span>
+              </label>
+              <nav aria-expanded="false" aria-labelledby="__nav_4_2_label" class="md-nav" data-md-level="2">
+               <label class="md-nav__title" for="__nav_4_2">
+                <span class="md-nav__icon md-icon">
+                </span>
+                Omnivore
+               </label>
+               <ul class="md-nav__list" data-md-scrollfix="">
+                <li class="md-nav__item md-nav__item--nested">
+                 <input class="md-nav__toggle md-toggle" id="__nav_4_2_1" type="checkbox"/>
+                 <label class="md-nav__link" for="__nav_4_2_1" id="__nav_4_2_1_label" tabindex="0">
+                  <span class="md-ellipsis">
+                   2024 01 11
+                  </span>
+                  <span class="md-nav__icon md-icon">
+                  </span>
+                 </label>
+                 <nav aria-expanded="false" aria-labelledby="__nav_4_2_1_label" class="md-nav" data-md-level="3">
+                  <label class="md-nav__title" for="__nav_4_2_1">
+                   <span class="md-nav__icon md-icon">
+                   </span>
+                   2024 01 11
+                  </label>
+                  <ul class="md-nav__list" data-md-scrollfix="">
+                   <li class="md-nav__item">
+                    <a class="md-nav__link" href="../../../../Notes/Omnivore/2024-01-11/Rebuilding%20Netflix%20Video%20Processing%20Pipeline%20with%20Microservices/">
+                     <span class="md-ellipsis">
+                      Rebuilding Netflix Video Processing Pipeline with Microservices
+                     </span>
+                    </a>
+                   </li>
+                  </ul>
+                 </nav>
+                </li>
+                <li class="md-nav__item md-nav__item--nested">
+                 <input class="md-nav__toggle md-toggle" id="__nav_4_2_2" type="checkbox"/>
+                 <label class="md-nav__link" for="__nav_4_2_2" id="__nav_4_2_2_label" tabindex="0">
+                  <span class="md-ellipsis">
+                   2024 01 31
+                  </span>
+                  <span class="md-nav__icon md-icon">
+                  </span>
+                 </label>
+                 <nav aria-expanded="false" aria-labelledby="__nav_4_2_2_label" class="md-nav" data-md-level="3">
+                  <label class="md-nav__title" for="__nav_4_2_2">
+                   <span class="md-nav__icon md-icon">
+                   </span>
+                   2024 01 31
+                  </label>
+                  <ul class="md-nav__list" data-md-scrollfix="">
+                   <li class="md-nav__item">
+                    <a class="md-nav__link" href="../../../../Notes/Omnivore/2024-01-31/COVID%20Test%20Data%20Breach-%201.3%20Million%20Patient%20Records%20Exposed%20Online/">
+                     <span class="md-ellipsis">
+                      COVID Test Data Breach: 1.3 Million Patient Records Exposed Online
+                     </span>
+                    </a>
+                   </li>
+                   <li class="md-nav__item">
+                    <a class="md-nav__link" href="../../../../Notes/Omnivore/2024-01-31/I%20Just%20Wanted%20Emacs%20to%20Look%20Nice%20%E2%80%94%20Using%2024-Bit%20Color%20in%20Terminals%20%20Chad%20Austin/">
+                     <span class="md-ellipsis">
+                      I Just Wanted Emacs to Look Nice — Using 24 Bit Color in Terminals  Chad Austin
+                     </span>
+                    </a>
+                   </li>
+                   <li class="md-nav__item">
+                    <a class="md-nav__link" href="../../../../Notes/Omnivore/2024-01-31/I%20Just%20Wanted%20Emacs%20to%20Look%20Nice%20%E2%80%94%20Using%2024-Bit%20Color%20in%20Terminals%20-%20Chad%20Austin/">
+                     <span class="md-ellipsis">
+                      I Just Wanted Emacs to Look Nice — Using 24-Bit Color in Terminals | Chad Austin
+                     </span>
+                    </a>
+                   </li>
+                   <li class="md-nav__item">
+                    <a class="md-nav__link" href="../../../../Notes/Omnivore/2024-01-31/Preface%20-%20LSM%20in%20a%20Week/">
+                     <span class="md-ellipsis">
+                      Preface - LSM in a Week
+                     </span>
+                    </a>
+                   </li>
+                  </ul>
+                 </nav>
+                </li>
+                <li class="md-nav__item md-nav__item--nested">
+                 <input class="md-nav__toggle md-toggle" id="__nav_4_2_3" type="checkbox"/>
+                 <label class="md-nav__link" for="__nav_4_2_3" id="__nav_4_2_3_label" tabindex="0">
+                  <span class="md-ellipsis">
+                   2024 02 08
+                  </span>
+                  <span class="md-nav__icon md-icon">
+                  </span>
+                 </label>
+                 <nav aria-expanded="false" aria-labelledby="__nav_4_2_3_label" class="md-nav" data-md-level="3">
+                  <label class="md-nav__title" for="__nav_4_2_3">
+                   <span class="md-nav__icon md-icon">
+                   </span>
+                   2024 02 08
+                  </label>
+                  <ul class="md-nav__list" data-md-scrollfix="">
+                   <li class="md-nav__item">
+                    <a class="md-nav__link" href="../../../../Notes/Omnivore/2024-02-08/How%20we%20got%20fine-tuning%20Mistral-7B%20to%20not%20suck-%20Helix%20Project%20Report%2C%20Feb%202024/">
+                     <span class="md-ellipsis">
+                      How we got fine-tuning Mistral-7B to not suck: Helix Project Report, Feb 2024
+                     </span>
+                    </a>
+                   </li>
+                   <li class="md-nav__item">
+                    <a class="md-nav__link" href="../../../../Notes/Omnivore/2024-02-08/Simple%20Precision%20Time%20Protocol%20at%20Meta%20-%20Engineering%20at%20Meta/">
+                     <span class="md-ellipsis">
+                      Simple Precision Time Protocol at Meta - Engineering at Meta
+                     </span>
+                    </a>
+                   </li>
+                  </ul>
+                 </nav>
+                </li>
+                <li class="md-nav__item md-nav__item--nested">
+                 <input class="md-nav__toggle md-toggle" id="__nav_4_2_4" type="checkbox"/>
+                 <label class="md-nav__link" for="__nav_4_2_4" id="__nav_4_2_4_label" tabindex="0">
+                  <span class="md-ellipsis">
+                   2024 02 26
+                  </span>
+                  <span class="md-nav__icon md-icon">
+                  </span>
+                 </label>
+                 <nav aria-expanded="false" aria-labelledby="__nav_4_2_4_label" class="md-nav" data-md-level="3">
+                  <label class="md-nav__title" for="__nav_4_2_4">
+                   <span class="md-nav__icon md-icon">
+                   </span>
+                   2024 02 26
+                  </label>
+                  <ul class="md-nav__list" data-md-scrollfix="">
+                   <li class="md-nav__item">
+                    <a class="md-nav__link" href="../../../../Notes/Omnivore/2024-02-26/Excalidraw/">
+                     <span class="md-ellipsis">
+                      Excalidraw
+                     </span>
+                    </a>
+                   </li>
+                  </ul>
+                 </nav>
+                </li>
+                <li class="md-nav__item md-nav__item--nested">
+                 <input class="md-nav__toggle md-toggle" id="__nav_4_2_5" type="checkbox"/>
+                 <label class="md-nav__link" for="__nav_4_2_5" id="__nav_4_2_5_label" tabindex="0">
+                  <span class="md-ellipsis">
+                   2024 02 27
+                  </span>
+                  <span class="md-nav__icon md-icon">
+                  </span>
+                 </label>
+                 <nav aria-expanded="false" aria-labelledby="__nav_4_2_5_label" class="md-nav" data-md-level="3">
+                  <label class="md-nav__title" for="__nav_4_2_5">
+                   <span class="md-nav__icon md-icon">
+                   </span>
+                   2024 02 27
+                  </label>
+                  <ul class="md-nav__list" data-md-scrollfix="">
+                   <li class="md-nav__item">
+                    <a class="md-nav__link" href="../../../../Notes/Omnivore/2024-02-27/%40ASmartBear/">
+                     <span class="md-ellipsis">
+                      @ASmartBear
+                     </span>
+                    </a>
+                   </li>
+                   <li class="md-nav__item">
+                    <a class="md-nav__link" href="../../../../Notes/Omnivore/2024-02-27/Apache%20Superset%20-%20Hacker%20News/">
+                     <span class="md-ellipsis">
+                      Apache Superset | Hacker News
+                     </span>
+                    </a>
+                   </li>
+                   <li class="md-nav__item">
+                    <a class="md-nav__link" href="../../../../Notes/Omnivore/2024-02-27/https---zeck.app/">
+                     <span class="md-ellipsis">
+                      https://zeck.app
+                     </span>
+                    </a>
+                   </li>
+                  </ul>
+                 </nav>
+                </li>
+                <li class="md-nav__item md-nav__item--nested">
+                 <input class="md-nav__toggle md-toggle" id="__nav_4_2_6" type="checkbox"/>
+                 <label class="md-nav__link" for="__nav_4_2_6" id="__nav_4_2_6_label" tabindex="0">
+                  <span class="md-ellipsis">
+                   2024 02 28
+                  </span>
+                  <span class="md-nav__icon md-icon">
+                  </span>
+                 </label>
+                 <nav aria-expanded="false" aria-labelledby="__nav_4_2_6_label" class="md-nav" data-md-level="3">
+                  <label class="md-nav__title" for="__nav_4_2_6">
+                   <span class="md-nav__icon md-icon">
+                   </span>
+                   2024 02 28
+                  </label>
+                  <ul class="md-nav__list" data-md-scrollfix="">
+                   <li class="md-nav__item">
+                    <a class="md-nav__link" href="../../../../Notes/Omnivore/2024-02-28/Start%20a%20Profitable%20Side%20Project%20in%202024%20-%20Indie%20Hackers/">
+                     <span class="md-ellipsis">
+                      Start a Profitable Side Project in 2024 - Indie Hackers
+                     </span>
+                    </a>
+                   </li>
+                  </ul>
+                 </nav>
+                </li>
+                <li class="md-nav__item md-nav__item--nested">
+                 <input class="md-nav__toggle md-toggle" id="__nav_4_2_7" type="checkbox"/>
+                 <label class="md-nav__link" for="__nav_4_2_7" id="__nav_4_2_7_label" tabindex="0">
+                  <span class="md-ellipsis">
+                   2024 03 05
+                  </span>
+                  <span class="md-nav__icon md-icon">
+                  </span>
+                 </label>
+                 <nav aria-expanded="false" aria-labelledby="__nav_4_2_7_label" class="md-nav" data-md-level="3">
+                  <label class="md-nav__title" for="__nav_4_2_7">
+                   <span class="md-nav__icon md-icon">
+                   </span>
+                   2024 03 05
+                  </label>
+                  <ul class="md-nav__list" data-md-scrollfix="">
+                   <li class="md-nav__item">
+                    <a class="md-nav__link" href="../../../../Notes/Omnivore/2024-03-05/a16z%20Consumer%20Abundance%20Agenda/">
+                     <span class="md-ellipsis">
+                      a16z Consumer Abundance Agenda
+                     </span>
+                    </a>
+                   </li>
+                  </ul>
+                 </nav>
+                </li>
+                <li class="md-nav__item md-nav__item--nested">
+                 <input class="md-nav__toggle md-toggle" id="__nav_4_2_8" type="checkbox"/>
+                 <label class="md-nav__link" for="__nav_4_2_8" id="__nav_4_2_8_label" tabindex="0">
+                  <span class="md-ellipsis">
+                   2024 03 11
+                  </span>
+                  <span class="md-nav__icon md-icon">
+                  </span>
+                 </label>
+                 <nav aria-expanded="false" aria-labelledby="__nav_4_2_8_label" class="md-nav" data-md-level="3">
+                  <label class="md-nav__title" for="__nav_4_2_8">
+                   <span class="md-nav__icon md-icon">
+                   </span>
+                   2024 03 11
+                  </label>
+                  <ul class="md-nav__list" data-md-scrollfix="">
+                   <li class="md-nav__item">
+                    <a class="md-nav__link" href="../../../../Notes/Omnivore/2024-03-11/Rogo/">
+                     <span class="md-ellipsis">
+                      Rogo
+                     </span>
+                    </a>
+                   </li>
+                   <li class="md-nav__item">
+                    <a class="md-nav__link" href="../../../../Notes/Omnivore/2024-03-11/Voxel/">
+                     <span class="md-ellipsis">
+                      Voxel
+                     </span>
+                    </a>
+                   </li>
+                  </ul>
+                 </nav>
+                </li>
+                <li class="md-nav__item md-nav__item--nested">
+                 <input class="md-nav__toggle md-toggle" id="__nav_4_2_9" type="checkbox"/>
+                 <label class="md-nav__link" for="__nav_4_2_9" id="__nav_4_2_9_label" tabindex="0">
+                  <span class="md-ellipsis">
+                   2024 03 12
+                  </span>
+                  <span class="md-nav__icon md-icon">
+                  </span>
+                 </label>
+                 <nav aria-expanded="false" aria-labelledby="__nav_4_2_9_label" class="md-nav" data-md-level="3">
+                  <label class="md-nav__title" for="__nav_4_2_9">
+                   <span class="md-nav__icon md-icon">
+                   </span>
+                   2024 03 12
+                  </label>
+                  <ul class="md-nav__list" data-md-scrollfix="">
+                   <li class="md-nav__item">
+                    <a class="md-nav__link" href="../../../../Notes/Omnivore/2024-03-12/Chief%20AI%20Decks/">
+                     <span class="md-ellipsis">
+                      Chief AI Decks
+                     </span>
+                    </a>
+                   </li>
+                   <li class="md-nav__item">
+                    <a class="md-nav__link" href="../../../../Notes/Omnivore/2024-03-12/Personal%20Branding%E2%80%94Most%20Important%20Thing%20You%20Do.%20Full%20Video%20AdobeMAX%202023/">
+                     <span class="md-ellipsis">
+                      Personal Branding—Most Important Thing You Do. Full Video AdobeMAX 2023
+                     </span>
+                    </a>
+                   </li>
+                   <li class="md-nav__item">
+                    <a class="md-nav__link" href="../../../../Notes/Omnivore/2024-03-12/Please%20Stop%20Using%20Google%20Analytics/">
+                     <span class="md-ellipsis">
+                      Please Stop Using Google Analytics
+                     </span>
+                    </a>
+                   </li>
+                   <li class="md-nav__item">
+                    <a class="md-nav__link" href="../../../../Notes/Omnivore/2024-03-12/ULTRA.VC/">
+                     <span class="md-ellipsis">
+                      ULTRA.VC
+                     </span>
+                    </a>
+                   </li>
+                   <li class="md-nav__item">
+                    <a class="md-nav__link" href="../../../../Notes/Omnivore/2024-03-12/ron0studios-C-Plus-Plus-%20Collection%20of%20various%20algorithms%20in%20mathematics%2C%20machine%20learning%2C%20compu.../">
+                     <span class="md-ellipsis">
+                      ron0studios/C-Plus-Plus: Collection of various algorithms in mathematics, machine learning, computer science and physics implemented in C++ for educational purposes.
+                     </span>
+                    </a>
+                   </li>
+                  </ul>
+                 </nav>
+                </li>
+                <li class="md-nav__item md-nav__item--nested">
+                 <input class="md-nav__toggle md-toggle" id="__nav_4_2_10" type="checkbox"/>
+                 <label class="md-nav__link" for="__nav_4_2_10" id="__nav_4_2_10_label" tabindex="0">
+                  <span class="md-ellipsis">
+                   2024 03 17
+                  </span>
+                  <span class="md-nav__icon md-icon">
+                  </span>
+                 </label>
+                 <nav aria-expanded="false" aria-labelledby="__nav_4_2_10_label" class="md-nav" data-md-level="3">
+                  <label class="md-nav__title" for="__nav_4_2_10">
+                   <span class="md-nav__icon md-icon">
+                   </span>
+                   2024 03 17
+                  </label>
+                  <ul class="md-nav__list" data-md-scrollfix="">
+                   <li class="md-nav__item">
+                    <a class="md-nav__link" href="../../../../Notes/Omnivore/2024-03-17/Wait...%20PostgreSQL%20can%20do%20WHAT-/">
+                     <span class="md-ellipsis">
+                      Wait... PostgreSQL can do WHAT?
+                     </span>
+                    </a>
+                   </li>
+                  </ul>
+                 </nav>
+                </li>
+                <li class="md-nav__item md-nav__item--nested">
+                 <input class="md-nav__toggle md-toggle" id="__nav_4_2_11" type="checkbox"/>
+                 <label class="md-nav__link" for="__nav_4_2_11" id="__nav_4_2_11_label" tabindex="0">
+                  <span class="md-ellipsis">
+                   2024 03 18
+                  </span>
+                  <span class="md-nav__icon md-icon">
+                  </span>
+                 </label>
+                 <nav aria-expanded="false" aria-labelledby="__nav_4_2_11_label" class="md-nav" data-md-level="3">
+                  <label class="md-nav__title" for="__nav_4_2_11">
+                   <span class="md-nav__icon md-icon">
+                   </span>
+                   2024 03 18
+                  </label>
+                  <ul class="md-nav__list" data-md-scrollfix="">
+                   <li class="md-nav__item">
+                    <a class="md-nav__link" href="../../../../Notes/Omnivore/2024-03-18/Building%20Meta%E2%80%99s%20GenAI%20Infrastructure%20-%20Engineering%20at%20Meta/">
+                     <span class="md-ellipsis">
+                      Building Meta’s GenAI Infrastructure - Engineering at Meta
+                     </span>
+                    </a>
+                   </li>
+                   <li class="md-nav__item">
+                    <a class="md-nav__link" href="../../../../Notes/Omnivore/2024-03-18/Logarithm-%20A%20logging%20engine%20for%20AI%20training%20workflows%20and%20services%20-%20Engineering%20at%20Meta/">
+                     <span class="md-ellipsis">
+                      Logarithm: A logging engine for AI training workflows and services - Engineering at Meta
+                     </span>
+                    </a>
+                   </li>
+                   <li class="md-nav__item">
+                    <a class="md-nav__link" href="../../../../Notes/Omnivore/2024-03-18/Next.js%20Commerce%20%E2%80%93%20Vercel/">
+                     <span class="md-ellipsis">
+                      Next.js Commerce – Vercel
+                     </span>
+                    </a>
+                   </li>
+                   <li class="md-nav__item">
+                    <a class="md-nav__link" href="../../../../Notes/Omnivore/2024-03-18/sanity-io-hydrogen-sanity-demo-%20A%20starter%20for%20Hydrogen%20%2B%20Sanity%20projects/">
+                     <span class="md-ellipsis">
+                      sanity-io/hydrogen-sanity-demo: A starter for Hydrogen + Sanity projects
+                     </span>
+                    </a>
+                   </li>
+                  </ul>
+                 </nav>
+                </li>
+                <li class="md-nav__item md-nav__item--nested">
+                 <input class="md-nav__toggle md-toggle" id="__nav_4_2_12" type="checkbox"/>
+                 <label class="md-nav__link" for="__nav_4_2_12" id="__nav_4_2_12_label" tabindex="0">
+                  <span class="md-ellipsis">
+                   2024 03 26
+                  </span>
+                  <span class="md-nav__icon md-icon">
+                  </span>
+                 </label>
+                 <nav aria-expanded="false" aria-labelledby="__nav_4_2_12_label" class="md-nav" data-md-level="3">
+                  <label class="md-nav__title" for="__nav_4_2_12">
+                   <span class="md-nav__icon md-icon">
+                   </span>
+                   2024 03 26
+                  </label>
+                  <ul class="md-nav__list" data-md-scrollfix="">
+                   <li class="md-nav__item">
+                    <a class="md-nav__link" href="../../../../Notes/Omnivore/2024-03-26/failsafe-go-failsafe-go-%20Fault%20tolerance%20and%20resilience%20patterns%20for%20Go/">
+                     <span class="md-ellipsis">
+                      failsafe-go/failsafe-go: Fault tolerance and resilience patterns for Go
+                     </span>
+                    </a>
+                   </li>
+                  </ul>
+                 </nav>
+                </li>
+               </ul>
+              </nav>
+             </li>
+             <li class="md-nav__item md-nav__item--nested">
+              <input class="md-nav__toggle md-toggle" id="__nav_4_3" type="checkbox"/>
+              <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+               <span class="md-ellipsis">
+                Podcast
+               </span>
+               <span class="md-nav__icon md-icon">
+               </span>
+              </label>
+              <nav aria-expanded="false" aria-labelledby="__nav_4_3_label" class="md-nav" data-md-level="2">
+               <label class="md-nav__title" for="__nav_4_3">
+                <span class="md-nav__icon md-icon">
+                </span>
+                Podcast
+               </label>
+               <ul class="md-nav__list" data-md-scrollfix="">
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../../../Notes/Podcast/The_Morning_Brief__%5B2023-06-06%5D/">
+                  <span class="md-ellipsis">
+                   The Morning Brief  [2023 06 06]
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../../../Notes/Podcast/Vedanta_Talks__%5B2019-01-26%5D/">
+                  <span class="md-ellipsis">
+                   16. Bhagavad Gita | Chapter 2 Verse 45 - 47 | Swami Sarvapriyananda
+                  </span>
+                 </a>
+                </li>
+               </ul>
+              </nav>
+             </li>
+             <li class="md-nav__item md-nav__item--nested">
+              <input class="md-nav__toggle md-toggle" id="__nav_4_4" type="checkbox"/>
+              <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+               <span class="md-ellipsis">
+                YT
+               </span>
+               <span class="md-nav__icon md-icon">
+               </span>
+              </label>
+              <nav aria-expanded="false" aria-labelledby="__nav_4_4_label" class="md-nav" data-md-level="2">
+               <label class="md-nav__title" for="__nav_4_4">
+                <span class="md-nav__icon md-icon">
+                </span>
+                YT
+               </label>
+               <ul class="md-nav__list" data-md-scrollfix="">
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../../../Notes/YT/Aakrit-Haptik-Varun-Mayya/">
+                  <span class="md-ellipsis">
+                   Aakrit-Haptik-Varun-Mayya
+                  </span>
+                 </a>
+                </li>
+               </ul>
+              </nav>
+             </li>
+            </ul>
+           </nav>
+          </li>
+          <li class="md-nav__item md-nav__item--nested">
+           <input class="md-nav__toggle md-toggle" id="__nav_5" type="checkbox"/>
+           <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            <span class="md-ellipsis">
+             Docs
+            </span>
+            <span class="md-nav__icon md-icon">
+            </span>
+           </label>
+           <nav aria-expanded="false" aria-labelledby="__nav_5_label" class="md-nav" data-md-level="1">
+            <label class="md-nav__title" for="__nav_5">
+             <span class="md-nav__icon md-icon">
+             </span>
+             Docs
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix="">
+             <li class="md-nav__item md-nav__item--nested">
+              <input class="md-nav__toggle md-toggle" id="__nav_5_1" type="checkbox"/>
+              <div class="md-nav__link md-nav__container">
+               <a class="md-nav__link" href="../../../../docs/Articles/">
+                <span class="md-ellipsis">
+                 Articles
+                </span>
+               </a>
+              </div>
+              <nav aria-expanded="false" aria-labelledby="__nav_5_1_label" class="md-nav" data-md-level="2">
+               <label class="md-nav__title" for="__nav_5_1">
+                <span class="md-nav__icon md-icon">
+                </span>
+                Articles
+               </label>
+               <ul class="md-nav__list" data-md-scrollfix="">
+               </ul>
+              </nav>
+             </li>
+            </ul>
+           </nav>
+          </li>
+         </ul>
+        </nav>
+       </div>
+      </div>
+     </div>
+     <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+      <div class="md-sidebar__scrollwrap">
+       <div class="md-sidebar__inner">
+        <nav aria-label="On This Page" class="md-nav md-nav--secondary">
+         <label class="md-nav__title" for="__toc">
+          <span class="md-nav__icon md-icon">
+          </span>
+          On This Page
+         </label>
+         <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+          <li class="md-nav__item">
+           <a class="md-nav__link" href="#why-write-about-the-linux-kernel">
+            <span class="md-ellipsis">
+             Why write about the Linux Kernel?
+            </span>
+           </a>
+          </li>
+          <li class="md-nav__item">
+           <a class="md-nav__link" href="#what-happens-when-you-press-the-power-button-on-a-machine">
+            <span class="md-ellipsis">
+             What Happens When You Press the Power Button on a Machine?
+            </span>
+           </a>
+          </li>
+          <li class="md-nav__item">
+           <a class="md-nav__link" href="#bios-and-power-on-self-test-post">
+            <span class="md-ellipsis">
+             BIOS and Power-On Self Test (POST)
+            </span>
+           </a>
+           <nav aria-label="BIOS and Power-On Self Test (POST)" class="md-nav">
+            <ul class="md-nav__list">
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="#the-role-of-bios-and-bootloader">
+               <span class="md-ellipsis">
+                The Role of BIOS and Bootloader
+               </span>
+              </a>
+             </li>
+            </ul>
+           </nav>
+          </li>
+          <li class="md-nav__item">
+           <a class="md-nav__link" href="#bootloader-and-grub">
+            <span class="md-ellipsis">
+             Bootloader and GRUB
+            </span>
+           </a>
+          </li>
+          <li class="md-nav__item">
+           <a class="md-nav__link" href="#linux-kernel-bootup-sequence">
+            <span class="md-ellipsis">
+             Linux Kernel Bootup Sequence
+            </span>
+           </a>
+          </li>
+          <li class="md-nav__item">
+           <a class="md-nav__link" href="#bare-minimum-linux-kernel">
+            <span class="md-ellipsis">
+             Bare Minimum Linux Kernel?
+            </span>
+           </a>
+          </li>
+          <li class="md-nav__item">
+           <a class="md-nav__link" href="#root-file-system-linux-kernel-directory-structure">
+            <span class="md-ellipsis">
+             Root File System : Linux Kernel Directory Structure
+            </span>
+           </a>
+           <nav aria-label="Root File System : Linux Kernel Directory Structure" class="md-nav">
+            <ul class="md-nav__list">
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="#init-process-and-the-role-of-pid-1-systemd-and-upstart-in-modern-linux-distros">
+               <span class="md-ellipsis">
+                Init Process and the Role of PID 1: systemd and upstart in modern linux distros
+               </span>
+              </a>
+              <nav aria-label="Init Process and the Role of PID 1: systemd and upstart in modern linux distros" class="md-nav">
+               <ul class="md-nav__list">
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="#systemd-as-init">
+                  <span class="md-ellipsis">
+                   systemd as init
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="#how-systemd-works">
+                  <span class="md-ellipsis">
+                   How systemd Works?
+                  </span>
+                 </a>
+                </li>
+               </ul>
+              </nav>
+             </li>
+            </ul>
+           </nav>
+          </li>
+          <li class="md-nav__item">
+           <a class="md-nav__link" href="#kernel-privilege-rings-and-security-pid-1s-security-implications">
+            <span class="md-ellipsis">
+             Kernel Privilege rings and security. PID 1's security implications
+            </span>
+           </a>
+           <nav aria-label="Kernel Privilege rings and security. PID 1's security implications" class="md-nav">
+            <ul class="md-nav__list">
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="#privilege-rings-explained">
+               <span class="md-ellipsis">
+                Privilege Rings Explained
+               </span>
+              </a>
+             </li>
+            </ul>
+           </nav>
+          </li>
+         </ul>
+        </nav>
+       </div>
+      </div>
+     </div>
+     <div class="md-content" data-md-component="content">
+      <article class="md-content__inner md-typeset">
+       <nav class="md-tags">
+        <span class="md-tag">
+         series/bits-n-bytes
+        </span>
+        <span class="md-tag">
+         software_engineering/linux-internals
+        </span>
+        <span class="md-tag">
+         topic/deep-dives
+        </span>
+       </nav>
+       <h1 id="linux-kernel-explained-deep-dive-series-for-system-engineers">
+        Linux Kernel Explained - Deep Dive Series for System Engineers
+       </h1>
+       <p>
+        The Linux kernel is a monumental achievement in the world of open-source software, driven by a passionate community of contributors.
+        <br/>
+        This collaborative effort has resulted in a powerful, versatile operating system that powers an estimated 80-90% of the internet. From the smartphones in our pockets to the vast cloud infrastructure, Linux is the backbone of many technologies we rely on daily.
+       </p>
+       <p>
+        Linux is not just for servers and desktops. Here is a short list of places where the Linux kernel is chugging along.
+       </p>
+       <ul>
+        <li>
+         <strong>
+          Smartphones
+         </strong>
+         : Android, the most widely used mobile operating system, is built on the Linux kernel.
+        </li>
+        <li>
+         <strong>
+          MacOS and iOS
+         </strong>
+         : While MacOS is based on a different Unix variant (Loosely related FreeBSD), it shares many principles + components with Linux.
+        </li>
+        <li>
+         <strong>
+          Cloud Infrastructure
+         </strong>
+         : Major cloud service providers like AWS, Google Cloud, and Azure rely heavily on Linux to power their data centers.
+        </li>
+        <li>
+         <strong>
+          IoT Devices
+         </strong>
+         : From smart home devices to industrial sensors, many IoT devices run on Linux.
+        </li>
+        <li>
+         <strong>
+          Networking and Telecommunications
+         </strong>
+         : Many telecom systems and every major ISP uses Linux in its networking stack. Your home router is probably running an embedded Linux kernel already
+        </li>
+        <li>
+         <strong>
+          Entertainment
+         </strong>
+         : Streaming services, gaming platforms, and more use Linux-based servers to deliver content seamlessly.
+         <br/>
+         .. and the list goes on and on ..
+        </li>
+       </ul>
+       <blockquote>
+        <p>
+         Mankind's Achievement in Collaborative Development
+        </p>
+        <p>
+         The success of the Linux kernel exemplifies human ingenuity and collaborative spirit. It showcases how collective effort and shared knowledge can create something that far surpasses individual contributions. As we progress into the future, the way we build the kernel also needs to scale to an every changing landscape of devices and services. A challenge indeed!
+        </p>
+        <p>
+         <img alt="Famous XKCD Strip. That tiny pillar was once Linus maintaining Linux Kernel. Thankfully he has more hands on deck today" loading="lazy" src="../Assets/media/Linux%20Kernel%20Explained%20-%20Deep%20Dive%20Series%20for%20System%20Engineers/Linux%20Kernel%20Explained%20-%20Deep%20Dive%20Series%20for%20System%20Engineers-image-2024-05-29-231847.png"/>
+        </p>
+       </blockquote>
+       <hr/>
+       <h3 id="why-write-about-the-linux-kernel">
+        Why write about the Linux Kernel?
+       </h3>
+       <p>
+        <strong>
+         The Evolution of Programming Abstractions
+        </strong>
+       </p>
+       <p>
+        In the early days of computing, programmers worked close to the hardware, using assembly languages or early high-level languages like Fortran.
+       </p>
+       <p>
+        As technology advanced and business needs grew, programming languages became more abstract to accommodate a broader range of developers. This evolution brought us C, C++, Java, and various scripting languages. Today, new programming languages emerge regularly, each aiming to solve specific problems or improve developer productivity. Abstractions gave us superpower, and now I see a lot of engineers unaware of how this machine works.
+       </p>
+       <p>
+        We are at a point in human learning, where the abstractions are too much to unwrap. Its of utmost importance that we write down,
+       </p>
+       <p>
+        <img alt="Another XKCD strip. Oh well, that's what abstractions resulted in. Cat memes! |367" src="../Assets/media/Linux%20Kernel%20Explained%20-%20Deep%20Dive%20Series%20for%20System%20Engineers/Linux%20Kernel%20Explained%20-%20Deep%20Dive%20Series%20for%20System%20Engineers-image-2024-05-29-232015.png"/>
+       </p>
+       <p>
+        <strong>
+         The Linux Kernel as a Foundational Technology
+        </strong>
+       </p>
+       <p>
+        Despite the rapid pace of technological advancement, some foundational technologies remain constant. The Linux kernel is one such pillar, integral to many cutting-edge fields. Rarely is there a skill more transferable than knowing about the internals of the kernel. It's useful in space tech, robotics, manufacturing, industrial automation, cloud, networking, energy, adtech, streaming and communications.
+       </p>
+       <p>
+        <strong>
+         Encouragement for Developers
+        </strong>
+       </p>
+       <p>
+        Understanding the Linux kernel is a valuable skill for both new and seasoned developers. It provides deep insights into operating system design and functionality. By exploring Linux, developers can gain a "superpower" that enhances their ability to innovate and solve complex problems.
+       </p>
+       <p>
+        For those looking to delve deeper, numerous resources and guided curriculums are available, crafted by experts in the field.
+        <br/>
+        I will try to curate a journey which will help you get your Aha moment and get a glimpse into the under belly of your machine.
+       </p>
+       <p>
+        <img alt="XKCD telling us, we just need the hardware, Neuralink took this seriously?" loading="lazy" src="../Assets/media/Linux%20Kernel%20Explained%20-%20Deep%20Dive%20Series%20for%20System%20Engineers/Linux%20Kernel%20Explained%20-%20Deep%20Dive%20Series%20for%20System%20Engineers-image-2024-05-29-232317.png"/>
+       </p>
+       <hr/>
+       <h3 id="what-happens-when-you-press-the-power-button-on-a-machine">
+        What Happens When You Press the Power Button on a Machine?
+       </h3>
+       <p>
+        When you press the power button on your machine, a series of events unfold to initialize and start your compute
+        <img alt="High level Sequence of Boot up Steps |475" src="../Assets/media/Linux%20Kernel%20Explained%20-%20Deep%20Dive%20Series%20for%20System%20Engineers/Linux%20Kernel%20Explained%20-%20Deep%20Dive%20Series%20for%20System%20Engineers-image-2024-05-30-000610.png"/>
+       </p>
+       <h2 id="bios-and-power-on-self-test-post">
+        BIOS and Power-On Self Test (POST)
+       </h2>
+       <p>
+        The first program that runs on the hardware is the BIOS (Basic Input/Output System). The BIOS is an embedded program responsible for starting the computer and performing a POST (Power-On Self Test). Its stored on a ROM chip on your bios and is usually shipped by the motherboard vendor, although most vendors seem to source them from a few well known providers. In the world of BIOS, UEFI is the new modern reincarnation on the block. But from the linux kernel bootup perspective, BIOS vs UEFI has limited implications in the startup process*.
+       </p>
+       <p>
+        <img alt="Minimum POST checks at startup. Pic Credit: CGDirector.com |700" src="../Assets/media/Linux%20Kernel%20Explained%20-%20Deep%20Dive%20Series%20for%20System%20Engineers/Linux%20Kernel%20Explained%20-%20Deep%20Dive%20Series%20for%20System%20Engineers-image-2024-05-30-000719.png"/>
+       </p>
+       <ol>
+        <li>
+         <strong>
+          Power-On Self Test (POST):
+         </strong>
+         During POST, the BIOS initializes the CPU and memory subsystem. It checks if these components are functioning correctly. If they start properly, the computer is ready to boot. However, this depends on the rest of the hardware functioning correctly as well.
+        </li>
+        <li>
+         <strong>
+          Hardware Initialization:
+         </strong>
+         The BIOS initializes and lists all other peripheral hardware attached to the system. These peripherals are generally connected via buses like I2C, PCI Express, and SATA, which connect them to the CPU
+        </li>
+        <li>
+         <strong>
+          RAM check
+         </strong>
+         : Verify RAM speed and make sure the bus speed of various subsystems are compatible.
+        </li>
+        <li>
+         <p>
+          Boot a Storage Device: Try to find bootable storage devices. Either a disk with Master Boot Record entries, or a GPT UUID partitioned disk.
+         </p>
+        </li>
+        <li>
+         <p>
+          <img alt="BIOS and UEFI both perform POST on motherboards. UEFI just happens to be with the times.|750" src="../Assets/media/Linux%20Kernel%20Explained%20-%20Deep%20Dive%20Series%20for%20System%20Engineers/Linux%20Kernel%20Explained%20-%20Deep%20Dive%20Series%20for%20System%20Engineers-image-2024-05-30-000359.png"/>
+         </p>
+        </li>
+       </ol>
+       <h5 id="the-role-of-bios-and-bootloader">
+        The Role of BIOS and Bootloader
+       </h5>
+       <ul>
+        <li>
+         <strong>
+          BIOS:
+         </strong>
+         Acts as the first basic check, initializing the system and performing POST.
+        </li>
+        <li>
+         <strong>
+          Bootloader:
+         </strong>
+         A more advanced program that loads the operating system, transitioning from BIOS initialization to the Linux kernel startup.
+        </li>
+       </ul>
+       <hr/>
+       <h2 id="bootloader-and-grub">
+        Bootloader and GRUB
+       </h2>
+       <p>
+        After POST, the BIOS looks for special I/O devices to provide the next program to run, typically the bootloader.
+       </p>
+       <ol>
+        <li>
+         <strong>
+          Bootloader Initialization:
+         </strong>
+         The bootloader is the next program in the sequence. Due to legacy standards, it starts the system in a 16-bit mode, then brings it up to a 32-bit or 64-bit mode. This process has been streamlined in the ARM world, but remains common in x86 processors.
+        </li>
+        <li>
+         <strong>
+          Loading the Operating System:
+         </strong>
+         The bootloader loads the operating system, giving us the first glimpse of the Linux kernel.
+        </li>
+       </ol>
+       <p>
+        Here is the minimal set of commands you can use on a GRUB prompt to start a linux system.
+       </p>
+       <div class="language-text highlight">
+        <pre><span></span><code><span id="__span-0-1"><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>insmod linux
+</span><span id="__span-0-2"><a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a>set root=(hd0,1)
+</span><span id="__span-0-3"><a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a>linux /boot/vmlinuz-3.13.0-29-generic root=/dev/sda1
+</span><span id="__span-0-4"><a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a>initrd /boot/initrd.img-3.13.0-29-generic
+</span><span id="__span-0-5"><a href="#__codelineno-0-5" id="__codelineno-0-5" name="__codelineno-0-5"></a>boot
+</span></code></pre>
+       </div>
+       <p>
+        A quick description of what's happening.
+       </p>
+       <ul>
+        <li>
+         load the linux grub module. This module tells grub how to start a Linux like operating system.
+        </li>
+        <li>
+         <code>
+          /boot/vmlinuz-3.13.0-29-generic
+         </code>
+         is the compressed compiled linux kernel.
+        </li>
+        <li>
+         <code>
+          /dev/sda1
+         </code>
+         is the root file system device
+        </li>
+        <li>
+         <code>
+          /boot/initrd.img-3.13.0-29-generic
+         </code>
+         is the initial ram disk
+        </li>
+        <li>
+         <code>
+          boot
+         </code>
+         kicks off the boot process and runs vmlinux.
+        </li>
+       </ul>
+       <blockquote>
+        <p>
+         <strong>
+          Future Topics
+         </strong>
+         <br/>
+         If you're interested, I can cover BIOS and bootloader in more detail in future posts. However, for practicality, most of us won't be dealing directly with building BIOS or bootloaders. This high-level overview should provide a clear understanding of the initial steps in the boot sequence.
+        </p>
+       </blockquote>
+       <hr/>
+       <h2 id="linux-kernel-bootup-sequence">
+        Linux Kernel Bootup Sequence
+       </h2>
+       <p>
+        Many seasoned developers have observed a Linux system boot up, witnessing a stream of text scrolling by on the screen. This output primarily consists of driver initializations and service startups. Despite its apparent complexity, the Linux kernel boot process is relatively straightforward. Let's delve into the most prevalent Linux kernel boot sequence
+       </p>
+       <p>
+        <img alt="Linux Boot Process in a Nutshell" loading="lazy" src="../Assets/media/Linux%20Kernel%20Explained%20-%20Deep%20Dive%20Series%20for%20System%20Engineers/Linux%20Kernel%20Explained%20-%20Deep%20Dive%20Series%20for%20System%20Engineers-image-2024-05-30-014854.png"/>
+       </p>
+       <h2 id="bare-minimum-linux-kernel">
+        Bare Minimum Linux Kernel?
+       </h2>
+       <p>
+        As we saw in the grub commands, achieving a minimal boot for a practical PC experience requires,
+       </p>
+       <ul>
+        <li>
+         <strong>
+          vmlinuz
+         </strong>
+         : Compressed compiled linux kernel binary
+        </li>
+        <li>
+         <strong>
+          initramfs
+         </strong>
+         or
+         <strong>
+          initrd
+         </strong>
+         : compressed archive which can be expanded by vmlinuz or grub and placed into memory
+        </li>
+        <li>
+         (additionally)
+         <strong>
+          root filesystem
+         </strong>
+        </li>
+       </ul>
+       <p>
+        Linux follows a two stage booting process. The bootloader first loads the stage 1 kernel.
+       </p>
+       <p>
+        <em>
+         Stage 1
+        </em>
+        kernel's aim is simple and can be listed as follows
+       </p>
+       <ul>
+        <li>
+         Load just enough kernel modules to mount a proper filesystem.
+        </li>
+        <li>
+         Mount said root file system
+        </li>
+        <li>
+         Hand over control to an init executable in the root filesystem. (/init, /sbin/init or configured paths in
+         <a href="https://github.com/torvalds/linux/blob/4a4be1ad3a6efea16c56615f31117590fd881358/init/main.c#L1523">
+          linux/init/main.c at torvalds/linux · GitHub
+         </a>
+         )
+        </li>
+       </ul>
+       <p>
+        Because storage hardware comes in various formats (curse of linux's ubiquity), kernel developers have chosen to break the booting process into an initial in-memory file system load (
+        <strong>
+         Initramfs
+        </strong>
+        or
+        <strong>
+         initrd
+        </strong>
+        ) which then mounts and loads the
+        <strong>
+         root filesystem
+        </strong>
+       </p>
+       <p>
+        <em>
+         Stage 2
+        </em>
+        kernel boot is where the init process starts configuring hardware and running services, usually running programs initiated in userspace but invoking kernel space syscalls. This ensures the boot process can be configured without having to recompile the kernel for every small customizations. This design choice is the reason why we all aren't kernel developers (yet)
+       </p>
+       <blockquote>
+        <p>
+         Note: About minimal linux
+         <br/>
+         For a truly minimal boot experience we could have a stripped down
+         <strong>
+          vmlinuz
+         </strong>
+         which runs a statically compiled
+         <em>
+          /sbin/init
+         </em>
+         program to print hello world! all in &lt; 10mbs of RAM, if you configure your kernel boot correctly!
+        </p>
+        <p>
+         <strong>
+          Initramfs
+         </strong>
+         and
+         <strong>
+          initrd
+         </strong>
+         (initial ramdisk) serve a similar purpose. initramfs is a modern take on initrd;
+         <br/>
+         Write to me if you think I should write about the internals of initramfs/initrd.
+         <br/>
+         PS: A quick search would point to some great resources.
+         <br/>
+         I do find
+         <a href="https://www.baeldung.com/linux/initrd-vs-initramfs">
+          What’s the Difference Between initrd and initramfs? | Baeldung on Linux
+         </a>
+         a good reference.
+        </p>
+       </blockquote>
+       <h2 id="root-file-system-linux-kernel-directory-structure">
+        Root File System : Linux Kernel Directory Structure
+       </h2>
+       <p>
+        Upon starting, the Linux kernel prepares and virtually presents some special file system in a specific way. The root file system and the initial RAM file system (initramfs) are crucial parts of this structure.
+        <br/>
+        Initramfs is the first file system that the kernel mounts and operates in memory, rather than on disk.
+        <br/>
+        Root filesystem is then loaded and presents more kernel modules, libraries, binary utilities and daemons.
+        <br/>
+        The root filesystem also starts various daemons which could further mount other storage devices and filesystems.
+       </p>
+       <p>
+        We need to be aware of
+        <code>
+         /proc
+        </code>
+        and
+        <code>
+         /sys
+        </code>
+        directories, which contain information about the running kernel and allow certain kernel parameters to be modified.
+        <br/>
+        We also need to learn how all these file systems are combined together to provide a singular working view of the running system using overlayfs
+       </p>
+       <iframe height="450" src="https://whimsical.com/embed/RutWT6bkMH1J4nU7D7p2FV" style="border:none" width="800">
+       </iframe>
+       <h3 id="init-process-and-the-role-of-pid-1-systemd-and-upstart-in-modern-linux-distros">
+        Init Process and the Role of PID 1: systemd and upstart in modern linux distros
+       </h3>
+       <p>
+        In the world of Linux, PID 1 holds a special place. PID 1, or Process ID 1, is the first process started by the Linux kernel during the boot sequence and is the ancestor of all other processes. Understanding PID 1 and its role is crucial for grasping how a Linux system initializes and manages services.
+       </p>
+       <p>
+        When the Linux kernel finishes its initial setup, it launches the first user-space process, which is assigned PID 1. Traditionally, this process was the
+        <code>
+         init
+        </code>
+        system, responsible for starting system processes, handling system initialization, and managing services. The
+        <code>
+         init
+        </code>
+        system follows a predefined sequence to bring the system to a usable state.
+       </p>
+       <p>
+        PID 1 is critical because it remains running as long as the system is up and serves as the parent for all other processes. If PID 1 terminates, the kernel will panic, causing the system to halt or reboot, as there would be no process to adopt orphaned child processes.
+       </p>
+       <h4 id="systemd-as-init">
+        systemd as init
+       </h4>
+       <p>
+        In modern Linux distributions,
+        <code>
+         systemd
+        </code>
+        has largely replaced the traditional
+        <code>
+         init
+        </code>
+        system as the default system and service manager.
+        <code>
+         systemd
+        </code>
+        is designed to provide a more efficient and feature-rich way of managing system processes and services. It still occupies the PID 1 slot and takes on the responsibilities of its predecessor but with enhanced capabilities.
+       </p>
+       <h4 id="how-systemd-works">
+        How systemd Works?
+       </h4>
+       <p>
+        When the kernel passes control to
+        <code>
+         systemd
+        </code>
+        as PID 1,
+        <code>
+         systemd
+        </code>
+        begins its initialization process by mounting the initial file systems and starting essential services. It reads its configuration from unit files located in
+        <code>
+         /etc/systemd/system/
+        </code>
+        and
+        <code>
+         /usr/lib/systemd/system/
+        </code>
+        . These unit files describe how to manage services, sockets, devices, and other system components.
+       </p>
+       <p>
+        <code>
+         systemd
+        </code>
+        also sets up the cgroups (control groups) to manage resource allocation and limits for processes
+       </p>
+       <p>
+        <img alt="|850" src="../Assets/media/Linux%20Kernel%20Explained%20-%20Deep%20Dive%20Series%20for%20System%20Engineers/Linux%20Kernel%20Explained%20-%20Deep%20Dive%20Series%20for%20System%20Engineers-image-2024-05-29-030657.png"/>
+       </p>
+       <h2 id="kernel-privilege-rings-and-security-pid-1s-security-implications">
+        Kernel Privilege rings and security. PID 1's security implications
+       </h2>
+       <p>
+        In the architecture of modern computer systems, privilege rings play a crucial role in maintaining security and stability. The Linux kernel operates in these rings to control access to resources and enforce security policies. Understanding the concept of privilege rings and the security implications of PID 1 helps in comprehending how Linux ensures a secure environment.
+       </p>
+       <h4 id="privilege-rings-explained">
+        Privilege Rings Explained
+       </h4>
+       <p>
+        Privilege rings are hierarchical levels of privileges that a system's processes can have. They range from Ring 0, the highest level of privilege, to Ring 3, the lowest.
+       </p>
+       <ul>
+        <li>
+         <strong>
+          Ring 0 (Kernel Mode):
+         </strong>
+         The most privileged level, where the operating system kernel operates. It has unrestricted access to all system resources and hardware.
+        </li>
+        <li>
+         <p>
+          <strong>
+           Ring 3 (User Mode):
+          </strong>
+          The least privileged level, where user applications run. It has restricted access, requiring sudo to elevate to kernelmode
+         </p>
+        </li>
+        <li>
+         <p>
+          <img alt="" src="../Assets/media/Linux%20Kernel%20Explained%20-%20Deep%20Dive%20Series%20for%20System%20Engineers/Linux%20Kernel%20Explained%20-%20Deep%20Dive%20Series%20for%20System%20Engineers-image-2024-05-29-031152.png"/>
+         </p>
+        </li>
+       </ul>
+       <p>
+        The kernel mode (Ring 0) allows the operating system to execute critical tasks that require direct access to hardware and memory. User mode (Ring 3) provides a restricted environment for applications, preventing them from directly accessing hardware and system memory, thus protecting the system from malicious software and user errors.
+       </p>
+       <blockquote>
+        <p>
+         Ironically Ring 1 and Ring 2 have felt out of favor.
+        </p>
+        <p>
+         As a hobbyist linux nerd, I discovered that the benefits of rings 1 and 2 in the modern protection model are greatly diminished due to paging only distinguishing between privileged (ring 0, 1, 2) and unprivileged levels.
+        </p>
+        <p>
+         Anecdotally Intel designed rings 1 and 2 to house device drivers, providing them with some privileges while keeping them somewhat separate from kernel code. Although rings 1 and 2 can access supervisor pages, they still trigger a General Protection Fault (GPF) if they use a privileged instruction, similar to ring 3. Despite this, rings 1 and 2 are useful in certain designs.
+        </p>
+        <p>
+         For instance, VirtualBox places guest kernel code in ring 1, and some operating systems do utilize them, though it is not a widely popular design choice at present.
+        </p>
+       </blockquote>
+       <aside class="md-source-file">
+        <span class="md-source-file__fact">
+         <span class="md-icon" title="Last update">
+          <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+           <path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z">
+           </path>
+          </svg>
+         </span>
+         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago">
+          <span class="timeago" datetime="2024-06-03T18:36:34+00:00" locale="en">
+          </span>
+         </span>
+         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">
+          2024-06-03
+         </span>
+        </span>
+       </aside>
+      </article>
+     </div>
+     <script>
+      var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))
+     </script>
+    </div>
+   </main>
+   <footer class="md-footer">
+    <nav aria-label="footer.title" class="md-footer__inner md-grid">
+     <a aria-label="Previous: Startup CTO : Impatient , Lazy and how I learned the habit of plan-sprint-ship-document" class="md-footer__link md-footer__link--prev" href="../../../Startup%20CTO%20%20Impatient%20%2C%20Lazy%20and%20how%20I%20learned%20the%20habit%20of%20plan-sprint-ship-document/" rel="prev">
+      <div class="md-footer__button md-icon">
+       <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z">
+        </path>
+       </svg>
+      </div>
+      <div class="md-footer__title">
+       <div class="md-ellipsis">
+        <span class="md-footer__direction">
+         Previous
+        </span>
+        Startup CTO : Impatient , Lazy and how I learned the habit of plan-sprint-ship-document
+       </div>
+      </div>
+     </a>
+     <a aria-label="Next: Linux Kernel Explained - Deep Dive Series for System Engineers" class="md-footer__link md-footer__link--next" href="../Booting%20up%20Linux%20Kernel%20-%20Linux%20for%20Engineers%201/" rel="next">
+      <div class="md-footer__title">
+       <div class="md-ellipsis">
+        <span class="md-footer__direction">
+         Next
+        </span>
+        Linux Kernel Explained - Deep Dive Series for System Engineers
+       </div>
+      </div>
+      <div class="md-footer__button md-icon">
+       <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z">
+        </path>
+       </svg>
+      </div>
+     </a>
+    </nav>
+    <div class="md-footer-meta md-typeset">
+     <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+       <div class="md-footer-copyright__highlight">
+        Copyright © 2012 - 2024 Shaishav Kr | @wiresurfer
+       </div>
+      </div>
+      <div class="md-social">
+       <a class="md-social__link" href="https://www.linkedin.com/in/shaishavkr" rel="noopener" target="_blank" title="LinkedIn @shaishavkr">
+        <svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
+         <!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.-->
+         <path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z">
+         </path>
+        </svg>
+       </a>
+       <a class="md-social__link" href="https://instagram.com/wiresurfer" rel="noopener" target="_blank" title="Instagram @wiresurfer">
+        <svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
+         <!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.-->
+         <path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z">
+         </path>
+        </svg>
+       </a>
+       <a class="md-social__link" href="https://github.com/wiresurfer" rel="noopener" target="_blank" title="Github @wiresurfer">
+        <svg viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg">
+         <!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.-->
+         <path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z">
+         </path>
+        </svg>
+       </a>
+       <a class="md-social__link" href="https://twitter.com/wiresurfer" rel="noopener" target="_blank" title="X @ wiresurfer">
+        <svg viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+         <!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.-->
+         <path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8l164.9-188.5L26.8 48h145.6l100.5 132.9L389.2 48zm-24.8 373.8h39.1L151.1 88h-42l255.3 333.8z">
+         </path>
+        </svg>
+       </a>
+      </div>
+      <footer class="bg-dark dark:bg-gray-800 py-4">
+       <div class="max-w-screen-xl px-4 mx-auto">
+        <div class="flex max-w-xs mx-auto items-center justify-between">
+         <a class="text-gray-400 transition-colors duration-200 hover:text-gray-800 dark:hover:text-white" href="#">
+          <svg class="text-xl transition-colors duration-200 hover:text-gray-800 dark:hover:text-white" fill="currentcolor" height="20" viewbox="0 0 1792 1792" width="20" xmlns="http://www.w3.org/2000/svg">
+           <path d="M1343 12v264h-157q-86 0-116 36t-30 108v189h293l-39 296h-254v759H734V905H479V609h255V391q0-186 104-288.5T1115 0q147 0 228 12z">
+           </path>
+          </svg>
+         </a>
+         <a class="text-gray-400 transition-colors duration-200 hover:text-gray-800 dark:hover:text-white" href="#">
+          <svg class="text-xl transition-colors duration-200 hover:text-gray-800 dark:hover:text-white" fill="currentcolor" height="20" viewbox="0 0 1792 1792" width="20" xmlns="http://www.w3.org/2000/svg">
+           <path d="M1684 408q-67 98-162 167 1 14 1 42 0 130-38 259.5T1369.5 1125 1185 1335.5t-258 146-323 54.5q-271 0-496-145 35 4 78 4 225 0 401-138-105-2-188-64.5T285 1033q33 5 61 5 43 0 85-11-112-23-185.5-111.5T172 710v-4q68 38 146 41-66-44-105-115t-39-154q0-88 44-163 121 149 294.5 238.5T884 653q-8-38-8-74 0-134 94.5-228.5T1199 256q140 0 236 102 109-21 205-78-37 115-142 178 93-10 186-50z">
+           </path>
+          </svg>
+         </a>
+         <a class="text-gray-400 transition-colors duration-200 hover:text-gray-800 dark:hover:text-white" href="#">
+          <svg class="text-xl transition-colors duration-200 hover:text-gray-800 dark:hover:text-white" fill="currentcolor" height="20" viewbox="0 0 1792 1792" width="20" xmlns="http://www.w3.org/2000/svg">
+           <path d="M896 128q209 0 385.5 103T1561 510.5 1664 896q0 251-146.5 451.5T1139 1625q-27 5-40-7t-13-30q0-3 .5-76.5t.5-134.5q0-97-52-142 57-6 102.5-18t94-39 81-66.5 53-105T1386 856q0-119-79-206 37-91-8-204-28-9-81 11t-92 44l-38 24q-93-26-192-26t-192 26q-16-11-42.5-27T578 459.5 493 446q-45 113-8 204-79 87-79 206 0 85 20.5 150t52.5 105 80.5 67 94 39 102.5 18q-39 36-49 103-21 10-45 15t-57 5-65.5-21.5T484 1274q-19-32-48.5-52t-49.5-24l-20-3q-21 0-29 4.5t-5 11.5 9 14 13 12l7 5q22 10 43.5 38t31.5 51l10 23q13 38 44 61.5t67 30 69.5 7 55.5-3.5l23-4q0 38 .5 88.5t.5 54.5q0 18-13 30t-40 7q-232-77-378.5-277.5T128 896q0-209 103-385.5T510.5 231 896 128zM419 1231q3-7-7-12-10-3-13 2-3 7 7 12 9 6 13-2zm31 34q7-5-2-16-10-9-16-3-7 5 2 16 10 10 16 3zm30 45q9-7 0-19-8-13-17-6-9 5 0 18t17 7zm42 42q8-8-4-19-12-12-20-3-9 8 4 19 12 12 20 3zm57 25q3-11-13-16-15-4-19 7t13 15q15 6 19-6zm63 5q0-13-17-11-16 0-16 11 0 13 17 11 16 0 16-11zm58-10q-2-11-18-9-16 3-14 15t18 8 14-14z">
+           </path>
+          </svg>
+         </a>
+         <a class="text-gray-400 transition-colors duration-200 hover:text-gray-800 dark:hover:text-white" href="#">
+          <svg class="text-xl transition-colors duration-200 hover:text-gray-800 dark:hover:text-white" fill="currentcolor" height="20" viewbox="0 0 1792 1792" width="20" xmlns="http://www.w3.org/2000/svg">
+           <path d="M477 625v991H147V625h330zm21-306q1 73-50.5 122T312 490h-2q-82 0-132-49t-50-122q0-74 51.5-122.5T314 148t133 48.5T498 319zm1166 729v568h-329v-530q0-105-40.5-164.5T1168 862q-63 0-105.5 34.5T999 982q-11 30-11 81v553H659q2-399 2-647t-1-296l-1-48h329v144h-2q20-32 41-56t56.5-52 87-43.5T1285 602q171 0 275 113.5t104 332.5z">
+           </path>
+          </svg>
+         </a>
+         <a class="text-gray-400 transition-colors duration-200 hover:text-gray-800 dark:hover:text-white" href="#">
+          <svg class="text-xl transition-colors duration-200 hover:text-gray-800 dark:hover:text-white" fill="currentcolor" height="20" viewbox="0 0 1792 1792" width="20" xmlns="http://www.w3.org/2000/svg">
+           <path d="M1551 1476q15-6 26-3t11 17.5-15 33.5q-13 16-44 43.5t-95.5 68-141 74-188 58T875 1792q-119 0-238-31t-209-76.5-172.5-104-132.5-105-84-87.5q-8-9-10-16.5t1-12 8-7 11.5-2T61 1355q192 117 3e2 166 389 176 799 90 190-40 391-135zm207-115q11 16 2.5 69.5T1732 1533q-34 83-85 124-17 14-26 9t0-24q21-45 44.5-121.5t6.5-98.5q-5-7-15.5-11.5t-27-6-29.5-2.5-35 0-31.5 2-31 3-22.5 2q-6 1-13 1.5t-11 1-8.5 1-7 .5h-10l-3-.5-2-1.5-1.5-3q-6-16 47-40t103-30q46-7 108-1t76 24zm-394-443q0 31 13.5 64t32 58 37.5 46 33 32l13 11-227 224q-40-37-79-75.5t-58-58.5l-19-20q-11-11-25-33-38 59-97.5 102.5T860 1332t-140 23-137.5-21-117.5-65.5-83-113T351 993q0-84 28-154t72-116.5 106.5-83 122.5-57T810 548t119.5-18.5 99.5-6.5V396q0-65-21-97-34-53-121-53-6 0-16.5 1T830 259t-56 29.5-56 59.5-48 96l-294-27q0-60 22-119t67-113 108-95 151.5-65.5T915 0q1e2.0 181 25t129.5 61.5 81 83 45 86T1364 329v589zm-672 21q0 86 70 133 66 44 139 22 84-25 114-123 14-45 14-101V708q-59 2-111 12t-106.5 33.5-87 71T692 939z">
+           </path>
+          </svg>
+         </a>
+        </div>
+       </div>
+      </footer>
+     </div>
+    </div>
+   </footer>
+  </div>
+  <div class="md-dialog" data-md-component="dialog">
+   <div class="md-dialog__inner md-typeset">
+   </div>
+  </div>
+  <div class="md-progress" data-md-component="progress" role="progressbar">
+  </div>
+  <script id="__config" type="application/json">
+   {"base": "../../../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.path", "navigation.indexes", "toc.follow"], "search": "../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}
+  </script>
+  <script src="../../../../assets/javascripts/bundle.081f42fc.min.js">
+  </script>
+  <script src="../../../../js/timeago.min.js">
+  </script>
+  <script src="../../../../js/timeago_mkdocs_material.js">
+  </script>
+  <script async="" src="../../../../assets/javascripts/toggle-sidebar.js">
+  </script>
+ </body>
+</html>
