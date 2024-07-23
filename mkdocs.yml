@@ -4,15 +4,14 @@ site_url: https://blog.shaishav.kr
 copyright: Copyright &copy; 2012 - 2024 Shaishav Kr | @wiresurfer
 
 nav:
-  - Home: 'index.md'
-  - About 🔗: 'https://shaishav.kr"  target="_blank'
-  - ... 
-  - Photography 🔗: 'https://photos.shaishav.kr/grid"  target="_blank'
-
+  - Home: "index.md"
+  - About: 'https://shaishav.kr"  target="_blank'
+  - ...
+  - Photography: 'https://photos.shaishav.kr/grid"  target="_blank'
 
 exclude:
   #- 'Assets.*'
-  - '/templates'
+  - "/templates"
 
 theme:
   name: material
@@ -31,18 +30,17 @@ theme:
     - navigation.path
     - navigation.indexes
     - toc.follow
+    - content.code.copy
 
   palette:
     scheme: slate
     primary: red
 
-
-
-plugins: 
-  - search 
+plugins:
+  - search
   - pub-debugger
   - awesome-pages:
-      collapse_single_pages: false 
+      collapse_single_pages: false
   - tags:
       tags_file: tags.md
   - exclude:
@@ -52,19 +50,19 @@ plugins:
   - toggle-sidebar
   - pub-social
   - blog:
-      blog_dir: . 
+      blog_dir: .
       post_dir: "{blog}/Articles"
       post_url_date_format: yyyy/MM/dd
 
-      archive: true 
+      archive: true
       archive_name: Archive
       archive_url_date_format: yyyy
       archive_date_format: yyyy
 
       categories: true
-      categories_name: 'Categories'
+      categories_name: "Categories"
 
-      authors: true 
+      authors: true
       authors_file: "{blog}/.authors.yaml"
       pagination_per_page: 16
   - rss:
@@ -85,8 +83,8 @@ plugins:
         #datetime_format: "%Y-%m-%d"
         #default_timezone: Asia/Kolkata
       categories:
-       - tags        # will look into page.meta.tags
-       - categories  # will also look into page.meta.categori
+        - tags # will look into page.meta.tags
+        - categories # will also look into page.meta.categori
   - social:
       cards_layout_options:
         background_image: assets/images/parallax-bg.jpg
@@ -95,15 +93,14 @@ plugins:
   #    type: timeago
   #- mkdocs-newsletter
   #- pub-meta
-    #- pub-minifier
-    #- pub-obsidian
+  #- pub-minifier
+  #- pub-obsidian
 
-
-extra: 
+extra:
   generator: false
   social:
     - icon: fontawesome/brands/linkedin
-      link: https://www.linkedin.com/in/shaishavkr 
+      link: https://www.linkedin.com/in/shaishavkr
       name: LinkedIn @shaishavkr
     - icon: fontawesome/brands/instagram
       link: https://instagram.com/wiresurfer
@@ -118,28 +115,25 @@ extra:
 extra_css:
   - "assets/css/tailwing.min.css"
   - "assets/css/fonts.css"
+  - "assets/css/override.css"
+  - "assets/css/site.css"
   - "assets/css/nav.css"
   - "assets/css/typography.css"
-  - "assets/css/hero.css"
   - "assets/css/article.css"
   - "assets/css/list.css"
-  - "assets/css/override.css"
   - "assets/css/responsive.css"
   #- "assets/css/flowbite.min.css"
 pub-obsidian:
-    backlinks:
-      enabled: true
-    callouts:
-      enabled: true
-    comments:
-      enabled: true
-      inject_as_html: false
-    links:
-      wikilinks_enabled: true 
-      img_lazy: true
-
-
-
+  backlinks:
+    enabled: true
+  callouts:
+    enabled: true
+  comments:
+    enabled: true
+    inject_as_html: false
+  links:
+    wikilinks_enabled: true
+    img_lazy: true
 
 markdown_extensions:
   - admonition
@@ -163,4 +157,3 @@ markdown_extensions:
           format: !!python/name:pymdownx.superfences.fence_code_format
   - toc:
       title: On This Page
-

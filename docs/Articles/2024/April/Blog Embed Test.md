@@ -21,6 +21,7 @@ In this introductory blog post, we will explore the concept of iDp, its growing 
 ![](Assets/media/AI%20Checklist%20for%20Startups/AI%20Checklist%20for%20Startups%202023-12-28%2019.38.11.excalidraw.svg)
 
 
+
 #### Code
 
 ```python

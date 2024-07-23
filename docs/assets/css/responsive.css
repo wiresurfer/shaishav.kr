@@ -1,47 +1,172 @@
-
-.md-grid{
-    padding: 0 1rem;
-    max-width: revert;
+@media screen and (max-width: 1080px) {
+  article.md-content__inner.md-typeset {
+    max-width: 100% !important;
+    margin: 0 auto !important;
+  }
 }
 
-.md-content.md-content--post {
+@media screen and (min-width: 1080px) and (max-width: 1440px) {
+  article.md-content__inner.md-typeset {
+    max-width: 98% !important;
+    margin: 0 auto !important;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  article.md-content__inner.md-typeset {
+    max-width: 1400px !important;
+    margin: 0 auto !important;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .md-main__inner.md-grid {
     max-width: 100%;
+  }
+
+  nav.md-header__inner.md-grid {
+    max-width: 100%;
+  }
+  header.md-header {
+    background-color: #111419;
+    padding: 8px 0.5rem;
+  }
+}
+
+@media screen and (min-width: 480px) and (max-width: 768px) {
+  .md-main__inner.md-grid {
+    max-width: 100%;
+  }
+
+  nav.md-header__inner.md-grid {
+    max-width: 100%;
+  }
+  header.md-header {
+    background-color: #111419;
+    padding: 8px 0.5rem;
+  }
+  article.md-typeset > p > img {
+    margin: 8px auto;
+    max-width: 90% !important;
+    width: 90%;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1220px) {
+  .md-main__inner.md-grid {
+    max-width: 85%;
+  }
+
+  nav.md-header__inner.md-grid {
+    max-width: 85%;
+  }
+
+  header.md-header {
+    background-color: #111419;
+    padding: 8px 0.5rem;
+  }
+  article.md-typeset > p > img {
+    margin: 8px auto;
+    max-width: 60% !important;
+    width: unset;
+  }
+}
+
+@media screen and (min-width: 1220px) and (max-width: 1440px) {
+  .md-main__inner.md-grid {
+    max-width: 80%;
+  }
+
+  nav.md-header__inner.md-grid {
+    max-width: 80%;
+  }
+  .md-sidebar.md-sidebar--post {
+    display: none;
+  }
+  /* large */
+  article.md-typeset > p > img {
+    margin: 8px auto;
+    max-width: 90% !important;
+    width: 75%;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  /* xl-large */
+}
+
+@media screen and (max-width: 1080px) {
+  article.md-content__inner.md-typeset {
+    max-width: 80ch !important;
+    margin: 0 auto !important;
+  }
+}
+
+@media screen and (min-width: 1080px) and (max-width: 1440px) {
+  article.md-content__inner.md-typeset {
+    max-width: 80ch !important;
+    margin: 0 auto !important;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  article.md-content__inner.md-typeset {
+    max-width: 80ch !important;
+    margin: 0 auto !important;
+  }
+}
+
+@media print {
+  @page {
     margin: 0;
-    flex-grow: 1;
-}
+  }
+  * {
+    print-color-adjust: exact !important;
 
-.md-content {
-    margin: 0 auto;
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased !important;
-    -moz-font-smoothing: antialiased !important;
-    text-rendering: optimizelegibility !important;
-}
+    color: #e5e5e5;
+  }
+  body {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    background-color: hsl(0deg 0% 5.1%);
+    color: white;
+  }
 
-.md-sidebar--secondary {
-    margin-left: 10ch;
-    left: 5ch;
-}
+  .md-container {
+    background-color: hsl(0deg 0% 5.1%);
+  }
+  article.md-content__inner.md-typeset {
+    max-width: 95% !important;
+    margin: 0 2.5% !important;
+  }
+  nav.md-tabs {
+    display: none !important;
+  }
+  .md-main__inner.md-grid {
+    max-width: 100%;
+    width: 100%;
+    margin: auto 1rem;
+    margin-top: -10px;
+  }
 
-@media screen and (max-width:1080px) {
-    article.md-content__inner.md-typeset {
-        max-width: 80ch!important;
-        margin: 0 auto!important;
-    }
-    
-}
+  .md-sidebar.md-sidebar--primary {
+    display: none;
+  }
 
-@media screen and (min-width:1080px) and (max-width: 1440px) {
-    article.md-content__inner.md-typeset {
-        max-width: 80ch!important;
-        margin: 0 auto!important;
-    }
-}
+  .md-sidebar.md-sidebar--secondary {
+    display: none;
+  }
 
-@media screen and (min-width:1440px) {
-    article.md-content__inner.md-typeset {
-        max-width: 80ch!important;
-        margin: 0 auto!important;
-    }
+  code {
+    display: inline-block !important;
+    break-inside: avoid;
+    padding: 6px 10px !important;
+    margin: 0px !important;
+    line-height: 1rem !important;
+    min-height: 12px !important;
+    font-size: 14px !important;
+    top: 0 !important;
+    left: 0 !important;
+    border: none !important;
+  }
 }
-

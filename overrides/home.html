@@ -1,198 +1,189 @@
-{#-
-  This file was automatically generated - do not edit
--#}
-{% extends "main.html" %}
-
-
-{% block extrahead %}  
-  {{ super() }}
-  <style>
-    hr.gradient, hr.gradient {
-        background-image: radial-gradient(circle at 12.3% 19.3%, #3e3fcb 0%, #027ea9 100.2%);
-        height: 1px;
-        border: 0;
-        margin: .5rem 0;
-    }
-    .md-typeset h3 { margin:1em 0 0px;}
-    
-    article.home-info code { background: none; font-size:16px!important; line-height:24px!important}
-    
-
-    .text-lg.pr-5 {
-        font-size: 0.8rem;
-        color: slategray;
-    }
-
-    .bg-cover {
-        min-height: 240px;
-    }
-
-    a.block.group {
-        margin: 0.5rem 0 2rem;
-    }
-
-    .md-typeset .grid {
-        grid-gap: 1rem;
-    }
-
-    .hero-text {
-        font-size: 16px;
-        word-break: break-word;
-        font-family: monospace;
-        line-height: 24px;
-        width: 80%;
-        color: var(--text-normal);
-
-    }
-    .md-grid {
-        max-width: 70%;
-    }
-    h3.text-xl.font-bold.text-white.mb-2 {
-        font-size: 16px;
-    }
-
-    .text-lg.pr-5 {
-        font-size: 14px;
-    }
-  </style>
-{% endblock extrahead %} 
-
-
-{% block hero %}
-    <article class="container mx-auto">
-    <div class="first-entry home-info">
-      <div class="grid lg:grid-cols-3 md:grid-cols-2 gap-4">
-       <section class="entry-content col-span-2 md:col-span2 px-2">
-        <img style="
+{#- This file was automatically generated - do not edit -#} {% extends
+"main.html" %} {% block extrahead %} {{ super() }}
+<style></style>
+{% endblock extrahead %} {% block hero %}
+<article class="container mx-auto">
+  <div class="first-entry home-info">
+    <div class="grid lg:grid-cols-3 md:grid-cols-2 gap-4">
+      <section class="entry-content col-span-2 md:col-span2 px-2">
+        <img
+          style="
             position: relative;
             right: 0;
             margin: 0 auto;
             top: 0;
             margin-bottom: 6px;
             width: 89px;
-        " alt="Shaishav Kumar profile pic" loading="lazy" src="assets/images/profile-pic.png" title="Shaishav.kr">
-        <h2 id="my-journey" style="margin:0!important;margin-bottom:6px;">$ whoami</h2>
+          "
+          alt="Shaishav Kumar profile pic"
+          loading="lazy"
+          src="assets/images/profile-pic.png"
+          title="Shaishav.kr"
+        />
+        <h2 id="my-journey" style="margin: 0 !important; margin-bottom: 6px">
+          $ whoami
+        </h2>
         <div class="hero-text">
-            <br />
-            Hello there! I'm <strong style="color:var(--text-sub-accent)">Shaishav Kr</strong>, often known by my internet alias <strong style="color:var(--text-sub-accent);">@wiresufer</strong><br /><br /> 
-            Seasoned technology professional with over 15 years of hands-on experience in Machine Learning, Cloud, IoT, Robotics, Platform Engineering and Enterprise PaaS/SaaS.<br /><br />
-            My journey has been a roller coaster filled with valuable learnings, real-world case studies, and practical insights that I'm excited to share.     <br />
-            In the past 9+ years, I've also been a driving force behind small, high-paced engineering teams in both 0-to-1 and 1-to-Scale startups. 
-            <br />
-            <br />
-            <br />
+          <br />
+          Hello there! I'm
+          <strong style="color: var(--text-sub-accent)">Shaishav Kr</strong>,
+          often known by my internet alias
+          <strong style="color: var(--text-sub-accent)">@wiresufer</strong
+          ><br /><br />
+          Seasoned technology professional with over 15 years of hands-on
+          experience in Machine Learning, Cloud, IoT, Robotics, Platform
+          Engineering and Enterprise PaaS/SaaS.<br /><br />
+          My journey has been a roller coaster filled with valuable learnings,
+          real-world case studies, and practical insights that I'm excited to
+          share. <br />
+          In the past 9+ years, I've also been a driving force behind small,
+          high-paced engineering teams in both 0-to-1 and 1-to-Scale startups.
+          <br />
+          <br />
+          <br />
         </div>
         <h3 id="my-mission">My Mission</h3>
         <div class="hero-text">
-            <ol>
-                <li>Solving "hard" inter-disciplinary engineering problems using  software, data science and  AI as force multipliers, </li>
-                <li>at the intersection of Computer Science and the Physical World,</li>
-                <li>in business domains with measurable impact towards "betterment" of "human condition"</li>
-            </ol>
+          <ol>
+            <li>
+              Solving "hard" inter-disciplinary engineering problems using
+              software, data science and AI as force multipliers,
+            </li>
+            <li>
+              at the intersection of Computer Science and the Physical World,
+            </li>
+            <li>
+              in business domains with measurable impact towards "betterment" of
+              "human condition"
+            </li>
+          </ol>
         </div>
-        <br /><br /> 
-       </section>
-       
-       <div class="entry-header text-left sm:mx-4 md:mx-0 sm:col-span-2 md:col-span-1 sm:mt-0 md:mt-16" style="text-align:left;">
+        <br /><br />
+      </section>
+
+      <div
+        class="entry-header text-left sm:mx-4 md:mx-0 sm:col-span-2 md:col-span-1 sm:mt-0 md:mt-16"
+        style="text-align: left"
+      >
         <h3 id="my-writing-usually-talks-about">My Writing covers...</h3>
         <div id="writing-topics" style="">
-            <ol style="
-                margin: 0.5rem 0px;
-                padding: 4px 1rem;
-                display: inline-grid;
-                font-size: 14px;
-                font-family: monospace;
-                letter-spacing: 0px;
-            ">
-                <li>👷 Engineering
-                    <ol>
-                        <li>🌐 IoT,  🤖 Robotics, </li>
-                        <li>🖥️🧠 Machine Learning and AI </li>
-                        <li>🐰 Golang, ☸ Kubernetes, 🐳Docker &amp; friends. </li>
-                        <li>🐧 Linux Kernel Internals </li>
-                    </ol>
-                </li>
-                <li>💼 Management and Strategy
-                    <ol>
-                        <li>🙇 Engineering leadership for small + high-impact teams </li>
-                        <li>🌎 Managing Remote-first global teams.</li>
-                        <li>🚀 Product Management</li>
-                        <li>🏗️ B2b SaaS/PaaS overview </li>
-                    </ol>
-                </li>
-                <li>🧠 Right brain musings (in small, infrequent doses)
-                    <ol>
-                        <li>⌚Productivty  </li>
-                        <li>📸 Photography </li>
-                        <li>📖 Philosophy, and 🥳 Happiness </li> 
-                    </ol>
-                </li>
-            </code>
-        </pre>
-        
-       </header>
+          <ol
+            style="
+              margin: 0.5rem 0px;
+              padding: 4px 1rem;
+              display: inline-grid;
+              font-size: 14px;
+              font-family: monospace;
+              letter-spacing: 0px;
+            "
+          >
+            <li>
+              👷 Engineering
+              <ol>
+                <li>🌐 IoT, 🤖 Robotics,</li>
+                <li>🖥️🧠 Machine Learning and AI</li>
+                <li>🐰 Golang, ☸ Kubernetes, 🐳Docker &amp; friends.</li>
+                <li>🐧 Linux Kernel Internals</li>
+              </ol>
+            </li>
+            <li>
+              💼 Management and Strategy
+              <ol>
+                <li>🙇 Engineering leadership for small + high-impact teams</li>
+                <li>🌎 Managing Remote-first global teams.</li>
+                <li>🚀 Product Management</li>
+                <li>🏗️ B2b SaaS/PaaS overview</li>
+              </ol>
+            </li>
+            <li>
+              🧠 Right brain musings (in small, infrequent doses)
+              <ol>
+                <li>⌚Productivty</li>
+                <li>📸 Photography</li>
+                <li>📖 Philosophy, and 🥳 Happiness</li>
+              </ol>
+            </li>
+          </ol>
+        </div>
       </div>
     </div>
-
-
-    </article>
-
+  </div>
+</article>
 
 {% endblock %}
-
 
 <!-- Page content -->
 {% block site_nav %}
-  <div class="md-content" data-md-component="content">
-    <div class="md-content__inner">
-
+<div class="md-content" data-md-component="content">
+  <div class="md-content__inner">
     <div class="container mx-auto">
       <hr class="gradient" />
-      <h2 style="text-align:center; margin:1rem; font-family:monospace; font-size:2rem;"> Writing </h2>
+      <h2
+        style="
+          text-align: center;
+          margin: 1rem;
+          font-family: monospace;
+          font-size: 2rem;
+        "
+      >
+        Writing
+      </h2>
       <hr class="gradient mb-4" />
       <div class="grid lg:grid-cols-3 md:grid-cols-2 xl:grid-cols-3 gap-4">
-
-      <!-- Posts -->
-       {% for post in posts %}
-           {% include "partials/post.html" %}
-       {% endfor %}
-      <!-- Pagination -->
+        <!-- Posts -->
+        {% for post in posts %} {% include "partials/post.html" %} {% endfor %}
+        <!-- Pagination -->
       </div>
-      {% if pagination %}
-        {% block pagination %}
-          {% include "partials/pagination.html" %}
-        {% endblock %}
-      {% endif %}
-  </div>
+      {% if pagination %} {% block pagination %} {% include
+      "partials/pagination.html" %} {% endblock %} {% endif %}
+    </div>
 
-  {% endblock %}
-
-
-{% block container %} {% endblock %}
-
-{% block footer %}
+    {% endblock %} {% block container %} {% endblock %} {% block footer %}
     <div class="container mx-auto">
-
-        <hr class="gradient" />
-        <iframe src="https://photos.shaishav.kr/grid" width="100%" height="640px"></iframe>
-        <hr class="gradient" />
-        <div class="grid lg:grid-cols-3 md:grid-cols-2 gap-4">
-
-          <div class="lg:col-span-2 mx-auto lg:py-16 md:col-span-2 md:p-1">
-             <h2 id="giving-back-and-helping">Giving Back to the tech-community by,</h2>
-             <ul style="font-size:16px;padding:1rem 0;letter-spacing:0">
-                 <li><p>Mentoring young engineers in navigating their careers. <a href="mailto:mentoring@shaishav.kr">mentoring@shaishav.kr</a></p></li>
-                 <li><p>Coaching startups in building Skunkworks™️ like pods to deliver speedy innovation. <a href="mailto:leadership@shaishav.kr">leadership@shaishav.kr</a></p></li>
-                 <li><p>Advising traditional business owners/startup founders with technical &amp; AI strategy. <a href="mailto:strategy@shaishav.kr">strategy@shaishav.kr</a></p></li>
-             </ul>
-          </div>
+      <hr class="gradient" />
+      <iframe
+        src="https://photos.shaishav.kr/grid"
+        width="100%"
+        height="640px"
+      ></iframe>
+      <hr class="gradient" />
+      <div class="grid lg:grid-cols-3 md:grid-cols-2 gap-4">
+        <div class="lg:col-span-2 mx-auto lg:py-16 md:col-span-2 md:p-1">
+          <h2 id="giving-back-and-helping">
+            Giving Back to the tech-community by,
+          </h2>
+          <ul style="font-size: 16px; padding: 1rem 0; letter-spacing: 0">
+            <li>
+              <p>
+                Mentoring young engineers in navigating their careers.
+                <a href="mailto:mentoring@shaishav.kr">mentoring@shaishav.kr</a>
+              </p>
+            </li>
+            <li>
+              <p>
+                Coaching startups in building Skunkworks™️ like pods to deliver
+                speedy innovation.
+                <a href="mailto:leadership@shaishav.kr"
+                  >leadership@shaishav.kr</a
+                >
+              </p>
+            </li>
+            <li>
+              <p>
+                Advising traditional business owners/startup founders with
+                technical &amp; AI strategy.
+                <a href="mailto:strategy@shaishav.kr">strategy@shaishav.kr</a>
+              </p>
+            </li>
+          </ul>
+        </div>
         <div class="lg:col-span-1 md:col-span-2">
-             <div class="relative isolate overflow-hidden lg:py-2 my-2 md:py-2">
-                 {% include "partials/convertkit.html" %}
-             </div>
-         </div>
+          <div class="relative isolate overflow-hidden lg:py-2 my-2 md:py-2">
+            {% include "partials/convertkit.html" %}
+          </div>
+        </div>
+      </div>
     </div>
-    
-    </div>
-   {{ super() }}
-{% endblock %}
+    {{ super() }} {% endblock %}
+  </div>
+</div>

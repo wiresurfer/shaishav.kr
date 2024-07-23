@@ -41,6 +41,7 @@ While it isn't absolutely necessary for a Linux Kernel bootup saga, I do feel it
 
 For the impatient, feel free to jump to [Linux Kernel Bootup Sequence](#Linux-Kernel-Bootup-Sequence)
 
+
 ---
 ## 🖥️ Modern PC Architecture  
 
@@ -81,8 +82,6 @@ BIOS is an embedded program responsible for starting the computer and performing
 3. **CMOS Battery Check:** Keeping correct time is important. Not so critical these days, but back in the day, a depleted CMOS battery could lead to a lot of mess. Often a motherboard would refuse to boot automatically if it detected a fault in the CMOS Clock. 
 4. **RAM check**: Verify RAM speed and make sure the bus speed of various subsystems are compatible. Overclockers tinker with the voltage levels of the RAM and the CPU to force it to run at higher than prescribed clock speeds. BIOS/UEFI these days protects such folks from frying up their threadripper/i9 cpu
 5. **Boot a Storage Device:** Try to find bootable storage devices. Either a disk with Master Boot Record entries, or a GPT UUID partitioned disk. 
-
-
 6. ![BIOS and UEFI both perform POST on motherboards. UEFI just happens to be with the times.|625](Assets/media/Linux%20Kernel%20Explained%20-%20Deep%20Dive%20Series%20for%20System%20Engineers/Linux%20Kernel%20Explained%20-%20Deep%20Dive%20Series%20for%20System%20Engineers-image-2024-05-30-000359.png)
 
 
