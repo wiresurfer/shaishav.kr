@@ -46,6 +46,7 @@ div.container > h2,
 div.card-text > h2 {
   border-left: none;
   min-height: 2rem;
+  margin-top: 8px!important;
 }
 .card-text > p {
   /* font-family: monospace; */
