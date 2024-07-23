@@ -1,7 +1,0 @@
-created_at,updated_at,meta_data,id,name,type,length,width,height,max_weight,application
-2023-09-27 06:06:27,2023-09-27 16:27:18,,22c24b595891f260f8f45cfb11eeb503,SKUBINPARTITION-2x2,container-bin-partition,-1.0,-1.0,-1.0,-1.0,oks
-2023-09-27 06:06:02,2023-09-27 16:26:51,,22c24b595891de1811c85cfb11ee9aa3,SKUBIN,container-sku,-1.0,-1.0,-1.0,-1.0,oks
-2023-09-27 16:28:25,2023-09-27 16:28:25,,22c24b595891ddc846465d5211ee9754,PALLET,pallet,-1.0,-1.0,-1.0,-1.0,oks
-2023-09-27 16:28:13,2023-09-27 16:28:13,,22c24b595891d66813b85d5211ee9ae2,ORDERBIN,container-order,-1.0,-1.0,-1.0,-1.0,oks
-2023-09-27 16:27:41,2023-09-27 16:27:41,,22c24b595891c3f156905d5211eeb952,SKUBINPARTITION-1x2,container-bin-partition,-1.0,-1.0,-1.0,-1.0,oks
-2023-09-27 06:14:24,2023-09-27 16:27:12,,22c24b5958911254dbbe5cfd11eea2c2,SKUBINPARTITION1x1,container-bin-partition,-1.0,-1.0,-1.0,-1.0,oks
