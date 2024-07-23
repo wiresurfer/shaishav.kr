@@ -1,5 +1,7 @@
-.hugo_build.lock
 .DS_Store
 .build
-**/.build/*
-**/*.pyc
+.cache/
+.pub_blog_temp/
+.pub_min_cache/
+*_mkdocs_build.zip
+*_mkdocs_debug.log

@@ -1,0 +1,41 @@
+{% extends "main.html" %}
+
+<!-- Page content -->
+{% block container %}
+
+<div
+  class="md-content mx-auto w-full max-w-max"
+  style="max-width: max-content"
+  data-md-contnt="content"
+>
+  <div class="md-content__inner w-full">
+    <div class="container mx-auto w-full" style="width:90% max-width:1440px">
+      <hr class="gradient" />
+      <h2
+        style="
+          text-align: center;
+          margin: 1rem;
+          font-family: monospace;
+          font-size: 2rem;
+        "
+      >
+        Archive
+      </h2>
+      <hr class="gradient mb-4" />
+      <div class="grid lg:grid-cols-3 md:grid-cols-2 xl:grid-cols-3 gap-4">
+        <!-- Header -->
+        <header class="md-typeset">{{ page.content }}</header>
+
+        <!-- Posts -->
+        {% for post in posts %} {% if not post.meta.draft %} {% if
+        post.meta.public %} {% include "partials/post.html" %} {% endif %} {%
+        endif %} {% endfor %}
+
+        <!-- Pagination -->
+      </div>
+    </div>
+    {% if pagination %} {% block pagination %} {% include
+    "partials/pagination.html" %} {% endblock %} {% endif %}
+  </div>
+  {% endblock %}
+</div>
