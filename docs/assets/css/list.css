@@ -32,10 +32,14 @@ h3 {
 }
 
 .card-text > h2 {
-  font-size: 14px;
+  font-size: 1.5em;
   font-weight: revert;
   margin: 0 !important;
   padding: 0 !important;
+  line-height: 1.25em;
+  min-height: 1em;
+  height: 2.75em;
+  overflow: hidden;
 }
 
 div.container > h2,

@@ -6,6 +6,9 @@ header.md-header {
   padding: 16px 4rem;
 }
 
+md-main__inner  {
+  margin-top: 4px;
+}
 .md-content .entry-content {
   line-clamp: unset;
   -webkit-line-clamp: unset;
@@ -188,6 +191,6 @@ label.md-nav__title {
 .md-social {
   margin: 12px 16px;
 }
-article.md-post.md-post--excerpt {
-  margin-bottom: 0px;
-}
+/* article.md-post.md-post--excerpt { */
+/*   margin-bottom: 0px; */
+/* } */

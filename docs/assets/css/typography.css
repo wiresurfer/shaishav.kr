@@ -61,6 +61,7 @@ h2#further-reading + ol {
 .md-typeset ol > li {
   margin-left: 0.5rem;
   padding-left: 8px;
+  font-size: 16px;
 }
 
 .md-typeset ul:not(.task-list),
@@ -388,7 +389,7 @@ pre:hover .copy-code {
   flex-direction: column;
   justify-content: center;
   min-height: 320px;
-  margin: var(--gap) 0 calc(var(--gap) * 2);
+  /* margin: var(--gap) 0 calc(var(--gap) * 2); */
 }
 
 .first-entry .entry-header {
@@ -396,6 +397,7 @@ pre:hover .copy-code {
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
+  line-clamp:3;
 }
 
 .first-entry .entry-header h1 {
@@ -407,6 +409,7 @@ pre:hover .copy-code {
   margin: 14px 0;
   font-size: 16px;
   -webkit-line-clamp: 3;
+  line-clamp:3;
 }
 
 .first-entry .entry-footer {

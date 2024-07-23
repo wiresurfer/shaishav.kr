@@ -116,6 +116,11 @@
 {% block site_nav %}
 <div class="md-content" data-md-component="content">
   <div class="md-content__inner">
+
+    <div class="container mx-auto">
+      <hr class="gradient mt-4" />
+      {% include "partials/convertkit.html" %}
+    </div>
     <div class="container mx-auto">
       <hr class="gradient" />
       <h2
@@ -129,60 +134,34 @@
         Writing
       </h2>
       <hr class="gradient mb-4" />
-      <div class="grid lg:grid-cols-3 md:grid-cols-2 xl:grid-cols-3 gap-4">
+      <div class="grid lg:grid-cols-3 md:grid-cols-2 xl:grid-cols-3 gap-4 mt-8">
         <!-- Posts -->
-        {% for post in posts %} {% include "partials/post.html" %} {% endfor %}
+
+        {% for post in posts %} {% if not post.meta.draft %} {% if
+        post.meta.public %} {% include "partials/post.html" %} {% endif %} {%
+        endif %} {% endfor %}
         <!-- Pagination -->
       </div>
+      <div class="my-4">
       {% if pagination %} {% block pagination %} {% include
       "partials/pagination.html" %} {% endblock %} {% endif %}
+      </div>
     </div>
 
     {% endblock %} {% block container %} {% endblock %} {% block footer %}
-    <div class="container mx-auto">
-      <hr class="gradient" />
-      <iframe
-        src="https://photos.shaishav.kr/grid"
-        width="100%"
-        height="640px"
-      ></iframe>
-      <hr class="gradient" />
-      <div class="grid lg:grid-cols-3 md:grid-cols-2 gap-4">
-        <div class="lg:col-span-2 mx-auto lg:py-16 md:col-span-2 md:p-1">
-          <h2 id="giving-back-and-helping">
-            Giving Back to the tech-community by,
-          </h2>
-          <ul style="font-size: 16px; padding: 1rem 0; letter-spacing: 0">
-            <li>
-              <p>
-                Mentoring young engineers in navigating their careers.
-                <a href="mailto:mentoring@shaishav.kr">mentoring@shaishav.kr</a>
-              </p>
-            </li>
-            <li>
-              <p>
-                Coaching startups in building Skunkworks™️ like pods to deliver
-                speedy innovation.
-                <a href="mailto:leadership@shaishav.kr"
-                  >leadership@shaishav.kr</a
-                >
-              </p>
-            </li>
-            <li>
-              <p>
-                Advising traditional business owners/startup founders with
-                technical &amp; AI strategy.
-                <a href="mailto:strategy@shaishav.kr">strategy@shaishav.kr</a>
-              </p>
-            </li>
-          </ul>
-        </div>
-        <div class="lg:col-span-1 md:col-span-2">
-          <div class="relative isolate overflow-hidden lg:py-2 my-2 md:py-2">
-            {% include "partials/convertkit.html" %}
-          </div>
-        </div>
-      </div>
+    <div class="container mx-auto mt-8">
+      <h2
+        style="
+          text-align: center;
+          margin: 1rem;
+          font-family: monospace;
+          font-size: 2rem;
+        "
+      >
+        Photography 
+      </h2>
+      <hr class="gradient mb-4" />
+      {% include "partials/photos.html" %}
     </div>
     {{ super() }} {% endblock %}
   </div>
