@@ -2,100 +2,138 @@
 public: true
 ShowToc: true
 coverImage: https://images.unsplash.com/photo-1570304815928-ef0771059599
-title: AI Checklist for Startups
+title: AI/ML Checklist for Startups
 date: 2024-05-08
 ---
-# AI Checklist for Startups
+
+# AI/ML Checklist for Startups
+
+This is a work-in-progress article. At present, its a bullet point of topics I
+would cover. I have published this half-baked version to encourage discussion
+and seek editorial comments from people in my circle. This is not about GenAI,
+but the broader field of Artificial Intelligence as well as Machine Learning
+applications.
+
 <!-- more -->
+
+There would be slightly more focus on industrial applications which happens to
+be my domain of expertise.
+
 ## Introduction
-- Predicting the future:  as old as Civilization
-- Machines and Clerical record keeping
-- Advent of connected machines
-- Commoditized Storage and compute
-- Data Hoarding
-- Statistical Modelling for Business Data
-- From human perceivable statistics to abstract high dimension modelling
-- Machine learning at scale
-- Advent of self supervised models
-- Taking learning by example to the extreme
-- Supersizing Training data as well as model weights.
-- Generative/ Adversarial Learning
-- General Intelligence
+
+-   Predicting the future: as old as Civilization
+-   Machines and Clerical record keeping
+-   Advent of connected machines
+-   Commoditized Storage and compute
+-   Data Hoarding
+-   Statistical Modelling for Business Data
+-   From human perceivable statistics to abstract high dimension modelling
+-   Machine learning at scale
+-   Advent of self supervised models
+-   Taking learning by example to the extreme
+-   Supersizing Training data as well as model weights.
+-   Generative/ Adversarial Learning
+-   General Intelligence
 
 # Statistics 101
-- Regression and curve fitting
-- Classification
-- Clustering
-- Nearest Neighbor Searching
-- Dimensions and data modelling
-- Exploratory Data Analysis
+
+-   Regression and curve fitting
+-   Classification
+-   Clustering
+-   Nearest Neighbor Searching
+-   Dimensions and data modelling
+-   Exploratory Data Analysis
+
 # Disciplines
-- NLP
-- Image
-- Audio
-- Time Series
-- User Behavior
+
+-   NLP
+-   Image
+-   Audio
+-   Time Series
+-   User Behavior
 
 # Use Cases
 
 ### User behavior analysis
-- Think of a retail experience. Whether online or in person, businesses collect a vast amount of customer purchase information. Running this data through a machine learning algorithm allows businesses to predict consumer purchasing habits, market trends, popular products, and so on, allowing retailers to make informed business decisions based on this predicted information. For instance, ML enables companies to:
-	- Make accurate decisions on managing stock
-	- Streamline ordering according to market and consumer demand
-	- Increase the overall efficiency of the logistical and operational processes
-	- Integrate with marketing platforms to directly market products targeted at specific consumers
-- In an online environment, ML can:
-	- Analyze user browsing habits
-	- Predict user preferences accurately
-	- Offer targeted suggestions
-	- In a pharmaceutical business that runs drug trials, user behavior analysis can help determine the effectiveness of drugs and [predict any anomalies and outliers](https://www.bmc.com/blogs/machine-learning-anomaly-detection/).
-	- In the maritime industry, a logistics company can predict shipping demand by feeding the logistical data such as routes, transported goods, durations, etc. to a machine learning algorithm.
-		- Analyzing user behavior is not limited to consumers. Any entity in this context can be considered users who interact with the business. ML can be used to extract hidden patterns and behaviors that may not be readily visible on the surface, offering businesses a far greater understanding of the overall business processes.
+
+-   Think of a retail experience. Whether online or in person, businesses
+    collect a vast amount of customer purchase information. Running this data
+    through a machine learning algorithm allows businesses to predict consumer
+    purchasing habits, market trends, popular products, and so on, allowing
+    retailers to make informed business decisions based on this predicted
+    information. For instance, ML enables companies to:
+    -   Make accurate decisions on managing stock
+    -   Streamline ordering according to market and consumer demand
+    -   Increase the overall efficiency of the logistical and operational
+        processes
+    -   Integrate with marketing platforms to directly market products targeted
+        at specific consumers
+-   In an online environment, ML can:
+    -   Analyze user browsing habits
+    -   Predict user preferences accurately
+    -   Offer targeted suggestions
+    -   In a pharmaceutical business that runs drug trials, user behavior
+        analysis can help determine the effectiveness of drugs
+        and [predict any anomalies and outliers](https://www.bmc.com/blogs/machine-learning-anomaly-detection/).
+    -   In the maritime industry, a logistics company can predict shipping
+        demand by feeding the logistical data such as routes, transported goods,
+        durations, etc. to a machine learning algorithm.
+        -   Analyzing user behavior is not limited to consumers. Any entity in
+            this context can be considered users who interact with the business.
+            ML can be used to extract hidden patterns and behaviors that may not
+            be readily visible on the surface, offering businesses a far greater
+            understanding of the overall business processes.
 
 ### Manufacturing & Industrial Automation
-- Greatly reduce manufacturing defects
-- Increasing efficiency and scalability of existing process
-- Predictive Maintenance
-- Automated Workers.
 
+-   Greatly reduce manufacturing defects
+-   Increasing efficiency and scalability of existing process
+-   Predictive Maintenance
+-   Automated Workers.
 
 ### Security for your Product
-- Anomaly Detection
-- Content Moderation
-- Spam/phishing prevention
-- large scale automated audits
+
+-   Anomaly Detection
+-   Content Moderation
+-   Spam/phishing prevention
+-   large scale automated audits
 
 ### Financial Predictions for your Business
-- Expenses, sales forecasts
-- Algorithmic Trading
- 
+
+-   Expenses, sales forecasts
+-   Algorithmic Trading
+
 ### A differentiation with Innovative user experience
-- Vision for scanning receipts
-- Voice promps to Voice assistans
+
+-   Vision for scanning receipts
+-   Voice promps to Voice assistans
 
 # Typical Project Lifecycle
-- Phase 0: Understanding your Problem Space
-- Phase 1: Data Ingestion
-	- Sources and Formats
-	- Data Storage Solutions
-	- Data Management and Provenance
-	- Schema Registry
-	- Streaming vs Batch Ingestion
-- Phase 2: Schema and Model Registry
-- Phase 3: Model Serving
-- Phase 4: Evaluation and Reporting
-- Phase 5: Retraining
-	
+
+-   Phase 0: Understanding your Problem Space
+-   Phase 1: Data Ingestion
+    -   Sources and Formats
+    -   Data Storage Solutions
+    -   Data Management and Provenance
+    -   Schema Registry
+    -   Streaming vs Batch Ingestion
+-   Phase 2: Schema and Model Registry
+-   Phase 3: Model Serving
+-   Phase 4: Evaluation and Reporting
+-   Phase 5: Retraining
 
 # Learning Resources
-  - IvyLeague Content
-		- https://executive.mit.edu/on/demandware.static/-/Sites-master-catalog-msee/default/dw4c31839c/brochures/machine-learning-brochure.pdf
-		- [Turning data into value: building an AI-enabled organization | Stanford Online](https://online.stanford.edu/turning-data-value-building-ai-enabled-organization)
-		
-	- Github/Chapters
-		- 5* - [microsoft](https://github.com/microsoft)/**[Data-Science-For-Beginners](https://github.com/microsoft/Data-Science-For-Beginners)**Public
-			- ![](https://microsoft.github.io/Data-Science-For-Beginners/sketchnotes/00-Roadmap.png "https://microsoft.github.io/Data-Science-For-Beginners/sketchnotes/00-Roadmap.png")
-		- [IoT for beginners](https://github.com/microsoft/IoT-For-Beginners)
-			- [https://github.com/microsoft/IoT-For-Beginners/blob/main/sketchnotes/Roadmap.jpg?raw=true](https://github.com/microsoft/IoT-For-Beginners/blob/main/sketchnotes/Roadmap.jpg?raw=true)
-		- 5* - [https://github.com/gedeck/practical-statistics-for-data-scientists](https://github.com/gedeck/practical-statistics-for-data-scientists)
-		- 2* - [https://github.com/alinasahoo/python-data-science-essentials-2](https://github.com/alinasahoo/python-data-science-essentials-2)
+
+-   IvyLeague Content -
+    https://executive.mit.edu/on/demandware.static/-/Sites-master-catalog-msee/default/dw4c31839c/brochures/machine-learning-brochure.pdf -
+    [Turning data into value: building an AI-enabled organization | Stanford Online](https://online.stanford.edu/turning-data-value-building-ai-enabled-organization)
+    -   Github/Chapters
+        -   5\* -
+            [microsoft](https://github.com/microsoft)/**[Data-Science-For-Beginners](https://github.com/microsoft/Data-Science-For-Beginners)**Public
+            -   ![](https://microsoft.github.io/Data-Science-For-Beginners/sketchnotes/00-Roadmap.png "https://microsoft.github.io/Data-Science-For-Beginners/sketchnotes/00-Roadmap.png")
+        -   [IoT for beginners](https://github.com/microsoft/IoT-For-Beginners)
+            -   [https://github.com/microsoft/IoT-For-Beginners/blob/main/sketchnotes/Roadmap.jpg?raw=true](https://github.com/microsoft/IoT-For-Beginners/blob/main/sketchnotes/Roadmap.jpg?raw=true)
+        -   5\* -
+            [https://github.com/gedeck/practical-statistics-for-data-scientists](https://github.com/gedeck/practical-statistics-for-data-scientists)
+        -   2\* -
+            [https://github.com/alinasahoo/python-data-science-essentials-2](https://github.com/alinasahoo/python-data-science-essentials-2)

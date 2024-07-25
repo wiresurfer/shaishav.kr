@@ -1,6 +1,6 @@
 ---
 title: Linux Kernel Explained - Deep Dive Series for System Engineers
-created: 2024-04-28 14:46
+created: 2024-05-28 14:46
 public: true
 categories:
     - Engineering
@@ -10,10 +10,11 @@ tags:
     - topic/deep-dives
 topic:
     - linux
-date: 2024-04-28
+date: 2024-05-28
 description:
     Deep dive into Linux Kernel for system engineers by @wiresurfer | Learn
     about BIOS, GRUB, Linux Kernel, Initramfs and Root file system.
+coverImage: https://bergercookie.dev/images/linux-books.jpg
 ---
 
 # Linux Kernel Explained - Deep Dive Series for System Engineers
