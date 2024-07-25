@@ -3,16 +3,16 @@
  <head>
   <meta charset="utf-8"/>
   <meta content="width=device-width,initial-scale=1" name="viewport"/>
-  <meta content="Deep dive into Linux Kernel for system engineers by @wiresurfer | Learn about BIOS, GRUB, Linux Kernel, Initramfs and Root file system." name="description"/>
-  <link href="https://blog.shaishav.kr/2024/04/28/linux-kernel-explained---deep-dive-series-for-system-engineers/" rel="canonical"/>
-  <link href="../booting-up-linux-kernel---linux-for-engineers/" rel="prev"/>
-  <link href="../../../05/08/ai-checklist-for-startups/" rel="next"/>
+  <meta content="required. Used as feed mandatory channel description." name="description"/>
+  <link href="https://blog.shaishav.kr/2024/05/08/aiml-checklist-for-startups/" rel="canonical"/>
+  <link href="../../../04/28/booting-up-linux-kernel---linux-for-engineers/" rel="prev"/>
+  <link href="../../28/linux-kernel-explained---deep-dive-series-for-system-engineers/" rel="next"/>
   <link href="../../../../feed_rss_created.xml" rel="alternate" title="RSS feed" type="application/rss+xml"/>
   <link href="../../../../feed_rss_updated.xml" rel="alternate" title="RSS feed of updated content" type="application/rss+xml"/>
   <link href="../../../../assets/images/favicon.png" rel="icon"/>
   <meta content="mkdocs-1.6.0, mkdocs-material-9.5.24" name="generator"/>
   <title>
-   Linux Kernel Explained - Deep Dive Series for System Engineers - wiresurfer's library | © shaishav.kr
+   AI/ML Checklist for Startups - wiresurfer's library | © shaishav.kr
   </title>
   <link href="../../../../assets/stylesheets/main.6543a935.min.css" rel="stylesheet"/>
   <link href="../../../../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
@@ -34,17 +34,17 @@
    __md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}
   </script>
   <meta content="website" property="og:type"/>
-  <meta content="Linux Kernel Explained - Deep Dive Series for System Engineers - wiresurfer's library | © shaishav.kr" property="og:title"/>
-  <meta content="Deep dive into Linux Kernel for system engineers by @wiresurfer | Learn about BIOS, GRUB, Linux Kernel, Initramfs and Root file system." property="og:description"/>
-  <meta content="https://blog.shaishav.kr/assets/images/social/Articles/2024/May/Anatomy of Linux Kernel - Linux Kernel for System Engineers #2.png" property="og:image"/>
+  <meta content="AI/ML Checklist for Startups - wiresurfer's library | © shaishav.kr" property="og:title"/>
+  <meta content="required. Used as feed mandatory channel description." property="og:description"/>
+  <meta content="https://blog.shaishav.kr/assets/images/social/Articles/2024/May/AI Checklist for Startups.png" property="og:image"/>
   <meta content="image/png" property="og:image:type"/>
   <meta content="1200" property="og:image:width"/>
   <meta content="630" property="og:image:height"/>
-  <meta content="https://blog.shaishav.kr/2024/04/28/linux-kernel-explained---deep-dive-series-for-system-engineers/" property="og:url"/>
+  <meta content="https://blog.shaishav.kr/2024/05/08/aiml-checklist-for-startups/" property="og:url"/>
   <meta content="summary_large_image" name="twitter:card"/>
-  <meta content="Linux Kernel Explained - Deep Dive Series for System Engineers - wiresurfer's library | © shaishav.kr" name="twitter:title"/>
-  <meta content="Deep dive into Linux Kernel for system engineers by @wiresurfer | Learn about BIOS, GRUB, Linux Kernel, Initramfs and Root file system." name="twitter:description"/>
-  <meta content="https://blog.shaishav.kr/assets/images/social/Articles/2024/May/Anatomy of Linux Kernel - Linux Kernel for System Engineers #2.png" name="twitter:image"/>
+  <meta content="AI/ML Checklist for Startups - wiresurfer's library | © shaishav.kr" name="twitter:title"/>
+  <meta content="required. Used as feed mandatory channel description." name="twitter:description"/>
+  <meta content="https://blog.shaishav.kr/assets/images/social/Articles/2024/May/AI Checklist for Startups.png" name="twitter:image"/>
   <link href="../../../../feed_json_created.json" rel="alternate" title="JSON feed" type="application/feed+json">
    <link href="../../../../feed_json_updated.json" rel="alternate" title="JSON feed of updated content" type="application/feed+json">
     <meta content="IE=edge" http-equiv="x-ua-compatible">
@@ -80,15 +80,6 @@
     </meta>
    </link>
   </link>
-  <meta content="article" property="og:type"/>
-  <meta content="Linux Kernel Explained - Deep Dive Series for System Engineers" property="og:title"/>
-  <meta content="Deep dive into Linux Kernel for system engineers by @wiresurfer | Learn about BIOS, GRUB, Linux Kernel, Initramfs and Root file system." property="og:description"/>
-  <meta content="wiresurfer's library | © shaishav.kr" property="og:site_name"/>
-  <meta content="en_US" property="og:locale"/>
-  <meta content="https://blog.shaishav.kr/2024/04/28/linux-kernel-explained---deep-dive-series-for-system-engineers/" property="og:url"/>
-  <meta content="summary" property="twitter:card"/>
-  <meta content="Linux Kernel Explained - Deep Dive Series for System Engineers" property="twitter:title"/>
-  <meta content="Deep dive into Linux Kernel for system engineers by @wiresurfer | Learn about BIOS, GRUB, Linux Kernel, Initramfs and Root file system." property="twitter:description"/>
  </head>
  <body data-md-color-accent="indigo" data-md-color-primary="red" data-md-color-scheme="slate" dir="ltr">
   <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
@@ -96,7 +87,7 @@
   <label class="md-overlay" for="__drawer">
   </label>
   <div data-md-component="skip">
-   <a class="md-skip" href="#linux-kernel-explained-deep-dive-series-for-system-engineers">
+   <a class="md-skip" href="#aiml-checklist-for-startups">
     Skip to content
    </a>
   </div>
@@ -145,7 +136,7 @@
       </div>
       <div class="md-header__topic" data-md-component="header-topic">
        <span class="md-ellipsis">
-        Linux Kernel Explained - Deep Dive Series for System Engineers
+        AI/ML Checklist for Startups
        </span>
       </div>
      </div>
@@ -1572,156 +1563,11 @@
          </label>
          <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
           <li class="md-nav__item">
-           <a class="md-nav__link" href="#why-write-about-the-linux-kernel">
+           <a class="md-nav__link" href="#introduction">
             <span class="md-ellipsis">
-             Why write about the Linux Kernel?
+             Introduction
             </span>
            </a>
-          </li>
-          <li class="md-nav__item">
-           <a class="md-nav__link" href="#learning-path">
-            <span class="md-ellipsis">
-             Learning Path
-            </span>
-           </a>
-          </li>
-          <li class="md-nav__item">
-           <a class="md-nav__link" href="#booting-up-linux-kernel">
-            <span class="md-ellipsis">
-             Booting up Linux Kernel
-            </span>
-           </a>
-          </li>
-          <li class="md-nav__item">
-           <a class="md-nav__link" href="#linux-kernel-organization">
-            <span class="md-ellipsis">
-             Linux Kernel Organization
-            </span>
-           </a>
-           <nav aria-label="Linux Kernel Organization" class="md-nav">
-            <ul class="md-nav__list">
-             <li class="md-nav__item">
-              <a class="md-nav__link" href="#1-cpu-scheduling-and-timers">
-               <span class="md-ellipsis">
-                1. CPU, Scheduling and Timers
-               </span>
-              </a>
-             </li>
-             <li class="md-nav__item">
-              <a class="md-nav__link" href="#2-memory-layout-and-management">
-               <span class="md-ellipsis">
-                2. Memory Layout and Management
-               </span>
-              </a>
-             </li>
-             <li class="md-nav__item">
-              <a class="md-nav__link" href="#3-device-and-drivers">
-               <span class="md-ellipsis">
-                3. Device and Drivers
-               </span>
-              </a>
-             </li>
-             <li class="md-nav__item">
-              <a class="md-nav__link" href="#4-human-interface-devices">
-               <span class="md-ellipsis">
-                4. Human Interface Devices
-               </span>
-              </a>
-              <nav aria-label="4. Human Interface Devices" class="md-nav">
-               <ul class="md-nav__list">
-                <li class="md-nav__item">
-                 <a class="md-nav__link" href="#41-hid-human-interface-device">
-                  <span class="md-ellipsis">
-                   4.1 HID (Human Interface Device)
-                  </span>
-                 </a>
-                </li>
-                <li class="md-nav__item">
-                 <a class="md-nav__link" href="#42-linux-graphics-stack">
-                  <span class="md-ellipsis">
-                   4.2 Linux Graphics Stack
-                  </span>
-                 </a>
-                </li>
-                <li class="md-nav__item">
-                 <a class="md-nav__link" href="#43-sound-subsystem">
-                  <span class="md-ellipsis">
-                   4.3 Sound Subsystem
-                  </span>
-                 </a>
-                </li>
-               </ul>
-              </nav>
-             </li>
-             <li class="md-nav__item">
-              <a class="md-nav__link" href="#5-storage-interface-and-virtual-file-system">
-               <span class="md-ellipsis">
-                5. Storage Interface and Virtual File System
-               </span>
-              </a>
-             </li>
-             <li class="md-nav__item">
-              <a class="md-nav__link" href="#6-networking-interface">
-               <span class="md-ellipsis">
-                6. Networking Interface
-               </span>
-              </a>
-             </li>
-             <li class="md-nav__item">
-              <a class="md-nav__link" href="#7-inter-process-communication">
-               <span class="md-ellipsis">
-                7. Inter Process Communication
-               </span>
-              </a>
-             </li>
-            </ul>
-           </nav>
-          </li>
-          <li class="md-nav__item">
-           <a class="md-nav__link" href="#writing-your-first-kernel-module">
-            <span class="md-ellipsis">
-             Writing Your First Kernel Module
-            </span>
-           </a>
-           <nav aria-label="Writing Your First Kernel Module" class="md-nav">
-            <ul class="md-nav__list">
-             <li class="md-nav__item">
-              <a class="md-nav__link" href="#step-1-set-up-the-development-environment">
-               <span class="md-ellipsis">
-                Step 1: Set up the development environment
-               </span>
-              </a>
-             </li>
-             <li class="md-nav__item">
-              <a class="md-nav__link" href="#step-2-create-the-module-source-file">
-               <span class="md-ellipsis">
-                Step 2: Create the module source file
-               </span>
-              </a>
-             </li>
-             <li class="md-nav__item">
-              <a class="md-nav__link" href="#step-3-create-a-makefile">
-               <span class="md-ellipsis">
-                Step 3: Create a Makefile
-               </span>
-              </a>
-             </li>
-             <li class="md-nav__item">
-              <a class="md-nav__link" href="#step-4-build-the-module">
-               <span class="md-ellipsis">
-                Step 4: Build the module
-               </span>
-              </a>
-             </li>
-             <li class="md-nav__item">
-              <a class="md-nav__link" href="#step-5-load-and-test-the-module">
-               <span class="md-ellipsis">
-                Step 5: Load and test the module
-               </span>
-              </a>
-             </li>
-            </ul>
-           </nav>
           </li>
          </ul>
         </nav>
@@ -1761,23 +1607,9 @@
                  <path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5v-5Z">
                  </path>
                 </svg>
-                <time class="md-ellipsis" datetime="2024-04-28 00:00:00">
-                 April 28, 2024
+                <time class="md-ellipsis" datetime="2024-05-08 00:00:00">
+                 May 8, 2024
                 </time>
-               </div>
-              </li>
-              <li class="md-nav__item">
-               <div class="md-nav__link">
-                <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                 <path d="M9 3v15h3V3H9m3 2 4 13 3-1-4-13-3 1M5 5v13h3V5H5M3 19v2h18v-2H3Z">
-                 </path>
-                </svg>
-                <span class="md-ellipsis">
-                 in
-                 <a href="../../../../category/engineering/">
-                  Engineering
-                 </a>
-                </span>
                </div>
               </li>
               <li class="md-nav__item">
@@ -1787,7 +1619,7 @@
                  </path>
                 </svg>
                 <span class="md-ellipsis">
-                 9 min read
+                 3 min read
                 </span>
                </div>
               </li>
@@ -1800,1102 +1632,334 @@
        </div>
       </div>
       <article class="md-content__inner md-typeset">
-       <nav class="md-tags">
-        <a class="md-tag" href="../../../../tags/#seriesbits-n-bytes">
-         series/bits-n-bytes
-        </a>
-        <a class="md-tag" href="../../../../tags/#software_engineeringlinux-internals">
-         software_engineering/linux-internals
-        </a>
-        <a class="md-tag" href="../../../../tags/#topicdeep-dives">
-         topic/deep-dives
-        </a>
-       </nav>
-       <h1 id="linux-kernel-explained-deep-dive-series-for-system-engineers">
-        Linux Kernel Explained - Deep Dive Series for System Engineers
+       <h1 id="aiml-checklist-for-startups">
+        AI/ML Checklist for Startups
        </h1>
        <p>
-        The Linux kernel is a monumental achievement in the world of open-source
-software, driven by a passionate community of contributors.
-        <br/>
-        This collaborative effort has resulted in a powerful, versatile operating system
-that powers an estimated 80-90% of the internet. From the smartphones in our
-pockets to the vast cloud infrastructure, Linux is the backbone of many
-technologies we rely on daily.
+        This is a work-in-progress article. At present, its a bullet point of topics I
+would cover. I have published this half-baked version to encourage discussion
+and seek editorial comments from people in my circle. This is not about GenAI,
+but the broader field of Artificial Intelligence as well as Machine Learning
+applications.
        </p>
        <!-- more -->
        <p>
-        Linux is not just for servers and desktops. Here is a short list of places where
-the Linux kernel is chugging along.
+        There would be slightly more focus on industrial applications which happens to
+be my domain of expertise.
        </p>
+       <h2 id="introduction">
+        Introduction
+       </h2>
        <ul>
         <li>
-         <strong>
-          Smartphones
-         </strong>
-         : Android, the most widely used mobile operating system, is
-    built on the Linux kernel.
+         Predicting the future: as old as Civilization
         </li>
         <li>
-         <strong>
-          MacOS and iOS
-         </strong>
-         : While MacOS is based on a different Unix variant (Loosely
-    related FreeBSD), it shares many principles + components with Linux.
+         Machines and Clerical record keeping
         </li>
         <li>
-         <strong>
-          Cloud Infrastructure
-         </strong>
-         : Major cloud service providers like AWS, Google
-    Cloud, and Azure rely heavily on Linux to power their data centers.
+         Advent of connected machines
         </li>
         <li>
-         <strong>
-          IoT Devices
-         </strong>
-         : From smart home devices to industrial sensors, many IoT
-    devices run on Linux.
+         Commoditized Storage and compute
         </li>
         <li>
-         <strong>
-          Networking and Telecommunications
-         </strong>
-         : Many telecom systems and every major
-    ISP uses Linux in its networking stack. Your home router is probably running
-    an embedded Linux kernel already
+         Data Hoarding
         </li>
         <li>
-         <strong>
-          Entertainment
-         </strong>
-         : Streaming services, gaming platforms, and more use
-    Linux-based servers to deliver content seamlessly.
-         <br/>
-         .. and the list goes on and on ..
+         Statistical Modelling for Business Data
+        </li>
+        <li>
+         From human perceivable statistics to abstract high dimension modelling
+        </li>
+        <li>
+         Machine learning at scale
+        </li>
+        <li>
+         Advent of self supervised models
+        </li>
+        <li>
+         Taking learning by example to the extreme
+        </li>
+        <li>
+         Supersizing Training data as well as model weights.
+        </li>
+        <li>
+         Generative/ Adversarial Learning
+        </li>
+        <li>
+         General Intelligence
         </li>
        </ul>
-       <blockquote>
-        <p>
-         Mankind's Achievement in Collaborative Development
-        </p>
-        <p>
-         The success of the Linux kernel exemplifies human ingenuity and collaborative
-spirit. It showcases how collective effort and shared knowledge can create
-something that far surpasses individual contributions. As we progress into the
-future, the way we build the kernel also needs to scale to an every changing
-landscape of devices and services. A challenge indeed!
-        </p>
-        <p>
-         <img alt="Famous XKCD Strip. That tiny pillar was once Linus maintaining Linux Kernel. Thankfully he has more hands on deck today" src="../../../May/Assets/media/Linux%20Kernel%20Explained%20-%20Deep%20Dive%20Series%20for%20System%20Engineers/Linux%20Kernel%20Explained%20-%20Deep%20Dive%20Series%20for%20System%20Engineers-image-2024-05-29-231847.png"/>
-        </p>
-       </blockquote>
-       <hr/>
-       <h3 id="why-write-about-the-linux-kernel">
-        Why write about the Linux Kernel?
-       </h3>
-       <p>
-        <strong>
-         The Evolution of Programming Abstractions
-        </strong>
-       </p>
-       <p>
-        In the early days of computing, programmers worked close to the hardware, using
-assembly languages or early high-level languages like Fortran.
-       </p>
-       <p>
-        As technology advanced and business needs grew, programming languages became
-more abstract to accommodate a broader range of developers. This evolution
-brought us C, C++, Java, and various scripting languages. Today, new programming
-languages emerge regularly, each aiming to solve specific problems or improve
-developer productivity. Abstractions gave us superpower, and now I see a lot of
-engineers unaware of how this machine works.
-       </p>
-       <p>
-        We are at a point in human learning, where the abstractions are too much to
-unwrap. Its of utmost importance that we write down,
-       </p>
-       <p>
-        <img alt="Another XKCD strip. Oh well, that's what abstractions resulted in. Cat memes! |367" src="../../../May/Assets/media/Linux%20Kernel%20Explained%20-%20Deep%20Dive%20Series%20for%20System%20Engineers/Linux%20Kernel%20Explained%20-%20Deep%20Dive%20Series%20for%20System%20Engineers-image-2024-05-29-232015.png"/>
-       </p>
-       <p>
-        <strong>
-         The Linux Kernel as a Foundational Technology
-        </strong>
-       </p>
-       <p>
-        Despite the rapid pace of technological advancement, some foundational
-technologies remain constant. The Linux kernel is one such pillar, integral to
-many cutting-edge fields. Rarely is there a skill more transferable than knowing
-about the internals of the kernel. It's useful in space tech, robotics,
-manufacturing, industrial automation, cloud, networking, energy, adtech,
-streaming and communications.
-       </p>
-       <p>
-        <strong>
-         Encouragement for Developers
-        </strong>
-       </p>
-       <p>
-        Understanding the Linux kernel is a valuable skill for both new and seasoned
-developers. It provides deep insights into operating system design and
-functionality. By exploring Linux, developers can gain a "superpower" that
-enhances their ability to innovate and solve complex problems.
-       </p>
-       <p>
-        For those looking to delve deeper, numerous resources and guided curriculums are
-available, crafted by experts in the field.
-        <br/>
-        I will try to curate a journey which will help you get your Aha moment and get a
-glimpse into the under belly of your machine.
-       </p>
-       <p>
-        <img alt="XKCD telling us, we just need the hardware, Neuralink took this seriously?" src="../../../May/Assets/media/Linux%20Kernel%20Explained%20-%20Deep%20Dive%20Series%20for%20System%20Engineers/Linux%20Kernel%20Explained%20-%20Deep%20Dive%20Series%20for%20System%20Engineers-image-2024-05-29-232317.png"/>
-       </p>
-       <hr/>
-       <h2 id="learning-path">
-        Learning Path
-       </h2>
-       <ol>
+       <h1 id="statistics-101">
+        Statistics 101
+       </h1>
+       <ul>
         <li>
-         Booting Up Linux Kernel
+         Regression and curve fitting
         </li>
         <li>
-         Understanding how Linux Kernel is organized
-         <ol>
+         Classification
+        </li>
+        <li>
+         Clustering
+        </li>
+        <li>
+         Nearest Neighbor Searching
+        </li>
+        <li>
+         Dimensions and data modelling
+        </li>
+        <li>
+         Exploratory Data Analysis
+        </li>
+       </ul>
+       <h1 id="disciplines">
+        Disciplines
+       </h1>
+       <ul>
+        <li>
+         NLP
+        </li>
+        <li>
+         Image
+        </li>
+        <li>
+         Audio
+        </li>
+        <li>
+         Time Series
+        </li>
+        <li>
+         User Behavior
+        </li>
+       </ul>
+       <h1 id="use-cases">
+        Use Cases
+       </h1>
+       <h3 id="user-behavior-analysis">
+        User behavior analysis
+       </h3>
+       <ul>
+        <li>
+         Think of a retail experience. Whether online or in person, businesses
+    collect a vast amount of customer purchase information. Running this data
+    through a machine learning algorithm allows businesses to predict consumer
+    purchasing habits, market trends, popular products, and so on, allowing
+    retailers to make informed business decisions based on this predicted
+    information. For instance, ML enables companies to:
+         <ul>
           <li>
-           CPU, Scheduling and Timers
+           Make accurate decisions on managing stock
           </li>
           <li>
-           Memory Layout and Management
+           Streamline ordering according to market and consumer demand
           </li>
           <li>
-           Device and Drivers
+           Increase the overall efficiency of the logistical and operational
+    processes
           </li>
           <li>
-           Human Interface Devices
-           <ol>
+           Integrate with marketing platforms to directly market products targeted
+    at specific consumers
+          </li>
+         </ul>
+        </li>
+        <li>
+         In an online environment, ML can:
+         <ul>
+          <li>
+           Analyze user browsing habits
+          </li>
+          <li>
+           Predict user preferences accurately
+          </li>
+          <li>
+           Offer targeted suggestions
+          </li>
+          <li>
+           In a pharmaceutical business that runs drug trials, user behavior
+    analysis can help determine the effectiveness of drugs
+    and
+           <a href="https://www.bmc.com/blogs/machine-learning-anomaly-detection/">
+            predict any anomalies and outliers
+           </a>
+           .
+          </li>
+          <li>
+           In the maritime industry, a logistics company can predict shipping
+    demand by feeding the logistical data such as routes, transported goods,
+    durations, etc. to a machine learning algorithm.
+           <ul>
             <li>
-             HID
+             Analyzing user behavior is not limited to consumers. Any entity in
+    this context can be considered users who interact with the business.
+    ML can be used to extract hidden patterns and behaviors that may not
+    be readily visible on the surface, offering businesses a far greater
+    understanding of the overall business processes.
+            </li>
+           </ul>
+          </li>
+         </ul>
+        </li>
+       </ul>
+       <h3 id="manufacturing-industrial-automation">
+        Manufacturing &amp; Industrial Automation
+       </h3>
+       <ul>
+        <li>
+         Greatly reduce manufacturing defects
+        </li>
+        <li>
+         Increasing efficiency and scalability of existing process
+        </li>
+        <li>
+         Predictive Maintenance
+        </li>
+        <li>
+         Automated Workers.
+        </li>
+       </ul>
+       <h3 id="security-for-your-product">
+        Security for your Product
+       </h3>
+       <ul>
+        <li>
+         Anomaly Detection
+        </li>
+        <li>
+         Content Moderation
+        </li>
+        <li>
+         Spam/phishing prevention
+        </li>
+        <li>
+         large scale automated audits
+        </li>
+       </ul>
+       <h3 id="financial-predictions-for-your-business">
+        Financial Predictions for your Business
+       </h3>
+       <ul>
+        <li>
+         Expenses, sales forecasts
+        </li>
+        <li>
+         Algorithmic Trading
+        </li>
+       </ul>
+       <h3 id="a-differentiation-with-innovative-user-experience">
+        A differentiation with Innovative user experience
+       </h3>
+       <ul>
+        <li>
+         Vision for scanning receipts
+        </li>
+        <li>
+         Voice promps to Voice assistans
+        </li>
+       </ul>
+       <h1 id="typical-project-lifecycle">
+        Typical Project Lifecycle
+       </h1>
+       <ul>
+        <li>
+         Phase 0: Understanding your Problem Space
+        </li>
+        <li>
+         Phase 1: Data Ingestion
+         <ul>
+          <li>
+           Sources and Formats
+          </li>
+          <li>
+           Data Storage Solutions
+          </li>
+          <li>
+           Data Management and Provenance
+          </li>
+          <li>
+           Schema Registry
+          </li>
+          <li>
+           Streaming vs Batch Ingestion
+          </li>
+         </ul>
+        </li>
+        <li>
+         Phase 2: Schema and Model Registry
+        </li>
+        <li>
+         Phase 3: Model Serving
+        </li>
+        <li>
+         Phase 4: Evaluation and Reporting
+        </li>
+        <li>
+         Phase 5: Retraining
+        </li>
+       </ul>
+       <h1 id="learning-resources">
+        Learning Resources
+       </h1>
+       <ul>
+        <li>
+         IvyLeague Content -
+    https://executive.mit.edu/on/demandware.static/-/Sites-master-catalog-msee/default/dw4c31839c/brochures/machine-learning-brochure.pdf -
+         <a href="https://online.stanford.edu/turning-data-value-building-ai-enabled-organization">
+          Turning data into value: building an AI-enabled organization | Stanford Online
+         </a>
+         <ul>
+          <li>
+           Github/Chapters
+           <ul>
+            <li>
+             5* -
+             <a href="https://github.com/microsoft">
+              microsoft
+             </a>
+             /
+             <strong>
+              <a href="https://github.com/microsoft/Data-Science-For-Beginners">
+               Data-Science-For-Beginners
+              </a>
+             </strong>
+             Public
+             <ul>
+              <li>
+               <img alt="" src="https://microsoft.github.io/Data-Science-For-Beginners/sketchnotes/00-Roadmap.png" title="https://microsoft.github.io/Data-Science-For-Beginners/sketchnotes/00-Roadmap.png"/>
+              </li>
+             </ul>
             </li>
             <li>
-             Linux Graphics Stack
+             <a href="https://github.com/microsoft/IoT-For-Beginners">
+              IoT for beginners
+             </a>
+             <ul>
+              <li>
+               <a href="https://github.com/microsoft/IoT-For-Beginners/blob/main/sketchnotes/Roadmap.jpg?raw=true">
+                https://github.com/microsoft/IoT-For-Beginners/blob/main/sketchnotes/Roadmap.jpg?raw=true
+               </a>
+              </li>
+             </ul>
             </li>
             <li>
-             Sound Subsystem
+             5* -
+             <a href="https://github.com/gedeck/practical-statistics-for-data-scientists">
+              https://github.com/gedeck/practical-statistics-for-data-scientists
+             </a>
             </li>
-           </ol>
+            <li>
+             2* -
+             <a href="https://github.com/alinasahoo/python-data-science-essentials-2">
+              https://github.com/alinasahoo/python-data-science-essentials-2
+             </a>
+            </li>
+           </ul>
           </li>
-          <li>
-           Storage Interface and Virtual File System
-          </li>
-          <li>
-           Networking Interface
-          </li>
-          <li>
-           Inter Process Communication
-          </li>
-         </ol>
-        </li>
-        <li>
-         Writing your first kernel modules
-        </li>
-        <li>
-         Linux kernel development workflow
-        </li>
-        <li>
-         eBPF: Advanced tips and tricks for debugging, networking and more.
-        </li>
-       </ol>
-       <h2 id="booting-up-linux-kernel">
-        Booting up Linux Kernel
-       </h2>
-       <p>
-        Its always important to know what happens before Linux kernel boots up. This
-foundation would help you make heads and tails of your hardware and never be
-afraid of "Bare metal". In this day and age of layers of abstractions on which a
-world of cloud infrastructure powers most of the internet, its important to know
-how things work at its core.
-       </p>
-       <p>
-        I have written in some detail how
-        <a href="../booting-up-linux-kernel---linux-for-engineers/">
-         Linux Kernel boots up in a separate post : Booting Linux Kernel
-        </a>
-       </p>
-       <h2 id="linux-kernel-organization">
-        Linux Kernel Organization
-       </h2>
-       <p>
-        When taken as a whole, Linux kernel source code is an intimidating pile of C
-structs and pointer allocs which would give anyone the jeebies. To tame this
-beast you have to understand its organization. Compartmentalization is the key
-here. Its also important to note that different subsystems are written in a way
-where they build on abstractions and don't step on the toes of other modules.
-       </p>
-       <p>
-        All this is to say, you don't need to tame the whole beast. You can take healthy
-bite-sized chunks from the system of your choice and at the level of abstraction
-you are comfortable with. That in itself would be a rewarding experience.
-       </p>
-       <p>
-        Take for eg. Networking. You could look at it bottom up. In which case you would
-look at the world of
-        <code>
-         drivers/net
-        </code>
-        ,
-        <code>
-         linux/netdevice.h
-        </code>
-        and probably the nitty
-gritties of
-        <code>
-         struct skbuff
-        </code>
-       </p>
-       <p>
-        Or maybe you are interested in just TCP-IP. In which case you would look at
-        <code>
-         socker syscalls
-        </code>
-        -&gt;
-        <code>
-         sys_socket
-        </code>
-        -&gt;
-        <code>
-         address_families
-        </code>
-        -&gt;
-        <code>
-         net/protocols/tcp_prot
-        </code>
-       </p>
-       <p>
-        I would write about the kernel organization in detail in an upcoming blog post.
-For now I would leave you with this amazing diagram which was instrumental in my
-exploration of the kernel's organization
-        <img src="https://raw.githubusercontent.com/makelinux/linux_kernel_map/main/LKM.svg"/>
-       </p>
-       <blockquote>
-        <p>
-         You can open the SVG and zoom in/out or try the
-         <a href="https://makelinux.github.io/kernel/map/">
-          interactive kernel map here
-         </a>
-        </p>
-       </blockquote>
-       <h3 id="1-cpu-scheduling-and-timers">
-        1. CPU, Scheduling and Timers
-       </h3>
-       <p>
-        The CPU, Scheduling, and Timers component is responsible for managing processor
-resources and ensuring efficient execution of processes. It handles task
-scheduling, context switching, and time-keeping operations.
-       </p>
-       <p>
-        a) This component manages CPU allocation among processes, implements scheduling
-algorithms, and maintains system timers.
-       </p>
-       <p>
-        b) Key files and directories:
-       </p>
-       <ul>
-        <li>
-         <code>
-          /kernel/sched/
-         </code>
-         : Contains the core scheduler implementation
-        </li>
-        <li>
-         <code>
-          /include/linux/sched.h
-         </code>
-         : Defines important scheduling structures
-        </li>
-        <li>
-         <code>
-          /kernel/time/
-         </code>
-         : Implements various timekeeping functions
+         </ul>
         </li>
        </ul>
-       <p>
-        c) Important system calls:
-       </p>
-       <ul>
-        <li>
-         <code>
-          sched_yield()
-         </code>
-         : Voluntarily give up CPU time
-        </li>
-        <li>
-         <code>
-          nice()
-         </code>
-         : Change process priority
-        </li>
-        <li>
-         <code>
-          sched_setaffinity()
-         </code>
-         : Set CPU affinity for a process
-        </li>
-       </ul>
-       <p>
-        d) Further reading:
-       </p>
-       <ul>
-        <li>
-         <a href="https://www.amazon.com/Linux-Kernel-Development-Robert-Love/dp/0672329468">
-          Linux Kernel Development
-         </a>
-         by Robert Love
-        </li>
-        <li>
-         <a href="https://github.com/torvalds/linux/tree/master/kernel/sched">
-          Linux Kernel Source
-         </a>
-        </li>
-       </ul>
-       <h3 id="2-memory-layout-and-management">
-        2. Memory Layout and Management
-       </h3>
-       <p>
-        The Memory Layout and Management component is crucial for efficient utilization
-of system memory. It handles memory allocation, deallocation, and protection
-mechanisms.
-       </p>
-       <p>
-        a) This component manages physical and virtual memory, implements paging and
-swapping, and provides memory protection.
-       </p>
-       <p>
-        b) Key files and directories:
-       </p>
-       <ul>
-        <li>
-         <code>
-          /mm/
-         </code>
-         : Contains memory management implementations
-        </li>
-        <li>
-         <code>
-          /include/linux/mm.h
-         </code>
-         : Defines memory management structures
-        </li>
-        <li>
-         <code>
-          /arch/x86/mm/
-         </code>
-         : Architecture-specific memory management (for x86)
-        </li>
-       </ul>
-       <p>
-        c) Important system calls:
-       </p>
-       <ul>
-        <li>
-         <code>
-          mmap()
-         </code>
-         : Map files or devices into memory
-        </li>
-        <li>
-         <code>
-          brk()
-         </code>
-         : Change the location of the program break
-        </li>
-        <li>
-         <code>
-          mprotect()
-         </code>
-         : Set protection on a region of memory
-        </li>
-       </ul>
-       <p>
-        d) Further reading:
-       </p>
-       <ul>
-        <li>
-         <a href="https://www.kernel.org/doc/gorman/html/understand/">
-          Understanding the Linux Virtual Memory Manager
-         </a>
-         by Mel Gorman
-        </li>
-        <li>
-         <a href="https://github.com/torvalds/linux/tree/master/mm">
-          Linux Kernel Source - mm subsystem
-         </a>
-        </li>
-       </ul>
-       <h3 id="3-device-and-drivers">
-        3. Device and Drivers
-       </h3>
-       <p>
-        The Device and Drivers component provides a framework for managing hardware
-devices and their corresponding software drivers.
-       </p>
-       <p>
-        a) This component facilitates communication between the kernel and hardware
-devices, manages device initialization, and handles device-specific operations.
-       </p>
-       <p>
-        b) Key files and directories:
-       </p>
-       <ul>
-        <li>
-         <code>
-          /drivers/
-         </code>
-         : Contains various device drivers
-        </li>
-        <li>
-         <code>
-          /include/linux/device.h
-         </code>
-         : Defines device and driver structures
-        </li>
-        <li>
-         <code>
-          /include/linux/module.h
-         </code>
-         : Provides module-related definitions
-        </li>
-       </ul>
-       <p>
-        c) Important system calls:
-       </p>
-       <ul>
-        <li>
-         <code>
-          ioctl()
-         </code>
-         : Device-specific operations
-        </li>
-        <li>
-         <code>
-          open()
-         </code>
-         : Open a device file
-        </li>
-        <li>
-         <code>
-          read()
-         </code>
-         and
-         <code>
-          write()
-         </code>
-         : Perform I/O operations on devices
-        </li>
-       </ul>
-       <p>
-        d) Further reading:
-       </p>
-       <ul>
-        <li>
-         <a href="https://lwn.net/Kernel/LDD3/">
-          Linux Device Drivers
-         </a>
-         by Jonathan Corbet,
-    Alessandro Rubini, and Greg Kroah-Hartman
-        </li>
-        <li>
-         <a href="https://github.com/torvalds/linux/tree/master/drivers">
-          Linux Kernel Source - drivers
-         </a>
-        </li>
-       </ul>
-       <h3 id="4-human-interface-devices">
-        4. Human Interface Devices
-       </h3>
-       <h4 id="41-hid-human-interface-device">
-        4.1 HID (Human Interface Device)
-       </h4>
-       <p>
-        The HID subsystem manages input devices such as keyboards, mice, and game
-controllers.
-       </p>
-       <p>
-        a) This component provides a unified interface for various input devices,
-handling device detection, input event processing, and device-specific features.
-       </p>
-       <p>
-        b) Key files and directories:
-       </p>
-       <ul>
-        <li>
-         <code>
-          /drivers/hid/
-         </code>
-         : Contains HID driver implementations
-        </li>
-        <li>
-         <code>
-          /include/linux/hid.h
-         </code>
-         : Defines HID-related structures and functions
-        </li>
-       </ul>
-       <p>
-        c) Important system calls:
-       </p>
-       <ul>
-        <li>
-         <code>
-          read()
-         </code>
-         : Read input events from HID devices
-        </li>
-        <li>
-         <code>
-          ioctl()
-         </code>
-         : Perform device-specific operations on HID devices
-        </li>
-       </ul>
-       <p>
-        d) Further reading:
-       </p>
-       <ul>
-        <li>
-         <a href="https://www.kernel.org/doc/html/latest/input/input_uapi.html">
-          Linux Input Subsystem
-         </a>
-         documentation
-        </li>
-        <li>
-         <a href="https://github.com/torvalds/linux/tree/master/drivers/hid">
-          Linux Kernel Source - HID drivers
-         </a>
-        </li>
-       </ul>
-       <h4 id="42-linux-graphics-stack">
-        4.2 Linux Graphics Stack
-       </h4>
-       <p>
-        The Linux Graphics Stack manages display output, rendering, and GPU
-interactions.
-       </p>
-       <p>
-        a) This component handles graphics rendering, display management, and GPU
-acceleration.
-       </p>
-       <p>
-        b) Key files and directories:
-       </p>
-       <ul>
-        <li>
-         <code>
-          /drivers/gpu/
-         </code>
-         : Contains GPU driver implementations
-        </li>
-        <li>
-         <code>
-          /include/drm/
-         </code>
-         : Defines Direct Rendering Manager (DRM) structures and
-    functions
-        </li>
-       </ul>
-       <p>
-        c) Important system calls:
-       </p>
-       <ul>
-        <li>
-         <code>
-          ioctl()
-         </code>
-         : Used extensively for graphics operations
-        </li>
-        <li>
-         <code>
-          mmap()
-         </code>
-         : Map video memory into user space
-        </li>
-       </ul>
-       <p>
-        d) Further reading:
-       </p>
-       <ul>
-        <li>
-         <a href="https://www.kernel.org/doc/html/latest/gpu/index.html">
-          Linux GPU Driver Developer's Guide
-         </a>
-        </li>
-        <li>
-         <a href="https://github.com/torvalds/linux/tree/master/drivers/gpu">
-          Linux Kernel Source - GPU drivers
-         </a>
-        </li>
-       </ul>
-       <h4 id="43-sound-subsystem">
-        4.3 Sound Subsystem
-       </h4>
-       <p>
-        The Sound Subsystem manages audio devices and sound processing.
-       </p>
-       <p>
-        a) This component handles audio device drivers, sound mixing, and audio
-processing.
-       </p>
-       <p>
-        b) Key files and directories:
-       </p>
-       <ul>
-        <li>
-         <code>
-          /sound/
-         </code>
-         : Contains ALSA (Advanced Linux Sound Architecture) implementations
-        </li>
-        <li>
-         <code>
-          /include/sound/
-         </code>
-         : Defines sound-related structures and functions
-        </li>
-       </ul>
-       <p>
-        c) Important system calls:
-       </p>
-       <ul>
-        <li>
-         <code>
-          ioctl()
-         </code>
-         : Used for various audio operations
-        </li>
-        <li>
-         <code>
-          read()
-         </code>
-         and
-         <code>
-          write()
-         </code>
-         : Perform I/O on audio devices
-        </li>
-       </ul>
-       <p>
-        d) Further reading:
-       </p>
-       <ul>
-        <li>
-         <a href="https://www.alsa-project.org/wiki/Main_Page">
-          ALSA Project Documentation
-         </a>
-        </li>
-        <li>
-         <a href="https://github.com/torvalds/linux/tree/master/sound">
-          Linux Kernel Source - sound
-         </a>
-        </li>
-       </ul>
-       <h3 id="5-storage-interface-and-virtual-file-system">
-        5. Storage Interface and Virtual File System
-       </h3>
-       <p>
-        The Storage Interface and Virtual File System (VFS) component provides a unified
-interface for various file systems and storage devices.
-       </p>
-       <p>
-        a) This component manages file system operations, provides a common API for
-different file systems, and handles storage device interactions.
-       </p>
-       <p>
-        b) Key files and directories:
-       </p>
-       <ul>
-        <li>
-         <code>
-          /fs/
-         </code>
-         : Contains implementations of various file systems
-        </li>
-        <li>
-         <code>
-          /include/linux/fs.h
-         </code>
-         : Defines file system-related structures and functions
-        </li>
-        <li>
-         <code>
-          /block/
-         </code>
-         : Implements block device drivers
-        </li>
-       </ul>
-       <p>
-        c) Important system calls:
-       </p>
-       <ul>
-        <li>
-         <code>
-          open()
-         </code>
-         ,
-         <code>
-          read()
-         </code>
-         ,
-         <code>
-          write()
-         </code>
-         ,
-         <code>
-          close()
-         </code>
-         : Basic file operations
-        </li>
-        <li>
-         <code>
-          mount()
-         </code>
-         : Mount a file system
-        </li>
-        <li>
-         <code>
-          stat()
-         </code>
-         : Get file status
-        </li>
-       </ul>
-       <p>
-        d) Further reading:
-       </p>
-       <ul>
-        <li>
-         <a href="https://www.kernel.org/doc/html/latest/filesystems/index.html">
-          Linux File Systems
-         </a>
-         documentation
-        </li>
-        <li>
-         <a href="https://github.com/torvalds/linux/tree/master/fs">
-          Linux Kernel Source - fs
-         </a>
-        </li>
-       </ul>
-       <h3 id="6-networking-interface">
-        6. Networking Interface
-       </h3>
-       <p>
-        The Networking Interface component manages network communications and protocols.
-       </p>
-       <p>
-        a) This component handles network device drivers, protocol implementations, and
-network stack operations.
-       </p>
-       <p>
-        b) Key files and directories:
-       </p>
-       <ul>
-        <li>
-         <code>
-          /net/
-         </code>
-         : Contains networking subsystem implementations
-        </li>
-        <li>
-         <code>
-          /include/net/
-         </code>
-         : Defines networking-related structures and functions
-        </li>
-        <li>
-         <code>
-          /drivers/net/
-         </code>
-         : Implements network device drivers
-        </li>
-       </ul>
-       <p>
-        c) Important system calls:
-       </p>
-       <ul>
-        <li>
-         <code>
-          socket()
-         </code>
-         : Create a network socket
-        </li>
-        <li>
-         <code>
-          connect()
-         </code>
-         ,
-         <code>
-          bind()
-         </code>
-         ,
-         <code>
-          listen()
-         </code>
-         ,
-         <code>
-          accept()
-         </code>
-         : Manage network connections
-        </li>
-        <li>
-         <code>
-          send()
-         </code>
-         ,
-         <code>
-          recv()
-         </code>
-         : Send and receive data over network
-        </li>
-       </ul>
-       <p>
-        d) Further reading:
-       </p>
-       <ul>
-        <li>
-         <a href="https://www.kernel.org/doc/html/latest/networking/index.html">
-          Linux Networking Documentation
-         </a>
-        </li>
-        <li>
-         <a href="https://github.com/torvalds/linux/tree/master/net">
-          Linux Kernel Source - net
-         </a>
-        </li>
-       </ul>
-       <h3 id="7-inter-process-communication">
-        7. Inter Process Communication
-       </h3>
-       <p>
-        The Inter Process Communication (IPC) component facilitates communication
-between different processes.
-       </p>
-       <p>
-        a) This component provides mechanisms for processes to exchange data and
-synchronize their actions.
-       </p>
-       <p>
-        b) Key files and directories:
-       </p>
-       <ul>
-        <li>
-         <code>
-          /ipc/
-         </code>
-         : Contains IPC mechanism implementations
-        </li>
-        <li>
-         <code>
-          /include/linux/ipc.h
-         </code>
-         : Defines IPC-related structures and functions
-        </li>
-       </ul>
-       <p>
-        c) Important system calls:
-       </p>
-       <ul>
-        <li>
-         <code>
-          pipe()
-         </code>
-         : Create a pipe for communication
-        </li>
-        <li>
-         <code>
-          msgget()
-         </code>
-         ,
-         <code>
-          msgsnd()
-         </code>
-         ,
-         <code>
-          msgrcv()
-         </code>
-         : Message queue operations
-        </li>
-        <li>
-         <code>
-          semget()
-         </code>
-         ,
-         <code>
-          semop()
-         </code>
-         : Semaphore operations
-        </li>
-        <li>
-         <code>
-          shmget()
-         </code>
-         ,
-         <code>
-          shmat()
-         </code>
-         ,
-         <code>
-          shmdt()
-         </code>
-         : Shared memory operations
-        </li>
-       </ul>
-       <p>
-        i) Further reading:
-       </p>
-       <ul>
-        <li>
-         <a href="https://www.kernel.org/doc/html/latest/admin-guide/sysctl/kernel.html#ipc-inter-process-communication">
-          Linux IPC Mechanisms
-         </a>
-        </li>
-        <li>
-         <a href="https://github.com/torvalds/linux/tree/master/ipc">
-          Linux Kernel Source - ipc
-         </a>
-        </li>
-       </ul>
-       <hr/>
-       <h2 id="writing-your-first-kernel-module">
-        Writing Your First Kernel Module
-       </h2>
-       <p>
-        Kernel modules are pieces of code that can be loaded and unloaded into the
-kernel upon demand. They extend the functionality of the kernel without the need
-to reboot the system. Let's walk through creating a simple "Hello World" kernel
-module.
-       </p>
-       <h3 id="step-1-set-up-the-development-environment">
-        Step 1: Set up the development environment
-       </h3>
-       <p>
-        First, ensure you have the necessary tools installed. Run the following
-commands:
-       </p>
-       <div class="language-bash highlight">
-        <pre><span></span><code><span id="__span-0-1"><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="c1"># Update package list</span>
-</span><span id="__span-0-2"><a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a>sudo<span class="w"> </span>apt<span class="w"> </span>update
-</span><span id="__span-0-3"><a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a>
-</span><span id="__span-0-4"><a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="c1"># Install essential tools for kernel development</span>
-</span><span id="__span-0-5"><a href="#__codelineno-0-5" id="__codelineno-0-5" name="__codelineno-0-5"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>build-essential<span class="w"> </span>linux-headers-<span class="k">$(</span>uname<span class="w"> </span>-r<span class="k">)</span>
-</span></code></pre>
-       </div>
-       <p>
-        This script updates your package list and installs the build-essential package
-(which includes gcc, make, and other necessary tools) and the Linux kernel
-headers for your current kernel version.
-       </p>
-       <h3 id="step-2-create-the-module-source-file">
-        Step 2: Create the module source file
-       </h3>
-       <p>
-        Create a new file named
-        <code>
-         hello_world.c
-        </code>
-        with the following content:
-       </p>
-       <div class="language-c highlight">
-        <pre><span></span><code><span id="__span-1-1"><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;linux/init.h&gt;</span>
-</span><span id="__span-1-2"><a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;linux/module.h&gt;</span>
-</span><span id="__span-1-3"><a href="#__codelineno-1-3" id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;linux/kernel.h&gt;</span>
-</span><span id="__span-1-4"><a href="#__codelineno-1-4" id="__codelineno-1-4" name="__codelineno-1-4"></a>
-</span><span id="__span-1-5"><a href="#__codelineno-1-5" id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="n">MODULE_LICENSE</span><span class="p">(</span><span class="s">"GPL"</span><span class="p">);</span>
-</span><span id="__span-1-6"><a href="#__codelineno-1-6" id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="n">MODULE_AUTHOR</span><span class="p">(</span><span class="s">"Your Name"</span><span class="p">);</span>
-</span><span id="__span-1-7"><a href="#__codelineno-1-7" id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="n">MODULE_DESCRIPTION</span><span class="p">(</span><span class="s">"A simple Hello World module"</span><span class="p">);</span>
-</span><span id="__span-1-8"><a href="#__codelineno-1-8" id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="n">MODULE_VERSION</span><span class="p">(</span><span class="s">"0.1"</span><span class="p">);</span>
-</span><span id="__span-1-9"><a href="#__codelineno-1-9" id="__codelineno-1-9" name="__codelineno-1-9"></a>
-</span><span id="__span-1-10"><a href="#__codelineno-1-10" id="__codelineno-1-10" name="__codelineno-1-10"></a><span class="k">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">__init</span><span class="w"> </span><span class="nf">hello_world_init</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-1-11"><a href="#__codelineno-1-11" id="__codelineno-1-11" name="__codelineno-1-11"></a><span class="w">    </span><span class="n">printk</span><span class="p">(</span><span class="n">KERN_INFO</span><span class="w"> </span><span class="s">"Hello, World!</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
-</span><span id="__span-1-12"><a href="#__codelineno-1-12" id="__codelineno-1-12" name="__codelineno-1-12"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-</span><span id="__span-1-13"><a href="#__codelineno-1-13" id="__codelineno-1-13" name="__codelineno-1-13"></a><span class="p">}</span>
-</span><span id="__span-1-14"><a href="#__codelineno-1-14" id="__codelineno-1-14" name="__codelineno-1-14"></a>
-</span><span id="__span-1-15"><a href="#__codelineno-1-15" id="__codelineno-1-15" name="__codelineno-1-15"></a><span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">__exit</span><span class="w"> </span><span class="nf">hello_world_exit</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-1-16"><a href="#__codelineno-1-16" id="__codelineno-1-16" name="__codelineno-1-16"></a><span class="w">    </span><span class="n">printk</span><span class="p">(</span><span class="n">KERN_INFO</span><span class="w"> </span><span class="s">"Goodbye, World!</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
-</span><span id="__span-1-17"><a href="#__codelineno-1-17" id="__codelineno-1-17" name="__codelineno-1-17"></a><span class="p">}</span>
-</span><span id="__span-1-18"><a href="#__codelineno-1-18" id="__codelineno-1-18" name="__codelineno-1-18"></a>
-</span><span id="__span-1-19"><a href="#__codelineno-1-19" id="__codelineno-1-19" name="__codelineno-1-19"></a><span class="n">module_init</span><span class="p">(</span><span class="n">hello_world_init</span><span class="p">);</span>
-</span><span id="__span-1-20"><a href="#__codelineno-1-20" id="__codelineno-1-20" name="__codelineno-1-20"></a><span class="n">module_exit</span><span class="p">(</span><span class="n">hello_world_exit</span><span class="p">);</span>
-</span></code></pre>
-       </div>
-       <p>
-        This code defines a simple kernel module that prints "Hello, World!" when loaded
-and "Goodbye, World!" when unloaded.
-       </p>
-       <h3 id="step-3-create-a-makefile">
-        Step 3: Create a Makefile
-       </h3>
-       <p>
-        Create a file named
-        <code>
-         Makefile
-        </code>
-        in the same directory with the following content:
-       </p>
-       <div class="language-makefile highlight">
-        <pre><span></span><code><span id="__span-2-1"><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="nv">obj-m</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span>hello_world.o
-</span><span id="__span-2-2"><a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a>
-</span><span id="__span-2-3"><a href="#__codelineno-2-3" id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="nf">all</span><span class="o">:</span>
-</span><span id="__span-2-4"><a href="#__codelineno-2-4" id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="w">    </span>make<span class="w"> </span>-C<span class="w"> </span>/lib/modules/<span class="k">$(</span>shell<span class="w"> </span>uname<span class="w"> </span>-r<span class="k">)</span>/build<span class="w"> </span><span class="nv">M</span><span class="o">=</span><span class="k">$(</span>PWD<span class="k">)</span><span class="w"> </span>modules
-</span><span id="__span-2-5"><a href="#__codelineno-2-5" id="__codelineno-2-5" name="__codelineno-2-5"></a>
-</span><span id="__span-2-6"><a href="#__codelineno-2-6" id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="nf">clean</span><span class="o">:</span>
-</span><span id="__span-2-7"><a href="#__codelineno-2-7" id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="w">    </span>make<span class="w"> </span>-C<span class="w"> </span>/lib/modules/<span class="k">$(</span>shell<span class="w"> </span>uname<span class="w"> </span>-r<span class="k">)</span>/build<span class="w"> </span><span class="nv">M</span><span class="o">=</span><span class="k">$(</span>PWD<span class="k">)</span><span class="w"> </span>clean
-</span></code></pre>
-       </div>
-       <p>
-        This Makefile tells the kernel build system how to compile your module.
-       </p>
-       <h3 id="step-4-build-the-module">
-        Step 4: Build the module
-       </h3>
-       <p>
-        Run the following command to build your module:
-       </p>
-       <div class="language-bash highlight">
-        <pre><span></span><code><span id="__span-3-1"><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a>make
-</span></code></pre>
-       </div>
-       <p>
-        This will compile your module and create a
-        <code>
-         hello_world.ko
-        </code>
-        file.
-       </p>
-       <h3 id="step-5-load-and-test-the-module">
-        Step 5: Load and test the module
-       </h3>
-       <p>
-        Use the following commands to load, test, and unload your module:
-       </p>
-       <div class="language-bash highlight">
-        <pre><span></span><code><span id="__span-4-1"><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="c1"># Load the module</span>
-</span><span id="__span-4-2"><a href="#__codelineno-4-2" id="__codelineno-4-2" name="__codelineno-4-2"></a>sudo<span class="w"> </span>insmod<span class="w"> </span>hello_world.ko
-</span><span id="__span-4-3"><a href="#__codelineno-4-3" id="__codelineno-4-3" name="__codelineno-4-3"></a>
-</span><span id="__span-4-4"><a href="#__codelineno-4-4" id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="c1"># View kernel messages</span>
-</span><span id="__span-4-5"><a href="#__codelineno-4-5" id="__codelineno-4-5" name="__codelineno-4-5"></a>sudo<span class="w"> </span>dmesg<span class="w"> </span><span class="p">|</span><span class="w"> </span>tail
-</span><span id="__span-4-6"><a href="#__codelineno-4-6" id="__codelineno-4-6" name="__codelineno-4-6"></a>
-</span><span id="__span-4-7"><a href="#__codelineno-4-7" id="__codelineno-4-7" name="__codelineno-4-7"></a><span class="c1"># Unload the module</span>
-</span><span id="__span-4-8"><a href="#__codelineno-4-8" id="__codelineno-4-8" name="__codelineno-4-8"></a>sudo<span class="w"> </span>rmmod<span class="w"> </span>hello_world
-</span><span id="__span-4-9"><a href="#__codelineno-4-9" id="__codelineno-4-9" name="__codelineno-4-9"></a>
-</span><span id="__span-4-10"><a href="#__codelineno-4-10" id="__codelineno-4-10" name="__codelineno-4-10"></a><span class="c1"># View kernel messages again</span>
-</span><span id="__span-4-11"><a href="#__codelineno-4-11" id="__codelineno-4-11" name="__codelineno-4-11"></a>sudo<span class="w"> </span>dmesg<span class="w"> </span><span class="p">|</span><span class="w"> </span>tail
-</span></code></pre>
-       </div>
-       <p>
-        These commands load your module, display kernel messages (which should include
-your "Hello, World!" message), unload the module, and display kernel messages
-again (which should now include your "Goodbye, World!" message).
-       </p>
       </article>
      </div>
      <script>
@@ -2905,7 +1969,7 @@ again (which should now include your "Goodbye, World!" message).
    </main>
    <footer class="md-footer mt-16">
     <nav aria-label="footer.title" class="md-footer__inner md-grid">
-     <a aria-label="Previous: Booting up Linux Kernel - Linux for Engineers" class="md-footer__link md-footer__link--prev" href="../booting-up-linux-kernel---linux-for-engineers/" rel="prev">
+     <a aria-label="Previous: Booting up Linux Kernel - Linux for Engineers" class="md-footer__link md-footer__link--prev" href="../../../04/28/booting-up-linux-kernel---linux-for-engineers/" rel="prev">
       <div class="md-footer__button md-icon">
        <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
         <path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z">
@@ -2921,13 +1985,13 @@ again (which should now include your "Goodbye, World!" message).
        </div>
       </div>
      </a>
-     <a aria-label="Next: AI Checklist for Startups" class="md-footer__link md-footer__link--next" href="../../../05/08/ai-checklist-for-startups/" rel="next">
+     <a aria-label="Next: Linux Kernel Explained - Deep Dive Series for System Engineers" class="md-footer__link md-footer__link--next" href="../../28/linux-kernel-explained---deep-dive-series-for-system-engineers/" rel="next">
       <div class="md-footer__title">
        <div class="md-ellipsis">
         <span class="md-footer__direction">
          Next
         </span>
-        AI Checklist for Startups
+        Linux Kernel Explained - Deep Dive Series for System Engineers
        </div>
       </div>
       <div class="md-footer__button md-icon">

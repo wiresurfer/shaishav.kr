@@ -6,7 +6,7 @@
   <meta content="Deep dive into Linux Kernel for system engineers by @wiresurfer | Learn about BIOS, GRUB, Linux Kernel, Initramfs and Root file system." name="description"/>
   <link href="https://blog.shaishav.kr/2024/04/28/booting-up-linux-kernel---linux-for-engineers/" rel="canonical"/>
   <link href="../../18/rise-of-internal-developer-portals-idp---part-1/" rel="prev"/>
-  <link href="../linux-kernel-explained---deep-dive-series-for-system-engineers/" rel="next"/>
+  <link href="../../../05/08/aiml-checklist-for-startups/" rel="next"/>
   <link href="../../../../feed_rss_created.xml" rel="alternate" title="RSS feed" type="application/rss+xml"/>
   <link href="../../../../feed_rss_updated.xml" rel="alternate" title="RSS feed of updated content" type="application/rss+xml"/>
   <link href="../../../../assets/images/favicon.png" rel="icon"/>
@@ -1792,17 +1792,21 @@
         Booting up Linux Kernel - Linux for Engineers #1
        </h1>
        <p>
-        Ever wondered what happens when your Linux machine starts? There is a fascinating song and dance between different components which brings a machine to life. 
-Lets dive into the world of booting Linux Kernel.
+        Ever wondered what happens when your Linux machine starts? There is a
+fascinating song and dance between different components which brings a machine
+to life. Lets dive into the world of booting Linux Kernel.
        </p>
        <!-- more -->
        <blockquote>
         <p>
-         Linux kernel is a monumental achievement of collaboration in the world of open-source software.
+         Linux kernel is a monumental achievement of collaboration in the world of
+open-source software.
          <br/>
-         It has resulted in a powerful, versatile operating system base that powers an estimated 80-90% of the modern tech world
+         It has resulted in a powerful, versatile operating system base that powers an
+estimated 80-90% of the modern tech world
          <br/>
-         From smartphones in our pockets to the vast cloud infrastructure, Linux is the backbone of many technologies we rely on daily.
+         From smartphones in our pockets to the vast cloud infrastructure, Linux is
+the backbone of many technologies we rely on daily.
          <br/>
          This series chronicles different aspects of modern day Linux system.
          <br/>
@@ -1810,13 +1814,16 @@ Lets dive into the world of booting Linux Kernel.
          <strong>
           tldr;
          </strong>
-         While linking to amazing talks/presentations/articles by some great minds.
+         While linking to amazing
+talks/presentations/articles by some great minds.
          <br/>
-         Treat this as a crash course for the lazy and a jump-off point for the curious.
+         Treat this as a crash course for the lazy and a jump-off point for the
+curious.
          <br/>
          Happy reading!
          <br/>
-         Have feedback or questions, or want to be notified about more such articles? Follow me on Twitter
+         Have feedback or questions, or want to be notified about more such articles?
+Follow me on Twitter
          <a href="https://x.com/wiresurfer">
           @wiresurfer
          </a>
@@ -1828,17 +1835,24 @@ Lets dive into the world of booting Linux Kernel.
        <p>
         Ever wondered what happens when you press the power button on your machines.
         <br/>
-        The fan's come to life, your RGB lights light up, there is a bell sound, and the screen shows a sea of gibberish [or if you started using laptops, you probably see a fancy logo and a spinner. How boring is that!]
+        The fan's come to life, your RGB lights light up, there is a bell sound, and the
+screen shows a sea of gibberish [or if you started using laptops, you probably
+see a fancy logo and a spinner. How boring is that!]
         <br/>
-        By the end of this article, I want to unwrap the song and dance that goes on between hardware and different types of software to finally bring to you a usable PC.
+        By the end of this article, I want to unwrap the song and dance that goes on
+between hardware and different types of software to finally bring to you a
+usable PC.
        </p>
        <p>
-        I won't hold back on some technical details and gloss over some in the interest of salvaging some brevity.
+        I won't hold back on some technical details and gloss over some in the interest
+of salvaging some brevity.
        </p>
        <p>
-        This post in particular will have a buildup and posturing in the beginning about hardware, bios and grub.
+        This post in particular will have a buildup and posturing in the beginning about
+hardware, bios and grub.
         <br/>
-        While it isn't absolutely necessary for a Linux Kernel bootup saga, I do feel its important for a well rounded understanding.
+        While it isn't absolutely necessary for a Linux Kernel bootup saga, I do feel
+its important for a well rounded understanding.
        </p>
        <p>
         For the impatient, feel free to jump to
@@ -1851,7 +1865,9 @@ Lets dive into the world of booting Linux Kernel.
         🖥️ Modern PC Architecture
        </h2>
        <p>
-        A modern day PC hasn't changed its core design philosophy for over 30 years. Yes, there has been miniaturization and our electronics design has improved by leaps and bounds, but the basic building blocks have remained the same.
+        A modern day PC hasn't changed its core design philosophy for over 30 years.
+Yes, there has been miniaturization and our electronics design has improved by
+leaps and bounds, but the basic building blocks have remained the same.
         <br/>
         Here is a picture of a motherboard annotated to show different subsystems.
        </p>
@@ -1861,7 +1877,8 @@ Lets dive into the world of booting Linux Kernel.
        <p>
         Even this can be simplified down to the following block diagram.
         <br/>
-        If you pay attention, most of the peripherals used with modern machines connect over the PCI express bus.
+        If you pay attention, most of the peripherals used with modern machines connect
+over the PCI express bus.
        </p>
        <p>
         <img alt="|475" src="../../../May/Assets/media/Booting%20up%20Linux%20Kernel%20-%20Linux%20for%20Engineers%201/Booting%20up%20Linux%20Kernel%20-%20Linux%20Kernel%20for%20System%20Engineers%201-image-2024-06-01-003141.png"/>
@@ -1869,7 +1886,9 @@ Lets dive into the world of booting Linux Kernel.
        <ul>
         <li>
          <p>
-          Most demanding high throughput devices are the graphics cards and memory modules. They attach directly to the CPU over dedicated lanes often referred to as the
+          Most demanding high throughput devices are the graphics cards and memory
+    modules. They attach directly to the CPU over dedicated lanes often referred
+    to as the
           <strong>
            Northbridge
           </strong>
@@ -1881,7 +1900,9 @@ Lets dive into the world of booting Linux Kernel.
           <strong>
            Southbridge
           </strong>
-          on the other hand is a separate bus controller which manages other peripherals and connects to the CPU with a dedicated link. [
+          on the other hand is a separate bus controller which manages
+    other peripherals and connects to the CPU with a dedicated link.
+    [
           <a href="https://en.wikipedia.org/wiki/Direct_Media_Interface">
            <strong>
             D
@@ -1922,7 +1943,8 @@ Lets dive into the world of booting Linux Kernel.
        </p>
        <ul>
         <li>
-         CMOS Clock [helps with timekeeping specially in embedded devices. Modern OS's often use NTP to sync time]
+         CMOS Clock [helps with timekeeping specially in embedded devices. Modern
+    OS's often use NTP to sync time]
         </li>
         <li>
          Temperature Sensors
@@ -1937,7 +1959,9 @@ Lets dive into the world of booting Linux Kernel.
         </li>
        </ul>
        <p>
-        The first step in bringing the computer to working order is performed by a special program called the BIOS which is programmed onto a ROM chip on the motherboard, right from the factory. Lets see what happens in the BIOS.
+        The first step in bringing the computer to working order is performed by a
+special program called the BIOS which is programmed onto a ROM chip on the
+motherboard, right from the factory. Lets see what happens in the BIOS.
        </p>
        <p>
         <img alt="High level Sequence of Boot up Steps |475" src="../../../May/Assets/media/Linux%20Kernel%20Explained%20-%20Deep%20Dive%20Series%20for%20System%20Engineers/Linux%20Kernel%20Explained%20-%20Deep%20Dive%20Series%20for%20System%20Engineers-image-2024-05-30-000610.png"/>
@@ -1946,7 +1970,10 @@ Lets dive into the world of booting Linux Kernel.
         🧩 BIOS and Power-On Self Test (POST)
        </h2>
        <p>
-        BIOS is an embedded program responsible for starting the computer and performing a POST (Power-On Self Test). UEFI is the new modern reincarnation on the BIOS and the new kid on the block. From the Linux kernel bootup perspective, BIOS vs UEFI has limited implications in the startup process
+        BIOS is an embedded program responsible for starting the computer and performing
+a POST (Power-On Self Test). UEFI is the new modern reincarnation on the BIOS
+and the new kid on the block. From the Linux kernel bootup perspective, BIOS vs
+UEFI has limited implications in the startup process
         <sup id="fnref:3">
          <a class="footnote-ref" href="#fn:3">
           3
@@ -1961,31 +1988,45 @@ Lets dive into the world of booting Linux Kernel.
          <strong>
           Power-On Self Test (POST):
          </strong>
-         During POST, the BIOS initializes the CPU and memory subsystem. It checks if these components are functioning correctly. If they start properly, the computer is ready to boot. However, this depends on the rest of the hardware functioning correctly as well.
+         During POST, the BIOS initializes the CPU and
+   memory subsystem. It checks if these components are functioning correctly. If
+   they start properly, the computer is ready to boot. However, this depends on
+   the rest of the hardware functioning correctly as well.
         </li>
         <li>
          <strong>
           Hardware Initialization:
          </strong>
-         The BIOS initializes and lists all other peripheral hardware attached to the system. These peripherals are generally connected via buses like I2C, PCI Express, and SATA, which connect them to the CPU
+         The BIOS initializes and lists all other
+   peripheral hardware attached to the system. These peripherals are generally
+   connected via buses like I2C, PCI Express, and SATA, which connect them to
+   the CPU
         </li>
         <li>
          <strong>
           CMOS Battery Check:
          </strong>
-         Keeping correct time is important. Not so critical these days, but back in the day, a depleted CMOS battery could lead to a lot of mess. Often a motherboard would refuse to boot automatically if it detected a fault in the CMOS Clock.
+         Keeping correct time is important. Not so critical
+   these days, but back in the day, a depleted CMOS battery could lead to a lot
+   of mess. Often a motherboard would refuse to boot automatically if it
+   detected a fault in the CMOS Clock.
         </li>
         <li>
          <strong>
           RAM check
          </strong>
-         : Verify RAM speed and make sure the bus speed of various subsystems are compatible. Overclockers tinker with the voltage levels of the RAM and the CPU to force it to run at higher than prescribed clock speeds. BIOS/UEFI these days protects such folks from frying up their threadripper/i9 cpu
+         : Verify RAM speed and make sure the bus speed of various
+   subsystems are compatible. Overclockers tinker with the voltage levels of the
+   RAM and the CPU to force it to run at higher than prescribed clock speeds.
+   BIOS/UEFI these days protects such folks from frying up their threadripper/i9
+   cpu
         </li>
         <li>
          <strong>
           Boot a Storage Device:
          </strong>
-         Try to find bootable storage devices. Either a disk with Master Boot Record entries, or a GPT UUID partitioned disk.
+         Try to find bootable storage devices. Either a
+   disk with Master Boot Record entries, or a GPT UUID partitioned disk.
         </li>
         <li>
          <img alt="BIOS and UEFI both perform POST on motherboards. UEFI just happens to be with the times.|625" src="../../../May/Assets/media/Linux%20Kernel%20Explained%20-%20Deep%20Dive%20Series%20for%20System%20Engineers/Linux%20Kernel%20Explained%20-%20Deep%20Dive%20Series%20for%20System%20Engineers-image-2024-05-30-000359.png"/>
@@ -1999,34 +2040,44 @@ Lets dive into the world of booting Linux Kernel.
         <strong>
          BIOS
         </strong>
-        acts as the first sanity check, initializing the system and performing POST. It hands over control to a
+        acts as the first sanity check, initializing the system
+and performing POST. It hands over control to a
         <strong>
          Bootloader
         </strong>
-        , a somewhat more advanced program that is tasked with loading operating systems
+        , a somewhat more
+advanced program that is tasked with loading operating systems
        </p>
        <hr/>
        <h2 id="bootloader-and-grub">
         💽 Bootloader and GRUB
        </h2>
        <p>
-        After POST, BIOS looks for special I/O devices to provide the next program to run, typically the bootloader.
+        After POST, BIOS looks for special I/O devices to provide the next program to
+run, typically the bootloader.
         <br/>
-        Locating the bootloader is done by following a few conventions which have been in the PC world for decades. In short, BIOS has a configured set of boot devices. This preference is stored in the CMOS.
+        Locating the bootloader is done by following a few conventions which have been
+in the PC world for decades. In short, BIOS has a configured set of boot
+devices. This preference is stored in the CMOS.
        </p>
        <p>
-        After POST, BIOS will start going through each Boot Device and verify if it has a
+        After POST, BIOS will start going through each Boot Device and verify if it has
+a
         <a href="https://en.wikipedia.org/wiki/Master_boot_record">
          Master Boot Record
         </a>
-        . This is where GRUB enters the picture.
+        . This
+is where GRUB enters the picture.
         <a href="https://en.wikipedia.org/wiki/GNU_GRUB">
          GRUB
         </a>
         is a program residing in the Master Boot Record of a bootable device.
        </p>
        <p>
-        Here is a quick anatomy of the Master Boot Record. Its the first sector of a disk. A disk sector is traditionally 512bytes. Modern disks have larger sectors up to 4096 bytes [Advanced Format Disks] but even these disks access the physical media in 512byte emulated mode [512e]
+        Here is a quick anatomy of the Master Boot Record. Its the first sector of a
+disk. A disk sector is traditionally 512bytes. Modern disks have larger sectors
+up to 4096 bytes [Advanced Format Disks] but even these disks access the
+physical media in 512byte emulated mode [512e]
        </p>
        <p>
         512bytes of the MBR are broken up as follows
@@ -2046,18 +2097,22 @@ Lets dive into the world of booting Linux Kernel.
          <strong>
           0xAA55
          </strong>
-         . This indicates to the BIOS, there is a bootloader on this disk device.
+         . This indicates to the BIOS,
+    there is a bootloader on this disk device.
         </li>
        </ul>
        <p>
         With that out of the way, lets look at GRUB as a bootloader.
        </p>
        <p>
-        Now. lets be honest. 512bytes is a tight space, and adding things like splash image, nice graphics and menus to dual boot an OS will take way more than 512bytes. For eg.
+        Now. lets be honest. 512bytes is a tight space, and adding things like splash
+image, nice graphics and menus to dual boot an OS will take way more than
+512bytes. For eg.
         <a href="https://easybmp.sourceforge.net/">
          EasyBMP
         </a>
-        a tiny library to display images on screen when statically linked is 20kb!
+        a tiny library to
+display images on screen when statically linked is 20kb!
        </p>
        <p>
         To work around this limitation, Grub does a multi-stage boot.
@@ -2071,7 +2126,8 @@ Lets dive into the world of booting Linux Kernel.
           Boot.img
          </em>
         </strong>
-        , Fits in 440byte MBR. Its a simple sled program which loads Stage 1.5 using a
+        , Fits in 440byte MBR. Its a simple sled program
+which loads Stage 1.5 using a
         <a href="https://en.wikipedia.org/wiki/Logical_block_addressing">
          LBA address jump
         </a>
@@ -2083,7 +2139,8 @@ Lets dive into the world of booting Linux Kernel.
         <em>
          Core.img
         </em>
-        , Fits in 32kb. It has just enough file system modules to load
+        , Fits in 32kb. It has just enough file system modules
+to load
         <em>
          \/boot\/grub
         </em>
@@ -2095,22 +2152,29 @@ Lets dive into the world of booting Linux Kernel.
         <em>
          \/boot\/grub
         </em>
-        is a special folder in /boot partition or a path on the root / partition. This is where all grub modules are available. It contains module drives for a large set of IO devices including networking booting. It also brings some nice things like a GUI, selection menus and splash pages!
+        is a special folder in /boot partition or a path on
+the root / partition. This is where all grub modules are available. It contains
+module drives for a large set of IO devices including networking booting. It
+also brings some nice things like a GUI, selection menus and splash pages!
        </p>
        <p>
         <img alt="|500" src="../../../May/Assets/media/Booting%20up%20Linux%20Kernel%20-%20Linux%20for%20Engineers%201/Booting%20up%20Linux%20Kernel%20-%20Linux%20Kernel%20for%20System%20Engineers%201-image-2024-06-01-011821.png"/>
        </p>
        <p>
-        Now all that theory out of the way, how do we boot the kernel itself? We usually just select a menu and boom! Linux starts loading up?
+        Now all that theory out of the way, how do we boot the kernel itself? We usually
+just select a menu and boom! Linux starts loading up?
         <br/>
-        Well, there is a bunch of configuration files and menu entries which makes that happen. Just peek into
+        Well, there is a bunch of configuration files and menu entries which makes that
+happen. Just peek into
         <code>
          /boot/grub/grub.cfg
         </code>
-        . But we aren't looking at GRUB and its magic. Lets try to boot a system by first principles.
+        . But we aren't looking at GRUB and
+its magic. Lets try to boot a system by first principles.
        </p>
        <p>
-        Here is the minimal set of commands you can use on a GRUB prompt to start a Linux system.
+        Here is the minimal set of commands you can use on a GRUB prompt to start a
+Linux system.
        </p>
        <div class="language-text highlight">
         <pre><span></span><code><span id="__span-0-1"><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>insmod linux
@@ -2125,13 +2189,16 @@ Lets dive into the world of booting Linux Kernel.
        </p>
        <ul>
         <li>
-         Load the linux grub module. This module tells grub how to start a Linux like operating system.
+         Load the linux grub module. This module tells grub how to start a Linux like
+    operating system.
         </li>
         <li>
          <code>
           hd0,1
          </code>
-         - This is the tricky bit! This is grub's way of selecting a hard drive partition. varies on each machine, depending on how it was partitioned. This
+         - This is the tricky bit! This is grub's way of selecting a hard
+    drive partition. varies on each machine, depending on how it was
+    partitioned. This
          <a href="https://superuser.com/questions/182161/grub-how-find-partition-number-hd0-x">
           stackexchange discussion should come in handy
          </a>
@@ -2140,11 +2207,13 @@ Lets dive into the world of booting Linux Kernel.
          <code>
           /boot/vmlinuz-3.13.0-29-generic
          </code>
-         is the compressed compiled linux kernel. Tab completion is your friend. Version number
+         is the compressed compiled linux kernel.
+    Tab completion is your friend. Version number
          <code>
           3.13.0
          </code>
-         would likely change in your case.
+         would likely change
+    in your case.
         </li>
         <li>
          <code>
@@ -2166,7 +2235,8 @@ Lets dive into the world of booting Linux Kernel.
         </li>
        </ul>
        <p>
-        Once we write boot, GRUB is officially trying to hand over control to the kernel. Phew!
+        Once we write boot, GRUB is officially trying to hand over control to the
+kernel. Phew!
        </p>
        <blockquote>
         <p>
@@ -2174,7 +2244,10 @@ Lets dive into the world of booting Linux Kernel.
           Future Topics
          </strong>
          <br/>
-         If you're interested, I can cover BIOS and bootloader in more detail in future posts. However, for practicality, most of us won't be dealing directly with building BIOS or bootloaders. This high-level overview should provide a clear understanding of the initial steps in the boot sequence.
+         If you're interested, I can cover BIOS and bootloader in more detail in future
+posts. However, for practicality, most of us won't be dealing directly with
+building BIOS or bootloaders. This high-level overview should provide a clear
+understanding of the initial steps in the boot sequence.
         </p>
        </blockquote>
        <hr/>
@@ -2184,7 +2257,11 @@ Lets dive into the world of booting Linux Kernel.
         🐧 Linux Kernel Bootup Sequence
        </h2>
        <p>
-        Many seasoned developers have observed a Linux system boot up, witnessing a stream of text scrolling by on the screen. This output primarily consists of driver initializations and service startups. Despite its apparent complexity, the Linux kernel boot process is relatively straightforward. Let's delve into the most prevalent Linux kernel boot sequence
+        Many seasoned developers have observed a Linux system boot up, witnessing a
+stream of text scrolling by on the screen. This output primarily consists of
+driver initializations and service startups. Despite its apparent complexity,
+the Linux kernel boot process is relatively straightforward. Let's delve into
+the most prevalent Linux kernel boot sequence
        </p>
        <p>
         <img alt="Linux Boot Process in a Nutshell" src="../../../May/Assets/media/Linux%20Kernel%20Explained%20-%20Deep%20Dive%20Series%20for%20System%20Engineers/Linux%20Kernel%20Explained%20-%20Deep%20Dive%20Series%20for%20System%20Engineers-image-2024-05-30-014854.png"/>
@@ -2193,7 +2270,8 @@ Lets dive into the world of booting Linux Kernel.
         Bare Minimum Linux Kernel?
        </h3>
        <p>
-        As we saw in the grub commands, achieving a minimal boot for a practical PC experience requires,
+        As we saw in the grub commands, achieving a minimal boot for a practical PC
+experience requires,
        </p>
        <ul>
         <li>
@@ -2210,7 +2288,8 @@ Lets dive into the world of booting Linux Kernel.
          <strong>
           initrd
          </strong>
-         : compressed archive which can be expanded by vmlinuz or grub and placed into memory
+         : compressed archive which can be expanded by
+    vmlinuz or grub and placed into memory
         </li>
         <li>
          (additionally)
@@ -2220,7 +2299,8 @@ Lets dive into the world of booting Linux Kernel.
         </li>
        </ul>
        <p>
-        Linux follows a two stage booting process. The bootloader first loads the stage 1 kernel.
+        Linux follows a two stage booting process. The bootloader first loads the stage
+1 kernel.
        </p>
        <p>
         <em>
@@ -2236,7 +2316,8 @@ Lets dive into the world of booting Linux Kernel.
          Mount said root file system
         </li>
         <li>
-         Hand over control to an init executable in the root filesystem. (/init, /sbin/init or configured paths in
+         Hand over control to an init executable in the root filesystem. (/init,
+    /sbin/init or configured paths in
          <a href="https://github.com/torvalds/linux/blob/4a4be1ad3a6efea16c56615f31117590fd881358/init/main.c#L1523">
           linux/init/main.c at torvalds/linux · GitHub
          </a>
@@ -2244,7 +2325,9 @@ Lets dive into the world of booting Linux Kernel.
         </li>
        </ul>
        <p>
-        Because storage hardware comes in various formats (curse of linux's ubiquity), kernel developers have chosen to break the booting process into an initial in-memory file system load (
+        Because storage hardware comes in various formats (curse of linux's ubiquity),
+kernel developers have chosen to break the booting process into an initial
+in-memory file system load (
         <strong>
          Initramfs
         </strong>
@@ -2252,7 +2335,8 @@ Lets dive into the world of booting Linux Kernel.
         <strong>
          initrd
         </strong>
-        ) which then mounts and loads the
+        ) which then mounts and
+loads the
         <strong>
          root filesystem
         </strong>
@@ -2261,7 +2345,11 @@ Lets dive into the world of booting Linux Kernel.
         <em>
          Stage 2
         </em>
-        kernel boot is where the init process starts configuring hardware and running services, usually running programs initiated in userspace but invoking kernel space syscalls. This ensures the boot process can be configured without having to recompile the kernel for every small customizations. This design choice is the reason why we all aren't kernel developers (yet)
+        kernel boot is where the init process starts configuring hardware and
+running services, usually running programs initiated in userspace but invoking
+kernel space syscalls. This ensures the boot process can be configured without
+having to recompile the kernel for every small customizations. This design
+choice is the reason why we all aren't kernel developers (yet)
        </p>
        <blockquote>
         <p>
@@ -2275,7 +2363,8 @@ Lets dive into the world of booting Linux Kernel.
          <em>
           /sbin/init
          </em>
-         program to print hello world! all in &lt; 10mbs of RAM, if you configure your kernel boot correctly!
+         program to print hello world!
+all in &lt; 10mbs of RAM, if you configure your kernel boot correctly!
         </p>
         <p>
          <strong>
@@ -2285,9 +2374,11 @@ Lets dive into the world of booting Linux Kernel.
          <strong>
           initrd
          </strong>
-         (initial ramdisk) serve a similar purpose. initramfs is a modern take on initrd;
+         (initial ramdisk) serve a similar purpose.
+initramfs is a modern take on initrd;
          <br/>
-         Write to me if you think I should write about the internals of initramfs/initrd.
+         Write to me if you think I should write about the internals of
+initramfs/initrd.
          <br/>
          PS: A quick search would point to some great resources.
          <br/>
@@ -2302,13 +2393,18 @@ Lets dive into the world of booting Linux Kernel.
         🌴 Root File System : Linux Kernel Directory Structure
        </h2>
        <p>
-        Upon starting, the Linux kernel prepares and virtually presents some special file system in a specific way. The root file system and the initial RAM file system (initramfs) are crucial parts of this structure.
+        Upon starting, the Linux kernel prepares and virtually presents some special
+file system in a specific way. The root file system and the initial RAM file
+system (initramfs) are crucial parts of this structure.
         <br/>
-        Initramfs is the first file system that the kernel mounts and operates in memory, rather than on disk.
+        Initramfs is the first file system that the kernel mounts and operates in
+memory, rather than on disk.
         <br/>
-        Root filesystem is then loaded and presents more kernel modules, libraries, binary utilities and daemons.
+        Root filesystem is then loaded and presents more kernel modules, libraries,
+binary utilities and daemons.
         <br/>
-        The root filesystem also starts various daemons which could further mount other storage devices and filesystems.
+        The root filesystem also starts various daemons which could further mount other
+storage devices and filesystems.
        </p>
        <p>
         We need to be aware of
@@ -2319,9 +2415,11 @@ Lets dive into the world of booting Linux Kernel.
         <code>
          /sys
         </code>
-        directories, which contain information about the running kernel and allow certain kernel parameters to be modified.
+        directories, which contain information
+about the running kernel and allow certain kernel parameters to be modified.
         <br/>
-        We also need to learn how all these file systems are combined together to provide a singular working view of the running system using overlayfs
+        We also need to learn how all these file systems are combined together to
+provide a singular working view of the running system using overlayfs
        </p>
        <iframe height="450" src="https://whimsical.com/embed/RutWT6bkMH1J4nU7D7p2FV" style="border:none" width="800">
        </iframe>
@@ -2329,21 +2427,30 @@ Lets dive into the world of booting Linux Kernel.
         Init Process and the Role of PID 1: systemd and upstart in modern linux distros
        </h3>
        <p>
-        In the world of Linux, PID 1 holds a special place. PID 1, or Process ID 1, is the first process started by the Linux kernel during the boot sequence and is the ancestor of all other processes. Understanding PID 1 and its role is crucial for grasping how a Linux system initializes and manages services.
+        In the world of Linux, PID 1 holds a special place. PID 1, or Process ID 1, is
+the first process started by the Linux kernel during the boot sequence and is
+the ancestor of all other processes. Understanding PID 1 and its role is crucial
+for grasping how a Linux system initializes and manages services.
        </p>
        <p>
-        When the Linux kernel finishes its initial setup, it launches the first user-space process, which is assigned PID 1. Traditionally, this process was the
+        When the Linux kernel finishes its initial setup, it launches the first
+user-space process, which is assigned PID 1. Traditionally, this process was the
         <code>
          init
         </code>
-        system, responsible for starting system processes, handling system initialization, and managing services. The
+        system, responsible for starting system processes, handling system
+initialization, and managing services. The
         <code>
          init
         </code>
-        system follows a predefined sequence to bring the system to a usable state.
+        system follows a predefined
+sequence to bring the system to a usable state.
        </p>
        <p>
-        PID 1 is critical because it remains running as long as the system is up and serves as the parent for all other processes. If PID 1 terminates, the kernel will panic, causing the system to halt or reboot, as there would be no process to adopt orphaned child processes.
+        PID 1 is critical because it remains running as long as the system is up and
+serves as the parent for all other processes. If PID 1 terminates, the kernel
+will panic, causing the system to halt or reboot, as there would be no process
+to adopt orphaned child processes.
        </p>
        <h4 id="systemd-as-init">
         systemd as init
@@ -2361,7 +2468,10 @@ Lets dive into the world of booting Linux Kernel.
         <code>
          systemd
         </code>
-        is designed to provide a more efficient and feature-rich way of managing system processes and services. It still occupies the PID 1 slot and takes on the responsibilities of its predecessor but with enhanced capabilities.
+        is designed
+to provide a more efficient and feature-rich way of managing system processes
+and services. It still occupies the PID 1 slot and takes on the responsibilities
+of its predecessor but with enhanced capabilities.
        </p>
        <h4 id="how-systemd-works">
         How systemd Works?
@@ -2375,7 +2485,9 @@ Lets dive into the world of booting Linux Kernel.
         <code>
          systemd
         </code>
-        begins its initialization process by mounting the initial file systems and starting essential services. It reads its configuration from unit files located in
+        begins its
+initialization process by mounting the initial file systems and starting
+essential services. It reads its configuration from unit files located in
         <code>
          /etc/systemd/system/
         </code>
@@ -2383,13 +2495,15 @@ Lets dive into the world of booting Linux Kernel.
         <code>
          /usr/lib/systemd/system/
         </code>
-        . These unit files describe how to manage services, sockets, devices, and other system components.
+        . These unit files describe
+how to manage services, sockets, devices, and other system components.
        </p>
        <p>
         <code>
          systemd
         </code>
-        also sets up the cgroups (control groups) to manage resource allocation and limits for processes
+        also sets up the cgroups (control groups) to manage resource
+allocation and limits for processes
        </p>
        <p>
         <img alt="|850" src="../../../May/Assets/media/Linux%20Kernel%20Explained%20-%20Deep%20Dive%20Series%20for%20System%20Engineers/Linux%20Kernel%20Explained%20-%20Deep%20Dive%20Series%20for%20System%20Engineers-image-2024-05-29-030657.png"/>
@@ -2398,27 +2512,36 @@ Lets dive into the world of booting Linux Kernel.
         Kernel Privilege rings and security. PID 1's security implications
        </h3>
        <p>
-        In the architecture of modern computer systems, privilege rings play a crucial role in maintaining security and stability. The Linux kernel operates in these rings to control access to resources and enforce security policies. Understanding the concept of privilege rings and the security implications of PID 1 helps in comprehending how Linux ensures a secure environment.
+        In the architecture of modern computer systems, privilege rings play a crucial
+role in maintaining security and stability. The Linux kernel operates in these
+rings to control access to resources and enforce security policies.
+Understanding the concept of privilege rings and the security implications of
+PID 1 helps in comprehending how Linux ensures a secure environment.
        </p>
        <h4 id="privilege-rings-explained">
         Privilege Rings Explained
        </h4>
        <p>
-        Privilege rings are hierarchical levels of privileges that a system's processes can have. They range from Ring 0, the highest level of privilege, to Ring 3, the lowest.
+        Privilege rings are hierarchical levels of privileges that a system's processes
+can have. They range from Ring 0, the highest level of privilege, to Ring 3, the
+lowest.
        </p>
        <ul>
         <li>
          <strong>
           Ring 0 (Kernel Mode):
          </strong>
-         The most privileged level, where the operating system kernel operates. It has unrestricted access to all system resources and hardware.
+         The most privileged level, where the operating
+    system kernel operates. It has unrestricted access to all system resources
+    and hardware.
         </li>
         <li>
          <p>
           <strong>
            Ring 3 (User Mode):
           </strong>
-          The least privileged level, where user applications run. It has restricted access, requiring sudo to elevate to kernelmode
+          The least privileged level, where user applications
+    run. It has restricted access, requiring sudo to elevate to kernelmode
          </p>
         </li>
         <li>
@@ -2428,38 +2551,54 @@ Lets dive into the world of booting Linux Kernel.
         </li>
        </ul>
        <p>
-        The kernel mode (Ring 0) allows the operating system to execute critical tasks that require direct access to hardware and memory. User mode (Ring 3) provides a restricted environment for applications, preventing them from directly accessing hardware and system memory, thus protecting the system from malicious software and user errors.
+        The kernel mode (Ring 0) allows the operating system to execute critical tasks
+that require direct access to hardware and memory. User mode (Ring 3) provides a
+restricted environment for applications, preventing them from directly accessing
+hardware and system memory, thus protecting the system from malicious software
+and user errors.
        </p>
        <blockquote>
         <p>
          Ironically Ring 1 and Ring 2 have felt out of favor.
         </p>
         <p>
-         As a hobbyist Linux nerd, I discovered that the benefits of rings 1 and 2 in the modern protection model are greatly diminished due to paging only distinguishing between privileged (ring 0, 1, 2) and unprivileged levels.
+         As a hobbyist Linux nerd, I discovered that the benefits of rings 1 and 2 in
+the modern protection model are greatly diminished due to paging only
+distinguishing between privileged (ring 0, 1, 2) and unprivileged levels.
         </p>
         <p>
-         Anecdotally Intel designed rings 1 and 2 to house device drivers, providing them with some privileges while keeping them somewhat separate from kernel code. Although rings 1 and 2 can access supervisor pages, they still trigger a General Protection Fault (GPF) if they use a privileged instruction, similar to ring 3. Despite this, rings 1 and 2 are useful in certain designs.
+         Anecdotally Intel designed rings 1 and 2 to house device drivers, providing
+them with some privileges while keeping them somewhat separate from kernel
+code. Although rings 1 and 2 can access supervisor pages, they still trigger a
+General Protection Fault (GPF) if they use a privileged instruction, similar
+to ring 3. Despite this, rings 1 and 2 are useful in certain designs.
         </p>
         <p>
-         For instance, VirtualBox places guest kernel code in ring 1, and some operating systems do utilize them, though it is not a widely popular design choice at present.
+         For instance, VirtualBox places guest kernel code in ring 1, and some
+operating systems do utilize them, though it is not a widely popular design
+choice at present.
         </p>
        </blockquote>
        <h2 id="conclusion">
         🏁 Conclusion
        </h2>
        <p>
-        Dear reader, I hope this gives you a glimpse into the fascinating engineering that powers your PC.
+        Dear reader, I hope this gives you a glimpse into the fascinating engineering
+that powers your PC.
         <br/>
         We followed a popular path through the woods of bootloaders and linux kernels.
         <br/>
-        In reality, there are many ways to boot a machine. We've got three components to mix and match. The BIOS, Bootloader and the OS/Kernel.
+        In reality, there are many ways to boot a machine. We've got three components to
+mix and match. The BIOS, Bootloader and the OS/Kernel.
        </p>
        <p>
         In modern devices with a single powerful
         <strong>
          System on Chip
         </strong>
-        design, we sometimes encounter BIOS and Bootloader becoming very slim and having features to offer OEM locking and security. In most systems there is a proprietary "BIOS".
+        design, we sometimes
+encounter BIOS and Bootloader becoming very slim and having features to offer
+OEM locking and security. In most systems there is a proprietary "BIOS".
         <sup id="fnref:4">
          <a class="footnote-ref" href="#fn:4">
           4
@@ -2467,26 +2606,33 @@ Lets dive into the world of booting Linux Kernel.
         </sup>
        </p>
        <p>
-        Keen readers would noticed how Grub was a two stage bootloader, and Linux kernel was a two stage OS boot system. There have been efforts like
+        Keen readers would noticed how Grub was a two stage bootloader, and Linux kernel
+was a two stage OS boot system. There have been efforts like
         <strong>
-         Direct Kernel Boot
+         Direct Kernel
+Boot
         </strong>
         <sup id="fnref:5">
          <a class="footnote-ref" href="#fn:5">
           5
          </a>
         </sup>
-        to merge these two components + four steps into a streamlined two step process. This speeds up the boot process and is usually seen as an option in Virtualization solutions and hypervisors.
+        to merge these two components + four steps into a streamlined two
+step process. This speeds up the boot process and is usually seen as an option
+in Virtualization solutions and hypervisors.
        </p>
        <p>
-        In no particular order or importance, here are some interesting projects powering the modern device bootup space.
+        In no particular order or importance, here are some interesting projects
+powering the modern device bootup space.
        </p>
        <ul>
         <li>
          <a href="https://source.denx.de/u-boot/u-boot">
           U-Boot
          </a>
-         - Usually used in embedded devices. Gives fine grained control of where the kernel gets loaded into device memory. As seen in:
+         - Usually used in embedded
+    devices. Gives fine grained control of where the kernel gets loaded into
+    device memory. As seen in:
          <ul>
           <li>
            SpaceX Dragon/falcon/
@@ -2510,10 +2656,12 @@ Lets dive into the world of booting Linux Kernel.
          Android Devices :
          <ul>
           <li>
-           While android uses a variant of the Linux kernel, there is no standard boot loader prescribed for running android os.
+           While android uses a variant of the Linux kernel, there is no standard
+    boot loader prescribed for running android os.
           </li>
           <li>
-           OEMs implement their own boot loader depending on the storage options available and the SoC used.
+           OEMs implement their own boot loader depending on the storage options
+    available and the SoC used.
           </li>
           <li>
            Qualcomm chipsets use Little Kernel and try to be UEFI compatible.
@@ -2527,20 +2675,29 @@ Lets dive into the world of booting Linux Kernel.
          </ul>
         </li>
         <li>
-         Cloud VMs : AWS/Azure/GCP support custom virtualized BIOS/UEFI for their VMs.
+         Cloud VMs : AWS/Azure/GCP support custom virtualized BIOS/UEFI for their
+    VMs.
          <ul>
           <li>
-           Cloud BIOS supports emulating keyboard/serial console during the boot process, even before the bootloader or OS has loaded. This makes supporting any standard bootloader possible on cloud infrastructure. Critical for disaster recovery scenarios where your server, 7000kms away stops booting!
+           Cloud BIOS supports emulating keyboard/serial console during the boot
+    process, even before the bootloader or OS has loaded. This makes
+    supporting any standard bootloader possible on cloud infrastructure.
+    Critical for disaster recovery scenarios where your server, 7000kms away
+    stops booting!
           </li>
           <li>
            <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/virtualization_types.html">
             Virtio and OS Images
            </a>
-           : Cloud Boot disks are virtualized and attached on demand. You could explore
+           :
+    Cloud Boot disks are virtualized and attached on demand. You could
+    explore
            <strong>
             virtio
            </strong>
-           locally on qemu kvm. Virtualized storage enables using pre-built images for different operating systems. A superpower for running repeatable consistent infrastructure at scale!
+           locally on qemu kvm. Virtualized storage enables
+    using pre-built images for different operating systems. A superpower for
+    running repeatable consistent infrastructure at scale!
           </li>
           <li>
            <strong>
@@ -2548,11 +2705,14 @@ Lets dive into the world of booting Linux Kernel.
              Cloud-Init
             </a>
            </strong>
-           : They also have additional initialization steps after the kernel and operating system start called
+           : They also have additional
+    initialization steps after the kernel and operating system start called
            <strong>
             cloud-init
            </strong>
-           . This helps setup networking, user accounts, passwords and ssh keys, networking and services. It also helps platform operators to further extend the boot process.
+           . This helps setup networking, user accounts, passwords
+    and ssh keys, networking and services. It also helps platform operators
+    to further extend the boot process.
           </li>
          </ul>
         </li>
@@ -2560,7 +2720,8 @@ Lets dive into the world of booting Linux Kernel.
        <hr/>
        <blockquote>
         <p>
-         Have feedback or questions, or want to be notified about more such articles? Follow me on Twitter
+         Have feedback or questions, or want to be notified about more such articles?
+Follow me on Twitter
          <a href="https://x.com/wiresurfer">
           @wiresurfer
          </a>
@@ -2576,7 +2737,8 @@ Lets dive into the world of booting Linux Kernel.
         <ol>
          <li id="fn:1">
           <p>
-           GPIOs are common in embedded boards like raspberry pi or industrial PCs. Here is an insightful stackoverflow discussion about hacks to
+           GPIOs are common in embedded boards like raspberry pi or industrial PCs.
+Here is an insightful stackoverflow discussion about hacks to
            <a href="https://superuser.com/questions/993690/do-desktop-computer-motherboards-have-gpio-if-they-do-how-to-read-from-or-writ">
             use GPIOs on desktop motherboards
            </a>
@@ -2587,7 +2749,9 @@ Lets dive into the world of booting Linux Kernel.
          </li>
          <li id="fn:2">
           <p>
-           PWM Controllers and Temperature Sensors together play a critical role in thermal management. Most modern UEFI motherboards offer fine grained control over the sensor readings and the Fan control curve.
+           PWM Controllers and Temperature Sensors together play a critical role in
+thermal management. Most modern UEFI motherboards offer fine grained control
+over the sensor readings and the Fan control curve.
            <a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">
             ↩
            </a>
@@ -2595,7 +2759,10 @@ Lets dive into the world of booting Linux Kernel.
          </li>
          <li id="fn:3">
           <p>
-           This is a loose statement and I accept its far from true. For all you advanced practitioners out there, remember we are writing this guide down to be approachable. I am shying away from a lot of complexity and keeping things simple.
+           This is a loose statement and I accept its far from true. For all you
+advanced practitioners out there, remember we are writing this guide down to
+be approachable. I am shying away from a lot of complexity and keeping
+things simple.
            <a href="https://www.happyassassin.net/posts/2014/01/25/uefi-boot-how-does-that-actually-work-then/">
             Adam Williamson from Redhat, who has written about Linux, has a great post about this
            </a>
@@ -2606,7 +2773,10 @@ Lets dive into the world of booting Linux Kernel.
          </li>
          <li id="fn:4">
           <p>
-           "BIOS" is a symbolic name here. Each SoC needs to start the hardware and do some rudimentary POST. Most Mobile devices also need to initialize a special telephony subsystem which runs its own Baseband OS. A traditional BIOS/UEFI introduced here would mean pushing a square peg through a round hole.
+           "BIOS" is a symbolic name here. Each SoC needs to start the hardware and do
+some rudimentary POST. Most Mobile devices also need to initialize a special
+telephony subsystem which runs its own Baseband OS. A traditional BIOS/UEFI
+introduced here would mean pushing a square peg through a round hole.
            <a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 4 in the text">
             ↩
            </a>
@@ -2649,13 +2819,13 @@ Lets dive into the world of booting Linux Kernel.
        </div>
       </div>
      </a>
-     <a aria-label="Next: Linux Kernel Explained - Deep Dive Series for System Engineers" class="md-footer__link md-footer__link--next" href="../linux-kernel-explained---deep-dive-series-for-system-engineers/" rel="next">
+     <a aria-label="Next: AI/ML Checklist for Startups" class="md-footer__link md-footer__link--next" href="../../../05/08/aiml-checklist-for-startups/" rel="next">
       <div class="md-footer__title">
        <div class="md-ellipsis">
         <span class="md-footer__direction">
          Next
         </span>
-        Linux Kernel Explained - Deep Dive Series for System Engineers
+        AI/ML Checklist for Startups
        </div>
       </div>
       <div class="md-footer__button md-icon">
