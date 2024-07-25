@@ -5,3 +5,6 @@
 .pub_min_cache/
 *_mkdocs_build.zip
 *_mkdocs_debug.log
+site/
+*.log
+*.zip
