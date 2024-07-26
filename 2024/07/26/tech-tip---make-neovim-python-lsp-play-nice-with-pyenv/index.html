@@ -3,50 +3,49 @@
  <head>
   <meta charset="utf-8"/>
   <meta content="width=device-width,initial-scale=1" name="viewport"/>
-  <meta content="required. Used as feed mandatory channel description." name="description"/>
-  <link href="https://blog.shaishav.kr/category/engineering/" rel="canonical"/>
-  <link href="../../tags/" rel="prev"/>
-  <link href="../insights/" rel="next"/>
-  <link href="../../feed_rss_created.xml" rel="alternate" title="RSS feed" type="application/rss+xml"/>
-  <link href="../../feed_rss_updated.xml" rel="alternate" title="RSS feed of updated content" type="application/rss+xml"/>
-  <link href="../../assets/images/favicon.png" rel="icon"/>
+  <meta content="Modern python development relies on some form of virtual environment management. pyenv + virtialenv is a goto toolkit for managing both python versions and isolated package environments. For people using Neovim as their editor, setting up Neovim's LSP to play nice with pyenv requires a trick. This post covers the interplay of tools to make this work." name="description"/>
+  <link href="https://blog.shaishav.kr/2024/07/26/tech-tip---make-neovim-python-lsp-play-nice-with-pyenv/" rel="canonical"/>
+  <link href="../../22/story-untold-is-a-story-lost/" rel="prev"/>
+  <link href="../../../../feed_rss_created.xml" rel="alternate" title="RSS feed" type="application/rss+xml"/>
+  <link href="../../../../feed_rss_updated.xml" rel="alternate" title="RSS feed of updated content" type="application/rss+xml"/>
+  <link href="../../../../assets/images/favicon.png" rel="icon"/>
   <meta content="mkdocs-1.6.0, mkdocs-material-9.5.24" name="generator"/>
   <title>
-   Engineering - wiresurfer's library | © shaishav.kr
+   Tech Tip - Make Neovim Python LSP play nice with pyenv - wiresurfer's library | © shaishav.kr
   </title>
-  <link href="../../assets/stylesheets/main.6543a935.min.css" rel="stylesheet"/>
-  <link href="../../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
+  <link href="../../../../assets/stylesheets/main.6543a935.min.css" rel="stylesheet"/>
+  <link href="../../../../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
   <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
   <style>
    :root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}
   </style>
-  <link href="../../assets/css/tailwing.min.css" rel="stylesheet"/>
-  <link href="../../assets/css/fonts.css" rel="stylesheet"/>
-  <link href="../../assets/css/override.css" rel="stylesheet"/>
-  <link href="../../assets/css/site.css" rel="stylesheet"/>
-  <link href="../../assets/css/nav.css" rel="stylesheet"/>
-  <link href="../../assets/css/typography.css" rel="stylesheet"/>
-  <link href="../../assets/css/article.css" rel="stylesheet"/>
-  <link href="../../assets/css/list.css" rel="stylesheet"/>
-  <link href="../../assets/css/responsive.css" rel="stylesheet"/>
+  <link href="../../../../assets/css/tailwing.min.css" rel="stylesheet"/>
+  <link href="../../../../assets/css/fonts.css" rel="stylesheet"/>
+  <link href="../../../../assets/css/override.css" rel="stylesheet"/>
+  <link href="../../../../assets/css/site.css" rel="stylesheet"/>
+  <link href="../../../../assets/css/nav.css" rel="stylesheet"/>
+  <link href="../../../../assets/css/typography.css" rel="stylesheet"/>
+  <link href="../../../../assets/css/article.css" rel="stylesheet"/>
+  <link href="../../../../assets/css/list.css" rel="stylesheet"/>
+  <link href="../../../../assets/css/responsive.css" rel="stylesheet"/>
   <script>
-   __md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}
+   __md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}
   </script>
   <meta content="website" property="og:type"/>
-  <meta content="Engineering - wiresurfer's library | © shaishav.kr" property="og:title"/>
-  <meta content="required. Used as feed mandatory channel description." property="og:description"/>
-  <meta content="https://blog.shaishav.kr/assets/images/social/category/engineering.png" property="og:image"/>
+  <meta content="Tech Tip - Make Neovim Python LSP play nice with pyenv - wiresurfer's library | © shaishav.kr" property="og:title"/>
+  <meta content="Modern python development relies on some form of virtual environment management. pyenv + virtialenv is a goto toolkit for managing both python versions and isolated package environments. For people using Neovim as their editor, setting up Neovim's LSP to play nice with pyenv requires a trick. This post covers the interplay of tools to make this work." property="og:description"/>
+  <meta content="https://blog.shaishav.kr/assets/images/social/Articles/2024/July/Tech Tip - Make Neovim Python LSP play nice with pyenv.png" property="og:image"/>
   <meta content="image/png" property="og:image:type"/>
   <meta content="1200" property="og:image:width"/>
   <meta content="630" property="og:image:height"/>
-  <meta content="https://blog.shaishav.kr/category/engineering/" property="og:url"/>
+  <meta content="https://blog.shaishav.kr/2024/07/26/tech-tip---make-neovim-python-lsp-play-nice-with-pyenv/" property="og:url"/>
   <meta content="summary_large_image" name="twitter:card"/>
-  <meta content="Engineering - wiresurfer's library | © shaishav.kr" name="twitter:title"/>
-  <meta content="required. Used as feed mandatory channel description." name="twitter:description"/>
-  <meta content="https://blog.shaishav.kr/assets/images/social/category/engineering.png" name="twitter:image"/>
-  <link href="../../feed_json_created.json" rel="alternate" title="JSON feed" type="application/feed+json">
-   <link href="../../feed_json_updated.json" rel="alternate" title="JSON feed of updated content" type="application/feed+json">
+  <meta content="Tech Tip - Make Neovim Python LSP play nice with pyenv - wiresurfer's library | © shaishav.kr" name="twitter:title"/>
+  <meta content="Modern python development relies on some form of virtual environment management. pyenv + virtialenv is a goto toolkit for managing both python versions and isolated package environments. For people using Neovim as their editor, setting up Neovim's LSP to play nice with pyenv requires a trick. This post covers the interplay of tools to make this work." name="twitter:description"/>
+  <meta content="https://blog.shaishav.kr/assets/images/social/Articles/2024/July/Tech Tip - Make Neovim Python LSP play nice with pyenv.png" name="twitter:image"/>
+  <link href="../../../../feed_json_created.json" rel="alternate" title="JSON feed" type="application/feed+json">
+   <link href="../../../../feed_json_updated.json" rel="alternate" title="JSON feed of updated content" type="application/feed+json">
     <meta content="IE=edge" http-equiv="x-ua-compatible">
      <meta content="width=device-width,initial-scale=1,shrink-to-fit=no" name="viewport">
       <meta content="index, follow" name="robots">
@@ -80,6 +79,15 @@
     </meta>
    </link>
   </link>
+  <meta content="article" property="og:type"/>
+  <meta content="Tech Tip - Make Neovim Python LSP play nice with pyenv" property="og:title"/>
+  <meta content="Modern python development relies on some form of virtual environment management. pyenv + virtialenv is a goto toolkit for managing both python versions and isolated package environments. For people using Neovim as their editor, setting up Neovim's LSP to play nice with pyenv requires a trick. This post covers the interplay of tools to make this work." property="og:description"/>
+  <meta content="wiresurfer's library | © shaishav.kr" property="og:site_name"/>
+  <meta content="en_US" property="og:locale"/>
+  <meta content="https://blog.shaishav.kr/2024/07/26/tech-tip---make-neovim-python-lsp-play-nice-with-pyenv/" property="og:url"/>
+  <meta content="summary" property="twitter:card"/>
+  <meta content="Tech Tip - Make Neovim Python LSP play nice with pyenv" property="twitter:title"/>
+  <meta content="Modern python development relies on some form of virtual environment management. pyenv + virtialenv is a goto toolkit for managing both python versions and isolated package environments. For people using Neovim as their editor, setting up Neovim's LSP to play nice with pyenv requires a trick. This post covers the interplay of tools to make this work." property="twitter:description"/>
  </head>
  <body data-md-color-accent="indigo" data-md-color-primary="red" data-md-color-scheme="slate" dir="ltr">
   <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
@@ -87,7 +95,7 @@
   <label class="md-overlay" for="__drawer">
   </label>
   <div data-md-component="skip">
-   <a class="md-skip" href="#engineering">
+   <a class="md-skip" href="#tech-tip-make-neovim-python-lsp-play-nice-with-pyenv">
     Skip to content
    </a>
   </div>
@@ -119,8 +127,8 @@
   <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
    <nav aria-label="Header" class="md-header__inner md-grid">
     <!-- Link to home -->
-    <a aria-label="wiresurfer's library | © shaishav.kr" class="md-header__button md-logo" data-md-component="logo" href="../.." title="wiresurfer's library | © shaishav.kr">
-     <img alt="logo" src="../../assets/images/wiresurfer-logo.jpeg"/>
+    <a aria-label="wiresurfer's library | © shaishav.kr" class="md-header__button md-logo" data-md-component="logo" href="../../../.." title="wiresurfer's library | © shaishav.kr">
+     <img alt="logo" src="../../../../assets/images/wiresurfer-logo.jpeg"/>
     </a>
     <!-- Button to open drawer -->
     <label class="md-header__button md-icon" for="__drawer">
@@ -136,7 +144,7 @@
       </div>
       <div class="md-header__topic" data-md-component="header-topic">
        <span class="md-ellipsis">
-        Engineering
+        Tech Tip - Make Neovim Python LSP play nice with pyenv
        </span>
       </div>
      </div>
@@ -197,8 +205,8 @@
   <nav aria-label="Tabs" class="md-tabs" data-md-component="tabs">
    <div class="md-grid">
     <ul class="md-tabs__list">
-     <li class="md-tabs__item">
-      <a class="md-tabs__link" href="../..">
+     <li class="md-tabs__item md-tabs__item--active">
+      <a class="md-tabs__link" href="../../../..">
        Home
       </a>
      </li>
@@ -208,17 +216,17 @@
       </a>
      </li>
      <li class="md-tabs__item">
-      <a class="md-tabs__link" href="../../tags/">
+      <a class="md-tabs__link" href="../../../../tags/">
        Tags
       </a>
      </li>
      <li class="md-tabs__item">
-      <a class="md-tabs__link" href="../../Bookmarks/Books/How%20to%20Win%20Friends%20and%20Influence%20People/">
+      <a class="md-tabs__link" href="../../../../Bookmarks/Books/How%20to%20Win%20Friends%20and%20Influence%20People/">
        Bookmarks
       </a>
      </li>
      <li class="md-tabs__item">
-      <a class="md-tabs__link" href="../../Interests/Finance/FIRE/">
+      <a class="md-tabs__link" href="../../../../Interests/Finance/FIRE/">
        Interests
       </a>
      </li>
@@ -228,12 +236,12 @@
       </a>
      </li>
      <li class="md-tabs__item">
-      <a class="md-tabs__link" href="../../archive/2024/">
+      <a class="md-tabs__link" href="../../../../archive/2024/">
        Archive
       </a>
      </li>
-     <li class="md-tabs__item md-tabs__item--active">
-      <a class="md-tabs__link" href="./">
+     <li class="md-tabs__item">
+      <a class="md-tabs__link" href="../../../../category/engineering/">
        Categories
       </a>
      </li>
@@ -243,7 +251,7 @@
   <div class="md-container" data-md-component="container">
    <main class="md-main" data-md-component="main">
     <div class="md-main__inner md-grid">
-     <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+     <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden="">
       <div class="md-sidebar__scrollwrap">
        <div class="md-sidebar__inner">
         <!--
@@ -272,8 +280,8 @@
         <nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
          <!-- Navigation list -->
          <ul class="md-nav__list" data-md-scrollfix="">
-          <li class="md-nav__item">
-           <a class="md-nav__link" href="../..">
+          <li class="md-nav__item md-nav__item--active">
+           <a class="md-nav__link" href="../../../..">
             <span class="md-ellipsis">
              Home
             </span>
@@ -287,7 +295,7 @@
            </a>
           </li>
           <li class="md-nav__item">
-           <a class="md-nav__link" href="../../tags/">
+           <a class="md-nav__link" href="../../../../tags/">
             <span class="md-ellipsis">
              Tags
             </span>
@@ -326,28 +334,28 @@
                </label>
                <ul class="md-nav__list" data-md-scrollfix="">
                 <li class="md-nav__item">
-                 <a class="md-nav__link" href="../../Bookmarks/Books/How%20to%20Win%20Friends%20and%20Influence%20People/">
+                 <a class="md-nav__link" href="../../../../Bookmarks/Books/How%20to%20Win%20Friends%20and%20Influence%20People/">
                   <span class="md-ellipsis">
                    How to Win Friends and Influence People
                   </span>
                  </a>
                 </li>
                 <li class="md-nav__item">
-                 <a class="md-nav__link" href="../../Bookmarks/Books/Mossad/">
+                 <a class="md-nav__link" href="../../../../Bookmarks/Books/Mossad/">
                   <span class="md-ellipsis">
                    Mossad
                   </span>
                  </a>
                 </li>
                 <li class="md-nav__item">
-                 <a class="md-nav__link" href="../../Bookmarks/Books/Raw%20%20A%20History%20Of%20India%20Covert%20Operations/">
+                 <a class="md-nav__link" href="../../../../Bookmarks/Books/Raw%20%20A%20History%20Of%20India%20Covert%20Operations/">
                   <span class="md-ellipsis">
                    Raw : A History Of India's Covert Operations
                   </span>
                  </a>
                 </li>
                 <li class="md-nav__item">
-                 <a class="md-nav__link" href="../../Bookmarks/Books/The%20Bhagavad%20Gita%20For%20Millenials/">
+                 <a class="md-nav__link" href="../../../../Bookmarks/Books/The%20Bhagavad%20Gita%20For%20Millenials/">
                   <span class="md-ellipsis">
                    The Bhagavad Gita For Millenials
                   </span>
@@ -389,7 +397,7 @@
                   </label>
                   <ul class="md-nav__list" data-md-scrollfix="">
                    <li class="md-nav__item">
-                    <a class="md-nav__link" href="../../Bookmarks/Omnivore/2024-01-11/Rebuilding%20Netflix%20Video%20Processing%20Pipeline%20with%20Microservices/">
+                    <a class="md-nav__link" href="../../../../Bookmarks/Omnivore/2024-01-11/Rebuilding%20Netflix%20Video%20Processing%20Pipeline%20with%20Microservices/">
                      <span class="md-ellipsis">
                       Rebuilding Netflix Video Processing Pipeline with Microservices
                      </span>
@@ -415,28 +423,28 @@
                   </label>
                   <ul class="md-nav__list" data-md-scrollfix="">
                    <li class="md-nav__item">
-                    <a class="md-nav__link" href="../../Bookmarks/Omnivore/2024-01-31/COVID%20Test%20Data%20Breach-%201.3%20Million%20Patient%20Records%20Exposed%20Online/">
+                    <a class="md-nav__link" href="../../../../Bookmarks/Omnivore/2024-01-31/COVID%20Test%20Data%20Breach-%201.3%20Million%20Patient%20Records%20Exposed%20Online/">
                      <span class="md-ellipsis">
                       COVID Test Data Breach: 1.3 Million Patient Records Exposed Online
                      </span>
                     </a>
                    </li>
                    <li class="md-nav__item">
-                    <a class="md-nav__link" href="../../Bookmarks/Omnivore/2024-01-31/I%20Just%20Wanted%20Emacs%20to%20Look%20Nice%20%E2%80%94%20Using%2024-Bit%20Color%20in%20Terminals%20%20Chad%20Austin/">
+                    <a class="md-nav__link" href="../../../../Bookmarks/Omnivore/2024-01-31/I%20Just%20Wanted%20Emacs%20to%20Look%20Nice%20%E2%80%94%20Using%2024-Bit%20Color%20in%20Terminals%20%20Chad%20Austin/">
                      <span class="md-ellipsis">
                       I Just Wanted Emacs to Look Nice — Using 24 Bit Color in Terminals  Chad Austin
                      </span>
                     </a>
                    </li>
                    <li class="md-nav__item">
-                    <a class="md-nav__link" href="../../Bookmarks/Omnivore/2024-01-31/I%20Just%20Wanted%20Emacs%20to%20Look%20Nice%20%E2%80%94%20Using%2024-Bit%20Color%20in%20Terminals%20-%20Chad%20Austin/">
+                    <a class="md-nav__link" href="../../../../Bookmarks/Omnivore/2024-01-31/I%20Just%20Wanted%20Emacs%20to%20Look%20Nice%20%E2%80%94%20Using%2024-Bit%20Color%20in%20Terminals%20-%20Chad%20Austin/">
                      <span class="md-ellipsis">
                       I Just Wanted Emacs to Look Nice — Using 24-Bit Color in Terminals | Chad Austin
                      </span>
                     </a>
                    </li>
                    <li class="md-nav__item">
-                    <a class="md-nav__link" href="../../Bookmarks/Omnivore/2024-01-31/Preface%20-%20LSM%20in%20a%20Week/">
+                    <a class="md-nav__link" href="../../../../Bookmarks/Omnivore/2024-01-31/Preface%20-%20LSM%20in%20a%20Week/">
                      <span class="md-ellipsis">
                       Preface - LSM in a Week
                      </span>
@@ -462,14 +470,14 @@
                   </label>
                   <ul class="md-nav__list" data-md-scrollfix="">
                    <li class="md-nav__item">
-                    <a class="md-nav__link" href="../../Bookmarks/Omnivore/2024-02-08/How%20we%20got%20fine-tuning%20Mistral-7B%20to%20not%20suck-%20Helix%20Project%20Report%2C%20Feb%202024/">
+                    <a class="md-nav__link" href="../../../../Bookmarks/Omnivore/2024-02-08/How%20we%20got%20fine-tuning%20Mistral-7B%20to%20not%20suck-%20Helix%20Project%20Report%2C%20Feb%202024/">
                      <span class="md-ellipsis">
                       How we got fine-tuning Mistral-7B to not suck: Helix Project Report, Feb 2024
                      </span>
                     </a>
                    </li>
                    <li class="md-nav__item">
-                    <a class="md-nav__link" href="../../Bookmarks/Omnivore/2024-02-08/Simple%20Precision%20Time%20Protocol%20at%20Meta%20-%20Engineering%20at%20Meta/">
+                    <a class="md-nav__link" href="../../../../Bookmarks/Omnivore/2024-02-08/Simple%20Precision%20Time%20Protocol%20at%20Meta%20-%20Engineering%20at%20Meta/">
                      <span class="md-ellipsis">
                       Simple Precision Time Protocol at Meta - Engineering at Meta
                      </span>
@@ -495,7 +503,7 @@
                   </label>
                   <ul class="md-nav__list" data-md-scrollfix="">
                    <li class="md-nav__item">
-                    <a class="md-nav__link" href="../../Bookmarks/Omnivore/2024-02-26/Excalidraw/">
+                    <a class="md-nav__link" href="../../../../Bookmarks/Omnivore/2024-02-26/Excalidraw/">
                      <span class="md-ellipsis">
                       Excalidraw
                      </span>
@@ -521,21 +529,21 @@
                   </label>
                   <ul class="md-nav__list" data-md-scrollfix="">
                    <li class="md-nav__item">
-                    <a class="md-nav__link" href="../../Bookmarks/Omnivore/2024-02-27/%40ASmartBear/">
+                    <a class="md-nav__link" href="../../../../Bookmarks/Omnivore/2024-02-27/%40ASmartBear/">
                      <span class="md-ellipsis">
                       @ASmartBear
                      </span>
                     </a>
                    </li>
                    <li class="md-nav__item">
-                    <a class="md-nav__link" href="../../Bookmarks/Omnivore/2024-02-27/Apache%20Superset%20-%20Hacker%20News/">
+                    <a class="md-nav__link" href="../../../../Bookmarks/Omnivore/2024-02-27/Apache%20Superset%20-%20Hacker%20News/">
                      <span class="md-ellipsis">
                       Apache Superset | Hacker News
                      </span>
                     </a>
                    </li>
                    <li class="md-nav__item">
-                    <a class="md-nav__link" href="../../Bookmarks/Omnivore/2024-02-27/https---zeck.app/">
+                    <a class="md-nav__link" href="../../../../Bookmarks/Omnivore/2024-02-27/https---zeck.app/">
                      <span class="md-ellipsis">
                       https://zeck.app
                      </span>
@@ -561,7 +569,7 @@
                   </label>
                   <ul class="md-nav__list" data-md-scrollfix="">
                    <li class="md-nav__item">
-                    <a class="md-nav__link" href="../../Bookmarks/Omnivore/2024-02-28/Start%20a%20Profitable%20Side%20Project%20in%202024%20-%20Indie%20Hackers/">
+                    <a class="md-nav__link" href="../../../../Bookmarks/Omnivore/2024-02-28/Start%20a%20Profitable%20Side%20Project%20in%202024%20-%20Indie%20Hackers/">
                      <span class="md-ellipsis">
                       Start a Profitable Side Project in 2024 - Indie Hackers
                      </span>
@@ -587,7 +595,7 @@
                   </label>
                   <ul class="md-nav__list" data-md-scrollfix="">
                    <li class="md-nav__item">
-                    <a class="md-nav__link" href="../../Bookmarks/Omnivore/2024-03-05/a16z%20Consumer%20Abundance%20Agenda/">
+                    <a class="md-nav__link" href="../../../../Bookmarks/Omnivore/2024-03-05/a16z%20Consumer%20Abundance%20Agenda/">
                      <span class="md-ellipsis">
                       a16z Consumer Abundance Agenda
                      </span>
@@ -613,14 +621,14 @@
                   </label>
                   <ul class="md-nav__list" data-md-scrollfix="">
                    <li class="md-nav__item">
-                    <a class="md-nav__link" href="../../Bookmarks/Omnivore/2024-03-11/Rogo/">
+                    <a class="md-nav__link" href="../../../../Bookmarks/Omnivore/2024-03-11/Rogo/">
                      <span class="md-ellipsis">
                       Rogo
                      </span>
                     </a>
                    </li>
                    <li class="md-nav__item">
-                    <a class="md-nav__link" href="../../Bookmarks/Omnivore/2024-03-11/Voxel/">
+                    <a class="md-nav__link" href="../../../../Bookmarks/Omnivore/2024-03-11/Voxel/">
                      <span class="md-ellipsis">
                       Voxel
                      </span>
@@ -646,35 +654,35 @@
                   </label>
                   <ul class="md-nav__list" data-md-scrollfix="">
                    <li class="md-nav__item">
-                    <a class="md-nav__link" href="../../Bookmarks/Omnivore/2024-03-12/Chief%20AI%20Decks/">
+                    <a class="md-nav__link" href="../../../../Bookmarks/Omnivore/2024-03-12/Chief%20AI%20Decks/">
                      <span class="md-ellipsis">
                       Chief AI Decks
                      </span>
                     </a>
                    </li>
                    <li class="md-nav__item">
-                    <a class="md-nav__link" href="../../Bookmarks/Omnivore/2024-03-12/Personal%20Branding%E2%80%94Most%20Important%20Thing%20You%20Do.%20Full%20Video%20AdobeMAX%202023/">
+                    <a class="md-nav__link" href="../../../../Bookmarks/Omnivore/2024-03-12/Personal%20Branding%E2%80%94Most%20Important%20Thing%20You%20Do.%20Full%20Video%20AdobeMAX%202023/">
                      <span class="md-ellipsis">
                       Personal Branding—Most Important Thing You Do. Full Video AdobeMAX 2023
                      </span>
                     </a>
                    </li>
                    <li class="md-nav__item">
-                    <a class="md-nav__link" href="../../Bookmarks/Omnivore/2024-03-12/Please%20Stop%20Using%20Google%20Analytics/">
+                    <a class="md-nav__link" href="../../../../Bookmarks/Omnivore/2024-03-12/Please%20Stop%20Using%20Google%20Analytics/">
                      <span class="md-ellipsis">
                       Please Stop Using Google Analytics
                      </span>
                     </a>
                    </li>
                    <li class="md-nav__item">
-                    <a class="md-nav__link" href="../../Bookmarks/Omnivore/2024-03-12/ULTRA.VC/">
+                    <a class="md-nav__link" href="../../../../Bookmarks/Omnivore/2024-03-12/ULTRA.VC/">
                      <span class="md-ellipsis">
                       ULTRA.VC
                      </span>
                     </a>
                    </li>
                    <li class="md-nav__item">
-                    <a class="md-nav__link" href="../../Bookmarks/Omnivore/2024-03-12/ron0studios-C-Plus-Plus-%20Collection%20of%20various%20algorithms%20in%20mathematics%2C%20machine%20learning%2C%20compu.../">
+                    <a class="md-nav__link" href="../../../../Bookmarks/Omnivore/2024-03-12/ron0studios-C-Plus-Plus-%20Collection%20of%20various%20algorithms%20in%20mathematics%2C%20machine%20learning%2C%20compu.../">
                      <span class="md-ellipsis">
                       ron0studios/C-Plus-Plus: Collection of various algorithms in mathematics, machine learning, computer science and physics implemented in C++ for educational purposes.
                      </span>
@@ -700,7 +708,7 @@
                   </label>
                   <ul class="md-nav__list" data-md-scrollfix="">
                    <li class="md-nav__item">
-                    <a class="md-nav__link" href="../../Bookmarks/Omnivore/2024-03-17/Wait...%20PostgreSQL%20can%20do%20WHAT-/">
+                    <a class="md-nav__link" href="../../../../Bookmarks/Omnivore/2024-03-17/Wait...%20PostgreSQL%20can%20do%20WHAT-/">
                      <span class="md-ellipsis">
                       Wait... PostgreSQL can do WHAT?
                      </span>
@@ -726,28 +734,28 @@
                   </label>
                   <ul class="md-nav__list" data-md-scrollfix="">
                    <li class="md-nav__item">
-                    <a class="md-nav__link" href="../../Bookmarks/Omnivore/2024-03-18/Building%20Meta%E2%80%99s%20GenAI%20Infrastructure%20-%20Engineering%20at%20Meta/">
+                    <a class="md-nav__link" href="../../../../Bookmarks/Omnivore/2024-03-18/Building%20Meta%E2%80%99s%20GenAI%20Infrastructure%20-%20Engineering%20at%20Meta/">
                      <span class="md-ellipsis">
                       Building Meta’s GenAI Infrastructure - Engineering at Meta
                      </span>
                     </a>
                    </li>
                    <li class="md-nav__item">
-                    <a class="md-nav__link" href="../../Bookmarks/Omnivore/2024-03-18/Logarithm-%20A%20logging%20engine%20for%20AI%20training%20workflows%20and%20services%20-%20Engineering%20at%20Meta/">
+                    <a class="md-nav__link" href="../../../../Bookmarks/Omnivore/2024-03-18/Logarithm-%20A%20logging%20engine%20for%20AI%20training%20workflows%20and%20services%20-%20Engineering%20at%20Meta/">
                      <span class="md-ellipsis">
                       Logarithm: A logging engine for AI training workflows and services - Engineering at Meta
                      </span>
                     </a>
                    </li>
                    <li class="md-nav__item">
-                    <a class="md-nav__link" href="../../Bookmarks/Omnivore/2024-03-18/Next.js%20Commerce%20%E2%80%93%20Vercel/">
+                    <a class="md-nav__link" href="../../../../Bookmarks/Omnivore/2024-03-18/Next.js%20Commerce%20%E2%80%93%20Vercel/">
                      <span class="md-ellipsis">
                       Next.js Commerce – Vercel
                      </span>
                     </a>
                    </li>
                    <li class="md-nav__item">
-                    <a class="md-nav__link" href="../../Bookmarks/Omnivore/2024-03-18/sanity-io-hydrogen-sanity-demo-%20A%20starter%20for%20Hydrogen%20%2B%20Sanity%20projects/">
+                    <a class="md-nav__link" href="../../../../Bookmarks/Omnivore/2024-03-18/sanity-io-hydrogen-sanity-demo-%20A%20starter%20for%20Hydrogen%20%2B%20Sanity%20projects/">
                      <span class="md-ellipsis">
                       sanity-io/hydrogen-sanity-demo: A starter for Hydrogen + Sanity projects
                      </span>
@@ -773,7 +781,7 @@
                   </label>
                   <ul class="md-nav__list" data-md-scrollfix="">
                    <li class="md-nav__item">
-                    <a class="md-nav__link" href="../../Bookmarks/Omnivore/2024-03-26/failsafe-go-failsafe-go-%20Fault%20tolerance%20and%20resilience%20patterns%20for%20Go/">
+                    <a class="md-nav__link" href="../../../../Bookmarks/Omnivore/2024-03-26/failsafe-go-failsafe-go-%20Fault%20tolerance%20and%20resilience%20patterns%20for%20Go/">
                      <span class="md-ellipsis">
                       failsafe-go/failsafe-go: Fault tolerance and resilience patterns for Go
                      </span>
@@ -802,14 +810,14 @@
                </label>
                <ul class="md-nav__list" data-md-scrollfix="">
                 <li class="md-nav__item">
-                 <a class="md-nav__link" href="../../Bookmarks/Podcast/The_Morning_Brief__%5B2023-06-06%5D/">
+                 <a class="md-nav__link" href="../../../../Bookmarks/Podcast/The_Morning_Brief__%5B2023-06-06%5D/">
                   <span class="md-ellipsis">
                    The Morning Brief  [2023 06 06]
                   </span>
                  </a>
                 </li>
                 <li class="md-nav__item">
-                 <a class="md-nav__link" href="../../Bookmarks/Podcast/Vedanta_Talks__%5B2019-01-26%5D/">
+                 <a class="md-nav__link" href="../../../../Bookmarks/Podcast/Vedanta_Talks__%5B2019-01-26%5D/">
                   <span class="md-ellipsis">
                    16. Bhagavad Gita | Chapter 2 Verse 45 - 47 | Swami Sarvapriyananda
                   </span>
@@ -835,7 +843,7 @@
                </label>
                <ul class="md-nav__list" data-md-scrollfix="">
                 <li class="md-nav__item">
-                 <a class="md-nav__link" href="../../Bookmarks/Videos/Aakrit-Haptik-Varun-Mayya/">
+                 <a class="md-nav__link" href="../../../../Bookmarks/Videos/Aakrit-Haptik-Varun-Mayya/">
                   <span class="md-ellipsis">
                    Aakrit-Haptik-Varun-Mayya
                   </span>
@@ -893,7 +901,7 @@
                      </label>
                      <ul class="md-nav__list" data-md-scrollfix="">
                       <li class="md-nav__item">
-                       <a class="md-nav__link" href="../../Bookmarks/Web/2024/01-January/Weekly-Digest-Week-05/">
+                       <a class="md-nav__link" href="../../../../Bookmarks/Web/2024/01-January/Weekly-Digest-Week-05/">
                         <span class="md-ellipsis">
                          Weekly Digest Week 05
                         </span>
@@ -919,14 +927,14 @@
                      </label>
                      <ul class="md-nav__list" data-md-scrollfix="">
                       <li class="md-nav__item">
-                       <a class="md-nav__link" href="../../Bookmarks/Web/2024/02-February/Weekly-Digest-Week-06/">
+                       <a class="md-nav__link" href="../../../../Bookmarks/Web/2024/02-February/Weekly-Digest-Week-06/">
                         <span class="md-ellipsis">
                          Weekly Digest Week 06
                         </span>
                        </a>
                       </li>
                       <li class="md-nav__item">
-                       <a class="md-nav__link" href="../../Bookmarks/Web/2024/02-February/Weekly-Digest-Week-09/">
+                       <a class="md-nav__link" href="../../../../Bookmarks/Web/2024/02-February/Weekly-Digest-Week-09/">
                         <span class="md-ellipsis">
                          Weekly Digest Week 09
                         </span>
@@ -952,28 +960,28 @@
                      </label>
                      <ul class="md-nav__list" data-md-scrollfix="">
                       <li class="md-nav__item">
-                       <a class="md-nav__link" href="../../Bookmarks/Web/2024/03-March/Weekly-Digest-Week-10/">
+                       <a class="md-nav__link" href="../../../../Bookmarks/Web/2024/03-March/Weekly-Digest-Week-10/">
                         <span class="md-ellipsis">
                          Weekly Digest Week 10
                         </span>
                        </a>
                       </li>
                       <li class="md-nav__item">
-                       <a class="md-nav__link" href="../../Bookmarks/Web/2024/03-March/Weekly-Digest-Week-11/">
+                       <a class="md-nav__link" href="../../../../Bookmarks/Web/2024/03-March/Weekly-Digest-Week-11/">
                         <span class="md-ellipsis">
                          Weekly Digest Week 11
                         </span>
                        </a>
                       </li>
                       <li class="md-nav__item">
-                       <a class="md-nav__link" href="../../Bookmarks/Web/2024/03-March/Weekly-Digest-Week-12/">
+                       <a class="md-nav__link" href="../../../../Bookmarks/Web/2024/03-March/Weekly-Digest-Week-12/">
                         <span class="md-ellipsis">
                          Weekly Digest Week 12
                         </span>
                        </a>
                       </li>
                       <li class="md-nav__item">
-                       <a class="md-nav__link" href="../../Bookmarks/Web/2024/03-March/Weekly-Digest-Week-13/">
+                       <a class="md-nav__link" href="../../../../Bookmarks/Web/2024/03-March/Weekly-Digest-Week-13/">
                         <span class="md-ellipsis">
                          Weekly Digest Week 13
                         </span>
@@ -999,28 +1007,28 @@
                      </label>
                      <ul class="md-nav__list" data-md-scrollfix="">
                       <li class="md-nav__item">
-                       <a class="md-nav__link" href="../../Bookmarks/Web/2024/04-April/Weekly-Digest-Week-14/">
+                       <a class="md-nav__link" href="../../../../Bookmarks/Web/2024/04-April/Weekly-Digest-Week-14/">
                         <span class="md-ellipsis">
                          Weekly Digest Week 14
                         </span>
                        </a>
                       </li>
                       <li class="md-nav__item">
-                       <a class="md-nav__link" href="../../Bookmarks/Web/2024/04-April/Weekly-Digest-Week-15/">
+                       <a class="md-nav__link" href="../../../../Bookmarks/Web/2024/04-April/Weekly-Digest-Week-15/">
                         <span class="md-ellipsis">
                          Weekly Digest Week 15
                         </span>
                        </a>
                       </li>
                       <li class="md-nav__item">
-                       <a class="md-nav__link" href="../../Bookmarks/Web/2024/04-April/Weekly-Digest-Week-16/">
+                       <a class="md-nav__link" href="../../../../Bookmarks/Web/2024/04-April/Weekly-Digest-Week-16/">
                         <span class="md-ellipsis">
                          Weekly Digest Week 16
                         </span>
                        </a>
                       </li>
                       <li class="md-nav__item">
-                       <a class="md-nav__link" href="../../Bookmarks/Web/2024/04-April/Weekly-Digest-Week-17/">
+                       <a class="md-nav__link" href="../../../../Bookmarks/Web/2024/04-April/Weekly-Digest-Week-17/">
                         <span class="md-ellipsis">
                          Weekly Digest Week 17
                         </span>
@@ -1046,28 +1054,28 @@
                      </label>
                      <ul class="md-nav__list" data-md-scrollfix="">
                       <li class="md-nav__item">
-                       <a class="md-nav__link" href="../../Bookmarks/Web/2024/05-May/Weekly-Digest-Week-18/">
+                       <a class="md-nav__link" href="../../../../Bookmarks/Web/2024/05-May/Weekly-Digest-Week-18/">
                         <span class="md-ellipsis">
                          Weekly Digest Week 18
                         </span>
                        </a>
                       </li>
                       <li class="md-nav__item">
-                       <a class="md-nav__link" href="../../Bookmarks/Web/2024/05-May/Weekly-Digest-Week-20/">
+                       <a class="md-nav__link" href="../../../../Bookmarks/Web/2024/05-May/Weekly-Digest-Week-20/">
                         <span class="md-ellipsis">
                          Weekly Digest Week 20
                         </span>
                        </a>
                       </li>
                       <li class="md-nav__item">
-                       <a class="md-nav__link" href="../../Bookmarks/Web/2024/05-May/Weekly-Digest-Week-21/">
+                       <a class="md-nav__link" href="../../../../Bookmarks/Web/2024/05-May/Weekly-Digest-Week-21/">
                         <span class="md-ellipsis">
                          Weekly Digest Week 21
                         </span>
                        </a>
                       </li>
                       <li class="md-nav__item">
-                       <a class="md-nav__link" href="../../Bookmarks/Web/2024/05-May/Weekly-Digest-Week-22/">
+                       <a class="md-nav__link" href="../../../../Bookmarks/Web/2024/05-May/Weekly-Digest-Week-22/">
                         <span class="md-ellipsis">
                          Weekly Digest Week 22
                         </span>
@@ -1093,7 +1101,7 @@
                      </label>
                      <ul class="md-nav__list" data-md-scrollfix="">
                       <li class="md-nav__item">
-                       <a class="md-nav__link" href="../../Bookmarks/Web/2024/06-June/Weekly-Digest-Week-22/">
+                       <a class="md-nav__link" href="../../../../Bookmarks/Web/2024/06-June/Weekly-Digest-Week-22/">
                         <span class="md-ellipsis">
                          Weekly Digest Week 22
                         </span>
@@ -1144,28 +1152,28 @@
                </label>
                <ul class="md-nav__list" data-md-scrollfix="">
                 <li class="md-nav__item">
-                 <a class="md-nav__link" href="../../Interests/Finance/FIRE/">
+                 <a class="md-nav__link" href="../../../../Interests/Finance/FIRE/">
                   <span class="md-ellipsis">
                    FIRE
                   </span>
                  </a>
                 </li>
                 <li class="md-nav__item">
-                 <a class="md-nav__link" href="../../Interests/Finance/InvenstmentPhilosophy/">
+                 <a class="md-nav__link" href="../../../../Interests/Finance/InvenstmentPhilosophy/">
                   <span class="md-ellipsis">
                    InvenstmentPhilosophy
                   </span>
                  </a>
                 </li>
                 <li class="md-nav__item">
-                 <a class="md-nav__link" href="../../Interests/Finance/Investment%20System/">
+                 <a class="md-nav__link" href="../../../../Interests/Finance/Investment%20System/">
                   <span class="md-ellipsis">
                    Investment System
                   </span>
                  </a>
                 </li>
                 <li class="md-nav__item">
-                 <a class="md-nav__link" href="../../Interests/Finance/Trading%20%26%20Finanace/">
+                 <a class="md-nav__link" href="../../../../Interests/Finance/Trading%20%26%20Finanace/">
                   <span class="md-ellipsis">
                    Trading &amp; Finanace
                   </span>
@@ -1188,14 +1196,14 @@
                   </label>
                   <ul class="md-nav__list" data-md-scrollfix="">
                    <li class="md-nav__item">
-                    <a class="md-nav__link" href="../../Interests/Finance/Stocks/ERIS-ErisLifesciencesLtd/">
+                    <a class="md-nav__link" href="../../../../Interests/Finance/Stocks/ERIS-ErisLifesciencesLtd/">
                      <span class="md-ellipsis">
                       ERIS-ErisLifesciencesLtd
                      </span>
                     </a>
                    </li>
                    <li class="md-nav__item">
-                    <a class="md-nav__link" href="../../Interests/Finance/Stocks/SBCL_ShivalikBimetal/">
+                    <a class="md-nav__link" href="../../../../Interests/Finance/Stocks/SBCL_ShivalikBimetal/">
                      <span class="md-ellipsis">
                       SBCL_ShivalikBimetal
                      </span>
@@ -1224,14 +1232,14 @@
                </label>
                <ul class="md-nav__list" data-md-scrollfix="">
                 <li class="md-nav__item">
-                 <a class="md-nav__link" href="../../Interests/Geo-politics/Geo-politics/">
+                 <a class="md-nav__link" href="../../../../Interests/Geo-politics/Geo-politics/">
                   <span class="md-ellipsis">
                    Geo-politics
                   </span>
                  </a>
                 </li>
                 <li class="md-nav__item">
-                 <a class="md-nav__link" href="../../Interests/Geo-politics/Indo-China%20War%20prospects/">
+                 <a class="md-nav__link" href="../../../../Interests/Geo-politics/Indo-China%20War%20prospects/">
                   <span class="md-ellipsis">
                    Indo-China War prospects
                   </span>
@@ -1257,7 +1265,7 @@
                </label>
                <ul class="md-nav__list" data-md-scrollfix="">
                 <li class="md-nav__item">
-                 <a class="md-nav__link" href="../../Interests/LinuxKernel/Linux%20Internals%20MOOC/">
+                 <a class="md-nav__link" href="../../../../Interests/LinuxKernel/Linux%20Internals%20MOOC/">
                   <span class="md-ellipsis">
                    Linux Internals MOOC
                   </span>
@@ -1280,28 +1288,28 @@
                   </label>
                   <ul class="md-nav__list" data-md-scrollfix="">
                    <li class="md-nav__item">
-                    <a class="md-nav__link" href="../../Interests/LinuxKernel/06.Networking/06.01%20Life%20of%20a%20Packet/">
+                    <a class="md-nav__link" href="../../../../Interests/LinuxKernel/06.Networking/06.01%20Life%20of%20a%20Packet/">
                      <span class="md-ellipsis">
                       06.01 Life of a Packet
                      </span>
                     </a>
                    </li>
                    <li class="md-nav__item">
-                    <a class="md-nav__link" href="../../Interests/LinuxKernel/06.Networking/06.02%20Kernel%20High%20Performance%20Networking/">
+                    <a class="md-nav__link" href="../../../../Interests/LinuxKernel/06.Networking/06.02%20Kernel%20High%20Performance%20Networking/">
                      <span class="md-ellipsis">
                       06.02 Kernel High Performance Networking
                      </span>
                     </a>
                    </li>
                    <li class="md-nav__item">
-                    <a class="md-nav__link" href="../../Interests/LinuxKernel/06.Networking/06.03%20Bypassing%20the%20Kernel/">
+                    <a class="md-nav__link" href="../../../../Interests/LinuxKernel/06.Networking/06.03%20Bypassing%20the%20Kernel/">
                      <span class="md-ellipsis">
                       06.03 Bypassing the Kernel
                      </span>
                     </a>
                    </li>
                    <li class="md-nav__item">
-                    <a class="md-nav__link" href="../../Interests/LinuxKernel/06.Networking/06.04%20What%20Should%20I%20use/">
+                    <a class="md-nav__link" href="../../../../Interests/LinuxKernel/06.Networking/06.04%20What%20Should%20I%20use/">
                      <span class="md-ellipsis">
                       06.04 What Should I use
                      </span>
@@ -1327,7 +1335,7 @@
                   </label>
                   <ul class="md-nav__list" data-md-scrollfix="">
                    <li class="md-nav__item">
-                    <a class="md-nav__link" href="../../Interests/LinuxKernel/09.Tracing/09.xx%20Performance%20Monitoring/">
+                    <a class="md-nav__link" href="../../../../Interests/LinuxKernel/09.Tracing/09.xx%20Performance%20Monitoring/">
                      <span class="md-ellipsis">
                       09.xx Performance Monitoring
                      </span>
@@ -1353,35 +1361,35 @@
                   </label>
                   <ul class="md-nav__list" data-md-scrollfix="">
                    <li class="md-nav__item">
-                    <a class="md-nav__link" href="../../Interests/LinuxKernel/10.eBPF/10.01%20eBPF%20History%2C%20Motivation%20and%20Design/">
+                    <a class="md-nav__link" href="../../../../Interests/LinuxKernel/10.eBPF/10.01%20eBPF%20History%2C%20Motivation%20and%20Design/">
                      <span class="md-ellipsis">
                       10.01 eBPF History, Motivation and Design
                      </span>
                     </a>
                    </li>
                    <li class="md-nav__item">
-                    <a class="md-nav__link" href="../../Interests/LinuxKernel/10.eBPF/10.02%20Hello%20eBPF/">
+                    <a class="md-nav__link" href="../../../../Interests/LinuxKernel/10.eBPF/10.02%20Hello%20eBPF/">
                      <span class="md-ellipsis">
                       10.02 Hello eBPF
                      </span>
                     </a>
                    </li>
                    <li class="md-nav__item">
-                    <a class="md-nav__link" href="../../Interests/LinuxKernel/10.eBPF/10.03%20eBPF%20Maps/">
+                    <a class="md-nav__link" href="../../../../Interests/LinuxKernel/10.eBPF/10.03%20eBPF%20Maps/">
                      <span class="md-ellipsis">
                       10.03 eBPF Maps
                      </span>
                     </a>
                    </li>
                    <li class="md-nav__item">
-                    <a class="md-nav__link" href="../../Interests/LinuxKernel/10.eBPF/10.04%20XDP/">
+                    <a class="md-nav__link" href="../../../../Interests/LinuxKernel/10.eBPF/10.04%20XDP/">
                      <span class="md-ellipsis">
                       10.04 XDP
                      </span>
                     </a>
                    </li>
                    <li class="md-nav__item">
-                    <a class="md-nav__link" href="../../Interests/LinuxKernel/10.eBPF/10.05%20eBPF%20%26%20Tracing/">
+                    <a class="md-nav__link" href="../../../../Interests/LinuxKernel/10.eBPF/10.05%20eBPF%20%26%20Tracing/">
                      <span class="md-ellipsis">
                       10.05 eBPF &amp; Tracing
                      </span>
@@ -1410,14 +1418,14 @@
                </label>
                <ul class="md-nav__list" data-md-scrollfix="">
                 <li class="md-nav__item">
-                 <a class="md-nav__link" href="../../Interests/Photography/Photography/">
+                 <a class="md-nav__link" href="../../../../Interests/Photography/Photography/">
                   <span class="md-ellipsis">
                    Photography
                   </span>
                  </a>
                 </li>
                 <li class="md-nav__item">
-                 <a class="md-nav__link" href="../../Interests/Photography/Video%20and%20Photography/">
+                 <a class="md-nav__link" href="../../../../Interests/Photography/Video%20and%20Photography/">
                   <span class="md-ellipsis">
                    Video and Photography
                   </span>
@@ -1459,7 +1467,7 @@
                   </label>
                   <ul class="md-nav__list" data-md-scrollfix="">
                    <li class="md-nav__item">
-                    <a class="md-nav__link" href="../../Interests/Spirituality/Vedanta/Geeta%20Readings/">
+                    <a class="md-nav__link" href="../../../../Interests/Spirituality/Vedanta/Geeta%20Readings/">
                      <span class="md-ellipsis">
                       Geeta Readings
                      </span>
@@ -1498,7 +1506,7 @@
             </label>
             <ul class="md-nav__list" data-md-scrollfix="">
              <li class="md-nav__item">
-              <a class="md-nav__link" href="../../archive/2024/">
+              <a class="md-nav__link" href="../../../../archive/2024/">
                <span class="md-ellipsis">
                 2024
                </span>
@@ -1507,39 +1515,38 @@
             </ul>
            </nav>
           </li>
-          <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
-           <input checked="" class="md-nav__toggle md-toggle" id="__nav_8" type="checkbox"/>
-           <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+          <li class="md-nav__item md-nav__item--nested">
+           <input class="md-nav__toggle md-toggle" id="__nav_8" type="checkbox"/>
+           <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
             <span class="md-ellipsis">
              Categories
             </span>
             <span class="md-nav__icon md-icon">
             </span>
            </label>
-           <nav aria-expanded="true" aria-labelledby="__nav_8_label" class="md-nav" data-md-level="1">
+           <nav aria-expanded="false" aria-labelledby="__nav_8_label" class="md-nav" data-md-level="1">
             <label class="md-nav__title" for="__nav_8">
              <span class="md-nav__icon md-icon">
              </span>
              Categories
             </label>
             <ul class="md-nav__list" data-md-scrollfix="">
-             <li class="md-nav__item md-nav__item--active">
-              <input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
-              <a class="md-nav__link md-nav__link--active" href="./">
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="../../../../category/engineering/">
                <span class="md-ellipsis">
                 Engineering
                </span>
               </a>
              </li>
              <li class="md-nav__item">
-              <a class="md-nav__link" href="../insights/">
+              <a class="md-nav__link" href="../../../../category/insights/">
                <span class="md-ellipsis">
                 Insights
                </span>
               </a>
              </li>
              <li class="md-nav__item">
-              <a class="md-nav__link" href="../management/">
+              <a class="md-nav__link" href="../../../../category/management/">
                <span class="md-ellipsis">
                 Management
                </span>
@@ -1557,260 +1564,303 @@
       <div class="md-sidebar__scrollwrap">
        <div class="md-sidebar__inner">
         <nav aria-label="On This Page" class="md-nav md-nav--secondary">
+         <label class="md-nav__title" for="__toc">
+          <span class="md-nav__icon md-icon">
+          </span>
+          On This Page
+         </label>
+         <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+          <li class="md-nav__item">
+           <a class="md-nav__link" href="#whats-the-problem">
+            <span class="md-ellipsis">
+             What's the problem?
+            </span>
+           </a>
+          </li>
+          <li class="md-nav__item">
+           <a class="md-nav__link" href="#i-trying-to-deactivateactivate-the-virtualenv-and-launching-lvim">
+            <span class="md-ellipsis">
+             I. Trying to deactivate/activate the virtualenv and launching lvim.
+            </span>
+           </a>
+          </li>
+          <li class="md-nav__item">
+           <a class="md-nav__link" href="#ii-debugger-hat-on-looking-at-lsp-logs">
+            <span class="md-ellipsis">
+             II. Debugger Hat On: Looking at LSP logs
+            </span>
+           </a>
+          </li>
+          <li class="md-nav__item">
+           <a class="md-nav__link" href="#iii-final-solution">
+            <span class="md-ellipsis">
+             III. Final Solution
+            </span>
+           </a>
+          </li>
+         </ul>
         </nav>
        </div>
       </div>
      </div>
-     <div class="md-content mx-auto w-full max-w-max" data-md-contnt="content" style="max-width: max-content">
-      <div class="md-content__inner w-full">
-       <div class="container mx-auto w-full" style="width:90% max-width:1440px">
-        <hr class="gradient"/>
-        <h2 style="
-          text-align: center;
-          margin: 1rem;
-          font-family: monospace;
-          font-size: 2rem;
-        ">
-         Archive
-        </h2>
-        <hr class="gradient mb-4"/>
-        <div class="grid lg:grid-cols-3 md:grid-cols-2 xl:grid-cols-3 gap-4">
-         <!-- Header -->
-         <header class="md-typeset">
-          <h1 id="engineering">
-           Engineering
-          </h1>
-         </header>
-         <!-- Posts -->
-         <!-- Post excerpt -->
-         <article class="md-post md-post--excerpt">
-          <a class="block group" href="../../2024/07/26/tech-tip---make-neovim-python-lsp-play-nice-with-pyenv/">
-           <div class="bg-cover bg-gray-900 relative bg-center rounded-md pb-[56%] overflow-hidden transition-transform group-hover:scale-[97.5%]" style='background-image: url("https://quotefancy.com/media/wallpaper/3840x2160/1631341-Cara-Lockwood-Quote-It-s-better-to-put-yourself-out-there-and-get.jpg");'>
-           </div>
-           <header class="md-post__header">
-            <!-- Post authors -->
-            <nav class="md-post__authors md-typeset">
-             <span class="md-author">
-              <img alt="Shaishav Kr | Follow @wiresurfer on X" src="/assets/images/twitter-avatar.jpg">
-              </img>
+     <div class="md-content md-content--post" data-md-component="content">
+      <div class="md-sidebar md-sidebar--post" data-md-component="sidebar" data-md-type="navigation">
+       <div class="md-sidebar__scrollwrap">
+        <div class="md-sidebar__inner md-post">
+         <nav class="md-nav md-nav--primary">
+          <div class="md-post__back">
+           <div class="md-nav__title md-nav__container">
+            <a class="md-nav__link" href="../../../..">
+             <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z">
+              </path>
+             </svg>
+             <span class="md-ellipsis">
+              Back to index
              </span>
-            </nav>
-            <!-- Post metadata -->
-            <div class="md-post__meta md-meta" style="width: 100%">
-             <ul class="md-meta__list" style="display: flex; flex-grow: 1">
-              <!-- Post date -->
-              <li class="md-meta__item">
-               <div>
-                <time datetime="2024-07-26 00:00:00">
+            </a>
+           </div>
+          </div>
+          <ul class="md-post__meta md-nav__list">
+           <li class="md-nav__item md-nav__item--section">
+            <div class="md-post__title">
+             <span class="md-ellipsis">
+              Metadata
+             </span>
+            </div>
+            <nav class="md-nav">
+             <ul class="md-nav__list">
+              <li class="md-nav__item">
+               <div class="md-nav__link">
+                <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                 <path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5v-5Z">
+                 </path>
+                </svg>
+                <time class="md-ellipsis" datetime="2024-07-26 00:00:00">
                  July 26, 2024
-                </time>
-                <br/>
-                <time>
-                 4 min read
                 </time>
                </div>
               </li>
-              <!-- Post categories -->
-              <li class="md-meta__item" style="
-              display: flex;
-              flex-grow: 1;
-              align-items: baseline;
-              align-content: end;
-              justify-content: flex-end;
-            ">
-               <!-- in -->
-               <a class="md-meta__link" href="./">
-                Engineering
-               </a>
+              <li class="md-nav__item">
+               <div class="md-nav__link">
+                <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                 <path d="M9 3v15h3V3H9m3 2 4 13 3-1-4-13-3 1M5 5v13h3V5H5M3 19v2h18v-2H3Z">
+                 </path>
+                </svg>
+                <span class="md-ellipsis">
+                 in
+                 <a href="../../../../category/engineering/">
+                  Engineering
+                 </a>
+                </span>
+               </div>
               </li>
-              <!-- Post readtime -->
+              <li class="md-nav__item">
+               <div class="md-nav__link">
+                <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                 <path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7h1.5Z">
+                 </path>
+                </svg>
+                <span class="md-ellipsis">
+                 4 min read
+                </span>
+               </div>
+              </li>
              </ul>
-             <!-- Draft marker -->
-            </div>
-           </header>
-           <div class="text-lg pr-5 card-text">
-            <h2 id="tech-tip-make-neovim-python-lsp-play-nice-with-pyenv">
-             <a class="toclink" href="../../2024/07/26/tech-tip---make-neovim-python-lsp-play-nice-with-pyenv/">
-              Tech Tip - Make Neovim Python LSP play nice with pyenv
-             </a>
-            </h2>
-            <p>
-             Modern python development relies on some form of virtual environment management.
+            </nav>
+           </li>
+          </ul>
+         </nav>
+        </div>
+       </div>
+      </div>
+      <article class="md-content__inner md-typeset">
+       <nav class="md-tags">
+        <a class="md-tag" href="../../../../tags/#topicengineering">
+         topic/engineering
+        </a>
+        <a class="md-tag" href="../../../../tags/#topicpython">
+         topic/python
+        </a>
+        <a class="md-tag" href="../../../../tags/#topicneovim">
+         topic/neovim
+        </a>
+        <a class="md-tag" href="../../../../tags/#topicdevtools">
+         topic/devtools
+        </a>
+       </nav>
+       <h1 id="tech-tip-make-neovim-python-lsp-play-nice-with-pyenv">
+        Tech Tip - Make Neovim Python LSP play nice with pyenv
+       </h1>
+       <p>
+        Modern python development relies on some form of virtual environment management.
 pyenv + virtialenv is a goto toolkit for managing both python versions and
 isolated package environments. For people using Neovim as their editor, setting
 up Neovim's LSP to play nice with pyenv requires a trick. This post covers the
 interplay of tools to make this work.
-            </p>
-            <h3 id="whats-the-problem">
-             <a class="toclink" href="../../2024/07/26/tech-tip---make-neovim-python-lsp-play-nice-with-pyenv/#whats-the-problem">
-              What's the problem?
-             </a>
-            </h3>
-            <p>
-             Lets say you have the following folder structure.
-            </p>
-            <div class="language-text highlight">
-             <pre><span></span><code><span id="__span-10-1"><a href="#__codelineno-10-1" id="__codelineno-10-1" name="__codelineno-10-1"></a>src\
-</span><span id="__span-10-2"><a href="#__codelineno-10-2" id="__codelineno-10-2" name="__codelineno-10-2"></a>  python-project\
-</span><span id="__span-10-3"><a href="#__codelineno-10-3" id="__codelineno-10-3" name="__codelineno-10-3"></a>    main.py
-</span><span id="__span-10-4"><a href="#__codelineno-10-4" id="__codelineno-10-4" name="__codelineno-10-4"></a>    .python-version
+       </p>
+       <h2 id="whats-the-problem">
+        What's the problem?
+       </h2>
+       <p>
+        Lets say you have the following folder structure.
+       </p>
+       <div class="language-text highlight">
+        <pre><span></span><code><span id="__span-0-1"><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>src\
+</span><span id="__span-0-2"><a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a>  python-project\
+</span><span id="__span-0-3"><a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a>    main.py
+</span><span id="__span-0-4"><a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a>    .python-version
 </span></code></pre>
-            </div>
-            <ol>
-             <li>
-              You have setup a local python version using say,
-              <code>
-               pyenv local 3.11
-              </code>
-             </li>
-             <li>
-              You have also created a virtualenv using
-              <code>
-               pyenv virtualenv 3.11 demoenv
-              </code>
-             </li>
-             <li>
-              You activate your virtualenv
-              <code>
-               pyenv virtualenv activate demoenv
-              </code>
-             </li>
-             <li>
-              Install a package say
-              <code>
-               python -m pip install python-dotenv
-              </code>
-             </li>
-             <li>
-              And finally write the following in
-              <code>
-               main.py
-              </code>
-             </li>
-            </ol>
-            <div class="language-python highlight">
-             <pre><span></span><code><span id="__span-11-1"><a href="#__codelineno-11-1" id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="kn">from</span> <span class="nn">dotenv</span> <span class="kn">import</span> <span class="n">load_dotenv</span>
-</span><span id="__span-11-2"><a href="#__codelineno-11-2" id="__codelineno-11-2" name="__codelineno-11-2"></a>
-</span><span id="__span-11-3"><a href="#__codelineno-11-3" id="__codelineno-11-3" name="__codelineno-11-3"></a><span class="n">load_dotenv</span><span class="p">()</span>
+       </div>
+       <ol>
+        <li>
+         You have setup a local python version using say,
+         <code>
+          pyenv local 3.11
+         </code>
+        </li>
+        <li>
+         You have also created a virtualenv using
+         <code>
+          pyenv virtualenv 3.11 demoenv
+         </code>
+        </li>
+        <li>
+         You activate your virtualenv
+         <code>
+          pyenv virtualenv activate demoenv
+         </code>
+        </li>
+        <li>
+         Install a package say
+         <code>
+          python -m pip install python-dotenv
+         </code>
+        </li>
+        <li>
+         And finally write the following in
+         <code>
+          main.py
+         </code>
+        </li>
+       </ol>
+       <div class="language-python highlight">
+        <pre><span></span><code><span id="__span-1-1"><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="kn">from</span> <span class="nn">dotenv</span> <span class="kn">import</span> <span class="n">load_dotenv</span>
+</span><span id="__span-1-2"><a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a>
+</span><span id="__span-1-3"><a href="#__codelineno-1-3" id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="n">load_dotenv</span><span class="p">()</span>
 </span></code></pre>
-            </div>
-            <p>
-             So far so good. We have setup a barebones environment with its own package and a
+       </div>
+       <p>
+        So far so good. We have setup a barebones environment with its own package and a
 minimal main.py
-            </p>
-            <p>
-             Test this by running
-             <code>
-              python main.py
-             </code>
-             and it should run without any error, and
+       </p>
+       <p>
+        Test this by running
+        <code>
+         python main.py
+        </code>
+        and it should run without any error, and
 ironically without any output.
-            </p>
-            <p>
-             The problem happens if you have neovim setup with some sane LSP config and open
-             <code>
-              main.py
-             </code>
-             To follow along, I recommend you start with
-             <a href="https://www.lunarvim.org/">
-              LunarVim
-             </a>
-             to keep things simple. Lunarvim has a
+       </p>
+       <p>
+        The problem happens if you have neovim setup with some sane LSP config and open
+        <code>
+         main.py
+        </code>
+        To follow along, I recommend you start with
+        <a href="https://www.lunarvim.org/">
+         LunarVim
+        </a>
+        to keep things simple. Lunarvim has a
 known working python LSP setup using ruff and pyright.
-            </p>
-            <p>
-             If you open main.py in lunarvim you would notice the import statement would be
+       </p>
+       <p>
+        If you open main.py in lunarvim you would notice the import statement would be
 marked in squiglies. And you would also notice all your LSP superpowers like
 autocomplete and hints are gone. kaput. zilch.
-            </p>
-            <p>
-             Thats an uncomfortable place to be in, if you want to be a productive
+       </p>
+       <p>
+        Thats an uncomfortable place to be in, if you want to be a productive
 programmer. So what's going on here?
-            </p>
-            <h3 id="i-trying-to-deactivateactivate-the-virtualenv-and-launching-lvim">
-             <a class="toclink" href="../../2024/07/26/tech-tip---make-neovim-python-lsp-play-nice-with-pyenv/#i-trying-to-deactivateactivate-the-virtualenv-and-launching-lvim">
-              I. Trying to deactivate/activate the virtualenv and launching lvim.
-             </a>
-            </h3>
-            <p>
-             tl;dr. This wont work.
-            </p>
-            <p>
-             My first hunch when I had this issue was that I launched lunarvim without the
+       </p>
+       <h2 id="i-trying-to-deactivateactivate-the-virtualenv-and-launching-lvim">
+        I. Trying to deactivate/activate the virtualenv and launching lvim.
+       </h2>
+       <p>
+        tl;dr. This wont work.
+       </p>
+       <p>
+        My first hunch when I had this issue was that I launched lunarvim without the
 right python paths. Maybe a simple deactive and then activate should do the
 trick. So I quit neovim, deactivated the env, closed the terminal for good
 measure and meticulously redid the environment activation.
-            </p>
-            <p>
-             And the same squigly lines reappeared. Ah well, it was worth a shot.
-            </p>
-            <h3 id="ii-debugger-hat-on-looking-at-lsp-logs">
-             <a class="toclink" href="../../2024/07/26/tech-tip---make-neovim-python-lsp-play-nice-with-pyenv/#ii-debugger-hat-on-looking-at-lsp-logs">
-              II. Debugger Hat On: Looking at LSP logs
-             </a>
-            </h3>
-            <p>
-             I remembered Neovim gives the
-             <code>
-              :LspInfo
-             </code>
-             and
-             <code>
-              :LspLog
-             </code>
-             command which opens up a
+       </p>
+       <p>
+        And the same squigly lines reappeared. Ah well, it was worth a shot.
+       </p>
+       <h2 id="ii-debugger-hat-on-looking-at-lsp-logs">
+        II. Debugger Hat On: Looking at LSP logs
+       </h2>
+       <p>
+        I remembered Neovim gives the
+        <code>
+         :LspInfo
+        </code>
+        and
+        <code>
+         :LspLog
+        </code>
+        command which opens up a
 buffer with logs.
-            </p>
-            <p>
-             A quick look at how the LSP was launching pyright raised a few red flags. It
+       </p>
+       <p>
+        A quick look at how the LSP was launching pyright raised a few red flags. It
 seems pyright wasn't aware of pyenv path or pyenv environment at all.
-            </p>
-            <p>
-             And this looked awfully familiar.
-            </p>
-            <p>
-             A few months ago, I had a similar issue with CMake c++ projects and not being
+       </p>
+       <p>
+        And this looked awfully familiar.
+       </p>
+       <p>
+        A few months ago, I had a similar issue with CMake c++ projects and not being
 able to resolve library and include files.
-            </p>
-            <p>
-             The solution in the CMake case was a directive in the CMakeList.txt which output
+       </p>
+       <p>
+        The solution in the CMake case was a directive in the CMakeList.txt which output
 the compile parameters into a json file in the project root director.
-            </p>
-            <div class="language-text highlight">
-             <pre><span></span><code><span id="__span-12-1"><a href="#__codelineno-12-1" id="__codelineno-12-1" name="__codelineno-12-1"></a>#File: CMakeList.txt
-</span><span id="__span-12-2"><a href="#__codelineno-12-2" id="__codelineno-12-2" name="__codelineno-12-2"></a>set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+       </p>
+       <div class="language-text highlight">
+        <pre><span></span><code><span id="__span-2-1"><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a>#File: CMakeList.txt
+</span><span id="__span-2-2"><a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a>set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 </span></code></pre>
-            </div>
-            <p>
-             or
-            </p>
-            <div class="language-bash highlight">
-             <pre><span></span><code><span id="__span-13-1"><a href="#__codelineno-13-1" id="__codelineno-13-1" name="__codelineno-13-1"></a>cmake<span class="w"> </span>-DCMAKE_EXPORT_COMPILE_COMMANDS<span class="o">=</span><span class="m">1</span><span class="w"> </span>...rest<span class="w"> </span>of<span class="w"> </span>cmake<span class="w"> </span>arguments...
+       </div>
+       <p>
+        or
+       </p>
+       <div class="language-bash highlight">
+        <pre><span></span><code><span id="__span-3-1"><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a>cmake<span class="w"> </span>-DCMAKE_EXPORT_COMPILE_COMMANDS<span class="o">=</span><span class="m">1</span><span class="w"> </span>...rest<span class="w"> </span>of<span class="w"> </span>cmake<span class="w"> </span>arguments...
 </span></code></pre>
-            </div>
-            <h3 id="iii-final-solution">
-             <a class="toclink" href="../../2024/07/26/tech-tip---make-neovim-python-lsp-play-nice-with-pyenv/#iii-final-solution">
-              III. Final Solution
-             </a>
-            </h3>
-            <p>
-             Just like Cmake outputs a json file when run with CMAKE_EXPORT_COMPILE_COMMANDS
+       </div>
+       <h2 id="iii-final-solution">
+        III. Final Solution
+       </h2>
+       <p>
+        Just like Cmake outputs a json file when run with CMAKE_EXPORT_COMPILE_COMMANDS
 option, it seems pyright also looks for a json file to infer a few path/root
 related settings.
-            </p>
-            <p>
-             The file is named
-             <a href="https://github.com/microsoft/pyright/blob/main/docs/configuration.md">
-              <code>
-               pyrightconfig.json
-              </code>
-             </a>
-             Its pretty well documented and has a bunch of config options, but the one's we
+       </p>
+       <p>
+        The file is named
+        <a href="https://github.com/microsoft/pyright/blob/main/docs/configuration.md">
+         <code>
+          pyrightconfig.json
+         </code>
+        </a>
+        Its pretty well documented and has a bunch of config options, but the one's we
 are interested in are
-            </p>
-            <ul>
-             <li>
-              venvPath : [path, optional]: Path to a directory containing one or more subdirectories,
+       </p>
+       <ul>
+        <li>
+         venvPath : [path, optional]: Path to a directory containing one or more subdirectories,
     each of which contains a virtual environment. When used in conjunction with a
     venv setting (see below), pyright will search for imports in the virtual environment’s
     site-packages directory rather than the paths specified by the default Python
@@ -1818,605 +1868,96 @@ are interested in are
     not to specify this setting in the config file, since this path will typically
     differ for each developer. Instead, it can be specified on the command line or
     in a per-user setting. For more details, refer to the import resolution documentation.
-             </li>
-             <li>
-              venv : [string, optional]: Used in conjunction with the venvPath, specifies the
+        </li>
+        <li>
+         venv : [string, optional]: Used in conjunction with the venvPath, specifies the
     virtual environment to use. For more details, refer to the import resolution
     documentation.
-             </li>
-            </ul>
-            <p>
-             This
-             <a href="https://stackoverflow.com/questions/65847159/how-to-set-python-interpreter-in-neovim-for-python-language-server-depending-on">
-              stackoverflow answer
-             </a>
-             was what led me to this solution, after wasting about 20mins.
-            </p>
-            <p>
-             To make your project work properly you have one of two options.
-            </p>
-            <ol>
-             <li>
-              Manually place a pyrightconfig.json file in the root of your project.
-             </li>
-            </ol>
-            <div class="language-text highlight">
-             <pre><span></span><code><span id="__span-14-1"><a href="#__codelineno-14-1" id="__codelineno-14-1" name="__codelineno-14-1"></a>{
-</span><span id="__span-14-2"><a href="#__codelineno-14-2" id="__codelineno-14-2" name="__codelineno-14-2"></a>    "venvPath": "/home/USERNAME/.pyenv/versions/",
-</span><span id="__span-14-3"><a href="#__codelineno-14-3" id="__codelineno-14-3" name="__codelineno-14-3"></a>    "venv": "MY-VENV"
-</span><span id="__span-14-4"><a href="#__codelineno-14-4" id="__codelineno-14-4" name="__codelineno-14-4"></a>}
+        </li>
+       </ul>
+       <p>
+        This
+        <a href="https://stackoverflow.com/questions/65847159/how-to-set-python-interpreter-in-neovim-for-python-language-server-depending-on">
+         stackoverflow answer
+        </a>
+        was what led me to this solution, after wasting about 20mins.
+       </p>
+       <p>
+        To make your project work properly you have one of two options.
+       </p>
+       <ol>
+        <li>
+         Manually place a pyrightconfig.json file in the root of your project.
+        </li>
+       </ol>
+       <div class="language-text highlight">
+        <pre><span></span><code><span id="__span-4-1"><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a>{
+</span><span id="__span-4-2"><a href="#__codelineno-4-2" id="__codelineno-4-2" name="__codelineno-4-2"></a>    "venvPath": "/home/USERNAME/.pyenv/versions/",
+</span><span id="__span-4-3"><a href="#__codelineno-4-3" id="__codelineno-4-3" name="__codelineno-4-3"></a>    "venv": "MY-VENV"
+</span><span id="__span-4-4"><a href="#__codelineno-4-4" id="__codelineno-4-4" name="__codelineno-4-4"></a>}
 </span></code></pre>
-            </div>
-            <ol>
-             <li>
-              Or you can use
-              <a href="https://github.com/alefpereira/pyenv-pyright">
-               this pyenv plugin called "pyenv-pyright"
-              </a>
-              which automatically sets up the pyrightconfig.json file as per your current
-   active environment.
-             </li>
-            </ol>
-            <p>
-             Once the pyrightconfig.json is setup, starting neovim should load the LSP and
-also detect packages in your virtualenv properly.
-            </p>
-            <p>
-             A small summary of why this problem happens in the first place
-            </p>
-            <ul>
-             <li>
-              Microsoft pyright doesnt infer pyenv from the shell variables.
-             </li>
-             <li>
-              Even though you ran
-              <code>
-               pyenv activate demoenv
-              </code>
-              , this only sets up the python
-    path and shims for library paths.
-             </li>
-             <li>
-              pyright will only detect venvs when a pyrightconfig file is present.
-             </li>
-             <li>
-              doing pyenv activate doesn't generate this file automatically.
-             </li>
-             <li>
-              hence we need to either roll out our own file, or use the plugin mentioned
-    above to do it for us.
-             </li>
-            </ul>
-            <p>
-             Anyways, 20mins to fix LSP, 20 mins to write this. I guess I should do something
-more than
-             <code>
-              load_dotenv()
-             </code>
-             now.
-            </p>
-            <p>
-             Ciao. ~ wiresurfer
-            </p>
-           </div>
-          </a>
-          <!-- Post content -->
-         </article>
-         <!-- Post excerpt -->
-         <article class="md-post md-post--excerpt">
-          <a class="block group" href="../../2024/07/22/tech-tip---getting-qt5-to-respect-system-wide-dark-mode-and-gtk-theme/">
-           <div class="bg-cover bg-gray-900 relative bg-center rounded-md pb-[56%] overflow-hidden transition-transform group-hover:scale-[97.5%]" style='background-image: url("https://img.youtube.com/vi/rP4DWu24ff0/maxresdefault.jpg");'>
-           </div>
-           <header class="md-post__header">
-            <!-- Post authors -->
-            <nav class="md-post__authors md-typeset">
-             <span class="md-author">
-              <img alt="Shaishav Kr | Follow @wiresurfer on X" src="/assets/images/twitter-avatar.jpg"/>
-             </span>
-            </nav>
-            <!-- Post metadata -->
-            <div class="md-post__meta md-meta" style="width: 100%">
-             <ul class="md-meta__list" style="display: flex; flex-grow: 1">
-              <!-- Post date -->
-              <li class="md-meta__item">
-               <div>
-                <time datetime="2024-07-22 00:00:00">
-                 July 22, 2024
-                </time>
-                <br/>
-                <time>
-                 5 min read
-                </time>
-               </div>
-              </li>
-              <!-- Post categories -->
-              <li class="md-meta__item" style="
-              display: flex;
-              flex-grow: 1;
-              align-items: baseline;
-              align-content: end;
-              justify-content: flex-end;
-            ">
-               <!-- in -->
-               <a class="md-meta__link" href="./">
-                Engineering
-               </a>
-              </li>
-              <!-- Post readtime -->
-             </ul>
-             <!-- Draft marker -->
-            </div>
-           </header>
-           <div class="text-lg pr-5 card-text">
-            <h2 id="tech-tip-getting-qt5-to-respect-system-wide-dark-mode-and-gtk-theme">
-             <a class="toclink" href="../../2024/07/22/tech-tip---getting-qt5-to-respect-system-wide-dark-mode-and-gtk-theme/">
-              Tech Tip - Getting QT5 to respect system wide dark mode and GTK theme
-             </a>
-            </h2>
-            <p>
-             It seems my quest for a low overhead xubuntu desktop comes with its fair share
-of small annoying little gremlins. Today we talk about how QT5 and Ubuntu
-sometimes don't play nice specially when it comes to respecting dark mode
-themes. I will go throuh my motivations to use xubutu, or rather any operating
-system image for that matter.
-            </p>
-           </div>
-          </a>
-          <!-- Post content -->
-         </article>
-         <!-- Post excerpt -->
-         <article class="md-post md-post--excerpt">
-          <a class="block group" href="../../2024/06/04/unleash-the-forbidden---enabling-ebpfxdp-for-kernel-tinkering-on-wsl2/">
-           <div class="bg-cover bg-gray-900 relative bg-center rounded-md pb-[56%] overflow-hidden transition-transform group-hover:scale-[97.5%]" style='background-image: url("https://c4.wallpaperflare.com/wallpaper/226/682/452/minecraft-waterfall-video-games-wallpaper-preview.jpg");'>
-           </div>
-           <header class="md-post__header">
-            <!-- Post authors -->
-            <nav class="md-post__authors md-typeset">
-             <span class="md-author">
-              <img alt="Shaishav Kr | Follow @wiresurfer on X" src="/assets/images/twitter-avatar.jpg"/>
-             </span>
-            </nav>
-            <!-- Post metadata -->
-            <div class="md-post__meta md-meta" style="width: 100%">
-             <ul class="md-meta__list" style="display: flex; flex-grow: 1">
-              <!-- Post date -->
-              <li class="md-meta__item">
-               <div>
-                <time datetime="2024-06-04 00:00:00">
-                 June 4, 2024
-                </time>
-                <br/>
-                <time>
-                 5 min read
-                </time>
-               </div>
-              </li>
-              <!-- Post categories -->
-              <li class="md-meta__item" style="
-              display: flex;
-              flex-grow: 1;
-              align-items: baseline;
-              align-content: end;
-              justify-content: flex-end;
-            ">
-               <!-- in -->
-               <a class="md-meta__link" href="./">
-                Engineering
-               </a>
-              </li>
-              <!-- Post readtime -->
-             </ul>
-             <!-- Draft marker -->
-            </div>
-           </header>
-           <div class="text-lg pr-5 card-text">
-            <h2 id="unleash-the-forbidden-enabling-ebpfxdp-for-kernel-tinkering-on-wsl2">
-             <a class="toclink" href="../../2024/06/04/unleash-the-forbidden---enabling-ebpfxdp-for-kernel-tinkering-on-wsl2/">
-              Unleash the Forbidden - Enabling eBPF/XDP for Kernel Tinkering on WSL2
-             </a>
-            </h2>
-            <p>
-             Running eBPF on WSl2 running on Windows 10 feels forbidden. And yet, that's the entire premise of this blog.
-            </p>
-           </div>
-          </a>
-          <!-- Post content -->
-         </article>
-         <!-- Post excerpt -->
-         <article class="md-post md-post--excerpt">
-          <a class="block group" href="../../2024/05/31/future-of-organizations---post-genai-outlook-and-trends/">
-           <div class="bg-cover bg-gray-900 relative bg-center rounded-md pb-[56%] overflow-hidden transition-transform group-hover:scale-[97.5%]" style='background-image: url("https://c4.wallpaperflare.com/wallpaper/226/682/452/minecraft-waterfall-video-games-wallpaper-preview.jpg");'>
-           </div>
-           <header class="md-post__header">
-            <!-- Post authors -->
-            <nav class="md-post__authors md-typeset">
-             <span class="md-author">
-              <img alt="Shaishav Kr" src="/assets/images/twitter-avatar.jpg"/>
-             </span>
-            </nav>
-            <!-- Post metadata -->
-            <div class="md-post__meta md-meta" style="width: 100%">
-             <ul class="md-meta__list" style="display: flex; flex-grow: 1">
-              <!-- Post date -->
-              <li class="md-meta__item">
-               <div>
-                <time datetime="2024-05-31 00:00:00">
-                 May 31, 2024
-                </time>
-                <br/>
-                <time>
-                 14 min read
-                </time>
-               </div>
-              </li>
-              <!-- Post categories -->
-              <li class="md-meta__item" style="
-              display: flex;
-              flex-grow: 1;
-              align-items: baseline;
-              align-content: end;
-              justify-content: flex-end;
-            ">
-               <!-- in -->
-               <a class="md-meta__link" href="./">
-                Engineering
-               </a>
-              </li>
-              <!-- Post readtime -->
-             </ul>
-             <!-- Draft marker -->
-            </div>
-           </header>
-           <div class="text-lg pr-5 card-text">
-            <h2 id="future-of-organizations-post-genai-outlook-and-trends">
-             <a class="toclink" href="../../2024/05/31/future-of-organizations---post-genai-outlook-and-trends/">
-              Future of Organizations - Post GenAI Outlook and Trends
-             </a>
-            </h2>
-            <p>
-             A common conversation I have with Startups and Big Corp leaders alike is, how
-would the world evolve with GenAI. These conversations have slightly different
-trajectories depending on whether the leader is a technical person or a
-product/biz person. While there is a lot of material out there, I have noticed a
-BS scale evolving.
-            </p>
-           </div>
-          </a>
-          <!-- Post content -->
-         </article>
-         <!-- Post excerpt -->
-         <article class="md-post md-post--excerpt">
-          <a class="block group" href="../../2024/05/28/linux-kernel-explained---deep-dive-series-for-system-engineers/">
-           <div class="bg-cover bg-gray-900 relative bg-center rounded-md pb-[56%] overflow-hidden transition-transform group-hover:scale-[97.5%]" style='background-image: url("https://bergercookie.dev/images/linux-books.jpg");'>
-           </div>
-           <header class="md-post__header">
-            <!-- Post authors -->
-            <nav class="md-post__authors md-typeset">
-             <span class="md-author">
-              <img alt="Shaishav Kr | Follow @wiresurfer on X" src="/assets/images/twitter-avatar.jpg"/>
-             </span>
-            </nav>
-            <!-- Post metadata -->
-            <div class="md-post__meta md-meta" style="width: 100%">
-             <ul class="md-meta__list" style="display: flex; flex-grow: 1">
-              <!-- Post date -->
-              <li class="md-meta__item">
-               <div>
-                <time datetime="2024-05-28 00:00:00">
-                 May 28, 2024
-                </time>
-                <br/>
-                <time>
-                 9 min read
-                </time>
-               </div>
-              </li>
-              <!-- Post categories -->
-              <li class="md-meta__item" style="
-              display: flex;
-              flex-grow: 1;
-              align-items: baseline;
-              align-content: end;
-              justify-content: flex-end;
-            ">
-               <!-- in -->
-               <a class="md-meta__link" href="./">
-                Engineering
-               </a>
-              </li>
-              <!-- Post readtime -->
-             </ul>
-             <!-- Draft marker -->
-            </div>
-           </header>
-           <div class="text-lg pr-5 card-text">
-            <h2 id="linux-kernel-explained-deep-dive-series-for-system-engineers">
-             <a class="toclink" href="../../2024/05/28/linux-kernel-explained---deep-dive-series-for-system-engineers/">
-              Linux Kernel Explained - Deep Dive Series for System Engineers
-             </a>
-            </h2>
-            <p>
-             The Linux kernel is a monumental achievement in the world of open-source
-software, driven by a passionate community of contributors.
-             <br/>
-             This collaborative effort has resulted in a powerful, versatile operating system
-that powers an estimated 80-90% of the internet. From the smartphones in our
-pockets to the vast cloud infrastructure, Linux is the backbone of many
-technologies we rely on daily.
-            </p>
-           </div>
-          </a>
-          <!-- Post content -->
-         </article>
-         <!-- Post excerpt -->
-         <article class="md-post md-post--excerpt">
-          <a class="block group" href="../../2024/04/28/booting-up-linux-kernel---linux-for-engineers/">
-           <div class="bg-cover bg-gray-900 relative bg-center rounded-md pb-[56%] overflow-hidden transition-transform group-hover:scale-[97.5%]" style='background-image: url("https://i.imgur.com/89CApFC.png");'>
-           </div>
-           <header class="md-post__header">
-            <!-- Post authors -->
-            <nav class="md-post__authors md-typeset">
-             <span class="md-author">
-              <img alt="Shaishav Kr | Follow @wiresurfer on X" src="/assets/images/twitter-avatar.jpg"/>
-             </span>
-            </nav>
-            <!-- Post metadata -->
-            <div class="md-post__meta md-meta" style="width: 100%">
-             <ul class="md-meta__list" style="display: flex; flex-grow: 1">
-              <!-- Post date -->
-              <li class="md-meta__item">
-               <div>
-                <time datetime="2024-04-28 00:00:00">
-                 April 28, 2024
-                </time>
-                <br/>
-                <time>
-                 14 min read
-                </time>
-               </div>
-              </li>
-              <!-- Post categories -->
-              <li class="md-meta__item" style="
-              display: flex;
-              flex-grow: 1;
-              align-items: baseline;
-              align-content: end;
-              justify-content: flex-end;
-            ">
-               <!-- in -->
-               <a class="md-meta__link" href="./">
-                Engineering
-               </a>
-              </li>
-              <!-- Post readtime -->
-             </ul>
-             <!-- Draft marker -->
-            </div>
-           </header>
-           <div class="text-lg pr-5 card-text">
-            <h2 id="booting-up-linux-kernel-linux-for-engineers-1">
-             <a class="toclink" href="../../2024/04/28/booting-up-linux-kernel---linux-for-engineers/">
-              Booting up Linux Kernel - Linux for Engineers #1
-             </a>
-            </h2>
-            <p>
-             Ever wondered what happens when your Linux machine starts? There is a
-fascinating song and dance between different components which brings a machine
-to life. Lets dive into the world of booting Linux Kernel.
-            </p>
-           </div>
-          </a>
-          <!-- Post content -->
-         </article>
-         <!-- Post excerpt -->
-         <article class="md-post md-post--excerpt">
-          <a class="block group" href="../../2024/04/18/rise-of-internal-developer-portals-idp---part-1/">
-           <div class="bg-cover bg-gray-900 relative bg-center rounded-md pb-[56%] overflow-hidden transition-transform group-hover:scale-[97.5%]" style='background-image: url("https://www.epsglobal.com/getattachment/20c59b9b-abe3-4375-8210-366f6d8e9a7a/Containers,-Docker-and-Kubernetes-A-beginner-s-guide-Part-2.jpg?maxsidesize=780&amp;width=780");'>
-           </div>
-           <header class="md-post__header">
-            <!-- Post authors -->
-            <nav class="md-post__authors md-typeset">
-             <span class="md-author">
-              <img alt="Shaishav Kr | Follow @wiresurfer on X" src="/assets/images/twitter-avatar.jpg"/>
-             </span>
-            </nav>
-            <!-- Post metadata -->
-            <div class="md-post__meta md-meta" style="width: 100%">
-             <ul class="md-meta__list" style="display: flex; flex-grow: 1">
-              <!-- Post date -->
-              <li class="md-meta__item">
-               <div>
-                <time datetime="2024-04-18 00:00:00">
-                 April 18, 2024
-                </time>
-                <br/>
-                <time>
-                 4 min read
-                </time>
-               </div>
-              </li>
-              <!-- Post categories -->
-              <li class="md-meta__item" style="
-              display: flex;
-              flex-grow: 1;
-              align-items: baseline;
-              align-content: end;
-              justify-content: flex-end;
-            ">
-               <!-- in -->
-               <a class="md-meta__link" href="./">
-                Engineering
-               </a>
-              </li>
-              <!-- Post readtime -->
-             </ul>
-             <!-- Draft marker -->
-            </div>
-           </header>
-           <div class="text-lg pr-5 card-text">
-            <h2 id="rise-of-internal-developer-portals-idp-part-1">
-             <a class="toclink" href="../../2024/04/18/rise-of-internal-developer-portals-idp---part-1/">
-              Rise of Internal Developer Portals (iDp) - Part 1
-             </a>
-            </h2>
-            <p>
-             In today's rapidly evolving software development landscape, staying ahead of the curve is crucial for success. One emerging trend that has gained significant traction is the adoption of Internal Developer Portals (iDp).
-            </p>
-           </div>
-          </a>
-          <!-- Post content -->
-         </article>
-         <!-- Post excerpt -->
-         <article class="md-post md-post--excerpt">
-          <a class="block group" href="../../2024/03/12/practitioners-guide-to-great-project-documentation-feat-readthedocs/">
-           <div class="bg-cover bg-gray-900 relative bg-center rounded-md pb-[56%] overflow-hidden transition-transform group-hover:scale-[97.5%]" style='background-image: url("https://images.unsplash.com/photo-1600267204091-5c1ab8b10c02?q=80&amp;w=2070&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");'>
-           </div>
-           <header class="md-post__header">
-            <!-- Post authors -->
-            <nav class="md-post__authors md-typeset">
-             <span class="md-author">
-              <img alt="Shaishav Kr | Follow @wiresurfer on X" src="/assets/images/twitter-avatar.jpg"/>
-             </span>
-            </nav>
-            <!-- Post metadata -->
-            <div class="md-post__meta md-meta" style="width: 100%">
-             <ul class="md-meta__list" style="display: flex; flex-grow: 1">
-              <!-- Post date -->
-              <li class="md-meta__item">
-               <div>
-                <time datetime="2024-03-12 00:00:00">
-                 March 12, 2024
-                </time>
-                <br/>
-                <time>
-                 1 min read
-                </time>
-               </div>
-              </li>
-              <!-- Post categories -->
-              <li class="md-meta__item" style="
-              display: flex;
-              flex-grow: 1;
-              align-items: baseline;
-              align-content: end;
-              justify-content: flex-end;
-            ">
-               <!-- in -->
-               <a class="md-meta__link" href="./">
-                Engineering
-               </a>
-              </li>
-              <!-- Post readtime -->
-             </ul>
-             <!-- Draft marker -->
-            </div>
-           </header>
-           <div class="text-lg pr-5 card-text">
-            <h2 id="practitioners-guide-to-great-project-documentation-feat-readthedocs">
-             <a class="toclink" href="../../2024/03/12/practitioners-guide-to-great-project-documentation-feat-readthedocs/">
-              Practitioners Guide to Great Project Documentation feat. ReadTheDocs
-             </a>
-            </h2>
-            <p>
-             <a href="https://stackoverflow.com/questions/36237477/python-docstrings-to-github-readme-md">
-              markdown - Python docstrings to GitHub README.md - Stack Overflow
-             </a>
-             <a href="https://stackoverflow.com/questions/25012658/read-the-docs-not-working-with-automodule/71586732#71586732">
-              python - Read The Docs not working with automodule - Stack Overflow
-             </a>
-            </p>
-            <p>
-             <a href="https://www.zverovich.net/2016/06/16/rst-vs-markdown.html">
-              reStructuredText vs Markdown for documentation
-             </a>
-            </p>
-            <p>
-             <a href="https://github.com/django/django/tree/main/docs">
-              docs
-             </a>
-            </p>
-           </div>
-          </a>
-          <!-- Post content -->
-         </article>
-         <!-- Post excerpt -->
-         <article class="md-post md-post--excerpt">
-          <a class="block group" href="../../2024/03/01/startup-cto-impatient-lazy-and-how-i-learned-the-habit-of-plan-sprint-ship-document/">
-           <div class="bg-cover bg-gray-900 relative bg-center rounded-md pb-[56%] overflow-hidden transition-transform group-hover:scale-[97.5%]" style='background-image: url("https://cdn-images-1.medium.com/max/800/1*pXY33WWBSZ9Kkf3vu5_a1w.png");'>
-           </div>
-           <header class="md-post__header">
-            <!-- Post authors -->
-            <nav class="md-post__authors md-typeset">
-             <span class="md-author">
-              <img alt="Shaishav Kr | Follow @wiresurfer on X" src="/assets/images/twitter-avatar.jpg"/>
-             </span>
-            </nav>
-            <!-- Post metadata -->
-            <div class="md-post__meta md-meta" style="width: 100%">
-             <ul class="md-meta__list" style="display: flex; flex-grow: 1">
-              <!-- Post date -->
-              <li class="md-meta__item">
-               <div>
-                <time datetime="2024-03-01 00:00:00">
-                 March 1, 2024
-                </time>
-                <br/>
-                <time>
-                 10 min read
-                </time>
-               </div>
-              </li>
-              <!-- Post categories -->
-              <li class="md-meta__item" style="
-              display: flex;
-              flex-grow: 1;
-              align-items: baseline;
-              align-content: end;
-              justify-content: flex-end;
-            ">
-               <!-- in -->
-               <a class="md-meta__link" href="../management/">
-                Management
-               </a>
-               ,
-               <a class="md-meta__link" href="./">
-                Engineering
-               </a>
-              </li>
-              <!-- Post readtime -->
-             </ul>
-             <!-- Draft marker -->
-            </div>
-           </header>
-           <div class="text-lg pr-5 card-text">
-            <h2 id="startup-cto-impatient-lazy-and-how-i-learned-the-habit-of-plan-sprint-ship-document">
-             <a class="toclink" href="../../2024/03/01/startup-cto-impatient-lazy-and-how-i-learned-the-habit-of-plan-sprint-ship-document/">
-              Startup CTO : Impatient , Lazy and how I learned the habit of plan-sprint-ship-document
-             </a>
-            </h2>
-            <hr/>
-            <p>
-             I have an admission to make. I, as a person, am impatient and lazy. Impatient because I can’t stop myself from jumping from one problem to the other with absolutely no time. And lazy, well, lazy in the oddest of ways. Let me explain what I mean by walking you through some of my learnings in the last few years. This article would resonate with hands-on tech engineers who are graduating into more rounded/demanding/business/founder roles.
-            </p>
-           </div>
-          </a>
-          <!-- Post content -->
-         </article>
-         <!-- Pagination -->
-        </div>
        </div>
-       <nav class="md-pagination">
-       </nav>
-      </div>
-      <script>
-       var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))
-      </script>
+       <ol>
+        <li>
+         Or you can use
+         <a href="https://github.com/alefpereira/pyenv-pyright">
+          this pyenv plugin called "pyenv-pyright"
+         </a>
+         which automatically sets up the pyrightconfig.json file as per your current
+   active environment.
+        </li>
+       </ol>
+       <p>
+        Once the pyrightconfig.json is setup, starting neovim should load the LSP and
+also detect packages in your virtualenv properly.
+       </p>
+       <p>
+        A small summary of why this problem happens in the first place
+       </p>
+       <ul>
+        <li>
+         Microsoft pyright doesnt infer pyenv from the shell variables.
+        </li>
+        <li>
+         Even though you ran
+         <code>
+          pyenv activate demoenv
+         </code>
+         , this only sets up the python
+    path and shims for library paths.
+        </li>
+        <li>
+         pyright will only detect venvs when a pyrightconfig file is present.
+        </li>
+        <li>
+         doing pyenv activate doesn't generate this file automatically.
+        </li>
+        <li>
+         hence we need to either roll out our own file, or use the plugin mentioned
+    above to do it for us.
+        </li>
+       </ul>
+       <p>
+        Anyways, 20mins to fix LSP, 20 mins to write this. I guess I should do something
+more than
+        <code>
+         load_dotenv()
+        </code>
+        now.
+       </p>
+       <p>
+        Ciao. ~ wiresurfer
+       </p>
+      </article>
      </div>
+     <script>
+      var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))
+     </script>
     </div>
    </main>
    <footer class="md-footer mt-16">
     <nav aria-label="footer.title" class="md-footer__inner md-grid">
-     <a aria-label="Previous: Tags" class="md-footer__link md-footer__link--prev" href="../../tags/" rel="prev">
+     <a aria-label="Previous: Story Untold is a Story Lost" class="md-footer__link md-footer__link--prev" href="../../22/story-untold-is-a-story-lost/" rel="prev">
       <div class="md-footer__button md-icon">
        <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
         <path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z">
@@ -2428,24 +1969,8 @@ to life. Lets dive into the world of booting Linux Kernel.
         <span class="md-footer__direction">
          Previous
         </span>
-        Tags
+        Story Untold is a Story Lost
        </div>
-      </div>
-     </a>
-     <a aria-label="Next: Insights" class="md-footer__link md-footer__link--next" href="../insights/" rel="next">
-      <div class="md-footer__title">
-       <div class="md-ellipsis">
-        <span class="md-footer__direction">
-         Next
-        </span>
-        Insights
-       </div>
-      </div>
-      <div class="md-footer__button md-icon">
-       <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z">
-        </path>
-       </svg>
       </div>
      </a>
     </nav>
@@ -2549,11 +2074,11 @@ to life. Lets dive into the world of booting Linux Kernel.
   <div class="md-progress" data-md-component="progress" role="progressbar">
   </div>
   <script id="__config" type="application/json">
-   {"base": "../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.path", "navigation.indexes", "toc.follow", "content.code.copy"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}
+   {"base": "../../../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.path", "navigation.indexes", "toc.follow", "content.code.copy"], "search": "../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}
   </script>
-  <script src="../../assets/javascripts/bundle.081f42fc.min.js">
+  <script src="../../../../assets/javascripts/bundle.081f42fc.min.js">
   </script>
-  <script async="" src="../../assets/javascripts/toggle-sidebar.js">
+  <script async="" src="../../../../assets/javascripts/toggle-sidebar.js">
   </script>
  </body>
 </html>
