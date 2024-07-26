@@ -445,7 +445,7 @@ powering the modern device bootup space.
 ---
 
 > Have feedback or questions, or want to be notified about more such articles?
-> Follow me on Twitter [@wiresurfer](https://x.com/wiresurfer) >
+> Follow me on Twitter [@wiresurfer](https://x.com/wiresurfer)
 
 ---
 
