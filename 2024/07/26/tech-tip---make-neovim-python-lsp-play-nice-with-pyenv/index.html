@@ -1911,9 +1911,19 @@ are interested in are
    active environment.
         </li>
        </ol>
+       <div class="language-sh highlight">
+        <pre><span></span><code><span id="__span-5-1"><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="c1">#install pyenv-pyright plugin</span>
+</span><span id="__span-5-2"><a href="#__codelineno-5-2" id="__codelineno-5-2" name="__codelineno-5-2"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/alefpereira/pyenv-pyright.git<span class="w"> </span><span class="k">$(</span>pyenv<span class="w"> </span>root<span class="k">)</span>/plugins/pyenv-pyright
+</span><span id="__span-5-3"><a href="#__codelineno-5-3" id="__codelineno-5-3" name="__codelineno-5-3"></a>
+</span><span id="__span-5-4"><a href="#__codelineno-5-4" id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="c1">#generate the pyrightconfig.json file.</span>
+</span><span id="__span-5-5"><a href="#__codelineno-5-5" id="__codelineno-5-5" name="__codelineno-5-5"></a>pyenv<span class="w"> </span>pyright
+</span><span id="__span-5-6"><a href="#__codelineno-5-6" id="__codelineno-5-6" name="__codelineno-5-6"></a>
+</span><span id="__span-5-7"><a href="#__codelineno-5-7" id="__codelineno-5-7" name="__codelineno-5-7"></a><span class="c1">#lunarvim main.py  should work flawlessly now.</span>
+</span></code></pre>
+       </div>
        <p>
-        Once the pyrightconfig.json is setup, starting neovim should load the LSP and
-also detect packages in your virtualenv properly.
+        Once the pyrightconfig.json is setup using either method 1, or 2, starting
+neovim should load the LSP and also detect packages in your virtualenv properly.
        </p>
        <p>
         A small summary of why this problem happens in the first place
