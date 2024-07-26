@@ -25,9 +25,13 @@ coverImage: https://opengraph.githubassets.com/4c338d32f782385335706e884a4e72a51
 
 Modern python development relies on some form of virtual environment management.
 pyenv + virtialenv is a goto toolkit for managing both python versions and
-isolated package environments. For people using Neovim as their editor, setting
-up Neovim's LSP to play nice with pyenv requires a trick. This post covers the
-interplay of tools to make this work.
+isolated package environments.
+
+<!-- more -->
+
+For people using Neovim as their editor, setting up Neovim's LSP to play nice
+with pyenv requires a trick. This post covers the interplay of tools to make
+this work.
 
 ## What's the problem?
 
@@ -149,13 +153,23 @@ To make your project work properly you have one of two options.
 
 ```
 
-2. Or you can use
+1. Or you can use
    [this pyenv plugin called "pyenv-pyright"](https://github.com/alefpereira/pyenv-pyright)
    which automatically sets up the pyrightconfig.json file as per your current
    active environment.
 
-Once the pyrightconfig.json is setup, starting neovim should load the LSP and
-also detect packages in your virtualenv properly.
+```sh
+#install pyenv-pyright plugin
+git clone https://github.com/alefpereira/pyenv-pyright.git $(pyenv root)/plugins/pyenv-pyright
+
+#generate the pyrightconfig.json file.
+pyenv pyright
+
+#lunarvim main.py  should work flawlessly now.
+```
+
+Once the pyrightconfig.json is setup using either method 1, or 2, starting
+neovim should load the LSP and also detect packages in your virtualenv properly.
 
 A small summary of why this problem happens in the first place
 
