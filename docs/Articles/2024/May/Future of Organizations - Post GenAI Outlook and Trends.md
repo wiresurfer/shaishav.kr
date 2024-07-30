@@ -405,6 +405,8 @@ between genuine innovations and overblown promises. This toolkit aims to equip
 organizational leaders with the necessary questions and criteria to evaluate
 GenAI solutions critically.
 
+![Snake Oil AI Seleciton Guide](./Assets/media/snake-oil-ai-selection-guide.svg)
+
 ### 1. Key Questions to Ask AI Vendors
 
 -   What specific problem does your AI solution solve?

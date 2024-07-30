@@ -1,117 +1,156 @@
 {% import "partials/language.html" as lang with context %}
 <footer class="md-footer mt-16">
   {% if page.previous_page or page.next_page %}
-    <nav
-      class="md-footer__inner md-grid"
-      aria-label="{{ lang.t('footer.title') }}"
+  <nav
+    class="md-footer__inner md-grid"
+    aria-label="{{ lang.t('footer.title') }}"
+  >
+    {% if page.previous_page %} {% set direction = lang.t("footer.previous") %}
+    <a
+      href="{{ page.previous_page.url | url }}"
+      class="md-footer__link md-footer__link--prev"
+      aria-label="{{ direction }}: {{ page.previous_page.title | e }}"
+      rel="prev"
     >
-      {% if page.previous_page %}
-        {% set direction = lang.t("footer.previous") %}
-        <a
-          href="{{ page.previous_page.url | url }}"
-          class="md-footer__link md-footer__link--prev"
-          aria-label="{{ direction }}: {{ page.previous_page.title | e }}"
-          rel="prev"
-        >
-          <div class="md-footer__button md-icon">
-            {% include ".icons/material/arrow-left.svg" %}
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction"> {{ direction }} </span>
-              {{ page.previous_page.title }}
-            </div>
-          </div>
-        </a>
-      {% endif %}
-      {% if page.next_page %}
-        {% set direction = lang.t("footer.next") %}
-        <a
-          href="{{ page.next_page.url | url }}"
-          class="md-footer__link md-footer__link--next"
-          aria-label="{{ direction }}: {{ page.next_page.title | e }}"
-          rel="next"
-        >
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction"> {{ direction }} </span>
-              {{ page.next_page.title }}
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            {% include ".icons/material/arrow-right.svg" %}
-          </div>
-        </a>
-      {% endif %}
-    </nav>
+      <div class="md-footer__button md-icon">
+        {% include ".icons/material/arrow-left.svg" %}
+      </div>
+      <div class="md-footer__title">
+        <div class="md-ellipsis">
+          <span class="md-footer__direction"> {{ direction }} </span>
+          {{ page.previous_page.title }}
+        </div>
+      </div>
+    </a>
+    {% endif %} {% if page.next_page %} {% set direction = lang.t("footer.next")
+    %}
+    <a
+      href="{{ page.next_page.url | url }}"
+      class="md-footer__link md-footer__link--next"
+      aria-label="{{ direction }}: {{ page.next_page.title | e }}"
+      rel="next"
+    >
+      <div class="md-footer__title">
+        <div class="md-ellipsis">
+          <span class="md-footer__direction"> {{ direction }} </span>
+          {{ page.next_page.title }}
+        </div>
+      </div>
+      <div class="md-footer__button md-icon">
+        {% include ".icons/material/arrow-right.svg" %}
+      </div>
+    </a>
+    {% endif %}
+  </nav>
   {% endif %}
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
       <div class="md-footer-copyright">
         <div class="md-footer-copyright__highlight">
-          {% if config.copyright %}{{ config.copyright }}{% endif %}
-          {%
-            if
-            config.extra.version
-          %}
-            |
-            <strong
-              ><a
-                href="{{ config.extra.version.link }}"
-                target="_blank"
-                rel="noopener"
-                style="color: var(--md-typeset-a-color)"
-              >
-                {{ config.extra.version.name }}
-              </a></strong
+          {% if config.copyright %}{{ config.copyright }}{% endif %} {% if
+          config.extra.version %} |
+          <strong
+            ><a
+              href="{{ config.extra.version.link }}"
+              target="_blank"
+              rel="noopener"
+              style="color: var(--md-typeset-a-color)"
             >
-          {% endif %}
-          {% if config.extra.license %}
-            |
-            <strong
-              ><a
-                href="{{ config.extra.license.link }}"
-                target="_blank"
-                rel="noopener"
-                style="color: var(--md-typeset-a-color)"
-              >
-                {{ config.extra.license.name }}
-              </a></strong
+              {{ config.extra.version.name }}
+            </a></strong
+          >
+          {% endif %} {% if config.extra.license %} |
+          <strong
+            ><a
+              href="{{ config.extra.license.link }}"
+              target="_blank"
+              rel="noopener"
+              style="color: var(--md-typeset-a-color)"
             >
+              {{ config.extra.license.name }}
+            </a></strong
+          >
           {% endif %}
         </div>
-        {% if not config.extra.made_with %}{% else %}{%
-          if
-          config.extra.made_with == True
-        %}
-          Made with
-          <strong
-            ><a
-              href="https://abolfazlamiri.ir/gruvdoc/"
-              target="_blank"
-              rel="noopener"
-              style="color: var(--md-typeset-a-color)"
-            >
-              GruvDoc
-            </a></strong
+        {% if not config.extra.made_with %}{% else %}{% if
+        config.extra.made_with == True %} Made with
+        <strong
+          ><a
+            href="https://abolfazlamiri.ir/gruvdoc/"
+            target="_blank"
+            rel="noopener"
+            style="color: var(--md-typeset-a-color)"
           >
-          &
-          <strong
-            ><a
-              href="https://squidfunk.github.io/mkdocs-material/"
-              target="_blank"
-              rel="noopener"
-              style="color: var(--md-typeset-a-color)"
-            >
-              Material for MkDocs
-            </a></strong
+            GruvDoc
+          </a></strong
+        >
+        &
+        <strong
+          ><a
+            href="https://squidfunk.github.io/mkdocs-material/"
+            target="_blank"
+            rel="noopener"
+            style="color: var(--md-typeset-a-color)"
           >
-        {% else %}
-          {{ config.extra.made_with }}
-        {% endif %}{% endif %}
-        {{ extracopyright }}
+            Material for MkDocs
+          </a></strong
+        >
+        {% else %} {{ config.extra.made_with }} {% endif %}{% endif %} {{
+        extracopyright }}
       </div>
       {% include "partials/social.html" %}
     </div>
   </div>
 </footer>
+<script>
+  !(function (t, e) {
+    var o, n, p, r;
+    e.__SV ||
+      ((window.posthog = e),
+      (e._i = []),
+      (e.init = function (i, s, a) {
+        function g(t, e) {
+          var o = e.split(".");
+          2 == o.length && ((t = t[o[0]]), (e = o[1])),
+            (t[e] = function () {
+              t.push([e].concat(Array.prototype.slice.call(arguments, 0)));
+            });
+        }
+        ((p = t.createElement("script")).type = "text/javascript"),
+          (p.async = !0),
+          (p.src = s.api_host + "/static/array.js"),
+          (r = t.getElementsByTagName("script")[0]).parentNode.insertBefore(
+            p,
+            r
+          );
+        var u = e;
+        for (
+          void 0 !== a ? (u = e[a] = []) : (a = "posthog"),
+            u.people = u.people || [],
+            u.toString = function (t) {
+              var e = "posthog";
+              return (
+                "posthog" !== a && (e += "." + a), t || (e += " (stub)"), e
+              );
+            },
+            u.people.toString = function () {
+              return u.toString(1) + ".people (stub)";
+            },
+            o =
+              "capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled onFeatureFlags getFeatureFlag getFeatureFlagPayload reloadFeatureFlags group updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures getActiveMatchingSurveys getSurveys getNextSurveyStep onSessionId".split(
+                " "
+              ),
+            n = 0;
+          n < o.length;
+          n++
+        )
+          g(u, o[n]);
+        e._i.push([i, s, a]);
+      }),
+      (e.__SV = 1));
+  })(document, window.posthog || []);
+  posthog.init("<ph_project_api_key>", {
+    api_host: "https://us.i.posthog.com",
+    person_profiles: "identified_only",
+  });
+</script>
