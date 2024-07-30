@@ -3,7 +3,9 @@ public: true
 authors:
     - wiresurfer
 title: Future of Organizations - Post GenAI Outlook and Trends
-description: Meta Description
+description:
+    A zero-BS guide to GenAI applications in organizations. Use our Snake Oil
+    detector for vendor screenings.
 categories:
     - Engineering
 tags:
@@ -13,7 +15,8 @@ topic:
 created: 2024-05-31 02:05
 modified: 2024-05-31
 date: 2024-05-31
-coverImage: https://c4.wallpaperflare.com/wallpaper/226/682/452/minecraft-waterfall-video-games-wallpaper-preview.jpg
+coverImage: ./2024/May/Assets/media/snake-oil-ai-selection-guide.svg
+# coverImage: https://c4.wallpaperflare.com/wallpaper/226/682/452/minecraft-waterfall-video-games-wallpaper-preview.jpg
 ---
 
 # Future of Organizations - Post GenAI Outlook and Trends
@@ -70,66 +73,18 @@ organization.
 
 Ready? Let's dive in.
 
-## I. GenAI: The Good, the Bad, and the Utterly Ridiculous
-
-Before we make prophecies for the future, it makes sense to understand what has
-changed with Gen AI. We know the tell tale party tricks of an LLM application,
-we are also becoming aware of its incoming multi-modal skills.
-
-But to me, the proverbial bulb which has been lit is as follows: All AI before
-ChatGPT was looking at our world through a numerical/mathematical lens. It would
-take a problem statement, expect the human to parse any set of inputs into a
-tensor format, and then it would apply some mathematical transform.
-
-In a way, pre GenAI, everything was a mathematical transform from a fixed tensor
-space to another tensor space.
-
-Gen, in generative AI was the tipping point. AI could generate sequences before
-too. take an LSTM, or a simple ARIMA model. But those were just statistical
-extrapolations. All AI was a clever Mathmatical trickster at best.
-
-Its only when Transformers came into play, and parameter space started to grow,
-we started seeing glimses of "generative" capabilities.
-
-An anecdote from the domain of Natural Language Processing comes to mind. We
-would have a hard time parsing documents and respresenting them using clever,
-domain specific vector models. A subfield called feature engineering was the
-buzz back in early 2010s. It was an accepted norm that computers don't
-understand words or phrases, just vectors and cosine similarity. Word2vec
-changes this conception a bit by showing how good a large parameter trained
-vector embedding would be. And whem we started framing the problem as "given a
-sequence of tokens, predict the next word", we forced models to learn long,
-medium and short term relationships between each token. Its still a mystery and
-a raging debate whether human knowledge is just a set of token, phrase and
-document level weights afterall.
-
-Anyways, this long winded explanation was building up to a singular point. We
-need to remember what made GenAI a game changers. It understands the nuances of
-tokens, and through it, the nuances of language. It doesn't know truth from
-falsehood, correct from wrong, good from evil, smart from dumb. Its just knows
-how to bluff its way to the next token.
-
-So, what is this skill good for?
-
-GenAI is an excellent language parser. It can ingest faster than humans,
-understand what it reads, link it to what it has read and use its knowledgebase
-to answer questions.
-
-This parsing capability makes it great for applications where you asking it to
-make sense of the world and then answer questions about the world.
-
-Non-exhaustively, _Parsing_ can mean reading, expanding, rephrasing, format
-conversions, structuring, or translation. Similarly _Answer_ questions can mean
-organize, expand, reduce, infer intent, classify or review.
-
 ---
 
-## II. GenAI: The Good, the Bad, and the Utterly Ridiculous
+## I. GenAI: The Good, the Bad, and the Utterly Ridiculous
 
 Before we dive into future prophecies, let's take a moment to understand what
 exactly has changed with the advent of Generative AI. We're all familiar with
 the party tricks of LLM applications and their emerging multi-modal skills, but
 the real paradigm shift goes deeper.
+
+> 💡 Insight : Generative AI Models don't know truth from falsehood, correct
+> from wrong, good from evil, smart from dumb. Its just knows how to bluff its
+> way to the next token.
 
 ### A. The Tipping Point: From Mathematical Transforms to Language Understanding
 
@@ -165,6 +120,9 @@ long, medium, and short-term relationships between tokens. Whether human
 knowledge is just a set of token, phrase, and document-level weights remains a
 fascinating debate.
 
+> Insight: Its still a mystery and a raging debate whether human knowledge is
+> just a set of token, phrase and document level weights afterall.
+
 Its only when we started training transformer models of sufficiently large
 parameter space, did we relaize the marvels of transfer learning. Transfer
 learning is when you train a model on a particular problem, but can use the
@@ -174,11 +132,12 @@ Transfer learning results was the first signs that large transformer models
 scaled up with corporate truckloads of money spent in data acquisition and
 training. Which brings us to our current post ChatGPT era.
 
-> 💡 There are parallel innovations in image generation and voice transcription
-> which plays an important second fiddle to the current wave of GenAI llms which
-> I haven't discussed here. The point being NLP understanding gave GenAI the
-> human like understanding, image generation gave it visual perception and Audio
-> transcription models gave it hearing and listening capabilities
+> 💡 Insight : There are parallel innovations in image generation and voice
+> transcription which plays an important second fiddle to the current wave of
+> GenAI llms which I haven't discussed here. The point being NLP understanding
+> gave GenAI the human like understanding, image generation gave it visual
+> perception and Audio transcription models gave it hearing and listening
+> capabilities
 
 ### C. The Core Capability: Understanding Token Nuances
 
@@ -257,9 +216,9 @@ include answering with an Image, or a prompt which can be used with another LLM.
 
 Here in lies the first insight.
 
-> 💡 Insight 1: If you want to build or buy an AI solution, can you clearly
-> frame what the input would be, how would it be parsed by and human, and what
-> the output would look like. In practice, this is a lot like writing a sequence
+> 💡 Insight : If you want to build or buy an AI solution, can you clearly frame
+> what the input would be, how would it be parsed by and human, and what the
+> output would look like. In practice, this is a lot like writing a sequence
 > diagram before build a backend API system.
 
 Please dont ask AI to comeup with ingenious, correct and original thought. It
@@ -277,16 +236,19 @@ Most common applications can be modelled as follows
     is an image generation layer, then this image prompt is fed directly to a
     transformer which understands images.
 
-> 💡 Insight 2: GenAI LLMs are universal functions. A one size fits many
-> function call which changes its behaviour depending on the input it gets.
+> 💡 Insight : GenAI LLMs are universal functions. A one size fits many function
+> call which changes its behaviour depending on the input it gets.
 
 <!-- To simplify our discussion, lets take a concrete GenAI usecase and subject it to -->
 <!-- our analysis. -->
 
 <!-- With a clear scope of input and output and an understanding of what parsing and -->
+
 <!-- answering phase would look like, we need to move to feasibility and limitations. -->
 
-## III. GenAI Applications You Can Use Today
+---
+
+## II. GenAI Applications You Can Use Today
 
 GenAI isn't just a futuristic concept; it's already making waves across various
 sectors. Let's break down some practical applications that enterprises, small
@@ -398,7 +360,9 @@ see even more innovative uses across various sectors. The key is to approach
 these tools with a clear understanding of their strengths and limitations,
 always keeping the end goal and user needs in focus.
 
-## IV. The Snake Oil Detector: A Comprehensive Toolkit for Leaders Evaluating GenAI Solutions
+---
+
+## III. The Snake Oil Detector: A Comprehensive Toolkit for Leaders Evaluating GenAI Solutions
 
 In the rapidly evolving landscape of Generative AI, it's crucial to distinguish
 between genuine innovations and overblown promises. This toolkit aims to equip
@@ -459,7 +423,7 @@ GenAI solutions critically.
 -   Evaluate the need for ongoing maintenance and updates
 -   Understand the level of AI expertise required within the organization
 
-### 6. Red Flags in AI Product Pitches
+** Red Flags in AI Product Pitches: **
 
 -   Vague or overly broad claims (e.g., "Our AI can do anything!")
 -   Lack of transparency about the AI's capabilities and limitations
@@ -467,29 +431,30 @@ GenAI solutions critically.
 -   Promises of 100% accuracy or completely eliminating human involvement
 -   Inability to explain how the AI makes decisions
 
-### 7. Assessing Long-term Viability
+### 6. Assessing Long-term Viability
 
 -   Consider the AI company's track record and stability
 -   Evaluate the scalability of the AI solution
 -   Understand the potential for vendor lock-in
 -   Assess the alignment with your organization's long-term strategy
 
-### 8. Ethical and Security Considerations
+### 7. Ethical and Security Considerations
 
 -   Examine potential biases in the AI's decision-making
+-   Understand censorship levels of the base models censorship levels.
 -   Consider the impact on employees and stakeholders
 -   Evaluate transparency and explainability of the AI's processes
 -   Assess compliance with relevant regulations (e.g., GDPR, CCPA)
 
-### 9. Security and Privacy Protection:
+### 8. Security and Privacy Protection:
 
 -   How does the AI product prevent inadvertent leakage of Personally
     Identifiable Information (PII)?
--   What access control mechanisms are in place for the AI system?
+-   Ask about known prompt injection attacks against base models.
 -   How is data encrypted and protected both at rest and in transit?
 -   What is the vendor's protocol for handling potential data breaches?
 
-### 10. Safeguards Against AI Manipulation:
+### 9. Safeguards Against AI Manipulation:
 
 -   How does the product protect against prompt injection attacks?
 -   What measures are in place to prevent the AI from generating unethical,
@@ -508,7 +473,9 @@ GenAI solutions critically.
 -   Dismissive attitude towards the potential for AI to be manipulated or
     misused
 
-## Conclusion: Navigating the GenAI Maze Without Losing Your Mind (or Your Shirt)
+---
+
+## Final Word: Navigating the GenAI Maze Without Losing Your Mind (or Your Shirt)
 
 Alright, folks, we've been on quite a journey through the land of GenAI. Let's
 wrap this up with some key takeaways that'll hopefully keep you from falling
