@@ -87,6 +87,7 @@ plugins:
         - tags # will look into page.meta.tags
         - categories # will also look into page.meta.categori
   - social:
+      enabled: true 
       cards_layout_options:
         background_image: assets/images/parallax-bg.jpg
   #- pub-blog

@@ -120,8 +120,8 @@ long, medium, and short-term relationships between tokens. Whether human
 knowledge is just a set of token, phrase, and document-level weights remains a
 fascinating debate.
 
-> Insight: Its still a mystery and a raging debate whether human knowledge is
-> just a set of token, phrase and document level weights afterall.
+> 💡 Insight : Its still a mystery and a raging debate whether human knowledge
+> is just a set of token, phrase and document level weights afterall.
 
 Its only when we started training transformer models of sufficiently large
 parameter space, did we relaize the marvels of transfer learning. Transfer
