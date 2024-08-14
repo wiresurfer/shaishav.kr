@@ -1,8 +1,8 @@
 ---
-public: true
+public: false
 authors:
     - wiresurfer
-title: ./Business of Datacenters an India perspective
+title: Business of Datacenters an India perspective
 description:
     A zero-BS guide to GenAI applications in organizations. Use our Snake Oil
     detector for vendor screenings.
@@ -19,12 +19,14 @@ coverImage: ./2024/May/Assets/media/snake-oil-ai-selection-guide.svg
 # coverImage: https://c4.wallpaperflare.com/wallpaper/226/682/452/minecraft-waterfall-video-games-wallpaper-preview.jpg
 ---
 
-# Business of Datacenters - an India perspective
+# Business of Datacenters - An India perspective #1
 
 A few months ago I had a word with my friend Kumar Aakash about our views on
 AI's future, specially in the context of Indian startup opportunities. One thing
 which came up was a lack of any serious specialized AI datacenter infrastructure
 at that time. Some of the key challenges we noted were
+
+<!-- more -->
 
 -   GPU/TPU datacentres and the high tarrif to even import these.
 -   Infererence datacentres too end up going to Mumbai or Chennai across the

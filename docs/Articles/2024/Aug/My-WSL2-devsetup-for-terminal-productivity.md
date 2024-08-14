@@ -1,5 +1,5 @@
 ---
-title: Techtips - My WSL2 devsetup for terminal productivity
+title: Tech Tip - My WSL2 devsetup for terminal productivity
 created: 2024-08-14 16:27
 date: 2024-08-14
 public: true
@@ -18,7 +18,7 @@ description:
     networking in WSL2 to make your life easy.
 ---
 
-# Techtips - My WSL2 devsetup for terminal productivity
+# Tech Tip - My WSL2 devsetup for terminal productivity
 
 This guide is aimed at an intermediate to advanced user. We won't be covering
 how to setup WSL2 from scratch. There are ample guides for it, but if you insist
