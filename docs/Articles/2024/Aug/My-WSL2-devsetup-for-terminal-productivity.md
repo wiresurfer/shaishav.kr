@@ -3,7 +3,7 @@ title: Techtips - My WSL2 devsetup for terminal productivity
 created: 2024-08-14 16:27
 date: 2024-08-14
 public: true
-coverImage: https://quotefancy.com/media/wallpaper/3840x2160/1631341-Cara-Lockwood-Quote-It-s-better-to-put-yourself-out-there-and-get.jpg
+coverImage: https://miro.medium.com/v2/resize:fit:1400/0*XcnXh0HWWO8tHSpA.jpg
 categories:
     - engineering
 tags:
@@ -23,6 +23,8 @@ description:
 This guide is aimed at an intermediate to advanced user. We won't be covering
 how to setup WSL2 from scratch. There are ample guides for it, but if you insist
 on following my recommended source, here is a great guide.
+
+<!-- more -->
 
 https://www.freecodecamp.org/news/how-to-install-wsl2-windows-subsystem-for-linux-2-on-windows-10/
 
