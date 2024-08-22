@@ -26,7 +26,14 @@ on following my recommended source, here is a great guide.
 
 <!-- more -->
 
-https://www.freecodecamp.org/news/how-to-install-wsl2-windows-subsystem-for-linux-2-on-windows-10/
+This should help people with getting a step by step guide to getting WSL2 up and
+running.
+[How to Install WSL2 on Win10](https://www.freecodecamp.org/news/how-to-install-wsl2-windows-subsystem-for-linux-2-on-windows-10/)
+
+For the folks who are more comfortable with both windows and linux, the rest of
+the blog would work out more as a guideline which you can tweak to your liking.
+I have broken down the document into sections with a set objective. Follow along
+and happy tinkering.
 
 ## Preparing Windows Installation
 
@@ -124,7 +131,7 @@ located in `%UserProfile%\.wslconfig` which on most systems would resolve to
 `C:\Users\<username>\.wslconfig`
 
 For advanced users, here is a list of flags available for you to tinker with.
-https://learn.microsoft.com/en-us/windows/wsl/wsl-config#wslconfig
+[MSDN: About .wslconfig](https://learn.microsoft.com/en-us/windows/wsl/wsl-config#wslconfig)
 
 To edit .wslconfig you can run `notepad C:\Users\<username>'.wslconfig` from
 cmd/powershell/run
@@ -216,13 +223,13 @@ WSL2 doesn't require running a separate Xserver anymore. We have set the option
 in .wslconfig above to enable GUI Applications.
 
 If you are doing a new installation follow this
-https://learn.microsoft.com/en-us/windows/wsl/tutorials/gui-apps
+[MSDN: GUI apps in WSL on Windows](https://learn.microsoft.com/en-us/windows/wsl/tutorials/gui-apps)
 
 If you are on an older distro, specially if you haven't abandoned Win10 yet You
 would need to install an Xserver.
-https://community.chocolatey.org/packages/vcxsrv
+[Chocolatey: vcxsrv package](https://community.chocolatey.org/packages/vcxsrv)
 
-And follow the steps here. https://www.guide2wsl.com/x11/
+And follow the steps here. [Guide2WSL: X11](https://www.guide2wsl.com/x11/)
 
 Start vcxsrv and enable unautorized clients from connecting Set
 `DISPLAY=<windows-host-ip>:0` variable in your profile to point to your Windows
@@ -253,7 +260,8 @@ You have three options to go with here.
     3. docker-desktop isn't available for Windows arm devices.
     4. Gets tricky when using with advanced permissions, hosts, etc.
     5. Comes out of the box.
-    6. Steps https://docs.docker.com/desktop/wsl/
+    6. Steps
+       [Docker Desktop on Windows WSL](https://docs.docker.com/desktop/wsl/)
 2. User docker client + docker daemon running inside WSL2.
     1. Much cleaner, closest to how things would be on a tradition Ubuntu
        distro.
@@ -261,14 +269,17 @@ You have three options to go with here.
     3. Consumes lesser resources. you have advanced control on hosts, volumes,
        permissions et.al.
     4. plays well with k3d/kind/minikube and friends.
-    5. Steps to follow: https://www.guide2wsl.com/dockerd/
+    5. Steps to follow:
+       [Guide2WSL Docker daemon inside WSL2](https://www.guide2wsl.com/dockerd/)
 3. Run docker using buildkit + containerd + nerdctl/podman
     1. For advanced users. You can run rootless containers too.
     2. You have control over networking using CNI plugins
     3. You can also stop buildkit from running and only launch it on demand.
     4. No daemons by default. Most frugal in terms of resources
-    5. Steps for nerdctl : https://www.guide2wsl.com/nerdctl/
-    6. Steps for podman: https://www.guide2wsl.com/podman/
+    5. Steps for nerdctl :
+       [Guide2WSL: nerdctl on wsl2](https://www.guide2wsl.com/nerdctl/)
+    6. Steps for podman:
+       [Guide2WSL: podman on wsl2](https://www.guide2wsl.com/podman/)
 
 ## Bonus : Tailscale for accessing your phone,windows, wsl2, tablet over one network
 
