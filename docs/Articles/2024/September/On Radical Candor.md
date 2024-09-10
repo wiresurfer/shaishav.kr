@@ -1,13 +1,22 @@
 ---
+title: Navigating Radical Candor, the Delicate Balance Between Trust and Honesty
+created: 2024-09-04 00:00
+date: 2024-09-04
+public: true
+coverImage: https://managementforstartups.com/articles/content/images/2019/02/DLY6Cu-VAAEZJfm.jpg
+categories:
+    - Management
 tags:
     - topic/leadership
     - topic/management
     - topic/culture
-categories:
-    - Management
-title: Navigating Radical Candor, the Delicate Balance Between Trust and Honesty
+topic:
+    - leadership
+description:
+    Explore the concept of Radical Candor in leadership, focusing on the crucial
+    balance between trust and honest feedback. Learn how to foster a culture of
+    trust and effectively implement Radical Candor in your organization.
 ShowToc: true
-date: 2024-09-04
 ---
 
 # Navigating Radical Candor: The Delicate Balance Between Trust and Honest Feedback
@@ -19,10 +28,8 @@ date: 2024-09-04
 <!-- their 0-1 and 1-100 journey -->
 
 <!-- About Radical Candor. I have always identified with this way of working. We -->
-<!-- operate with honest clarity in my family. It does get hairy in marriage. Still -->
-<!-- working on this. -->
-
-## The Radical Candor Conundrum
+<!-- operate with honest clarity in my daily life. Its almost second nature which doesn;t win me a popularity contest but does get me a few lifelong friends. It does get hairy in partnerships! -->
+<!-- So I thought I would do a deep dive into my thoughts on this -->
 
 I've often grappled with how to give feedback without coming across as too harsh
 or too soft. Navigating this fine line has always baffled the engineer in me -
@@ -30,6 +37,10 @@ I've seen the same approach work in some cases and backfire in others. It
 becomes even more challenging when I need to mentor others to practice the same.
 How am I to teach someone Radical Candor when I myself haven't always done it
 right.
+
+<!-- more -->
+
+## The Radical Candor Conundrum
 
 Some situations are truly heartbreaking when someone approached a situation with
 utmost care and empathy at my behest and yet the perceived feedback was largely

@@ -1,22 +1,24 @@
 ---
-public: false
-authors:
-    - wiresurfer
-title: Business of Datacenters an India perspective
-description:
-    A zero-BS guide to GenAI applications in organizations. Use our Snake Oil
-    detector for vendor screenings.
+title: Business of Datacenters - An India perspective
+created: 2024-08-31 02:05
+date: 2024-08-31
+public: true
+ShowToc: true
+coverImage: https://stl.tech/wp-content/uploads/2023/02/Indian-data-center-market.webp
 categories:
-    - Engineering
+    - Business
 tags:
+    - topic/business
+    - topic/indian-markets
     - topic/deep-dives
 topic:
-    - topic1
-created: 2024-05-31 02:05
-modified: 2024-05-31
-date: 2024-05-31
-coverImage: ./2024/May/Assets/media/snake-oil-ai-selection-guide.svg
-# coverImage: https://c4.wallpaperflare.com/wallpaper/226/682/452/minecraft-waterfall-video-games-wallpaper-preview.jpg
+    - Startups
+authors:
+    - wiresurfer
+description:
+    An in-depth analysis of India's datacenter landscape, exploring the current
+    state, challenges, and future prospects of the country's AI and data
+    infrastructure.
 ---
 
 # Business of Datacenters - An India perspective #1
