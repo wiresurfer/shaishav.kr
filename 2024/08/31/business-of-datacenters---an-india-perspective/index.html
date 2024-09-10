@@ -3,16 +3,16 @@
  <head>
   <meta charset="utf-8"/>
   <meta content="width=device-width,initial-scale=1" name="viewport"/>
-  <meta content="A zero-BS guide to GenAI applications in organizations. Use our Snake Oil detector for vendor screenings." name="description"/>
-  <link href="https://blog.shaishav.kr/2024/05/31/business-of-datacenters-an-india-perspective/" rel="canonical"/>
-  <link href="../future-of-organizations---post-genai-outlook-and-trends/" rel="prev"/>
-  <link href="../../../06/04/unleash-the-forbidden---enabling-ebpfxdp-for-kernel-tinkering-on-wsl2/" rel="next"/>
+  <meta content="An in-depth analysis of India's datacenter landscape, exploring the current state, challenges, and future prospects of the country's AI and data infrastructure." name="description"/>
+  <link href="https://blog.shaishav.kr/2024/08/31/business-of-datacenters---an-india-perspective/" rel="canonical"/>
+  <link href="../../14/tech-tip---my-wsl2-devsetup-for-terminal-productivity/" rel="prev"/>
+  <link href="../../../09/04/navigating-radical-candor-the-delicate-balance-between-trust-and-honesty/" rel="next"/>
   <link href="../../../../feed_rss_created.xml" rel="alternate" title="RSS feed" type="application/rss+xml"/>
   <link href="../../../../feed_rss_updated.xml" rel="alternate" title="RSS feed of updated content" type="application/rss+xml"/>
   <link href="../../../../assets/images/favicon.png" rel="icon"/>
   <meta content="mkdocs-1.6.0, mkdocs-material-9.5.24" name="generator"/>
   <title>
-   Business of Datacenters an India perspective - wiresurfer's library | © shaishav.kr
+   Business of Datacenters - An India perspective - wiresurfer's library | © shaishav.kr
   </title>
   <link href="../../../../assets/stylesheets/main.6543a935.min.css" rel="stylesheet"/>
   <link href="../../../../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
@@ -34,16 +34,16 @@
    __md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}
   </script>
   <meta content="website" property="og:type"/>
-  <meta content="Business of Datacenters an India perspective - wiresurfer's library | © shaishav.kr" property="og:title"/>
-  <meta content="A zero-BS guide to GenAI applications in organizations. Use our Snake Oil detector for vendor screenings." property="og:description"/>
+  <meta content="Business of Datacenters - An India perspective - wiresurfer's library | © shaishav.kr" property="og:title"/>
+  <meta content="An in-depth analysis of India's datacenter landscape, exploring the current state, challenges, and future prospects of the country's AI and data infrastructure." property="og:description"/>
   <meta content="https://blog.shaishav.kr/assets/images/social/Articles/2024/Aug/Business of Datacenters an India perspective.png" property="og:image"/>
   <meta content="image/png" property="og:image:type"/>
   <meta content="1200" property="og:image:width"/>
   <meta content="630" property="og:image:height"/>
-  <meta content="https://blog.shaishav.kr/2024/05/31/business-of-datacenters-an-india-perspective/" property="og:url"/>
+  <meta content="https://blog.shaishav.kr/2024/08/31/business-of-datacenters---an-india-perspective/" property="og:url"/>
   <meta content="summary_large_image" name="twitter:card"/>
-  <meta content="Business of Datacenters an India perspective - wiresurfer's library | © shaishav.kr" name="twitter:title"/>
-  <meta content="A zero-BS guide to GenAI applications in organizations. Use our Snake Oil detector for vendor screenings." name="twitter:description"/>
+  <meta content="Business of Datacenters - An India perspective - wiresurfer's library | © shaishav.kr" name="twitter:title"/>
+  <meta content="An in-depth analysis of India's datacenter landscape, exploring the current state, challenges, and future prospects of the country's AI and data infrastructure." name="twitter:description"/>
   <meta content="https://blog.shaishav.kr/assets/images/social/Articles/2024/Aug/Business of Datacenters an India perspective.png" name="twitter:image"/>
   <link href="../../../../feed_json_created.json" rel="alternate" title="JSON feed" type="application/feed+json">
    <link href="../../../../feed_json_updated.json" rel="alternate" title="JSON feed of updated content" type="application/feed+json">
@@ -81,14 +81,14 @@
    </link>
   </link>
   <meta content="article" property="og:type"/>
-  <meta content="Business of Datacenters an India perspective" property="og:title"/>
-  <meta content="A zero-BS guide to GenAI applications in organizations. Use our Snake Oil detector for vendor screenings." property="og:description"/>
+  <meta content="Business of Datacenters - An India perspective" property="og:title"/>
+  <meta content="An in-depth analysis of India's datacenter landscape, exploring the current state, challenges, and future prospects of the country's AI and data infrastructure." property="og:description"/>
   <meta content="wiresurfer's library | © shaishav.kr" property="og:site_name"/>
   <meta content="en_US" property="og:locale"/>
-  <meta content="https://blog.shaishav.kr/2024/05/31/business-of-datacenters-an-india-perspective/" property="og:url"/>
+  <meta content="https://blog.shaishav.kr/2024/08/31/business-of-datacenters---an-india-perspective/" property="og:url"/>
   <meta content="summary" property="twitter:card"/>
-  <meta content="Business of Datacenters an India perspective" property="twitter:title"/>
-  <meta content="A zero-BS guide to GenAI applications in organizations. Use our Snake Oil detector for vendor screenings." property="twitter:description"/>
+  <meta content="Business of Datacenters - An India perspective" property="twitter:title"/>
+  <meta content="An in-depth analysis of India's datacenter landscape, exploring the current state, challenges, and future prospects of the country's AI and data infrastructure." property="twitter:description"/>
  </head>
  <body data-md-color-accent="indigo" data-md-color-primary="red" data-md-color-scheme="slate" dir="ltr">
   <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
@@ -145,7 +145,7 @@
       </div>
       <div class="md-header__topic" data-md-component="header-topic">
        <span class="md-ellipsis">
-        Business of Datacenters an India perspective
+        Business of Datacenters - An India perspective
        </span>
       </div>
      </div>
@@ -242,7 +242,7 @@
       </a>
      </li>
      <li class="md-tabs__item">
-      <a class="md-tabs__link" href="../../../../category/insights/">
+      <a class="md-tabs__link" href="../../../../category/business/">
        Categories
       </a>
      </li>
@@ -1533,6 +1533,13 @@
             </label>
             <ul class="md-nav__list" data-md-scrollfix="">
              <li class="md-nav__item">
+              <a class="md-nav__link" href="../../../../category/business/">
+               <span class="md-ellipsis">
+                Business
+               </span>
+              </a>
+             </li>
+             <li class="md-nav__item">
               <a class="md-nav__link" href="../../../../category/insights/">
                <span class="md-ellipsis">
                 Insights
@@ -1553,6 +1560,20 @@
                </span>
               </a>
              </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="../../../../category/graphics/">
+               <span class="md-ellipsis">
+                graphics
+               </span>
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="../../../../category/leadership/">
+               <span class="md-ellipsis">
+                leadership
+               </span>
+              </a>
+             </li>
             </ul>
            </nav>
           </li>
@@ -1565,6 +1586,66 @@
       <div class="md-sidebar__scrollwrap">
        <div class="md-sidebar__inner">
         <nav aria-label="On This Page" class="md-nav md-nav--secondary">
+         <label class="md-nav__title" for="__toc">
+          <span class="md-nav__icon md-icon">
+          </span>
+          On This Page
+         </label>
+         <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+          <li class="md-nav__item">
+           <a class="md-nav__link" href="#state-of-the-union-indias-dc-landscape">
+            <span class="md-ellipsis">
+             State of the Union : India's DC landscape
+            </span>
+           </a>
+           <nav aria-label="State of the Union : India's DC landscape" class="md-nav">
+            <ul class="md-nav__list">
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="#consumer-bandwidth-intensive-services">
+               <span class="md-ellipsis">
+                Consumer Bandwidth-Intensive Services
+               </span>
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="#business-bandwidth-intensive-services">
+               <span class="md-ellipsis">
+                Business Bandwidth-Intensive Services
+               </span>
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="#hosting-locations">
+               <span class="md-ellipsis">
+                Hosting Locations
+               </span>
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="#data-flow-and-undersea-cables">
+               <span class="md-ellipsis">
+                Data Flow and Undersea Cables
+               </span>
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="#current-data-center-capacity">
+               <span class="md-ellipsis">
+                Current Data Center Capacity
+               </span>
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="#hosting-popular-services">
+               <span class="md-ellipsis">
+                Hosting Popular Services
+               </span>
+              </a>
+             </li>
+            </ul>
+           </nav>
+          </li>
+         </ul>
         </nav>
        </div>
       </div>
@@ -1618,8 +1699,8 @@
                  <path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5v-5Z">
                  </path>
                 </svg>
-                <time class="md-ellipsis" datetime="2024-05-31 00:00:00">
-                 May 31, 2024
+                <time class="md-ellipsis" datetime="2024-08-31 00:00:00">
+                 August 31, 2024
                 </time>
                </div>
               </li>
@@ -1631,8 +1712,8 @@
                 </svg>
                 <span class="md-ellipsis">
                  in
-                 <a href="../../../../category/engineering/">
-                  engineering
+                 <a href="../../../../category/business/">
+                  Business
                  </a>
                 </span>
                </div>
@@ -1644,7 +1725,7 @@
                  </path>
                 </svg>
                 <span class="md-ellipsis">
-                 1 min read
+                 8 min read
                 </span>
                </div>
               </li>
@@ -1658,6 +1739,12 @@
       </div>
       <article class="md-content__inner md-typeset">
        <nav class="md-tags">
+        <a class="md-tag" href="../../../../tags/#topicbusiness">
+         topic/business
+        </a>
+        <a class="md-tag" href="../../../../tags/#topicindian-markets">
+         topic/indian-markets
+        </a>
         <a class="md-tag" href="../../../../tags/#topicdeep-dives">
          topic/deep-dives
         </a>
@@ -1705,9 +1792,391 @@ for a while.
        </p>
        <blockquote>
         <p>
-         Is India ready to host its own AI revolution? I
+         Is India ready to host its own AI revolution? If not, what steps can we take
+to be ready in the coming decade.
         </p>
        </blockquote>
+       <h2 id="state-of-the-union-indias-dc-landscape">
+        State of the Union : India's DC landscape
+       </h2>
+       <p>
+        India accounts for about 4% of the worlds datacenter capacity as of 2023. It
+goes without saying that we account for a whole lot more humans in the world
+than 4% would account for.
+       </p>
+       <p>
+        We have decent connectivity for our countryment with 46.3% indians online as
+of 2021. And we do fare pretty well at bandwidth of our network connections
+        <a href="https://utkarsh.com/current-affairs/india-jumpes-72-positions-in-the-ookla-speedtest-global-index#:~:text=According%20to%20the%20latest%20Ookla,5G%20services%20within%20the%20country">
+         jumping 72 places up to be 47th world wide as of 2023
+        </a>
+        .
+       </p>
+       <p>
+        Lets just say, with JIO lighting the match to rock bottom pricing, even with
+recent corrections, India's connectivity story is a net win!
+       </p>
+       <p>
+        I will admit, we do have swathes of land, underserved communities and patches of
+silence all across our geography which still dont have a decent reliable network
+backhaul. But I don't see this as an impossible to solve situation. I am
+confident products like starlink would drive the cost and feasibility of
+satellite internet down as soon as we have local playes and regulatory hirdles
+covered. We also need to think of services we would offer once we connect these
+brand new users. This could well be a topic for another day, but lets just say,
+LEO and MEO are gonna get crowded soon. Keep an eye out for Mukesh Ambani's JIO
+space, Sunil Mittal backed OneWeb along with longtime incumbent Hughes and
+INMARSAT pivoting to satellite broadband in the next 5 years.
+       </p>
+       <p>
+        In short, India's bandwidth usage has seen significant growth over the past few
+years. Here are some key points:
+       </p>
+       <ol>
+        <li>
+         <p>
+          <strong>
+           Average Data Consumption
+          </strong>
+          : As of 2023, the average data consumption per
+   user per month in India was around 24.1 gigabytes³. This is a substantial
+   increase from previous years.
+         </p>
+        </li>
+        <li>
+         <p>
+          <strong>
+           Total Data Usage
+          </strong>
+          : The total volume of wireless internet data usage in
+   India surged to 32,397 petabytes in 2021, up from around 4,200 petabytes in
+   2018⁴.
+         </p>
+        </li>
+        <li>
+         <p>
+          <strong>
+           Internet Penetration
+          </strong>
+          : By 2024, the internet penetration rate in India
+   rose to over 52%, meaning more than half of the population had internet
+   access².
+         </p>
+        </li>
+        <li>
+         <p>
+          <strong>
+           4G and 5G Traffic
+          </strong>
+          : 4G data traffic contributes to 99% of the overall data
+   traffic, while 5G was launched in India in October 2022³.
+         </p>
+        </li>
+       </ol>
+       <p>
+        This rapid increase in data usage is driven by affordable mobile internet plans,
+widespread smartphone adoption, and the growing digital ecosystem in the
+country.
+       </p>
+       <p>
+        So far so good, but lets look at our internet consumption patterns.
+       </p>
+       <p>
+        India's internet usage is driven by a variety of services, both for consumers
+and businesses. Here's a breakdown:
+       </p>
+       <h3 id="consumer-bandwidth-intensive-services">
+        Consumer Bandwidth-Intensive Services
+       </h3>
+       <ol>
+        <li>
+         <strong>
+          Streaming Services
+         </strong>
+         : Platforms like Netflix, Amazon Prime Video, and
+   Disney+ Hotstar are major contributors to data consumption. Video streaming
+   accounts for a significant portion of internet traffic[^6].
+        </li>
+        <li>
+         <strong>
+          Social Media
+         </strong>
+         : Apps like YouTube, Instagram, Facebook, and TikTok also
+   consume a lot of bandwidth due to video content
+        </li>
+        <li>
+         <strong>
+          Online Gaming
+         </strong>
+         : Games like PUBG Mobile, Call of Duty Mobile, and other
+   multiplayer games require substantial data for real-time interaction.
+        </li>
+        <li>
+         <strong>
+          Video Conferencing
+         </strong>
+         : Services like Zoom, Microsoft Teams, and Google Meet
+   have seen increased usage, especially post-pandemic⁶.
+        </li>
+       </ol>
+       <h3 id="business-bandwidth-intensive-services">
+        Business Bandwidth-Intensive Services
+       </h3>
+       <ol>
+        <li>
+         <strong>
+          Cloud Services
+         </strong>
+         : Businesses rely heavily on cloud platforms like AWS,
+   Microsoft Azure, and Google Cloud for storage, computing, and other
+   services⁶.
+        </li>
+        <li>
+         <strong>
+          Enterprise Applications
+         </strong>
+         : Tools like Salesforce, SAP, and other SaaS
+   applications are widely used.
+        </li>
+        <li>
+         <strong>
+          Data Analytics
+         </strong>
+         : Big data and analytics platforms consume significant
+   bandwidth for data processing and transfer.
+        </li>
+        <li>
+         <strong>
+          Remote Work Tools
+         </strong>
+         : VPNs, remote desktop applications, and collaboration
+   tools are essential for business operations.
+        </li>
+        <li>
+         AI! With Generative AI sticking to text at the moment, we are still in a slow
+   bandwidth growth phase. But sooner rather than later,, audio and multimodal
+   models will start demanding much bigger piece of the bandwidth pie. AI
+   service providers also need DC capacity to host inference and training
+   hardware in India which has created a high demand for GPU and NPU compute.
+   Yotta data centers and Jarvislabs are two new players in this space with
+   their GPU offerings as their USP and claim to fame
+        </li>
+       </ol>
+       <h3 id="hosting-locations">
+        Hosting Locations
+       </h3>
+       <ul>
+        <li>
+         <strong>
+          Domestic Hosting
+         </strong>
+         : Many Indian companies and services host their data
+    within India. This includes local data centers operated by companies like
+    Reliance Jio, Airtel, and Tata Communications.
+        </li>
+        <li>
+         <strong>
+          International Hosting
+         </strong>
+         : Some services, especially global platforms like
+    Netflix and AWS, have data centers both in India and abroad. However, a
+    significant portion of their infrastructure is still based internationally
+        </li>
+       </ul>
+       <h3 id="data-flow-and-undersea-cables">
+        Data Flow and Undersea Cables
+       </h3>
+       <p>
+        India, like most countries relies on undersea cables to connect to global
+internet infrastructure. These cables are crucial for international data
+transfer, especially for services hosted outside India. However, there is a
+growing trend towards increasing domestic data center capacity to reduce latency
+and improve service reliability. This trend is driven by the needs of two of the
+most ubiquitous and dataintensive services which consumers love! Streaming and
+Social Media!. Snappy snacable video needs to be cached and served from as close
+to a user as possible or else we incur a penalty of moving bits over expensive
+undersea cables. There's also a growing need to keep Indian user generated
+content withing our national perimeter for reasons as simple as national safety
+and as far fetched as abuse of indian data for AI training by foreign actors.
+       </p>
+       <p>
+        I say far fetched, but its already happening. A sizeable chunk of content
+created by Indians lands up on services run by US megacorps. For a brief period,
+we did indulge Chinese social media apps but a very swift regulatory push saw
+that door shut pretty quickly. With recent push by OpenAI to collaborate with 3
+letter agencies within USA and play a more direct role with development of AI as
+a national security tool, its natural to conclude we may have given up a lot of
+our users data in lieu of all the cat memes.
+       </p>
+       <p>
+        India has made significant strides in expanding its data center (DC) capacity to
+host popular services like streaming, social media, online gaming, and video
+conferencing. Here are some key points:
+       </p>
+       <h3 id="current-data-center-capacity">
+        Current Data Center Capacity
+       </h3>
+       <ol>
+        <li>
+         <strong>
+          Growth in Data Centers
+         </strong>
+         : India has seen a rapid increase in the number of
+   data centers. Major players like Reliance Jio, Airtel, Tata Communications,
+   and global giants like AWS, Microsoft Azure, and Google Cloud have
+   established or are expanding their data centers in India.
+        </li>
+        <li>
+         <strong>
+          Government Initiatives
+         </strong>
+         : The Indian government has been promoting data
+   localization, encouraging companies to store data within the country. This
+   has led to increased investment in local data center infrastructure.
+        </li>
+        <li>
+         <strong>
+          Capacity and Scalability
+         </strong>
+         : The current data center capacity is growing,
+   with several new projects underway. For instance, Adani Group and Hiranandani
+   Group are investing heavily in building large-scale data centers.
+        </li>
+       </ol>
+       <h3 id="hosting-popular-services">
+        Hosting Popular Services
+       </h3>
+       <ul>
+        <li>
+         <strong>
+          Streaming Services
+         </strong>
+         : Platforms like Netflix and Amazon Prime Video have
+    started hosting content locally to reduce latency and improve user
+    experience. Hosting services are incentivized to host local content close so
+    sooner or later pareto 80% of data would be hosted on our soil.
+        </li>
+        <li>
+         <p>
+          Related to streaming, Youtube is another big player backed by hyperscale
+    infrastructure. Its hard to curb them to one geography. And they usually
+    build up their own infrastructure rather than buy capacity on the market.
+         </p>
+        </li>
+        <li>
+         <p>
+          <strong>
+           Social Media
+          </strong>
+          : Companies like Facebook and Instagram are increasingly
+    using local data centers for better performance and compliance with data
+    localization laws. While this promotes players like Meta to start with
+    keeping data local, hyperscalers have a global mesh of interconnects and
+    there's no stopping where the data would eventually get copied to, for
+    operations, redundancy and strategic reasons.
+         </p>
+        </li>
+        <li>
+         There's strategic partnership between Jio and Meta and recently Reliance
+    chairman Mukesh Ambani has gone on to announce an AI cloud hosted in India
+    powered by Meta AI.
+        </li>
+        <li>
+         <strong>
+          Online Gaming
+         </strong>
+         : Gaming companies are also setting up local servers to
+    provide a smoother gaming experience with lower latency.
+        </li>
+        <li>
+         <strong>
+          Video Conferencing
+         </strong>
+         : Services like Zoom and Microsoft Teams have been
+    optimizing their infrastructure to include local data centers.
+        </li>
+       </ul>
+       <h1 id="challenges-and-future-prospects">
+        Challenges and Future Prospects
+       </h1>
+       <p>
+        Its abundantly clear that the DC sector is gonna see a windfall over the next
+decade.
+       </p>
+       <ul>
+        <li>
+         <strong>
+          Infrastructure Development
+         </strong>
+         : While significant progress has been made,
+    continuous investment in infrastructure is needed to keep up with the
+    growing demand.
+        </li>
+        <li>
+         <strong>
+          Energy and Sustainability
+         </strong>
+         : Data centers require substantial energy, and
+    there is a push towards sustainable and energy-efficient solutions.
+        </li>
+        <li>
+         <strong>
+          Regulatory Environment
+         </strong>
+         : Compliance with data protection and localization
+    laws is crucial for both domestic and international companies operating in
+    India.
+        </li>
+       </ul>
+       <p>
+        Overall, India is on the right path to becoming self-sufficient in hosting its
+own data for popular services. The ongoing investments and government support
+are likely to further enhance the country's data center capacity in the coming
+years.
+       </p>
+       <p>
+        I have compiled a few important resources if you are inclined to look at the
+technical aspects of a datacentre, with an intention to write about this as I
+dive deeper. Till then, this Board should be self explanatory.
+       </p>
+       <iframe allow="fullscreen; clipboard-read; clipboard-write" allowfullscreen="" frameborder="0" height="432" scrolling="no" src="https://miro.com/app/live-embed/uXjVKk_KO-A=/?moveToViewport=-4011,-3576,11830,6571&amp;embedId=833406712359" width="768">
+       </iframe>
+       <p>
+        If you are someone who's working in the DC space in India, or planning on diving
+into this space, I would love to hear from you. More specifically, what are you
+building and what's your play? What's your biggest challenge? I would love to
+connect over linkedin or twitter and hear your unique perspective and add to
+this series of blogs.
+       </p>
+       <hr/>
+       <p>
+        (1) India: average data consumption per user per month 2023 - Statista.
+https://www.statista.com/statistics/1114922/india-average-data-consumption-per-user-per-month/.
+(2) India's Internet Data Usage Shoots Up To 14.1 GB Per Month.
+https://inc42.com/buzz/indias-internet-data-usage-shoots-up-to-14-1-gb-per-month/.
+(3) India: internet penetration rate 2024 | Statista.
+https://www.statista.com/statistics/792074/india-internet-penetration-rate/. (4)
+Internet usage in India - statistics &amp; facts | Statista.
+https://www.statista.com/topics/2157/internet-usage-in-india/. (5) Massive data
+usage growth in India: Economic survey.
+https://economictimes.indiatimes.com/industry/telecom/telecom-news/massive-data-usage-growth-in-india-economic-survey/articleshow/89245236.cms.
+       </p>
+       <p>
+        (6) 52% of Indian population had internet access in 2022, says report.
+https://economictimes.indiatimes.com/tech/technology/52-of-indian-population-had-internet-access-in-2022-says-report/articleshow/99964704.cms.
+(7) US tech giants fight Indian telcos’ bid to regulate internet services, pay
+for network usage.
+https://www.msn.com/en-us/money/technology/us-tech-giants-fight-indian-telcos-bid-to-regulate-internet-services/ar-AA1p66j8.
+(8) India adds 7.3 cr internet subscribers in FY24.
+https://www.fortuneindia.com/macro/india-adds-73-cr-internet-subscribers-in-fy24/118083.
+(9) India's internet user base grows 8% YoY to 95.4 crore.
+https://www.newsbytesapp.com/news/science/india-s-internet-user-base-up-8-in-a-year/story.
+(10) Internet usage in India - statistics &amp; facts | Statista.
+https://www.statista.com/topics/2157/internet-usage-in-india/. (11) Digital
+2023: India — DataReportal – Global Digital Insights.
+https://datareportal.com/reports/digital-2023-india.
+(12)https://www.blackridgeresearch.com/blog/list-of-top-ten-largest-data-center-companies-in-india
+       </p>
       </article>
      </div>
      <script>
@@ -1717,7 +2186,7 @@ for a while.
    </main>
    <footer class="md-footer mt-16">
     <nav aria-label="footer.title" class="md-footer__inner md-grid">
-     <a aria-label="Previous: Future of Organizations - Post GenAI Outlook and Trends" class="md-footer__link md-footer__link--prev" href="../future-of-organizations---post-genai-outlook-and-trends/" rel="prev">
+     <a aria-label="Previous: Tech Tip - My WSL2 devsetup for terminal productivity" class="md-footer__link md-footer__link--prev" href="../../14/tech-tip---my-wsl2-devsetup-for-terminal-productivity/" rel="prev">
       <div class="md-footer__button md-icon">
        <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
         <path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z">
@@ -1729,17 +2198,17 @@ for a while.
         <span class="md-footer__direction">
          Previous
         </span>
-        Future of Organizations - Post GenAI Outlook and Trends
+        Tech Tip - My WSL2 devsetup for terminal productivity
        </div>
       </div>
      </a>
-     <a aria-label="Next: Unleash the Forbidden - Enabling eBPF/XDP for Kernel Tinkering on WSL2" class="md-footer__link md-footer__link--next" href="../../../06/04/unleash-the-forbidden---enabling-ebpfxdp-for-kernel-tinkering-on-wsl2/" rel="next">
+     <a aria-label="Next: Navigating Radical Candor, the Delicate Balance Between Trust and Honesty" class="md-footer__link md-footer__link--next" href="../../../09/04/navigating-radical-candor-the-delicate-balance-between-trust-and-honesty/" rel="next">
       <div class="md-footer__title">
        <div class="md-ellipsis">
         <span class="md-footer__direction">
          Next
         </span>
-        Unleash the Forbidden - Enabling eBPF/XDP for Kernel Tinkering on WSL2
+        Navigating Radical Candor, the Delicate Balance Between Trust and Honesty
        </div>
       </div>
       <div class="md-footer__button md-icon">
