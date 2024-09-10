@@ -471,16 +471,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://blog.shaishav.kr/category/engineering/</loc>
-         <lastmod>2024-09-10</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://blog.shaishav.kr/category/leadership/</loc>
-         <lastmod>2024-09-10</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://blog.shaishav.kr/category/management/</loc>
          <lastmod>2024-09-10</lastmod>
          <changefreq>daily</changefreq>
@@ -491,12 +481,12 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://blog.shaishav.kr/category/insights/</loc>
+         <loc>https://blog.shaishav.kr/category/engineering/</loc>
          <lastmod>2024-09-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://blog.shaishav.kr/category/graphics/</loc>
+         <loc>https://blog.shaishav.kr/category/insights/</loc>
          <lastmod>2024-09-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
