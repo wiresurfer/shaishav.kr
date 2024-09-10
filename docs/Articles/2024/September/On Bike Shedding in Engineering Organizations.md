@@ -1,13 +1,25 @@
 ---
-tags:
-  - topic/engineering
-  - topic/software-development
-  - topic/productivity
-categories:
-  - Engineering
-title: Bike Shedding and the Law of Triviality: Lessons from the Linux Kernel Conflict
-ShowToc: true
+title:
+    Bike Shedding and the Law of Triviality - Lessons from the Linux Kernel
+    Conflict
+created: 2024-09-10 02:14
 date: 2024-09-10
+public: true
+coverImage: https://images.prismic.io/thedecisionlab/0eb368eb-0bdf-49c7-996f-23020e94be34_Bikeshedding.jpg?auto=compress,format
+categories:
+    - engineering
+    - leadership
+tags:
+    - topic/bike-shedding
+    - topic/team-management
+    - topic/open-source
+topic:
+    - leadership
+description:
+    Explore the concept of bike shedding in product teams, using the recent
+    Linux kernel conflict as a case study. Learn how to spot and prevent trivial
+    debates from derailing progress, with practical advice for leaders in
+    startups and open-source communities.
 ---
 
 # Bike Shedding and the Law of Triviality: Lessons from the Linux Kernel Conflict
@@ -21,6 +33,8 @@ bike shedding, using this real-world example to illustrate its effects, and
 provides practical advice on how leaders can prevent it.
 
 <!-- more -->
+
+![Everything makes sense when its a graph!](Assets/2024-09-10-18-13-25.png)
 
 ## Table of Contents
 
@@ -119,6 +133,8 @@ control.
    decision, wasting time and energy.
 3. **Personal attacks or toxic behavior**: When arguments become personal, it’s
    a sign that the conversation has drifted away from the real issues.
+
+![There's always a Dilbert strip which makes a good point](Assets/2024-09-10-18-14-28.png)
 
 Bike shedding can happen in various forms across different teams, not just in
 programming but also between product management, engineering, sales, and
@@ -266,8 +282,6 @@ graph TD;
     D -->|Yes| E[Move on to more important tasks 🚀];
     D -->|No| C;
 ```
-
-![Is this Meeting on the right track?](/home/tempuser/Desktop/gondor-notes/Assets/2024-09-10-02-14-58.png)
 
 ### Stopping Bike Shedding Before It Begins
 

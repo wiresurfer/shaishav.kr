@@ -1,12 +1,35 @@
-# Deep Dive into Linux Graphics: From Program to Pixel
+---
+title: Deep Dive into Linux Graphics - From Program to Pixel
+created: 2024-07-15 10:00
+date: 2024-07-15
+public: true
+coverImage: https://user-images.githubusercontent.com/62131389/124236344-4ddb8c80-db51-11eb-9278-c001b21a46ac.png
+categories:
+    - engineering
+    - graphics
+tags:
+    - topic/linux
+    - topic/graphics
+    - topic/programming
+topic:
+    - linux
+    - graphics
+description:
+    Explore the complex journey of a pixel from a user program to your screen in
+    Linux. This comprehensive guide covers the entire Linux graphics stack,
+    including window managers, display servers, the Linux kernel, GPUs, and
+    more.
+---
 
-## Introduction
+# Deep Dive into Linux Graphics: From Program to Pixel
 
 Linux graphics is a complex ecosystem involving multiple layers of software and
 hardware. In this deep dive, I'll explore each component of the Linux graphics
 stack, from user programs to the final pixel on your screen. On this quest, I
 will provide practical examples and commands you can run on your Linux machine
 to interact with these components directly and take a peek under the hood
+
+<!-- more -->
 
 > Why Should You Care?
 
