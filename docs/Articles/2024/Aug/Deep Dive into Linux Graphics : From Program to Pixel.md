@@ -5,8 +5,7 @@ date: 2024-07-15
 public: true
 coverImage: https://user-images.githubusercontent.com/62131389/124236344-4ddb8c80-db51-11eb-9278-c001b21a46ac.png
 categories:
-    - engineering
-    - graphics
+    - Engineering
 tags:
     - topic/linux
     - topic/graphics

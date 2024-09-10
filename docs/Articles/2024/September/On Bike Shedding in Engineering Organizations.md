@@ -7,14 +7,13 @@ date: 2024-09-10
 public: true
 coverImage: https://images.prismic.io/thedecisionlab/0eb368eb-0bdf-49c7-996f-23020e94be34_Bikeshedding.jpg?auto=compress,format
 categories:
-    - engineering
-    - leadership
+    - Management
 tags:
     - topic/bike-shedding
     - topic/team-management
     - topic/open-source
 topic:
-    - leadership
+    - Leadership
 description:
     Explore the concept of bike shedding in product teams, using the recent
     Linux kernel conflict as a case study. Learn how to spot and prevent trivial

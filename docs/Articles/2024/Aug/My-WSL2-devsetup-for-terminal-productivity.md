@@ -5,7 +5,7 @@ date: 2024-08-14
 public: true
 coverImage: https://miro.medium.com/v2/resize:fit:1400/0*XcnXh0HWWO8tHSpA.jpg
 categories:
-    - engineering
+    - Engineering
 tags:
     - topic/techtips
     - topic/devtools
