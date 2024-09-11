@@ -3,50 +3,49 @@
  <head>
   <meta charset="utf-8"/>
   <meta content="width=device-width,initial-scale=1" name="viewport"/>
-  <meta content="Hello there! I'm Shaishav Kr , often known by my internet alias @wiresufer" name="description"/>
-  <link href="https://blog.shaishav.kr/tags/" rel="canonical"/>
-  <link href=".." rel="prev"/>
-  <link href="../category/business/" rel="next"/>
-  <link href="../feed_rss_created.xml" rel="alternate" title="RSS feed" type="application/rss+xml"/>
-  <link href="../feed_rss_updated.xml" rel="alternate" title="RSS feed of updated content" type="application/rss+xml"/>
-  <link href="../assets/images/favicon.png" rel="icon"/>
+  <meta content="Learn how to securely manage sensitive API keys and credentials in public dotfiles using PGP encryption and Mozilla SOPS. This guide provides a step-by-step approach to encrypt and decrypt secrets, ensuring your sensitive information remains protected while sharing your development setup across multiple environments." name="description"/>
+  <link href="https://blog.shaishav.kr/2024/09/11/manage-sensitive-api-keys-in-public-dotfiles-using-pgp-and-sops/" rel="canonical"/>
+  <link href="../../10/bike-shedding-and-the-law-of-triviality---lessons-from-the-linux-kernel-conflict/" rel="prev"/>
+  <link href="../../../../feed_rss_created.xml" rel="alternate" title="RSS feed" type="application/rss+xml"/>
+  <link href="../../../../feed_rss_updated.xml" rel="alternate" title="RSS feed of updated content" type="application/rss+xml"/>
+  <link href="../../../../assets/images/favicon.png" rel="icon"/>
   <meta content="mkdocs-1.6.0, mkdocs-material-9.5.24" name="generator"/>
   <title>
-   Tags - wiresurfer's library | © shaishav.kr
+   Manage Sensitive API Keys in Public Dotfiles Using PGP and SOPS - wiresurfer's library | © shaishav.kr
   </title>
-  <link href="../assets/stylesheets/main.6543a935.min.css" rel="stylesheet"/>
-  <link href="../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
+  <link href="../../../../assets/stylesheets/main.6543a935.min.css" rel="stylesheet"/>
+  <link href="../../../../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
   <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
   <style>
    :root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}
   </style>
-  <link href="../assets/css/tailwing.min.css" rel="stylesheet"/>
-  <link href="../assets/css/fonts.css" rel="stylesheet"/>
-  <link href="../assets/css/override.css" rel="stylesheet"/>
-  <link href="../assets/css/site.css" rel="stylesheet"/>
-  <link href="../assets/css/nav.css" rel="stylesheet"/>
-  <link href="../assets/css/typography.css" rel="stylesheet"/>
-  <link href="../assets/css/article.css" rel="stylesheet"/>
-  <link href="../assets/css/list.css" rel="stylesheet"/>
-  <link href="../assets/css/responsive.css" rel="stylesheet"/>
+  <link href="../../../../assets/css/tailwing.min.css" rel="stylesheet"/>
+  <link href="../../../../assets/css/fonts.css" rel="stylesheet"/>
+  <link href="../../../../assets/css/override.css" rel="stylesheet"/>
+  <link href="../../../../assets/css/site.css" rel="stylesheet"/>
+  <link href="../../../../assets/css/nav.css" rel="stylesheet"/>
+  <link href="../../../../assets/css/typography.css" rel="stylesheet"/>
+  <link href="../../../../assets/css/article.css" rel="stylesheet"/>
+  <link href="../../../../assets/css/list.css" rel="stylesheet"/>
+  <link href="../../../../assets/css/responsive.css" rel="stylesheet"/>
   <script>
-   __md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}
+   __md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}
   </script>
   <meta content="website" property="og:type"/>
-  <meta content="Tags - wiresurfer's library | © shaishav.kr" property="og:title"/>
-  <meta content="Hello there! I'm Shaishav Kr , often known by my internet alias @wiresufer" property="og:description"/>
-  <meta content="https://blog.shaishav.kr/assets/images/social/tags.png" property="og:image"/>
+  <meta content="Manage Sensitive API Keys in Public Dotfiles Using PGP and SOPS - wiresurfer's library | © shaishav.kr" property="og:title"/>
+  <meta content="Learn how to securely manage sensitive API keys and credentials in public dotfiles using PGP encryption and Mozilla SOPS. This guide provides a step-by-step approach to encrypt and decrypt secrets, ensuring your sensitive information remains protected while sharing your development setup across multiple environments." property="og:description"/>
+  <meta content="https://blog.shaishav.kr/assets/images/social/Articles/2024/September/Public Dot-files with Private Secrets.png" property="og:image"/>
   <meta content="image/png" property="og:image:type"/>
   <meta content="1200" property="og:image:width"/>
   <meta content="630" property="og:image:height"/>
-  <meta content="https://blog.shaishav.kr/tags/" property="og:url"/>
+  <meta content="https://blog.shaishav.kr/2024/09/11/manage-sensitive-api-keys-in-public-dotfiles-using-pgp-and-sops/" property="og:url"/>
   <meta content="summary_large_image" name="twitter:card"/>
-  <meta content="Tags - wiresurfer's library | © shaishav.kr" name="twitter:title"/>
-  <meta content="Hello there! I'm Shaishav Kr , often known by my internet alias @wiresufer" name="twitter:description"/>
-  <meta content="https://blog.shaishav.kr/assets/images/social/tags.png" name="twitter:image"/>
-  <link href="../feed_json_created.json" rel="alternate" title="JSON feed" type="application/feed+json">
-   <link href="../feed_json_updated.json" rel="alternate" title="JSON feed of updated content" type="application/feed+json">
+  <meta content="Manage Sensitive API Keys in Public Dotfiles Using PGP and SOPS - wiresurfer's library | © shaishav.kr" name="twitter:title"/>
+  <meta content="Learn how to securely manage sensitive API keys and credentials in public dotfiles using PGP encryption and Mozilla SOPS. This guide provides a step-by-step approach to encrypt and decrypt secrets, ensuring your sensitive information remains protected while sharing your development setup across multiple environments." name="twitter:description"/>
+  <meta content="https://blog.shaishav.kr/assets/images/social/Articles/2024/September/Public Dot-files with Private Secrets.png" name="twitter:image"/>
+  <link href="../../../../feed_json_created.json" rel="alternate" title="JSON feed" type="application/feed+json">
+   <link href="../../../../feed_json_updated.json" rel="alternate" title="JSON feed of updated content" type="application/feed+json">
     <meta content="IE=edge" http-equiv="x-ua-compatible">
      <meta content="width=device-width,initial-scale=1,shrink-to-fit=no" name="viewport">
       <meta content="index, follow" name="robots">
@@ -80,6 +79,15 @@
     </meta>
    </link>
   </link>
+  <meta content="article" property="og:type"/>
+  <meta content="Manage Sensitive API Keys in Public Dotfiles Using PGP and SOPS" property="og:title"/>
+  <meta content="Learn how to securely manage sensitive API keys and credentials in public dotfiles using PGP encryption and Mozilla SOPS. This guide provides a step-by-step approach to encrypt and decrypt secrets, ensuring your sensitive information remains protected while sharing your development setup across multiple environments." property="og:description"/>
+  <meta content="wiresurfer's library | © shaishav.kr" property="og:site_name"/>
+  <meta content="en_US" property="og:locale"/>
+  <meta content="https://blog.shaishav.kr/2024/09/11/manage-sensitive-api-keys-in-public-dotfiles-using-pgp-and-sops/" property="og:url"/>
+  <meta content="summary" property="twitter:card"/>
+  <meta content="Manage Sensitive API Keys in Public Dotfiles Using PGP and SOPS" property="twitter:title"/>
+  <meta content="Learn how to securely manage sensitive API keys and credentials in public dotfiles using PGP encryption and Mozilla SOPS. This guide provides a step-by-step approach to encrypt and decrypt secrets, ensuring your sensitive information remains protected while sharing your development setup across multiple environments." property="twitter:description"/>
  </head>
  <body data-md-color-accent="indigo" data-md-color-primary="red" data-md-color-scheme="slate" dir="ltr">
   <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
@@ -87,7 +95,7 @@
   <label class="md-overlay" for="__drawer">
   </label>
   <div data-md-component="skip">
-   <a class="md-skip" href="#seriesbits-n-bytes">
+   <a class="md-skip" href="#manage-sensitive-api-keys-in-public-dotfiles-using-pgp-and-sops">
     Skip to content
    </a>
   </div>
@@ -119,8 +127,8 @@
   <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
    <nav aria-label="Header" class="md-header__inner md-grid">
     <!-- Link to home -->
-    <a aria-label="wiresurfer's library | © shaishav.kr" class="md-header__button md-logo" data-md-component="logo" href=".." title="wiresurfer's library | © shaishav.kr">
-     <img alt="logo" src="../assets/images/wiresurfer-logo.jpeg"/>
+    <a aria-label="wiresurfer's library | © shaishav.kr" class="md-header__button md-logo" data-md-component="logo" href="../../../.." title="wiresurfer's library | © shaishav.kr">
+     <img alt="logo" src="../../../../assets/images/wiresurfer-logo.jpeg"/>
     </a>
     <!-- Button to open drawer -->
     <label class="md-header__button md-icon" for="__drawer">
@@ -136,7 +144,7 @@
       </div>
       <div class="md-header__topic" data-md-component="header-topic">
        <span class="md-ellipsis">
-        Tags
+        Manage Sensitive API Keys in Public Dotfiles Using PGP and SOPS
        </span>
       </div>
      </div>
@@ -197,8 +205,8 @@
   <nav aria-label="Tabs" class="md-tabs" data-md-component="tabs">
    <div class="md-grid">
     <ul class="md-tabs__list">
-     <li class="md-tabs__item">
-      <a class="md-tabs__link" href="..">
+     <li class="md-tabs__item md-tabs__item--active">
+      <a class="md-tabs__link" href="../../../..">
        Home
       </a>
      </li>
@@ -207,18 +215,18 @@
        About
       </a>
      </li>
-     <li class="md-tabs__item md-tabs__item--active">
-      <a class="md-tabs__link" href="./">
+     <li class="md-tabs__item">
+      <a class="md-tabs__link" href="../../../../tags/">
        Tags
       </a>
      </li>
      <li class="md-tabs__item">
-      <a class="md-tabs__link" href="../Bookmarks/Books/How%20to%20Win%20Friends%20and%20Influence%20People/">
+      <a class="md-tabs__link" href="../../../../Bookmarks/Books/How%20to%20Win%20Friends%20and%20Influence%20People/">
        Bookmarks
       </a>
      </li>
      <li class="md-tabs__item">
-      <a class="md-tabs__link" href="../Interests/Finance/FIRE/">
+      <a class="md-tabs__link" href="../../../../Interests/Finance/FIRE/">
        Interests
       </a>
      </li>
@@ -228,12 +236,12 @@
       </a>
      </li>
      <li class="md-tabs__item">
-      <a class="md-tabs__link" href="../archive/2024/">
+      <a class="md-tabs__link" href="../../../../archive/2024/">
        Archive
       </a>
      </li>
      <li class="md-tabs__item">
-      <a class="md-tabs__link" href="../category/business/">
+      <a class="md-tabs__link" href="../../../../category/business/">
        Categories
       </a>
      </li>
@@ -243,7 +251,7 @@
   <div class="md-container" data-md-component="container">
    <main class="md-main" data-md-component="main">
     <div class="md-main__inner md-grid">
-     <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+     <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden="">
       <div class="md-sidebar__scrollwrap">
        <div class="md-sidebar__inner">
         <!--
@@ -272,8 +280,8 @@
         <nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
          <!-- Navigation list -->
          <ul class="md-nav__list" data-md-scrollfix="">
-          <li class="md-nav__item">
-           <a class="md-nav__link" href="..">
+          <li class="md-nav__item md-nav__item--active">
+           <a class="md-nav__link" href="../../../..">
             <span class="md-ellipsis">
              Home
             </span>
@@ -286,281 +294,12 @@
             </span>
            </a>
           </li>
-          <li class="md-nav__item md-nav__item--active">
-           <input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
-           <label class="md-nav__link md-nav__link--active" for="__toc">
-            <span class="md-ellipsis">
-             Tags
-            </span>
-            <span class="md-nav__icon md-icon">
-            </span>
-           </label>
-           <a class="md-nav__link md-nav__link--active" href="./">
+          <li class="md-nav__item">
+           <a class="md-nav__link" href="../../../../tags/">
             <span class="md-ellipsis">
              Tags
             </span>
            </a>
-           <nav aria-label="On This Page" class="md-nav md-nav--secondary">
-            <label class="md-nav__title" for="__toc">
-             <span class="md-nav__icon md-icon">
-             </span>
-             On This Page
-            </label>
-            <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-             <li class="md-nav__item">
-              <a class="md-nav__link" href="#seriesbits-n-bytes">
-               <span class="md-ellipsis">
-                series/bits-n-bytes
-               </span>
-              </a>
-             </li>
-             <li class="md-nav__item">
-              <a class="md-nav__link" href="#software_engineeringlinux-internals">
-               <span class="md-ellipsis">
-                software_engineering/linux-internals
-               </span>
-              </a>
-             </li>
-             <li class="md-nav__item">
-              <a class="md-nav__link" href="#topicgenai">
-               <span class="md-ellipsis">
-                topic/GenAI
-               </span>
-              </a>
-             </li>
-             <li class="md-nav__item">
-              <a class="md-nav__link" href="#topicbike-shedding">
-               <span class="md-ellipsis">
-                topic/bike-shedding
-               </span>
-              </a>
-             </li>
-             <li class="md-nav__item">
-              <a class="md-nav__link" href="#topicbusiness">
-               <span class="md-ellipsis">
-                topic/business
-               </span>
-              </a>
-             </li>
-             <li class="md-nav__item">
-              <a class="md-nav__link" href="#topicculture">
-               <span class="md-ellipsis">
-                topic/culture
-               </span>
-              </a>
-             </li>
-             <li class="md-nav__item">
-              <a class="md-nav__link" href="#topicdeep-dives">
-               <span class="md-ellipsis">
-                topic/deep-dives
-               </span>
-              </a>
-             </li>
-             <li class="md-nav__item">
-              <a class="md-nav__link" href="#topicdevops">
-               <span class="md-ellipsis">
-                topic/devops
-               </span>
-              </a>
-             </li>
-             <li class="md-nav__item">
-              <a class="md-nav__link" href="#topicdevtools">
-               <span class="md-ellipsis">
-                topic/devtools
-               </span>
-              </a>
-             </li>
-             <li class="md-nav__item">
-              <a class="md-nav__link" href="#topicengineering">
-               <span class="md-ellipsis">
-                topic/engineering
-               </span>
-              </a>
-             </li>
-             <li class="md-nav__item">
-              <a class="md-nav__link" href="#topicengineering-management">
-               <span class="md-ellipsis">
-                topic/engineering-management
-               </span>
-              </a>
-             </li>
-             <li class="md-nav__item">
-              <a class="md-nav__link" href="#topicgit">
-               <span class="md-ellipsis">
-                topic/git
-               </span>
-              </a>
-             </li>
-             <li class="md-nav__item">
-              <a class="md-nav__link" href="#topicgraphics">
-               <span class="md-ellipsis">
-                topic/graphics
-               </span>
-              </a>
-             </li>
-             <li class="md-nav__item">
-              <a class="md-nav__link" href="#topicindian-markets">
-               <span class="md-ellipsis">
-                topic/indian-markets
-               </span>
-              </a>
-             </li>
-             <li class="md-nav__item">
-              <a class="md-nav__link" href="#topicleadership">
-               <span class="md-ellipsis">
-                topic/leadership
-               </span>
-              </a>
-             </li>
-             <li class="md-nav__item">
-              <a class="md-nav__link" href="#topiclinux">
-               <span class="md-ellipsis">
-                topic/linux
-               </span>
-              </a>
-             </li>
-             <li class="md-nav__item">
-              <a class="md-nav__link" href="#topicmanagement">
-               <span class="md-ellipsis">
-                topic/management
-               </span>
-              </a>
-             </li>
-             <li class="md-nav__item">
-              <a class="md-nav__link" href="#topicneovim">
-               <span class="md-ellipsis">
-                topic/neovim
-               </span>
-              </a>
-             </li>
-             <li class="md-nav__item">
-              <a class="md-nav__link" href="#topicopen-source">
-               <span class="md-ellipsis">
-                topic/open-source
-               </span>
-              </a>
-             </li>
-             <li class="md-nav__item">
-              <a class="md-nav__link" href="#topicorganizational-design">
-               <span class="md-ellipsis">
-                topic/organizational-design
-               </span>
-              </a>
-             </li>
-             <li class="md-nav__item">
-              <a class="md-nav__link" href="#topicpersonal-development">
-               <span class="md-ellipsis">
-                topic/personal-development
-               </span>
-              </a>
-             </li>
-             <li class="md-nav__item">
-              <a class="md-nav__link" href="#topicpgp">
-               <span class="md-ellipsis">
-                topic/pgp
-               </span>
-              </a>
-             </li>
-             <li class="md-nav__item">
-              <a class="md-nav__link" href="#topicpkm">
-               <span class="md-ellipsis">
-                topic/pkm
-               </span>
-              </a>
-             </li>
-             <li class="md-nav__item">
-              <a class="md-nav__link" href="#topicplatform-engineering">
-               <span class="md-ellipsis">
-                topic/platform-engineering
-               </span>
-              </a>
-             </li>
-             <li class="md-nav__item">
-              <a class="md-nav__link" href="#topicproductivity">
-               <span class="md-ellipsis">
-                topic/productivity
-               </span>
-              </a>
-             </li>
-             <li class="md-nav__item">
-              <a class="md-nav__link" href="#topicprogramming">
-               <span class="md-ellipsis">
-                topic/programming
-               </span>
-              </a>
-             </li>
-             <li class="md-nav__item">
-              <a class="md-nav__link" href="#topicpython">
-               <span class="md-ellipsis">
-                topic/python
-               </span>
-              </a>
-             </li>
-             <li class="md-nav__item">
-              <a class="md-nav__link" href="#topicqt5">
-               <span class="md-ellipsis">
-                topic/qt5
-               </span>
-              </a>
-             </li>
-             <li class="md-nav__item">
-              <a class="md-nav__link" href="#topicsecurity">
-               <span class="md-ellipsis">
-                topic/security
-               </span>
-              </a>
-             </li>
-             <li class="md-nav__item">
-              <a class="md-nav__link" href="#topicsoftware-development">
-               <span class="md-ellipsis">
-                topic/software-development
-               </span>
-              </a>
-             </li>
-             <li class="md-nav__item">
-              <a class="md-nav__link" href="#topicteam-management">
-               <span class="md-ellipsis">
-                topic/team-management
-               </span>
-              </a>
-             </li>
-             <li class="md-nav__item">
-              <a class="md-nav__link" href="#topictech-tips">
-               <span class="md-ellipsis">
-                topic/tech-tips
-               </span>
-              </a>
-             </li>
-             <li class="md-nav__item">
-              <a class="md-nav__link" href="#topictechtips">
-               <span class="md-ellipsis">
-                topic/techtips
-               </span>
-              </a>
-             </li>
-             <li class="md-nav__item">
-              <a class="md-nav__link" href="#topicvisual-programming">
-               <span class="md-ellipsis">
-                topic/visual-programming
-               </span>
-              </a>
-             </li>
-             <li class="md-nav__item">
-              <a class="md-nav__link" href="#topicwriting">
-               <span class="md-ellipsis">
-                topic/writing
-               </span>
-              </a>
-             </li>
-             <li class="md-nav__item">
-              <a class="md-nav__link" href="#topicwsl2">
-               <span class="md-ellipsis">
-                topic/wsl2
-               </span>
-              </a>
-             </li>
-            </ul>
-           </nav>
           </li>
           <li class="md-nav__item md-nav__item--nested">
            <input class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
@@ -595,28 +334,28 @@
                </label>
                <ul class="md-nav__list" data-md-scrollfix="">
                 <li class="md-nav__item">
-                 <a class="md-nav__link" href="../Bookmarks/Books/How%20to%20Win%20Friends%20and%20Influence%20People/">
+                 <a class="md-nav__link" href="../../../../Bookmarks/Books/How%20to%20Win%20Friends%20and%20Influence%20People/">
                   <span class="md-ellipsis">
                    How to Win Friends and Influence People
                   </span>
                  </a>
                 </li>
                 <li class="md-nav__item">
-                 <a class="md-nav__link" href="../Bookmarks/Books/Mossad/">
+                 <a class="md-nav__link" href="../../../../Bookmarks/Books/Mossad/">
                   <span class="md-ellipsis">
                    Mossad
                   </span>
                  </a>
                 </li>
                 <li class="md-nav__item">
-                 <a class="md-nav__link" href="../Bookmarks/Books/Raw%20%20A%20History%20Of%20India%20Covert%20Operations/">
+                 <a class="md-nav__link" href="../../../../Bookmarks/Books/Raw%20%20A%20History%20Of%20India%20Covert%20Operations/">
                   <span class="md-ellipsis">
                    Raw : A History Of India's Covert Operations
                   </span>
                  </a>
                 </li>
                 <li class="md-nav__item">
-                 <a class="md-nav__link" href="../Bookmarks/Books/The%20Bhagavad%20Gita%20For%20Millenials/">
+                 <a class="md-nav__link" href="../../../../Bookmarks/Books/The%20Bhagavad%20Gita%20For%20Millenials/">
                   <span class="md-ellipsis">
                    The Bhagavad Gita For Millenials
                   </span>
@@ -658,7 +397,7 @@
                   </label>
                   <ul class="md-nav__list" data-md-scrollfix="">
                    <li class="md-nav__item">
-                    <a class="md-nav__link" href="../Bookmarks/Omnivore/2024-01-11/Rebuilding%20Netflix%20Video%20Processing%20Pipeline%20with%20Microservices/">
+                    <a class="md-nav__link" href="../../../../Bookmarks/Omnivore/2024-01-11/Rebuilding%20Netflix%20Video%20Processing%20Pipeline%20with%20Microservices/">
                      <span class="md-ellipsis">
                       Rebuilding Netflix Video Processing Pipeline with Microservices
                      </span>
@@ -684,28 +423,28 @@
                   </label>
                   <ul class="md-nav__list" data-md-scrollfix="">
                    <li class="md-nav__item">
-                    <a class="md-nav__link" href="../Bookmarks/Omnivore/2024-01-31/COVID%20Test%20Data%20Breach-%201.3%20Million%20Patient%20Records%20Exposed%20Online/">
+                    <a class="md-nav__link" href="../../../../Bookmarks/Omnivore/2024-01-31/COVID%20Test%20Data%20Breach-%201.3%20Million%20Patient%20Records%20Exposed%20Online/">
                      <span class="md-ellipsis">
                       COVID Test Data Breach: 1.3 Million Patient Records Exposed Online
                      </span>
                     </a>
                    </li>
                    <li class="md-nav__item">
-                    <a class="md-nav__link" href="../Bookmarks/Omnivore/2024-01-31/I%20Just%20Wanted%20Emacs%20to%20Look%20Nice%20%E2%80%94%20Using%2024-Bit%20Color%20in%20Terminals%20%20Chad%20Austin/">
+                    <a class="md-nav__link" href="../../../../Bookmarks/Omnivore/2024-01-31/I%20Just%20Wanted%20Emacs%20to%20Look%20Nice%20%E2%80%94%20Using%2024-Bit%20Color%20in%20Terminals%20%20Chad%20Austin/">
                      <span class="md-ellipsis">
                       I Just Wanted Emacs to Look Nice — Using 24 Bit Color in Terminals  Chad Austin
                      </span>
                     </a>
                    </li>
                    <li class="md-nav__item">
-                    <a class="md-nav__link" href="../Bookmarks/Omnivore/2024-01-31/I%20Just%20Wanted%20Emacs%20to%20Look%20Nice%20%E2%80%94%20Using%2024-Bit%20Color%20in%20Terminals%20-%20Chad%20Austin/">
+                    <a class="md-nav__link" href="../../../../Bookmarks/Omnivore/2024-01-31/I%20Just%20Wanted%20Emacs%20to%20Look%20Nice%20%E2%80%94%20Using%2024-Bit%20Color%20in%20Terminals%20-%20Chad%20Austin/">
                      <span class="md-ellipsis">
                       I Just Wanted Emacs to Look Nice — Using 24-Bit Color in Terminals | Chad Austin
                      </span>
                     </a>
                    </li>
                    <li class="md-nav__item">
-                    <a class="md-nav__link" href="../Bookmarks/Omnivore/2024-01-31/Preface%20-%20LSM%20in%20a%20Week/">
+                    <a class="md-nav__link" href="../../../../Bookmarks/Omnivore/2024-01-31/Preface%20-%20LSM%20in%20a%20Week/">
                      <span class="md-ellipsis">
                       Preface - LSM in a Week
                      </span>
@@ -731,14 +470,14 @@
                   </label>
                   <ul class="md-nav__list" data-md-scrollfix="">
                    <li class="md-nav__item">
-                    <a class="md-nav__link" href="../Bookmarks/Omnivore/2024-02-08/How%20we%20got%20fine-tuning%20Mistral-7B%20to%20not%20suck-%20Helix%20Project%20Report%2C%20Feb%202024/">
+                    <a class="md-nav__link" href="../../../../Bookmarks/Omnivore/2024-02-08/How%20we%20got%20fine-tuning%20Mistral-7B%20to%20not%20suck-%20Helix%20Project%20Report%2C%20Feb%202024/">
                      <span class="md-ellipsis">
                       How we got fine-tuning Mistral-7B to not suck: Helix Project Report, Feb 2024
                      </span>
                     </a>
                    </li>
                    <li class="md-nav__item">
-                    <a class="md-nav__link" href="../Bookmarks/Omnivore/2024-02-08/Simple%20Precision%20Time%20Protocol%20at%20Meta%20-%20Engineering%20at%20Meta/">
+                    <a class="md-nav__link" href="../../../../Bookmarks/Omnivore/2024-02-08/Simple%20Precision%20Time%20Protocol%20at%20Meta%20-%20Engineering%20at%20Meta/">
                      <span class="md-ellipsis">
                       Simple Precision Time Protocol at Meta - Engineering at Meta
                      </span>
@@ -764,7 +503,7 @@
                   </label>
                   <ul class="md-nav__list" data-md-scrollfix="">
                    <li class="md-nav__item">
-                    <a class="md-nav__link" href="../Bookmarks/Omnivore/2024-02-26/Excalidraw/">
+                    <a class="md-nav__link" href="../../../../Bookmarks/Omnivore/2024-02-26/Excalidraw/">
                      <span class="md-ellipsis">
                       Excalidraw
                      </span>
@@ -790,21 +529,21 @@
                   </label>
                   <ul class="md-nav__list" data-md-scrollfix="">
                    <li class="md-nav__item">
-                    <a class="md-nav__link" href="../Bookmarks/Omnivore/2024-02-27/%40ASmartBear/">
+                    <a class="md-nav__link" href="../../../../Bookmarks/Omnivore/2024-02-27/%40ASmartBear/">
                      <span class="md-ellipsis">
                       @ASmartBear
                      </span>
                     </a>
                    </li>
                    <li class="md-nav__item">
-                    <a class="md-nav__link" href="../Bookmarks/Omnivore/2024-02-27/Apache%20Superset%20-%20Hacker%20News/">
+                    <a class="md-nav__link" href="../../../../Bookmarks/Omnivore/2024-02-27/Apache%20Superset%20-%20Hacker%20News/">
                      <span class="md-ellipsis">
                       Apache Superset | Hacker News
                      </span>
                     </a>
                    </li>
                    <li class="md-nav__item">
-                    <a class="md-nav__link" href="../Bookmarks/Omnivore/2024-02-27/https---zeck.app/">
+                    <a class="md-nav__link" href="../../../../Bookmarks/Omnivore/2024-02-27/https---zeck.app/">
                      <span class="md-ellipsis">
                       https://zeck.app
                      </span>
@@ -830,7 +569,7 @@
                   </label>
                   <ul class="md-nav__list" data-md-scrollfix="">
                    <li class="md-nav__item">
-                    <a class="md-nav__link" href="../Bookmarks/Omnivore/2024-02-28/Start%20a%20Profitable%20Side%20Project%20in%202024%20-%20Indie%20Hackers/">
+                    <a class="md-nav__link" href="../../../../Bookmarks/Omnivore/2024-02-28/Start%20a%20Profitable%20Side%20Project%20in%202024%20-%20Indie%20Hackers/">
                      <span class="md-ellipsis">
                       Start a Profitable Side Project in 2024 - Indie Hackers
                      </span>
@@ -856,7 +595,7 @@
                   </label>
                   <ul class="md-nav__list" data-md-scrollfix="">
                    <li class="md-nav__item">
-                    <a class="md-nav__link" href="../Bookmarks/Omnivore/2024-03-05/a16z%20Consumer%20Abundance%20Agenda/">
+                    <a class="md-nav__link" href="../../../../Bookmarks/Omnivore/2024-03-05/a16z%20Consumer%20Abundance%20Agenda/">
                      <span class="md-ellipsis">
                       a16z Consumer Abundance Agenda
                      </span>
@@ -882,14 +621,14 @@
                   </label>
                   <ul class="md-nav__list" data-md-scrollfix="">
                    <li class="md-nav__item">
-                    <a class="md-nav__link" href="../Bookmarks/Omnivore/2024-03-11/Rogo/">
+                    <a class="md-nav__link" href="../../../../Bookmarks/Omnivore/2024-03-11/Rogo/">
                      <span class="md-ellipsis">
                       Rogo
                      </span>
                     </a>
                    </li>
                    <li class="md-nav__item">
-                    <a class="md-nav__link" href="../Bookmarks/Omnivore/2024-03-11/Voxel/">
+                    <a class="md-nav__link" href="../../../../Bookmarks/Omnivore/2024-03-11/Voxel/">
                      <span class="md-ellipsis">
                       Voxel
                      </span>
@@ -915,35 +654,35 @@
                   </label>
                   <ul class="md-nav__list" data-md-scrollfix="">
                    <li class="md-nav__item">
-                    <a class="md-nav__link" href="../Bookmarks/Omnivore/2024-03-12/Chief%20AI%20Decks/">
+                    <a class="md-nav__link" href="../../../../Bookmarks/Omnivore/2024-03-12/Chief%20AI%20Decks/">
                      <span class="md-ellipsis">
                       Chief AI Decks
                      </span>
                     </a>
                    </li>
                    <li class="md-nav__item">
-                    <a class="md-nav__link" href="../Bookmarks/Omnivore/2024-03-12/Personal%20Branding%E2%80%94Most%20Important%20Thing%20You%20Do.%20Full%20Video%20AdobeMAX%202023/">
+                    <a class="md-nav__link" href="../../../../Bookmarks/Omnivore/2024-03-12/Personal%20Branding%E2%80%94Most%20Important%20Thing%20You%20Do.%20Full%20Video%20AdobeMAX%202023/">
                      <span class="md-ellipsis">
                       Personal Branding—Most Important Thing You Do. Full Video AdobeMAX 2023
                      </span>
                     </a>
                    </li>
                    <li class="md-nav__item">
-                    <a class="md-nav__link" href="../Bookmarks/Omnivore/2024-03-12/Please%20Stop%20Using%20Google%20Analytics/">
+                    <a class="md-nav__link" href="../../../../Bookmarks/Omnivore/2024-03-12/Please%20Stop%20Using%20Google%20Analytics/">
                      <span class="md-ellipsis">
                       Please Stop Using Google Analytics
                      </span>
                     </a>
                    </li>
                    <li class="md-nav__item">
-                    <a class="md-nav__link" href="../Bookmarks/Omnivore/2024-03-12/ULTRA.VC/">
+                    <a class="md-nav__link" href="../../../../Bookmarks/Omnivore/2024-03-12/ULTRA.VC/">
                      <span class="md-ellipsis">
                       ULTRA.VC
                      </span>
                     </a>
                    </li>
                    <li class="md-nav__item">
-                    <a class="md-nav__link" href="../Bookmarks/Omnivore/2024-03-12/ron0studios-C-Plus-Plus-%20Collection%20of%20various%20algorithms%20in%20mathematics%2C%20machine%20learning%2C%20compu.../">
+                    <a class="md-nav__link" href="../../../../Bookmarks/Omnivore/2024-03-12/ron0studios-C-Plus-Plus-%20Collection%20of%20various%20algorithms%20in%20mathematics%2C%20machine%20learning%2C%20compu.../">
                      <span class="md-ellipsis">
                       ron0studios/C-Plus-Plus: Collection of various algorithms in mathematics, machine learning, computer science and physics implemented in C++ for educational purposes.
                      </span>
@@ -969,7 +708,7 @@
                   </label>
                   <ul class="md-nav__list" data-md-scrollfix="">
                    <li class="md-nav__item">
-                    <a class="md-nav__link" href="../Bookmarks/Omnivore/2024-03-17/Wait...%20PostgreSQL%20can%20do%20WHAT-/">
+                    <a class="md-nav__link" href="../../../../Bookmarks/Omnivore/2024-03-17/Wait...%20PostgreSQL%20can%20do%20WHAT-/">
                      <span class="md-ellipsis">
                       Wait... PostgreSQL can do WHAT?
                      </span>
@@ -995,28 +734,28 @@
                   </label>
                   <ul class="md-nav__list" data-md-scrollfix="">
                    <li class="md-nav__item">
-                    <a class="md-nav__link" href="../Bookmarks/Omnivore/2024-03-18/Building%20Meta%E2%80%99s%20GenAI%20Infrastructure%20-%20Engineering%20at%20Meta/">
+                    <a class="md-nav__link" href="../../../../Bookmarks/Omnivore/2024-03-18/Building%20Meta%E2%80%99s%20GenAI%20Infrastructure%20-%20Engineering%20at%20Meta/">
                      <span class="md-ellipsis">
                       Building Meta’s GenAI Infrastructure - Engineering at Meta
                      </span>
                     </a>
                    </li>
                    <li class="md-nav__item">
-                    <a class="md-nav__link" href="../Bookmarks/Omnivore/2024-03-18/Logarithm-%20A%20logging%20engine%20for%20AI%20training%20workflows%20and%20services%20-%20Engineering%20at%20Meta/">
+                    <a class="md-nav__link" href="../../../../Bookmarks/Omnivore/2024-03-18/Logarithm-%20A%20logging%20engine%20for%20AI%20training%20workflows%20and%20services%20-%20Engineering%20at%20Meta/">
                      <span class="md-ellipsis">
                       Logarithm: A logging engine for AI training workflows and services - Engineering at Meta
                      </span>
                     </a>
                    </li>
                    <li class="md-nav__item">
-                    <a class="md-nav__link" href="../Bookmarks/Omnivore/2024-03-18/Next.js%20Commerce%20%E2%80%93%20Vercel/">
+                    <a class="md-nav__link" href="../../../../Bookmarks/Omnivore/2024-03-18/Next.js%20Commerce%20%E2%80%93%20Vercel/">
                      <span class="md-ellipsis">
                       Next.js Commerce – Vercel
                      </span>
                     </a>
                    </li>
                    <li class="md-nav__item">
-                    <a class="md-nav__link" href="../Bookmarks/Omnivore/2024-03-18/sanity-io-hydrogen-sanity-demo-%20A%20starter%20for%20Hydrogen%20%2B%20Sanity%20projects/">
+                    <a class="md-nav__link" href="../../../../Bookmarks/Omnivore/2024-03-18/sanity-io-hydrogen-sanity-demo-%20A%20starter%20for%20Hydrogen%20%2B%20Sanity%20projects/">
                      <span class="md-ellipsis">
                       sanity-io/hydrogen-sanity-demo: A starter for Hydrogen + Sanity projects
                      </span>
@@ -1042,7 +781,7 @@
                   </label>
                   <ul class="md-nav__list" data-md-scrollfix="">
                    <li class="md-nav__item">
-                    <a class="md-nav__link" href="../Bookmarks/Omnivore/2024-03-26/failsafe-go-failsafe-go-%20Fault%20tolerance%20and%20resilience%20patterns%20for%20Go/">
+                    <a class="md-nav__link" href="../../../../Bookmarks/Omnivore/2024-03-26/failsafe-go-failsafe-go-%20Fault%20tolerance%20and%20resilience%20patterns%20for%20Go/">
                      <span class="md-ellipsis">
                       failsafe-go/failsafe-go: Fault tolerance and resilience patterns for Go
                      </span>
@@ -1071,14 +810,14 @@
                </label>
                <ul class="md-nav__list" data-md-scrollfix="">
                 <li class="md-nav__item">
-                 <a class="md-nav__link" href="../Bookmarks/Podcast/The_Morning_Brief__%5B2023-06-06%5D/">
+                 <a class="md-nav__link" href="../../../../Bookmarks/Podcast/The_Morning_Brief__%5B2023-06-06%5D/">
                   <span class="md-ellipsis">
                    The Morning Brief  [2023 06 06]
                   </span>
                  </a>
                 </li>
                 <li class="md-nav__item">
-                 <a class="md-nav__link" href="../Bookmarks/Podcast/Vedanta_Talks__%5B2019-01-26%5D/">
+                 <a class="md-nav__link" href="../../../../Bookmarks/Podcast/Vedanta_Talks__%5B2019-01-26%5D/">
                   <span class="md-ellipsis">
                    16. Bhagavad Gita | Chapter 2 Verse 45 - 47 | Swami Sarvapriyananda
                   </span>
@@ -1104,7 +843,7 @@
                </label>
                <ul class="md-nav__list" data-md-scrollfix="">
                 <li class="md-nav__item">
-                 <a class="md-nav__link" href="../Bookmarks/Videos/Aakrit-Haptik-Varun-Mayya/">
+                 <a class="md-nav__link" href="../../../../Bookmarks/Videos/Aakrit-Haptik-Varun-Mayya/">
                   <span class="md-ellipsis">
                    Aakrit-Haptik-Varun-Mayya
                   </span>
@@ -1162,7 +901,7 @@
                      </label>
                      <ul class="md-nav__list" data-md-scrollfix="">
                       <li class="md-nav__item">
-                       <a class="md-nav__link" href="../Bookmarks/Web/2024/01-January/Weekly-Digest-Week-05/">
+                       <a class="md-nav__link" href="../../../../Bookmarks/Web/2024/01-January/Weekly-Digest-Week-05/">
                         <span class="md-ellipsis">
                          Weekly Digest Week 05
                         </span>
@@ -1188,14 +927,14 @@
                      </label>
                      <ul class="md-nav__list" data-md-scrollfix="">
                       <li class="md-nav__item">
-                       <a class="md-nav__link" href="../Bookmarks/Web/2024/02-February/Weekly-Digest-Week-06/">
+                       <a class="md-nav__link" href="../../../../Bookmarks/Web/2024/02-February/Weekly-Digest-Week-06/">
                         <span class="md-ellipsis">
                          Weekly Digest Week 06
                         </span>
                        </a>
                       </li>
                       <li class="md-nav__item">
-                       <a class="md-nav__link" href="../Bookmarks/Web/2024/02-February/Weekly-Digest-Week-09/">
+                       <a class="md-nav__link" href="../../../../Bookmarks/Web/2024/02-February/Weekly-Digest-Week-09/">
                         <span class="md-ellipsis">
                          Weekly Digest Week 09
                         </span>
@@ -1221,28 +960,28 @@
                      </label>
                      <ul class="md-nav__list" data-md-scrollfix="">
                       <li class="md-nav__item">
-                       <a class="md-nav__link" href="../Bookmarks/Web/2024/03-March/Weekly-Digest-Week-10/">
+                       <a class="md-nav__link" href="../../../../Bookmarks/Web/2024/03-March/Weekly-Digest-Week-10/">
                         <span class="md-ellipsis">
                          Weekly Digest Week 10
                         </span>
                        </a>
                       </li>
                       <li class="md-nav__item">
-                       <a class="md-nav__link" href="../Bookmarks/Web/2024/03-March/Weekly-Digest-Week-11/">
+                       <a class="md-nav__link" href="../../../../Bookmarks/Web/2024/03-March/Weekly-Digest-Week-11/">
                         <span class="md-ellipsis">
                          Weekly Digest Week 11
                         </span>
                        </a>
                       </li>
                       <li class="md-nav__item">
-                       <a class="md-nav__link" href="../Bookmarks/Web/2024/03-March/Weekly-Digest-Week-12/">
+                       <a class="md-nav__link" href="../../../../Bookmarks/Web/2024/03-March/Weekly-Digest-Week-12/">
                         <span class="md-ellipsis">
                          Weekly Digest Week 12
                         </span>
                        </a>
                       </li>
                       <li class="md-nav__item">
-                       <a class="md-nav__link" href="../Bookmarks/Web/2024/03-March/Weekly-Digest-Week-13/">
+                       <a class="md-nav__link" href="../../../../Bookmarks/Web/2024/03-March/Weekly-Digest-Week-13/">
                         <span class="md-ellipsis">
                          Weekly Digest Week 13
                         </span>
@@ -1268,28 +1007,28 @@
                      </label>
                      <ul class="md-nav__list" data-md-scrollfix="">
                       <li class="md-nav__item">
-                       <a class="md-nav__link" href="../Bookmarks/Web/2024/04-April/Weekly-Digest-Week-14/">
+                       <a class="md-nav__link" href="../../../../Bookmarks/Web/2024/04-April/Weekly-Digest-Week-14/">
                         <span class="md-ellipsis">
                          Weekly Digest Week 14
                         </span>
                        </a>
                       </li>
                       <li class="md-nav__item">
-                       <a class="md-nav__link" href="../Bookmarks/Web/2024/04-April/Weekly-Digest-Week-15/">
+                       <a class="md-nav__link" href="../../../../Bookmarks/Web/2024/04-April/Weekly-Digest-Week-15/">
                         <span class="md-ellipsis">
                          Weekly Digest Week 15
                         </span>
                        </a>
                       </li>
                       <li class="md-nav__item">
-                       <a class="md-nav__link" href="../Bookmarks/Web/2024/04-April/Weekly-Digest-Week-16/">
+                       <a class="md-nav__link" href="../../../../Bookmarks/Web/2024/04-April/Weekly-Digest-Week-16/">
                         <span class="md-ellipsis">
                          Weekly Digest Week 16
                         </span>
                        </a>
                       </li>
                       <li class="md-nav__item">
-                       <a class="md-nav__link" href="../Bookmarks/Web/2024/04-April/Weekly-Digest-Week-17/">
+                       <a class="md-nav__link" href="../../../../Bookmarks/Web/2024/04-April/Weekly-Digest-Week-17/">
                         <span class="md-ellipsis">
                          Weekly Digest Week 17
                         </span>
@@ -1315,28 +1054,28 @@
                      </label>
                      <ul class="md-nav__list" data-md-scrollfix="">
                       <li class="md-nav__item">
-                       <a class="md-nav__link" href="../Bookmarks/Web/2024/05-May/Weekly-Digest-Week-18/">
+                       <a class="md-nav__link" href="../../../../Bookmarks/Web/2024/05-May/Weekly-Digest-Week-18/">
                         <span class="md-ellipsis">
                          Weekly Digest Week 18
                         </span>
                        </a>
                       </li>
                       <li class="md-nav__item">
-                       <a class="md-nav__link" href="../Bookmarks/Web/2024/05-May/Weekly-Digest-Week-20/">
+                       <a class="md-nav__link" href="../../../../Bookmarks/Web/2024/05-May/Weekly-Digest-Week-20/">
                         <span class="md-ellipsis">
                          Weekly Digest Week 20
                         </span>
                        </a>
                       </li>
                       <li class="md-nav__item">
-                       <a class="md-nav__link" href="../Bookmarks/Web/2024/05-May/Weekly-Digest-Week-21/">
+                       <a class="md-nav__link" href="../../../../Bookmarks/Web/2024/05-May/Weekly-Digest-Week-21/">
                         <span class="md-ellipsis">
                          Weekly Digest Week 21
                         </span>
                        </a>
                       </li>
                       <li class="md-nav__item">
-                       <a class="md-nav__link" href="../Bookmarks/Web/2024/05-May/Weekly-Digest-Week-22/">
+                       <a class="md-nav__link" href="../../../../Bookmarks/Web/2024/05-May/Weekly-Digest-Week-22/">
                         <span class="md-ellipsis">
                          Weekly Digest Week 22
                         </span>
@@ -1362,7 +1101,7 @@
                      </label>
                      <ul class="md-nav__list" data-md-scrollfix="">
                       <li class="md-nav__item">
-                       <a class="md-nav__link" href="../Bookmarks/Web/2024/06-June/Weekly-Digest-Week-22/">
+                       <a class="md-nav__link" href="../../../../Bookmarks/Web/2024/06-June/Weekly-Digest-Week-22/">
                         <span class="md-ellipsis">
                          Weekly Digest Week 22
                         </span>
@@ -1413,28 +1152,28 @@
                </label>
                <ul class="md-nav__list" data-md-scrollfix="">
                 <li class="md-nav__item">
-                 <a class="md-nav__link" href="../Interests/Finance/FIRE/">
+                 <a class="md-nav__link" href="../../../../Interests/Finance/FIRE/">
                   <span class="md-ellipsis">
                    FIRE
                   </span>
                  </a>
                 </li>
                 <li class="md-nav__item">
-                 <a class="md-nav__link" href="../Interests/Finance/InvenstmentPhilosophy/">
+                 <a class="md-nav__link" href="../../../../Interests/Finance/InvenstmentPhilosophy/">
                   <span class="md-ellipsis">
                    InvenstmentPhilosophy
                   </span>
                  </a>
                 </li>
                 <li class="md-nav__item">
-                 <a class="md-nav__link" href="../Interests/Finance/Investment%20System/">
+                 <a class="md-nav__link" href="../../../../Interests/Finance/Investment%20System/">
                   <span class="md-ellipsis">
                    Investment System
                   </span>
                  </a>
                 </li>
                 <li class="md-nav__item">
-                 <a class="md-nav__link" href="../Interests/Finance/Trading%20%26%20Finanace/">
+                 <a class="md-nav__link" href="../../../../Interests/Finance/Trading%20%26%20Finanace/">
                   <span class="md-ellipsis">
                    Trading &amp; Finanace
                   </span>
@@ -1457,14 +1196,14 @@
                   </label>
                   <ul class="md-nav__list" data-md-scrollfix="">
                    <li class="md-nav__item">
-                    <a class="md-nav__link" href="../Interests/Finance/Stocks/ERIS-ErisLifesciencesLtd/">
+                    <a class="md-nav__link" href="../../../../Interests/Finance/Stocks/ERIS-ErisLifesciencesLtd/">
                      <span class="md-ellipsis">
                       ERIS-ErisLifesciencesLtd
                      </span>
                     </a>
                    </li>
                    <li class="md-nav__item">
-                    <a class="md-nav__link" href="../Interests/Finance/Stocks/SBCL_ShivalikBimetal/">
+                    <a class="md-nav__link" href="../../../../Interests/Finance/Stocks/SBCL_ShivalikBimetal/">
                      <span class="md-ellipsis">
                       SBCL_ShivalikBimetal
                      </span>
@@ -1493,14 +1232,14 @@
                </label>
                <ul class="md-nav__list" data-md-scrollfix="">
                 <li class="md-nav__item">
-                 <a class="md-nav__link" href="../Interests/Geo-politics/Geo-politics/">
+                 <a class="md-nav__link" href="../../../../Interests/Geo-politics/Geo-politics/">
                   <span class="md-ellipsis">
                    Geo-politics
                   </span>
                  </a>
                 </li>
                 <li class="md-nav__item">
-                 <a class="md-nav__link" href="../Interests/Geo-politics/Indo-China%20War%20prospects/">
+                 <a class="md-nav__link" href="../../../../Interests/Geo-politics/Indo-China%20War%20prospects/">
                   <span class="md-ellipsis">
                    Indo-China War prospects
                   </span>
@@ -1526,7 +1265,7 @@
                </label>
                <ul class="md-nav__list" data-md-scrollfix="">
                 <li class="md-nav__item">
-                 <a class="md-nav__link" href="../Interests/LinuxKernel/Linux%20Internals%20MOOC/">
+                 <a class="md-nav__link" href="../../../../Interests/LinuxKernel/Linux%20Internals%20MOOC/">
                   <span class="md-ellipsis">
                    Linux Internals MOOC
                   </span>
@@ -1549,28 +1288,28 @@
                   </label>
                   <ul class="md-nav__list" data-md-scrollfix="">
                    <li class="md-nav__item">
-                    <a class="md-nav__link" href="../Interests/LinuxKernel/06.Networking/06.01%20Life%20of%20a%20Packet/">
+                    <a class="md-nav__link" href="../../../../Interests/LinuxKernel/06.Networking/06.01%20Life%20of%20a%20Packet/">
                      <span class="md-ellipsis">
                       06.01 Life of a Packet
                      </span>
                     </a>
                    </li>
                    <li class="md-nav__item">
-                    <a class="md-nav__link" href="../Interests/LinuxKernel/06.Networking/06.02%20Kernel%20High%20Performance%20Networking/">
+                    <a class="md-nav__link" href="../../../../Interests/LinuxKernel/06.Networking/06.02%20Kernel%20High%20Performance%20Networking/">
                      <span class="md-ellipsis">
                       06.02 Kernel High Performance Networking
                      </span>
                     </a>
                    </li>
                    <li class="md-nav__item">
-                    <a class="md-nav__link" href="../Interests/LinuxKernel/06.Networking/06.03%20Bypassing%20the%20Kernel/">
+                    <a class="md-nav__link" href="../../../../Interests/LinuxKernel/06.Networking/06.03%20Bypassing%20the%20Kernel/">
                      <span class="md-ellipsis">
                       06.03 Bypassing the Kernel
                      </span>
                     </a>
                    </li>
                    <li class="md-nav__item">
-                    <a class="md-nav__link" href="../Interests/LinuxKernel/06.Networking/06.04%20What%20Should%20I%20use/">
+                    <a class="md-nav__link" href="../../../../Interests/LinuxKernel/06.Networking/06.04%20What%20Should%20I%20use/">
                      <span class="md-ellipsis">
                       06.04 What Should I use
                      </span>
@@ -1596,7 +1335,7 @@
                   </label>
                   <ul class="md-nav__list" data-md-scrollfix="">
                    <li class="md-nav__item">
-                    <a class="md-nav__link" href="../Interests/LinuxKernel/09.Tracing/09.xx%20Performance%20Monitoring/">
+                    <a class="md-nav__link" href="../../../../Interests/LinuxKernel/09.Tracing/09.xx%20Performance%20Monitoring/">
                      <span class="md-ellipsis">
                       09.xx Performance Monitoring
                      </span>
@@ -1622,35 +1361,35 @@
                   </label>
                   <ul class="md-nav__list" data-md-scrollfix="">
                    <li class="md-nav__item">
-                    <a class="md-nav__link" href="../Interests/LinuxKernel/10.eBPF/10.01%20eBPF%20History%2C%20Motivation%20and%20Design/">
+                    <a class="md-nav__link" href="../../../../Interests/LinuxKernel/10.eBPF/10.01%20eBPF%20History%2C%20Motivation%20and%20Design/">
                      <span class="md-ellipsis">
                       10.01 eBPF History, Motivation and Design
                      </span>
                     </a>
                    </li>
                    <li class="md-nav__item">
-                    <a class="md-nav__link" href="../Interests/LinuxKernel/10.eBPF/10.02%20Hello%20eBPF/">
+                    <a class="md-nav__link" href="../../../../Interests/LinuxKernel/10.eBPF/10.02%20Hello%20eBPF/">
                      <span class="md-ellipsis">
                       10.02 Hello eBPF
                      </span>
                     </a>
                    </li>
                    <li class="md-nav__item">
-                    <a class="md-nav__link" href="../Interests/LinuxKernel/10.eBPF/10.03%20eBPF%20Maps/">
+                    <a class="md-nav__link" href="../../../../Interests/LinuxKernel/10.eBPF/10.03%20eBPF%20Maps/">
                      <span class="md-ellipsis">
                       10.03 eBPF Maps
                      </span>
                     </a>
                    </li>
                    <li class="md-nav__item">
-                    <a class="md-nav__link" href="../Interests/LinuxKernel/10.eBPF/10.04%20XDP/">
+                    <a class="md-nav__link" href="../../../../Interests/LinuxKernel/10.eBPF/10.04%20XDP/">
                      <span class="md-ellipsis">
                       10.04 XDP
                      </span>
                     </a>
                    </li>
                    <li class="md-nav__item">
-                    <a class="md-nav__link" href="../Interests/LinuxKernel/10.eBPF/10.05%20eBPF%20%26%20Tracing/">
+                    <a class="md-nav__link" href="../../../../Interests/LinuxKernel/10.eBPF/10.05%20eBPF%20%26%20Tracing/">
                      <span class="md-ellipsis">
                       10.05 eBPF &amp; Tracing
                      </span>
@@ -1679,14 +1418,14 @@
                </label>
                <ul class="md-nav__list" data-md-scrollfix="">
                 <li class="md-nav__item">
-                 <a class="md-nav__link" href="../Interests/Photography/Photography/">
+                 <a class="md-nav__link" href="../../../../Interests/Photography/Photography/">
                   <span class="md-ellipsis">
                    Photography
                   </span>
                  </a>
                 </li>
                 <li class="md-nav__item">
-                 <a class="md-nav__link" href="../Interests/Photography/Video%20and%20Photography/">
+                 <a class="md-nav__link" href="../../../../Interests/Photography/Video%20and%20Photography/">
                   <span class="md-ellipsis">
                    Video and Photography
                   </span>
@@ -1728,7 +1467,7 @@
                   </label>
                   <ul class="md-nav__list" data-md-scrollfix="">
                    <li class="md-nav__item">
-                    <a class="md-nav__link" href="../Interests/Spirituality/Vedanta/Geeta%20Readings/">
+                    <a class="md-nav__link" href="../../../../Interests/Spirituality/Vedanta/Geeta%20Readings/">
                      <span class="md-ellipsis">
                       Geeta Readings
                      </span>
@@ -1767,7 +1506,7 @@
             </label>
             <ul class="md-nav__list" data-md-scrollfix="">
              <li class="md-nav__item">
-              <a class="md-nav__link" href="../archive/2024/">
+              <a class="md-nav__link" href="../../../../archive/2024/">
                <span class="md-ellipsis">
                 2024
                </span>
@@ -1793,28 +1532,28 @@
             </label>
             <ul class="md-nav__list" data-md-scrollfix="">
              <li class="md-nav__item">
-              <a class="md-nav__link" href="../category/business/">
+              <a class="md-nav__link" href="../../../../category/business/">
                <span class="md-ellipsis">
                 Business
                </span>
               </a>
              </li>
              <li class="md-nav__item">
-              <a class="md-nav__link" href="../category/engineering/">
+              <a class="md-nav__link" href="../../../../category/engineering/">
                <span class="md-ellipsis">
                 Engineering
                </span>
               </a>
              </li>
              <li class="md-nav__item">
-              <a class="md-nav__link" href="../category/insights/">
+              <a class="md-nav__link" href="../../../../category/insights/">
                <span class="md-ellipsis">
                 Insights
                </span>
               </a>
              </li>
              <li class="md-nav__item">
-              <a class="md-nav__link" href="../category/management/">
+              <a class="md-nav__link" href="../../../../category/management/">
                <span class="md-ellipsis">
                 Management
                </span>
@@ -1839,254 +1578,76 @@
          </label>
          <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
           <li class="md-nav__item">
-           <a class="md-nav__link" href="#seriesbits-n-bytes">
+           <a class="md-nav__link" href="#table-of-contents">
             <span class="md-ellipsis">
-             series/bits-n-bytes
+             Table of Contents
             </span>
            </a>
           </li>
           <li class="md-nav__item">
-           <a class="md-nav__link" href="#software_engineeringlinux-internals">
+           <a class="md-nav__link" href="#functional-requirements">
             <span class="md-ellipsis">
-             software_engineering/linux-internals
+             Functional Requirements
             </span>
            </a>
           </li>
           <li class="md-nav__item">
-           <a class="md-nav__link" href="#topicgenai">
+           <a class="md-nav__link" href="#solutions-considered">
             <span class="md-ellipsis">
-             topic/GenAI
+             Solutions Considered
             </span>
            </a>
           </li>
           <li class="md-nav__item">
-           <a class="md-nav__link" href="#topicbike-shedding">
+           <a class="md-nav__link" href="#solution-blueprint">
             <span class="md-ellipsis">
-             topic/bike-shedding
+             Solution Blueprint
+            </span>
+           </a>
+           <nav aria-label="Solution Blueprint" class="md-nav">
+            <ul class="md-nav__list">
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="#pgp">
+               <span class="md-ellipsis">
+                PGP
+               </span>
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="#sops">
+               <span class="md-ellipsis">
+                SOPS
+               </span>
+              </a>
+             </li>
+            </ul>
+           </nav>
+          </li>
+          <li class="md-nav__item">
+           <a class="md-nav__link" href="#setting-up-sops-with-pgp">
+            <span class="md-ellipsis">
+             Setting up SOPS with PGP
             </span>
            </a>
           </li>
           <li class="md-nav__item">
-           <a class="md-nav__link" href="#topicbusiness">
+           <a class="md-nav__link" href="#conclusion">
             <span class="md-ellipsis">
-             topic/business
+             Conclusion
             </span>
            </a>
           </li>
           <li class="md-nav__item">
-           <a class="md-nav__link" href="#topicculture">
+           <a class="md-nav__link" href="#tldr">
             <span class="md-ellipsis">
-             topic/culture
+             TLDR
             </span>
            </a>
           </li>
           <li class="md-nav__item">
-           <a class="md-nav__link" href="#topicdeep-dives">
+           <a class="md-nav__link" href="#footnotes">
             <span class="md-ellipsis">
-             topic/deep-dives
-            </span>
-           </a>
-          </li>
-          <li class="md-nav__item">
-           <a class="md-nav__link" href="#topicdevops">
-            <span class="md-ellipsis">
-             topic/devops
-            </span>
-           </a>
-          </li>
-          <li class="md-nav__item">
-           <a class="md-nav__link" href="#topicdevtools">
-            <span class="md-ellipsis">
-             topic/devtools
-            </span>
-           </a>
-          </li>
-          <li class="md-nav__item">
-           <a class="md-nav__link" href="#topicengineering">
-            <span class="md-ellipsis">
-             topic/engineering
-            </span>
-           </a>
-          </li>
-          <li class="md-nav__item">
-           <a class="md-nav__link" href="#topicengineering-management">
-            <span class="md-ellipsis">
-             topic/engineering-management
-            </span>
-           </a>
-          </li>
-          <li class="md-nav__item">
-           <a class="md-nav__link" href="#topicgit">
-            <span class="md-ellipsis">
-             topic/git
-            </span>
-           </a>
-          </li>
-          <li class="md-nav__item">
-           <a class="md-nav__link" href="#topicgraphics">
-            <span class="md-ellipsis">
-             topic/graphics
-            </span>
-           </a>
-          </li>
-          <li class="md-nav__item">
-           <a class="md-nav__link" href="#topicindian-markets">
-            <span class="md-ellipsis">
-             topic/indian-markets
-            </span>
-           </a>
-          </li>
-          <li class="md-nav__item">
-           <a class="md-nav__link" href="#topicleadership">
-            <span class="md-ellipsis">
-             topic/leadership
-            </span>
-           </a>
-          </li>
-          <li class="md-nav__item">
-           <a class="md-nav__link" href="#topiclinux">
-            <span class="md-ellipsis">
-             topic/linux
-            </span>
-           </a>
-          </li>
-          <li class="md-nav__item">
-           <a class="md-nav__link" href="#topicmanagement">
-            <span class="md-ellipsis">
-             topic/management
-            </span>
-           </a>
-          </li>
-          <li class="md-nav__item">
-           <a class="md-nav__link" href="#topicneovim">
-            <span class="md-ellipsis">
-             topic/neovim
-            </span>
-           </a>
-          </li>
-          <li class="md-nav__item">
-           <a class="md-nav__link" href="#topicopen-source">
-            <span class="md-ellipsis">
-             topic/open-source
-            </span>
-           </a>
-          </li>
-          <li class="md-nav__item">
-           <a class="md-nav__link" href="#topicorganizational-design">
-            <span class="md-ellipsis">
-             topic/organizational-design
-            </span>
-           </a>
-          </li>
-          <li class="md-nav__item">
-           <a class="md-nav__link" href="#topicpersonal-development">
-            <span class="md-ellipsis">
-             topic/personal-development
-            </span>
-           </a>
-          </li>
-          <li class="md-nav__item">
-           <a class="md-nav__link" href="#topicpgp">
-            <span class="md-ellipsis">
-             topic/pgp
-            </span>
-           </a>
-          </li>
-          <li class="md-nav__item">
-           <a class="md-nav__link" href="#topicpkm">
-            <span class="md-ellipsis">
-             topic/pkm
-            </span>
-           </a>
-          </li>
-          <li class="md-nav__item">
-           <a class="md-nav__link" href="#topicplatform-engineering">
-            <span class="md-ellipsis">
-             topic/platform-engineering
-            </span>
-           </a>
-          </li>
-          <li class="md-nav__item">
-           <a class="md-nav__link" href="#topicproductivity">
-            <span class="md-ellipsis">
-             topic/productivity
-            </span>
-           </a>
-          </li>
-          <li class="md-nav__item">
-           <a class="md-nav__link" href="#topicprogramming">
-            <span class="md-ellipsis">
-             topic/programming
-            </span>
-           </a>
-          </li>
-          <li class="md-nav__item">
-           <a class="md-nav__link" href="#topicpython">
-            <span class="md-ellipsis">
-             topic/python
-            </span>
-           </a>
-          </li>
-          <li class="md-nav__item">
-           <a class="md-nav__link" href="#topicqt5">
-            <span class="md-ellipsis">
-             topic/qt5
-            </span>
-           </a>
-          </li>
-          <li class="md-nav__item">
-           <a class="md-nav__link" href="#topicsecurity">
-            <span class="md-ellipsis">
-             topic/security
-            </span>
-           </a>
-          </li>
-          <li class="md-nav__item">
-           <a class="md-nav__link" href="#topicsoftware-development">
-            <span class="md-ellipsis">
-             topic/software-development
-            </span>
-           </a>
-          </li>
-          <li class="md-nav__item">
-           <a class="md-nav__link" href="#topicteam-management">
-            <span class="md-ellipsis">
-             topic/team-management
-            </span>
-           </a>
-          </li>
-          <li class="md-nav__item">
-           <a class="md-nav__link" href="#topictech-tips">
-            <span class="md-ellipsis">
-             topic/tech-tips
-            </span>
-           </a>
-          </li>
-          <li class="md-nav__item">
-           <a class="md-nav__link" href="#topictechtips">
-            <span class="md-ellipsis">
-             topic/techtips
-            </span>
-           </a>
-          </li>
-          <li class="md-nav__item">
-           <a class="md-nav__link" href="#topicvisual-programming">
-            <span class="md-ellipsis">
-             topic/visual-programming
-            </span>
-           </a>
-          </li>
-          <li class="md-nav__item">
-           <a class="md-nav__link" href="#topicwriting">
-            <span class="md-ellipsis">
-             topic/writing
-            </span>
-           </a>
-          </li>
-          <li class="md-nav__item">
-           <a class="md-nav__link" href="#topicwsl2">
-            <span class="md-ellipsis">
-             topic/wsl2
+             Footnotes
             </span>
            </a>
           </li>
@@ -2095,533 +1656,981 @@
        </div>
       </div>
      </div>
-     <div class="md-content" data-md-component="content">
+     <div class="md-content md-content--post" data-md-component="content">
+      <div class="md-sidebar md-sidebar--post" data-md-component="sidebar" data-md-type="navigation">
+       <div class="md-sidebar__scrollwrap">
+        <div class="md-sidebar__inner md-post">
+         <nav class="md-nav md-nav--primary">
+          <div class="md-post__back">
+           <div class="md-nav__title md-nav__container">
+            <a class="md-nav__link" href="../../../..">
+             <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z">
+              </path>
+             </svg>
+             <span class="md-ellipsis">
+              Back to index
+             </span>
+            </a>
+           </div>
+          </div>
+          <ul class="md-post__meta md-nav__list">
+           <li class="md-nav__item md-nav__item--section">
+            <div class="md-post__title">
+             <span class="md-ellipsis">
+              Metadata
+             </span>
+            </div>
+            <nav class="md-nav">
+             <ul class="md-nav__list">
+              <li class="md-nav__item">
+               <div class="md-nav__link">
+                <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                 <path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5v-5Z">
+                 </path>
+                </svg>
+                <time class="md-ellipsis" datetime="2024-09-11 00:00:00">
+                 September 11, 2024
+                </time>
+               </div>
+              </li>
+              <li class="md-nav__item">
+               <div class="md-nav__link">
+                <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                 <path d="M9 3v15h3V3H9m3 2 4 13 3-1-4-13-3 1M5 5v13h3V5H5M3 19v2h18v-2H3Z">
+                 </path>
+                </svg>
+                <span class="md-ellipsis">
+                 in
+                 <a href="../../../../category/engineering/">
+                  Engineering
+                 </a>
+                </span>
+               </div>
+              </li>
+              <li class="md-nav__item">
+               <div class="md-nav__link">
+                <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                 <path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7h1.5Z">
+                 </path>
+                </svg>
+                <span class="md-ellipsis">
+                 9 min read
+                </span>
+               </div>
+              </li>
+             </ul>
+            </nav>
+           </li>
+          </ul>
+         </nav>
+        </div>
+       </div>
+      </div>
       <article class="md-content__inner md-typeset">
-       <h1>
-        Tags
-       </h1>
-       <h2 id="seriesbits-n-bytes">
-        <span class="md-tag">
-         series/bits-n-bytes
-        </span>
-       </h2>
-       <ul>
-        <li>
-         <a href="../2024/04/07/ghost-in-a-shell---what-the-heck-is-a-terminalshelltty/">
-          Ghost in a shell - What the heck is a Terminal/Shell/TTY?
-         </a>
-        </li>
-        <li>
-         <a href="Articles/2024/May/Anatomy of Linux Kernel - Linux Kernel for System Engineers #2.md">
-          Linux Kernel Explained - Deep Dive Series for System Engineers
-         </a>
-        </li>
-        <li>
-         <a href="../2024/04/28/booting-up-linux-kernel---linux-for-engineers/">
-          Booting up Linux Kernel - Linux for Engineers
-         </a>
-        </li>
-       </ul>
-       <h2 id="software_engineeringlinux-internals">
-        <span class="md-tag">
-         software_engineering/linux-internals
-        </span>
-       </h2>
-       <ul>
-        <li>
-         <a href="Articles/2024/May/Anatomy of Linux Kernel - Linux Kernel for System Engineers #2.md">
-          Linux Kernel Explained - Deep Dive Series for System Engineers
-         </a>
-        </li>
-        <li>
-         <a href="../2024/04/28/booting-up-linux-kernel---linux-for-engineers/">
-          Booting up Linux Kernel - Linux for Engineers
-         </a>
-        </li>
-       </ul>
-       <h2 id="topicgenai">
-        <span class="md-tag">
-         topic/GenAI
-        </span>
-       </h2>
-       <ul>
-        <li>
-         <a href="../2024/07/15/visual-programming---promised-utopia-and-the-advent-of-genai/">
-          Visual Programming - Promised Utopia and the Advent of GenAI
-         </a>
-        </li>
-       </ul>
-       <h2 id="topicbike-shedding">
-        <span class="md-tag">
-         topic/bike-shedding
-        </span>
-       </h2>
-       <ul>
-        <li>
-         <a href="../2024/09/10/bike-shedding-and-the-law-of-triviality---lessons-from-the-linux-kernel-conflict/">
-          Bike Shedding and the Law of Triviality - Lessons from the Linux Kernel Conflict
-         </a>
-        </li>
-       </ul>
-       <h2 id="topicbusiness">
-        <span class="md-tag">
-         topic/business
-        </span>
-       </h2>
-       <ul>
-        <li>
-         <a href="../2024/08/31/business-of-datacenters---an-india-perspective/">
-          Business of Datacenters - An India perspective
-         </a>
-        </li>
-       </ul>
-       <h2 id="topicculture">
-        <span class="md-tag">
-         topic/culture
-        </span>
-       </h2>
-       <ul>
-        <li>
-         <a href="../2024/09/04/navigating-radical-candor-the-delicate-balance-between-trust-and-honesty/">
-          Navigating Radical Candor, the Delicate Balance Between Trust and Honesty
-         </a>
-        </li>
-       </ul>
-       <h2 id="topicdeep-dives">
-        <span class="md-tag">
-         topic/deep-dives
-        </span>
-       </h2>
-       <ul>
-        <li>
-         <a href="../2024/04/07/ghost-in-a-shell---what-the-heck-is-a-terminalshelltty/">
-          Ghost in a shell - What the heck is a Terminal/Shell/TTY?
-         </a>
-        </li>
-        <li>
-         <a href="../2024/08/31/business-of-datacenters---an-india-perspective/">
-          Business of Datacenters - An India perspective
-         </a>
-        </li>
-        <li>
-         <a href="Articles/2024/May/Anatomy of Linux Kernel - Linux Kernel for System Engineers #2.md">
-          Linux Kernel Explained - Deep Dive Series for System Engineers
-         </a>
-        </li>
-        <li>
-         <a href="../2024/04/28/booting-up-linux-kernel---linux-for-engineers/">
-          Booting up Linux Kernel - Linux for Engineers
-         </a>
-        </li>
-        <li>
-         <a href="../2024/05/31/future-of-organizations---post-genai-outlook-and-trends/">
-          Future of Organizations - Post GenAI Outlook and Trends
-         </a>
-        </li>
-       </ul>
-       <h2 id="topicdevops">
-        <span class="md-tag">
-         topic/devops
-        </span>
-       </h2>
-       <ul>
-        <li>
-         <a href="../2024/04/07/ghost-in-a-shell---what-the-heck-is-a-terminalshelltty/">
-          Ghost in a shell - What the heck is a Terminal/Shell/TTY?
-         </a>
-        </li>
-        <li>
-         <a href="../2024/04/18/rise-of-internal-developer-portals-idp---part-1/">
-          Rise of Internal Developer Portals (iDp) - Part 1
-         </a>
-        </li>
-        <li>
-         <a href="../2024/09/11/manage-sensitive-api-keys-in-public-dotfiles-using-pgp-and-sops/">
-          Manage Sensitive API Keys in Public Dotfiles Using PGP and SOPS
-         </a>
-        </li>
-       </ul>
-       <h2 id="topicdevtools">
-        <span class="md-tag">
-         topic/devtools
-        </span>
-       </h2>
-       <ul>
-        <li>
-         <a href="../2024/08/14/tech-tip---my-wsl2-devsetup-for-terminal-productivity/">
-          Tech Tip - My WSL2 devsetup for terminal productivity
-         </a>
-        </li>
-        <li>
-         <a href="../2024/07/26/tech-tip---make-neovim-python-lsp-play-nice-with-pyenv/">
-          Tech Tip - Make Neovim Python LSP play nice with pyenv
-         </a>
-        </li>
-       </ul>
-       <h2 id="topicengineering">
-        <span class="md-tag">
-         topic/engineering
-        </span>
-       </h2>
-       <ul>
-        <li>
-         <a href="../2024/07/26/tech-tip---make-neovim-python-lsp-play-nice-with-pyenv/">
-          Tech Tip - Make Neovim Python LSP play nice with pyenv
-         </a>
-        </li>
-        <li>
-         <a href="../2024/07/15/mastering-efficient-git-workflows-with-stacked-prs/">
-          Mastering Efficient Git Workflows with Stacked PRs
-         </a>
-        </li>
-       </ul>
-       <h2 id="topicengineering-management">
-        <span class="md-tag">
-         topic/engineering-management
-        </span>
-       </h2>
-       <ul>
-        <li>
-         <a href="../2024/03/12/practitioners-guide-to-great-project-documentation-feat-readthedocs/">
-          Practitioners Guide to Great Project Documentation feat. ReadTheDocs
-         </a>
-        </li>
-        <li>
-         <a href="../2024/03/01/startup-cto-impatient-lazy-and-how-i-learned-the-habit-of-plan-sprint-ship-document/">
-          Startup CTO : Impatient , Lazy and how I learned the habit of plan-sprint-ship-document
-         </a>
-        </li>
-       </ul>
-       <h2 id="topicgit">
-        <span class="md-tag">
-         topic/git
-        </span>
-       </h2>
-       <ul>
-        <li>
-         <a href="../2024/07/15/mastering-efficient-git-workflows-with-stacked-prs/">
-          Mastering Efficient Git Workflows with Stacked PRs
-         </a>
-        </li>
-       </ul>
-       <h2 id="topicgraphics">
-        <span class="md-tag">
-         topic/graphics
-        </span>
-       </h2>
-       <ul>
-        <li>
-         <a href="../2024/07/15/deep-dive-into-linux-graphics---from-program-to-pixel/">
-          Deep Dive into Linux Graphics - From Program to Pixel
-         </a>
-        </li>
-       </ul>
-       <h2 id="topicindian-markets">
-        <span class="md-tag">
-         topic/indian-markets
-        </span>
-       </h2>
-       <ul>
-        <li>
-         <a href="../2024/08/31/business-of-datacenters---an-india-perspective/">
-          Business of Datacenters - An India perspective
-         </a>
-        </li>
-       </ul>
-       <h2 id="topicleadership">
-        <span class="md-tag">
-         topic/leadership
-        </span>
-       </h2>
-       <ul>
-        <li>
-         <a href="../2024/03/01/startup-cto-impatient-lazy-and-how-i-learned-the-habit-of-plan-sprint-ship-document/">
-          Startup CTO : Impatient , Lazy and how I learned the habit of plan-sprint-ship-document
-         </a>
-        </li>
-        <li>
-         <a href="../2024/09/04/navigating-radical-candor-the-delicate-balance-between-trust-and-honesty/">
-          Navigating Radical Candor, the Delicate Balance Between Trust and Honesty
-         </a>
-        </li>
-       </ul>
-       <h2 id="topiclinux">
-        <span class="md-tag">
-         topic/linux
-        </span>
-       </h2>
-       <ul>
-        <li>
-         <a href="../2024/07/15/deep-dive-into-linux-graphics---from-program-to-pixel/">
-          Deep Dive into Linux Graphics - From Program to Pixel
-         </a>
-        </li>
-        <li>
-         <a href="../2024/07/22/tech-tip---getting-qt5-to-respect-system-wide-dark-mode-and-gtk-theme/">
-          Tech Tip - Getting QT5 to respect system wide dark mode and GTK theme
-         </a>
-        </li>
-       </ul>
-       <h2 id="topicmanagement">
-        <span class="md-tag">
-         topic/management
-        </span>
-       </h2>
-       <ul>
-        <li>
-         <a href="../2024/07/14/designing-async-await-organizations/">
-          Designing Async-Await Organizations
-         </a>
-        </li>
-        <li>
-         <a href="../2024/09/04/navigating-radical-candor-the-delicate-balance-between-trust-and-honesty/">
-          Navigating Radical Candor, the Delicate Balance Between Trust and Honesty
-         </a>
-        </li>
-       </ul>
-       <h2 id="topicneovim">
-        <span class="md-tag">
-         topic/neovim
-        </span>
-       </h2>
-       <ul>
-        <li>
-         <a href="../2024/07/26/tech-tip---make-neovim-python-lsp-play-nice-with-pyenv/">
-          Tech Tip - Make Neovim Python LSP play nice with pyenv
-         </a>
-        </li>
-       </ul>
-       <h2 id="topicopen-source">
-        <span class="md-tag">
-         topic/open-source
-        </span>
-       </h2>
-       <ul>
-        <li>
-         <a href="../2024/09/10/bike-shedding-and-the-law-of-triviality---lessons-from-the-linux-kernel-conflict/">
-          Bike Shedding and the Law of Triviality - Lessons from the Linux Kernel Conflict
-         </a>
-        </li>
-       </ul>
-       <h2 id="topicorganizational-design">
-        <span class="md-tag">
-         topic/organizational-design
-        </span>
-       </h2>
-       <ul>
-        <li>
-         <a href="../2024/07/14/designing-async-await-organizations/">
-          Designing Async-Await Organizations
-         </a>
-        </li>
-       </ul>
-       <h2 id="topicpersonal-development">
-        <span class="md-tag">
-         topic/personal-development
-        </span>
-       </h2>
-       <ul>
-        <li>
-         <a href="../2024/07/22/story-untold-is-a-story-lost/">
-          Story Untold is a Story Lost
-         </a>
-        </li>
-       </ul>
-       <h2 id="topicpgp">
-        <span class="md-tag">
-         topic/pgp
-        </span>
-       </h2>
-       <ul>
-        <li>
-         <a href="../2024/09/11/manage-sensitive-api-keys-in-public-dotfiles-using-pgp-and-sops/">
-          Manage Sensitive API Keys in Public Dotfiles Using PGP and SOPS
-         </a>
-        </li>
-       </ul>
-       <h2 id="topicpkm">
-        <span class="md-tag">
-         topic/pkm
-        </span>
-       </h2>
-       <ul>
-        <li>
-         <a href="../2024/03/12/practitioners-guide-to-great-project-documentation-feat-readthedocs/">
-          Practitioners Guide to Great Project Documentation feat. ReadTheDocs
-         </a>
-        </li>
-       </ul>
-       <h2 id="topicplatform-engineering">
-        <span class="md-tag">
-         topic/platform-engineering
-        </span>
-       </h2>
-       <ul>
-        <li>
-         <a href="../2024/04/07/ghost-in-a-shell---what-the-heck-is-a-terminalshelltty/">
-          Ghost in a shell - What the heck is a Terminal/Shell/TTY?
-         </a>
-        </li>
-        <li>
-         <a href="../2024/04/18/rise-of-internal-developer-portals-idp---part-1/">
-          Rise of Internal Developer Portals (iDp) - Part 1
-         </a>
-        </li>
-        <li>
-         <a href="../2024/06/04/unleash-the-forbidden---enabling-ebpfxdp-for-kernel-tinkering-on-wsl2/">
-          Unleash the Forbidden - Enabling eBPF/XDP for Kernel Tinkering on WSL2
-         </a>
-        </li>
-       </ul>
-       <h2 id="topicproductivity">
-        <span class="md-tag">
-         topic/productivity
-        </span>
-       </h2>
-       <ul>
-        <li>
-         <a href="../2024/03/19/productivity-audits--the-fine-art-of-mastering-your-day/">
-          Productivity Audits &amp; the Fine art of Mastering Your Day
-         </a>
-        </li>
-        <li>
-         <a href="../2024/07/15/mastering-efficient-git-workflows-with-stacked-prs/">
-          Mastering Efficient Git Workflows with Stacked PRs
-         </a>
-        </li>
-       </ul>
-       <h2 id="topicprogramming">
-        <span class="md-tag">
-         topic/programming
-        </span>
-       </h2>
-       <ul>
-        <li>
-         <a href="../2024/07/15/deep-dive-into-linux-graphics---from-program-to-pixel/">
-          Deep Dive into Linux Graphics - From Program to Pixel
-         </a>
-        </li>
-       </ul>
-       <h2 id="topicpython">
-        <span class="md-tag">
-         topic/python
-        </span>
-       </h2>
-       <ul>
-        <li>
-         <a href="../2024/07/26/tech-tip---make-neovim-python-lsp-play-nice-with-pyenv/">
-          Tech Tip - Make Neovim Python LSP play nice with pyenv
-         </a>
-        </li>
-       </ul>
-       <h2 id="topicqt5">
-        <span class="md-tag">
-         topic/qt5
-        </span>
-       </h2>
-       <ul>
-        <li>
-         <a href="../2024/07/22/tech-tip---getting-qt5-to-respect-system-wide-dark-mode-and-gtk-theme/">
-          Tech Tip - Getting QT5 to respect system wide dark mode and GTK theme
-         </a>
-        </li>
-       </ul>
-       <h2 id="topicsecurity">
-        <span class="md-tag">
+       <nav class="md-tags">
+        <a class="md-tag" href="../../../../tags/#topicsecurity">
          topic/security
-        </span>
+        </a>
+        <a class="md-tag" href="../../../../tags/#topicdevops">
+         topic/devops
+        </a>
+        <a class="md-tag" href="../../../../tags/#topicpgp">
+         topic/pgp
+        </a>
+       </nav>
+       <h1 id="manage-sensitive-api-keys-in-public-dotfiles-using-pgp-and-sops">
+        Manage Sensitive API Keys in Public Dotfiles Using PGP and SOPS
+       </h1>
+       <p>
+        In modern development environment, it’s common to host dotfiles
+publicly—especially for sharing across machines or with the broader developer
+community. However, this convenience introduces security risks, such as
+accidentally exposing sensitive information like API keys, tokens, and
+credentials in public repositories. API keys for services like OpenAI,
+Anthropic, Google Cloud, and more, if exposed, can lead to security breaches and
+unauthorized access.
+       </p>
+       <!-- more -->
+       <p>
+        Imagine pushing your meticulously crafted dotfiles to GitHub, only to realize
+hours later that you've just exposed your OpenAI API key to the entire internet.
+Sounds like a nightmare? Unfortunately, it's an all-too-common reality for many
+developers.
+       </p>
+       <p>
+        The recent explosion of interest in AI development has brought a wave of
+excitement - and a flood of new developers eager to experiment with powerful AI
+APIs. From ChatGPT, anthropic to midjourney, flux, these tools are reshaping how
+we approach software development.
+       </p>
+       <p>
+        But with great power comes great responsibility, and I've noticed an alarming
+trend: more and more developers, especially those new to development, are
+accidentally exposing their API keys and other sensitive credentials in public
+repositories.
+       </p>
+       <p>
+        This isn't just a rookie mistake - even seasoned developers can fall into this
+trap when rushing to share their latest AI project or dotfiles setup. The
+consequences can be severe: unauthorized API usage, compromised accounts, and in
+some cases, significant financial losses. It's this recurring issue that
+compelled me to write this guide. We need a solution that's both secure and
+accessible, especially for those just starting their journey in AI development.
+       </p>
+       <p>
+        In today's interconnected development landscape, we often find ourselves walking
+a tightrope between convenience and security. We want to share our development
+setups across multiple machines, collaborate with team members, and contribute
+to the open-source community. But how do we do this without compromising our
+sensitive data? This post delves into a bare bones solution for this pervasive
+problem. We'll explore how to leverage the power of PGP encryption and Mozilla's
+SOPS to create a system where your API keys, tokens, and other secrets remain
+hidden, even in public repositories. By the end of this guide, you'll have a
+Unix-native, cost-effective method to:
+       </p>
+       <ol>
+        <li>
+         Securely store sensitive data in your dotfiles
+        </li>
+        <li>
+         Easily share your development setup across multiple machines
+        </li>
+        <li>
+         Maintain the convenience of public repositories without sacrificing security
+        </li>
+       </ol>
+       <p>
+        Whether you're a solo developer juggling multiple AI projects or part of a team
+managing shared configurations, this guide will provide you with the tools to
+keep your secrets... well, secret. Let's dive in and transform those vulnerable
+dotfiles into a fortress of security!
+       </p>
+       <h2 id="table-of-contents">
+        Table of Contents
        </h2>
        <ul>
         <li>
-         <a href="../2024/09/11/manage-sensitive-api-keys-in-public-dotfiles-using-pgp-and-sops/">
-          Manage Sensitive API Keys in Public Dotfiles Using PGP and SOPS
+         <a href="#functional-requirements">
+          Functional Requirements
+         </a>
+        </li>
+        <li>
+         <a href="#solutions-considered">
+          Solutions Considered
+         </a>
+        </li>
+        <li>
+         <a href="#solution-blueprint">
+          Solution Blueprint
+         </a>
+        </li>
+        <li>
+         <a href="#pgp">
+          PGP
+         </a>
+        </li>
+        <li>
+         <a href="#sops">
+          SOPS
+         </a>
+        </li>
+        <li>
+         <a href="#setting-up-sops-with-pgp">
+          Setting up SOPS with PGP
+         </a>
+        </li>
+        <li>
+         <a href="#conclusion">
+          Conclusion
+         </a>
+        </li>
+        <li>
+         <a href="#tldr">
+          TLDR
          </a>
         </li>
        </ul>
-       <h2 id="topicsoftware-development">
-        <span class="md-tag">
-         topic/software-development
-        </span>
+       <h2 id="functional-requirements">
+        Functional Requirements
        </h2>
+       <p>
+        Before diving into the solution, let’s outline the functional and non-functional
+requirements:
+       </p>
        <ul>
         <li>
-         <a href="../2024/07/15/visual-programming---promised-utopia-and-the-advent-of-genai/">
-          Visual Programming - Promised Utopia and the Advent of GenAI
-         </a>
+         Must work as early as
+         <code>
+          .profile
+         </code>
+         or
+         <code>
+          .bashrc
+         </code>
+         .
+        </li>
+        <li>
+         Should enable easy sharing of the same setup across multiple machines.
+        </li>
+        <li>
+         Must remain as
+         <strong>
+          Unix-native
+         </strong>
+         as possible (i.e., avoid desktop password
+    managers or proprietary key-sharing solutions).
+        </li>
+        <li>
+         Should not introduce ongoing costs for key management.
         </li>
        </ul>
-       <h2 id="topicteam-management">
-        <span class="md-tag">
-         topic/team-management
-        </span>
+       <h2 id="solutions-considered">
+        Solutions Considered
        </h2>
+       <p>
+        Here are the primary options we explored for managing sensitive data in
+dotfiles:
+       </p>
        <ul>
         <li>
-         <a href="../2024/09/10/bike-shedding-and-the-law-of-triviality---lessons-from-the-linux-kernel-conflict/">
-          Bike Shedding and the Law of Triviality - Lessons from the Linux Kernel Conflict
-         </a>
+         <strong>
+          Enterprise Tools
+         </strong>
+         : Solutions like HashiCorp Vault or Azure KMS offer
+    robust key management but come with added complexity and cost.
+         <ul>
+          <li>
+           <strong>
+            Pros
+           </strong>
+           : Secure, widely used, highly customizable.
+          </li>
+          <li>
+           <strong>
+            Cons
+           </strong>
+           : Requires maintenance, has a learning curve, and may incur
+    costs for smaller teams.
+          </li>
+         </ul>
+        </li>
+        <li>
+         <strong>
+          Password Managers or Secret Managers
+         </strong>
+         : Storing secrets in managers like
+    LastPass or Bitwarden is an option.
+         <ul>
+          <li>
+           <strong>
+            Pros
+           </strong>
+           : Easy to use, available on multiple platforms.
+          </li>
+          <li>
+           <strong>
+            Cons
+           </strong>
+           : Not ideal for dotfiles or Unix-native environments; overkill
+    for this use case.
+          </li>
+         </ul>
+        </li>
+        <li>
+         <strong>
+          PGP + SOPS
+         </strong>
+         : This is the Unix-native method we will focus on. It’s
+    simple, secure, and there’s no ongoing cost.
+         <strong>
+          PGP
+         </strong>
+         encrypts your secrets,
+    and
+         <strong>
+          SOPS
+         </strong>
+         manages them effortlessly.
+         <ul>
+          <li>
+           <strong>
+            Pros
+           </strong>
+           : Cost-effective, simple, Unix-friendly.
+          </li>
+          <li>
+           <strong>
+            Cons
+           </strong>
+           : Requires knowledge of PGP and some configuration.
+          </li>
+         </ul>
         </li>
        </ul>
-       <h2 id="topictech-tips">
-        <span class="md-tag">
-         topic/tech-tips
-        </span>
+       <h2 id="solution-blueprint">
+        Solution Blueprint
        </h2>
+       <p>
+        To manage your secrets in public dotfiles, follow these steps:
+       </p>
+       <ul class="task-list">
+        <li class="task-list-item">
+         <label class="task-list-control">
+          <input disabled="" type="checkbox">
+           <span class="task-list-indicator">
+           </span>
+          </input>
+         </label>
+         Install PGP (
+         <code>
+          gpg
+         </code>
+         ).
+        </li>
+        <li class="task-list-item">
+         <label class="task-list-control">
+          <input disabled="" type="checkbox">
+           <span class="task-list-indicator">
+           </span>
+          </input>
+         </label>
+         Install Mozilla SOPS.
+        </li>
+        <li class="task-list-item">
+         <label class="task-list-control">
+          <input disabled="" type="checkbox">
+           <span class="task-list-indicator">
+           </span>
+          </input>
+         </label>
+         Generate a PGP key and store it securely.
+        </li>
+        <li class="task-list-item">
+         <label class="task-list-control">
+          <input disabled="" type="checkbox">
+           <span class="task-list-indicator">
+           </span>
+          </input>
+         </label>
+         Create a secrets file (
+         <code>
+          ~/secrets.env
+         </code>
+         ) outside of your git repository.
+        </li>
+        <li class="task-list-item">
+         <label class="task-list-control">
+          <input disabled="" type="checkbox">
+           <span class="task-list-indicator">
+           </span>
+          </input>
+         </label>
+         Use PGP and SOPS to encrypt the secrets file and commit the encrypted
+        version to your dotfiles (
+         <code>
+          ~/dot-files/secrets.gpg.env
+         </code>
+         ).
+        </li>
+        <li class="task-list-item">
+         <label class="task-list-control">
+          <input disabled="" type="checkbox">
+           <span class="task-list-indicator">
+           </span>
+          </input>
+         </label>
+         Modify your
+         <code>
+          .profile
+         </code>
+         or
+         <code>
+          .bashrc
+         </code>
+         to decrypt and source the secrets
+        directly into memory on startup.
+        </li>
+       </ul>
+       <p>
+        Here's a diagram to visualize the solution flow:
+       </p>
+       <p>
+        <img alt="For the visual learner, here's sops + keymanagement with 1password value.  We use pgp instead" src="../../../September/Assets/2024-09-11-14-17-33.png"/>
+       </p>
+       <h3 id="pgp">
+        PGP
+       </h3>
+       <p>
+        PGP is a powerful encryption system that uses
+        <strong>
+         public-key cryptography
+        </strong>
+        . In
+our solution, the
+        <strong>
+         client
+        </strong>
+        (your machine) uses a
+        <strong>
+         public key
+        </strong>
+        to encrypt the
+data, and the
+        <strong>
+         server
+        </strong>
+        (or another machine) uses a
+        <strong>
+         private key
+        </strong>
+        to decrypt
+it.
+       </p>
+       <p>
+        Here’s how it works:
+       </p>
        <ul>
         <li>
-         <a href="../2024/07/22/tech-tip---getting-qt5-to-respect-system-wide-dark-mode-and-gtk-theme/">
-          Tech Tip - Getting QT5 to respect system wide dark mode and GTK theme
-         </a>
+         You encrypt your secrets file using your public PGP key.
+        </li>
+        <li>
+         On the machine where you need the secrets (such as a server), you decrypt
+    the file using the corresponding private key.
         </li>
        </ul>
-       <h2 id="topictechtips">
-        <span class="md-tag">
-         topic/techtips
-        </span>
+       <p>
+        If you’re unfamiliar with PGP’s encryption mechanism, read this simplified
+explanation of
+        <a href="https://en.wikipedia.org/wiki/Web_of_trust#Simplified_Explanation">
+         Web of Trust
+        </a>
+        .
+       </p>
+       <h3 id="sops">
+        SOPS
+       </h3>
+       <p>
+        <strong>
+         SOPS (Secrets OPerationS)
+        </strong>
+        , created by Mozilla, is a powerful tool that makes
+working with encrypted files easy. It supports PGP, AWS KMS, Google Cloud KMS,
+and other encryption systems.
+       </p>
+       <p>
+        For our solution, we’ll use PGP with SOPS. SOPS ensures the secrets are
+encrypted in place and can easily be decrypted when needed. You can either use a
+        <strong>
+         single PGP key
+        </strong>
+        for all your environments or assign a unique key for each
+service.
+       </p>
+       <p>
+        In more complex setups, you might want to look into using
+        <strong>
+         AWS KMS
+        </strong>
+        to manage
+your keys, as it decouples key management from access credentials, which offers
+a higher level of security for larger teams.
+       </p>
+       <h2 id="setting-up-sops-with-pgp">
+        Setting up SOPS with PGP
        </h2>
+       <p>
+        Let’s walk through the step-by-step process of setting up
+        <strong>
+         SOPS
+        </strong>
+        with
+        <strong>
+         PGP
+        </strong>
+        to secure your secrets:
+       </p>
+       <ol>
+        <li>
+         <strong>
+          Install PGP and SOPS
+         </strong>
+         .
+        </li>
+        <li>
+         <strong>
+          Generate a PGP key
+         </strong>
+         by running
+         <code>
+          gpg --gen-key
+         </code>
+         and configuring as follows:
+         <ul>
+          <li>
+           Key type: RSA and RSA
+          </li>
+          <li>
+           Key size: 2048
+          </li>
+          <li>
+           Expiration: 0 (never expires)
+          </li>
+          <li>
+           Real name: "{{repo}} PGP"
+          </li>
+          <li>
+           Email: "{{email}}"
+          </li>
+          <li>
+           Comment: "PGP credentials for {{repo}} secrets"
+          </li>
+         </ul>
+        </li>
+        <li>
+         <strong>
+          Create an encrypted secrets file
+         </strong>
+         using SOPS:
+         <div class="language-bash highlight">
+          <pre><span></span><code><span id="__span-0-1"><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>sops<span class="w"> </span>--pgp<span class="w"> </span><span class="s1">'{{full_fingerprint}}'</span><span class="w"> </span>secret.enc.yml
+</span></code></pre>
+         </div>
+        </li>
+        <li>
+         <strong>
+          Store your private key securely
+         </strong>
+         , for instance, in a cloud vault or
+   outside the git repository:
+         <div class="language-bash highlight">
+          <pre><span></span><code><span id="__span-1-1"><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a>gpg<span class="w"> </span>--export-secret-keys<span class="w"> </span>--armor<span class="w"> </span><span class="o">{{</span>fingerprint<span class="o">}}</span><span class="w"> </span>&gt;<span class="w"> </span>private.rsa
+</span></code></pre>
+         </div>
+        </li>
+        <li>
+         <strong>
+          Modify your
+          <code>
+           .profile
+          </code>
+          to decrypt the secrets on startup
+         </strong>
+         :
+         <div class="language-bash highlight">
+          <pre><span></span><code><span id="__span-2-1"><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="nb">export</span><span class="w"> </span><span class="k">$(</span>sops<span class="w"> </span>--decrypt<span class="w"> </span>~/dot-files/secrets.gpg.env<span class="w"> </span><span class="p">|</span><span class="w"> </span>xargs<span class="k">)</span>
+</span></code></pre>
+         </div>
+        </li>
+       </ol>
+       <h2 id="conclusion">
+        Conclusion
+       </h2>
+       <p>
+        As we've explored in this guide, managing sensitive information in public
+dotfiles is not just a best practice—it's a critical component of modern secure
+development, especially in the rapidly evolving world of AI and machine
+learning.
+       </p>
+       <p>
+        By leveraging the power of PGP and SOPS, we've unlocked a robust, Unix-native
+solution that allows us to:
+       </p>
+       <ol>
+        <li>
+         Encrypt our secrets securely, ensuring they're only accessible to intended
+   recipients
+        </li>
+        <li>
+         Share our development setups across multiple machines without compromising
+   security
+        </li>
+        <li>
+         Contribute to open-source projects and share our dotfiles publicly with
+   confidence
+        </li>
+       </ol>
+       <p>
+        This approach scales well from individual developers to small and medium-sized
+teams, integrating seamlessly with existing Unix-like environments. It's
+particularly valuable for those working with AI APIs, where exposed credentials
+can lead to significant security breaches and unexpected costs.
+       </p>
+       <p>
+        Remember, as you continue your journey in AI development or any field requiring
+API keys and other secrets:
+       </p>
        <ul>
         <li>
-         <a href="../2024/08/14/tech-tip---my-wsl2-devsetup-for-terminal-productivity/">
-          Tech Tip - My WSL2 devsetup for terminal productivity
-         </a>
+         Regularly audit your public repositories for any accidentally exposed
+    credentials
         </li>
-       </ul>
-       <h2 id="topicvisual-programming">
-        <span class="md-tag">
-         topic/visual-programming
-        </span>
-       </h2>
-       <ul>
         <li>
-         <a href="../2024/07/15/visual-programming---promised-utopia-and-the-advent-of-genai/">
-          Visual Programming - Promised Utopia and the Advent of GenAI
-         </a>
+         Consider implementing this PGP + SOPS solution as part of your standard
+    development workflow
         </li>
-       </ul>
-       <h2 id="topicwriting">
-        <span class="md-tag">
-         topic/writing
-        </span>
-       </h2>
-       <ul>
         <li>
-         <a href="../2024/07/22/story-untold-is-a-story-lost/">
-          Story Untold is a Story Lost
-         </a>
+         Educate your team or community about the importance of secure credential
+    management
         </li>
        </ul>
-       <h2 id="topicwsl2">
-        <span class="md-tag">
-         topic/wsl2
-        </span>
+       <p>
+        For those looking to take their security posture to the next level, consider
+exploring more advanced setups supported by SOPS, such as integrating with AWS
+KMS for larger-scale key management, or incorporating these practices into your
+CI/CD pipelines.
+       </p>
+       <p>
+        Securing your secrets doesn't have to come at the cost of collaboration or
+convenience. With the approach outlined in this guide, you can embrace the open,
+sharing culture of the developer community while keeping your sensitive
+information locked down tight.
+       </p>
+       <p>
+        Stay curious, keep experimenting with AI, and above all, keep your secrets
+secret. Happy (and secure) coding!
+       </p>
+       <p>
+        Here's the steps in a single "not thoroghly tested" bash script. It should be
+easy to follow and even easier to fix
+       </p>
+       <h2 id="tldr">
+        TLDR
        </h2>
-       <ul>
+       <blockquote>
+        <p>
+         <strong>
+          ⚠️ Greybeard Territory: Proceed with Caution ⚠️
+         </strong>
+        </p>
+        <p>
+         For the Impatient Greybeards: The All-in-One Setup Script
+        </p>
+        <p>
+         The following section contains a bash script that automates the entire setup
+process. It's for those who prefer to dive in headfirst and tweak things
+later. If you're new to this, we strongly recommend following the step-by-step
+guide above instead.
+        </p>
+        <p>
+         Remember: With great power comes great responsibility. This script will make
+changes to your system. Review it carefully before running, and maybe pour
+yourself a strong cup of coffee first.
+        </p>
+       </blockquote>
+       <p>
+        For those of you who scoffed at the detailed explanations and just want to get
+things running, here's a bash script that sets up the entire PGP + SOPS
+environment in one go. It's not thoroughly tested, so consider this a starting
+point for your own customized setup.
+       </p>
+       <p>
+        To use this script:
+       </p>
+       <ol>
         <li>
-         <a href="../2024/08/14/tech-tip---my-wsl2-devsetup-for-terminal-productivity/">
-          Tech Tip - My WSL2 devsetup for terminal productivity
+         Save it as
+         <code>
+          setup_secrets.sh
+         </code>
+        </li>
+        <li>
+         Make it executable:
+         <code>
+          chmod +x setup_secrets.sh
+         </code>
+        </li>
+        <li>
+         Run it:
+         <code>
+          ./setup_secrets.sh
+         </code>
+        </li>
+       </ol>
+       <p>
+        Remember, this script is a starting point. You might need to adjust it based on
+your specific environment or requirements. And as always, review any script
+carefully before running it on your system.
+       </p>
+       <p>
+        Now, for those of you who skipped straight to this section: go back and read the
+rest of the post. There's valuable context and explanations up there that will
+help you understand what this script is actually doing. Don't say we didn't warn
+you!
+       </p>
+       <div class="language-bash highlight">
+        <span class="filename">
+         setup_secrets.sh
+        </span>
+        <pre><span></span><code><span id="__span-3-1"><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="ch">#!/bin/bash</span>
+</span><span id="__span-3-2"><a href="#__codelineno-3-2" id="__codelineno-3-2" name="__codelineno-3-2"></a>
+</span><span id="__span-3-3"><a href="#__codelineno-3-3" id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="c1"># Function to confirm actions from the user</span>
+</span><span id="__span-3-4"><a href="#__codelineno-3-4" id="__codelineno-3-4" name="__codelineno-3-4"></a>confirm<span class="o">()</span><span class="w"> </span><span class="o">{</span>
+</span><span id="__span-3-5"><a href="#__codelineno-3-5" id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="w">    </span><span class="nb">read</span><span class="w"> </span>-r<span class="w"> </span>-p<span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">1</span><span class="k">:-</span><span class="nv">Are</span><span class="p"> you sure? [y/N]</span><span class="si">}</span><span class="s2"> "</span><span class="w"> </span>response
+</span><span id="__span-3-6"><a href="#__codelineno-3-6" id="__codelineno-3-6" name="__codelineno-3-6"></a><span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="s2">"</span><span class="nv">$response</span><span class="s2">"</span><span class="w"> </span><span class="k">in</span>
+</span><span id="__span-3-7"><a href="#__codelineno-3-7" id="__codelineno-3-7" name="__codelineno-3-7"></a><span class="w">        </span><span class="o">[</span>yY<span class="o">][</span>eE<span class="o">][</span>sS<span class="o">]</span><span class="p">|</span><span class="o">[</span>yY<span class="o">])</span>
+</span><span id="__span-3-8"><a href="#__codelineno-3-8" id="__codelineno-3-8" name="__codelineno-3-8"></a><span class="w">            </span><span class="nb">true</span>
+</span><span id="__span-3-9"><a href="#__codelineno-3-9" id="__codelineno-3-9" name="__codelineno-3-9"></a><span class="w">            </span><span class="p">;;</span>
+</span><span id="__span-3-10"><a href="#__codelineno-3-10" id="__codelineno-3-10" name="__codelineno-3-10"></a><span class="w">        </span>*<span class="o">)</span>
+</span><span id="__span-3-11"><a href="#__codelineno-3-11" id="__codelineno-3-11" name="__codelineno-3-11"></a><span class="w">            </span><span class="nb">false</span>
+</span><span id="__span-3-12"><a href="#__codelineno-3-12" id="__codelineno-3-12" name="__codelineno-3-12"></a><span class="w">            </span><span class="p">;;</span>
+</span><span id="__span-3-13"><a href="#__codelineno-3-13" id="__codelineno-3-13" name="__codelineno-3-13"></a><span class="w">    </span><span class="k">esac</span>
+</span><span id="__span-3-14"><a href="#__codelineno-3-14" id="__codelineno-3-14" name="__codelineno-3-14"></a><span class="o">}</span>
+</span><span id="__span-3-15"><a href="#__codelineno-3-15" id="__codelineno-3-15" name="__codelineno-3-15"></a>
+</span><span id="__span-3-16"><a href="#__codelineno-3-16" id="__codelineno-3-16" name="__codelineno-3-16"></a><span class="c1"># Install GPG (GNU Privacy Guard)</span>
+</span><span id="__span-3-17"><a href="#__codelineno-3-17" id="__codelineno-3-17" name="__codelineno-3-17"></a><span class="k">if</span><span class="w"> </span>confirm<span class="w"> </span><span class="s2">"Do you want to install GPG (GNU Privacy Guard)? [y/N]"</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+</span><span id="__span-3-18"><a href="#__codelineno-3-18" id="__codelineno-3-18" name="__codelineno-3-18"></a><span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Installing GPG..."</span>
+</span><span id="__span-3-19"><a href="#__codelineno-3-19" id="__codelineno-3-19" name="__codelineno-3-19"></a><span class="w">    </span>sudo<span class="w"> </span>apt-get<span class="w"> </span>update
+</span><span id="__span-3-20"><a href="#__codelineno-3-20" id="__codelineno-3-20" name="__codelineno-3-20"></a><span class="w">    </span>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>gnupg
+</span><span id="__span-3-21"><a href="#__codelineno-3-21" id="__codelineno-3-21" name="__codelineno-3-21"></a><span class="k">else</span>
+</span><span id="__span-3-22"><a href="#__codelineno-3-22" id="__codelineno-3-22" name="__codelineno-3-22"></a><span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Skipping GPG installation."</span>
+</span><span id="__span-3-23"><a href="#__codelineno-3-23" id="__codelineno-3-23" name="__codelineno-3-23"></a><span class="k">fi</span>
+</span><span id="__span-3-24"><a href="#__codelineno-3-24" id="__codelineno-3-24" name="__codelineno-3-24"></a>
+</span><span id="__span-3-25"><a href="#__codelineno-3-25" id="__codelineno-3-25" name="__codelineno-3-25"></a><span class="c1"># Install SOPS (Secrets OPerationS)</span>
+</span><span id="__span-3-26"><a href="#__codelineno-3-26" id="__codelineno-3-26" name="__codelineno-3-26"></a><span class="k">if</span><span class="w"> </span>confirm<span class="w"> </span><span class="s2">"Do you want to install Mozilla SOPS? [y/N]"</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+</span><span id="__span-3-27"><a href="#__codelineno-3-27" id="__codelineno-3-27" name="__codelineno-3-27"></a><span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Installing SOPS..."</span>
+</span><span id="__span-3-28"><a href="#__codelineno-3-28" id="__codelineno-3-28" name="__codelineno-3-28"></a><span class="w">    </span>wget<span class="w"> </span>https://github.com/mozilla/sops/releases/download/v3.7.3/sops-v3.7.3.linux<span class="w"> </span>-O<span class="w"> </span>sops
+</span><span id="__span-3-29"><a href="#__codelineno-3-29" id="__codelineno-3-29" name="__codelineno-3-29"></a><span class="w">    </span>chmod<span class="w"> </span>+x<span class="w"> </span>sops
+</span><span id="__span-3-30"><a href="#__codelineno-3-30" id="__codelineno-3-30" name="__codelineno-3-30"></a><span class="w">    </span>sudo<span class="w"> </span>mv<span class="w"> </span>sops<span class="w"> </span>/usr/local/bin/
+</span><span id="__span-3-31"><a href="#__codelineno-3-31" id="__codelineno-3-31" name="__codelineno-3-31"></a><span class="k">else</span>
+</span><span id="__span-3-32"><a href="#__codelineno-3-32" id="__codelineno-3-32" name="__codelineno-3-32"></a><span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Skipping SOPS installation."</span>
+</span><span id="__span-3-33"><a href="#__codelineno-3-33" id="__codelineno-3-33" name="__codelineno-3-33"></a><span class="k">fi</span>
+</span><span id="__span-3-34"><a href="#__codelineno-3-34" id="__codelineno-3-34" name="__codelineno-3-34"></a>
+</span><span id="__span-3-35"><a href="#__codelineno-3-35" id="__codelineno-3-35" name="__codelineno-3-35"></a><span class="c1"># Remove SOPS default PGP keys</span>
+</span><span id="__span-3-36"><a href="#__codelineno-3-36" id="__codelineno-3-36" name="__codelineno-3-36"></a><span class="k">if</span><span class="w"> </span>confirm<span class="w"> </span><span class="s2">"Do you want to remove any default SOPS PGP keys? [y/N]"</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+</span><span id="__span-3-37"><a href="#__codelineno-3-37" id="__codelineno-3-37" name="__codelineno-3-37"></a><span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Listing GPG keys..."</span>
+</span><span id="__span-3-38"><a href="#__codelineno-3-38" id="__codelineno-3-38" name="__codelineno-3-38"></a><span class="w">    </span>gpg<span class="w"> </span>--list-keys
+</span><span id="__span-3-39"><a href="#__codelineno-3-39" id="__codelineno-3-39" name="__codelineno-3-39"></a><span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Enter the fingerprint of the key you want to delete (or press Enter to skip):"</span>
+</span><span id="__span-3-40"><a href="#__codelineno-3-40" id="__codelineno-3-40" name="__codelineno-3-40"></a><span class="w">    </span><span class="nb">read</span><span class="w"> </span>-r<span class="w"> </span>fingerprint
+</span><span id="__span-3-41"><a href="#__codelineno-3-41" id="__codelineno-3-41" name="__codelineno-3-41"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-n<span class="w"> </span><span class="s2">"</span><span class="nv">$fingerprint</span><span class="s2">"</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+</span><span id="__span-3-42"><a href="#__codelineno-3-42" id="__codelineno-3-42" name="__codelineno-3-42"></a><span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Deleting key with fingerprint </span><span class="nv">$fingerprint</span><span class="s2">..."</span>
+</span><span id="__span-3-43"><a href="#__codelineno-3-43" id="__codelineno-3-43" name="__codelineno-3-43"></a><span class="w">        </span>gpg<span class="w"> </span>--delete-keys<span class="w"> </span><span class="s2">"</span><span class="nv">$fingerprint</span><span class="s2">"</span>
+</span><span id="__span-3-44"><a href="#__codelineno-3-44" id="__codelineno-3-44" name="__codelineno-3-44"></a><span class="w">        </span>gpg<span class="w"> </span>--delete-secret-keys<span class="w"> </span><span class="s2">"</span><span class="nv">$fingerprint</span><span class="s2">"</span>
+</span><span id="__span-3-45"><a href="#__codelineno-3-45" id="__codelineno-3-45" name="__codelineno-3-45"></a><span class="w">    </span><span class="k">else</span>
+</span><span id="__span-3-46"><a href="#__codelineno-3-46" id="__codelineno-3-46" name="__codelineno-3-46"></a><span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"No keys deleted."</span>
+</span><span id="__span-3-47"><a href="#__codelineno-3-47" id="__codelineno-3-47" name="__codelineno-3-47"></a><span class="w">    </span><span class="k">fi</span>
+</span><span id="__span-3-48"><a href="#__codelineno-3-48" id="__codelineno-3-48" name="__codelineno-3-48"></a><span class="k">else</span>
+</span><span id="__span-3-49"><a href="#__codelineno-3-49" id="__codelineno-3-49" name="__codelineno-3-49"></a><span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Skipping sops default key deletion."</span>
+</span><span id="__span-3-50"><a href="#__codelineno-3-50" id="__codelineno-3-50" name="__codelineno-3-50"></a><span class="k">fi</span>
+</span><span id="__span-3-51"><a href="#__codelineno-3-51" id="__codelineno-3-51" name="__codelineno-3-51"></a><span class="c1"># Generate a GPG key</span>
+</span><span id="__span-3-52"><a href="#__codelineno-3-52" id="__codelineno-3-52" name="__codelineno-3-52"></a><span class="k">if</span><span class="w"> </span>confirm<span class="w"> </span><span class="s2">"Do you want to generate a new GPG key for encrypting secrets? [y/N]"</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+</span><span id="__span-3-53"><a href="#__codelineno-3-53" id="__codelineno-3-53" name="__codelineno-3-53"></a><span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Generating GPG key..."</span>
+</span><span id="__span-3-54"><a href="#__codelineno-3-54" id="__codelineno-3-54" name="__codelineno-3-54"></a><span class="w">    </span>gpg<span class="w"> </span>--gen-key
+</span><span id="__span-3-55"><a href="#__codelineno-3-55" id="__codelineno-3-55" name="__codelineno-3-55"></a><span class="k">else</span>
+</span><span id="__span-3-56"><a href="#__codelineno-3-56" id="__codelineno-3-56" name="__codelineno-3-56"></a><span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Skipping GPG key generation."</span>
+</span><span id="__span-3-57"><a href="#__codelineno-3-57" id="__codelineno-3-57" name="__codelineno-3-57"></a><span class="k">fi</span>
+</span><span id="__span-3-58"><a href="#__codelineno-3-58" id="__codelineno-3-58" name="__codelineno-3-58"></a>
+</span><span id="__span-3-59"><a href="#__codelineno-3-59" id="__codelineno-3-59" name="__codelineno-3-59"></a><span class="c1"># Create the secrets.env file</span>
+</span><span id="__span-3-60"><a href="#__codelineno-3-60" id="__codelineno-3-60" name="__codelineno-3-60"></a><span class="k">if</span><span class="w"> </span>confirm<span class="w"> </span><span class="s2">"Do you want to create a new secrets.env file at ~/secrets.env? [y/N]"</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+</span><span id="__span-3-61"><a href="#__codelineno-3-61" id="__codelineno-3-61" name="__codelineno-3-61"></a><span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Creating a new secrets.env file at ~/secrets.env..."</span>
+</span><span id="__span-3-62"><a href="#__codelineno-3-62" id="__codelineno-3-62" name="__codelineno-3-62"></a><span class="w">    </span>cat<span class="w"> </span><span class="s">&lt;&lt;EOL &gt; ~/secrets.env</span>
+</span><span id="__span-3-63"><a href="#__codelineno-3-63" id="__codelineno-3-63" name="__codelineno-3-63"></a><span class="s"># Add your secrets here in KEY=VALUE format</span>
+</span><span id="__span-3-64"><a href="#__codelineno-3-64" id="__codelineno-3-64" name="__codelineno-3-64"></a><span class="s">API_KEY=your_api_key_here</span>
+</span><span id="__span-3-65"><a href="#__codelineno-3-65" id="__codelineno-3-65" name="__codelineno-3-65"></a><span class="s">SECRET_KEY=your_secret_key_here</span>
+</span><span id="__span-3-66"><a href="#__codelineno-3-66" id="__codelineno-3-66" name="__codelineno-3-66"></a><span class="s">EOL</span>
+</span><span id="__span-3-67"><a href="#__codelineno-3-67" id="__codelineno-3-67" name="__codelineno-3-67"></a><span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Created secrets.env. Please add your sensitive data."</span>
+</span><span id="__span-3-68"><a href="#__codelineno-3-68" id="__codelineno-3-68" name="__codelineno-3-68"></a><span class="k">else</span>
+</span><span id="__span-3-69"><a href="#__codelineno-3-69" id="__codelineno-3-69" name="__codelineno-3-69"></a><span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Skipping secrets.env creation."</span>
+</span><span id="__span-3-70"><a href="#__codelineno-3-70" id="__codelineno-3-70" name="__codelineno-3-70"></a><span class="k">fi</span>
+</span><span id="__span-3-71"><a href="#__codelineno-3-71" id="__codelineno-3-71" name="__codelineno-3-71"></a>
+</span><span id="__span-3-72"><a href="#__codelineno-3-72" id="__codelineno-3-72" name="__codelineno-3-72"></a><span class="c1"># List available GPG keys and their fingerprints</span>
+</span><span id="__span-3-73"><a href="#__codelineno-3-73" id="__codelineno-3-73" name="__codelineno-3-73"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">"Encrypting your ~/secrets.env"</span>
+</span><span id="__span-3-74"><a href="#__codelineno-3-74" id="__codelineno-3-74" name="__codelineno-3-74"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">"Select Available GPG keys:"</span>
+</span><span id="__span-3-75"><a href="#__codelineno-3-75" id="__codelineno-3-75" name="__codelineno-3-75"></a>gpg<span class="w"> </span>--list-keys<span class="w"> </span>--fingerprint
+</span><span id="__span-3-76"><a href="#__codelineno-3-76" id="__codelineno-3-76" name="__codelineno-3-76"></a>
+</span><span id="__span-3-77"><a href="#__codelineno-3-77" id="__codelineno-3-77" name="__codelineno-3-77"></a><span class="c1"># Ask the user to select a GPG key fingerprint</span>
+</span><span id="__span-3-78"><a href="#__codelineno-3-78" id="__codelineno-3-78" name="__codelineno-3-78"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">"Enter the fingerprint of the GPG key you want to use for encryption:"</span>
+</span><span id="__span-3-79"><a href="#__codelineno-3-79" id="__codelineno-3-79" name="__codelineno-3-79"></a><span class="nb">read</span><span class="w"> </span>-r<span class="w"> </span>fingerprint
+</span><span id="__span-3-80"><a href="#__codelineno-3-80" id="__codelineno-3-80" name="__codelineno-3-80"></a>
+</span><span id="__span-3-81"><a href="#__codelineno-3-81" id="__codelineno-3-81" name="__codelineno-3-81"></a><span class="c1"># Check if the user input is empty</span>
+</span><span id="__span-3-82"><a href="#__codelineno-3-82" id="__codelineno-3-82" name="__codelineno-3-82"></a><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-z<span class="w"> </span><span class="s2">"</span><span class="nv">$fingerprint</span><span class="s2">"</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+</span><span id="__span-3-83"><a href="#__codelineno-3-83" id="__codelineno-3-83" name="__codelineno-3-83"></a><span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"No fingerprint provided. Aborting encryption."</span>
+</span><span id="__span-3-84"><a href="#__codelineno-3-84" id="__codelineno-3-84" name="__codelineno-3-84"></a><span class="w">    </span><span class="nb">exit</span><span class="w"> </span><span class="m">1</span>
+</span><span id="__span-3-85"><a href="#__codelineno-3-85" id="__codelineno-3-85" name="__codelineno-3-85"></a><span class="k">fi</span>
+</span><span id="__span-3-86"><a href="#__codelineno-3-86" id="__codelineno-3-86" name="__codelineno-3-86"></a>
+</span><span id="__span-3-87"><a href="#__codelineno-3-87" id="__codelineno-3-87" name="__codelineno-3-87"></a><span class="c1"># Encrypt the secrets.env file using the selected fingerprint and save it as secrets.gpg.env</span>
+</span><span id="__span-3-88"><a href="#__codelineno-3-88" id="__codelineno-3-88" name="__codelineno-3-88"></a><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-f<span class="w"> </span>~/secrets.env<span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+</span><span id="__span-3-89"><a href="#__codelineno-3-89" id="__codelineno-3-89" name="__codelineno-3-89"></a><span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Encrypting secrets.env into secrets.gpg.env..."</span>
+</span><span id="__span-3-90"><a href="#__codelineno-3-90" id="__codelineno-3-90" name="__codelineno-3-90"></a><span class="w">    </span>sops<span class="w"> </span>--encrypt<span class="w"> </span>--pgp<span class="w"> </span><span class="s2">"</span><span class="nv">$fingerprint</span><span class="s2">"</span><span class="w"> </span>~/secrets.env<span class="w"> </span>&gt;<span class="w"> </span>~/secrets.gpg.env
+</span><span id="__span-3-91"><a href="#__codelineno-3-91" id="__codelineno-3-91" name="__codelineno-3-91"></a><span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Encryption complete. Encrypted file saved as ~/secrets.gpg.env"</span>
+</span><span id="__span-3-92"><a href="#__codelineno-3-92" id="__codelineno-3-92" name="__codelineno-3-92"></a><span class="k">else</span>
+</span><span id="__span-3-93"><a href="#__codelineno-3-93" id="__codelineno-3-93" name="__codelineno-3-93"></a><span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"secrets.env not found in home directory. Please create it first."</span>
+</span><span id="__span-3-94"><a href="#__codelineno-3-94" id="__codelineno-3-94" name="__codelineno-3-94"></a><span class="w">    </span><span class="nb">exit</span><span class="w"> </span><span class="m">1</span>
+</span><span id="__span-3-95"><a href="#__codelineno-3-95" id="__codelineno-3-95" name="__codelineno-3-95"></a><span class="k">fi</span>
+</span><span id="__span-3-96"><a href="#__codelineno-3-96" id="__codelineno-3-96" name="__codelineno-3-96"></a>
+</span><span id="__span-3-97"><a href="#__codelineno-3-97" id="__codelineno-3-97" name="__codelineno-3-97"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">"Setup complete!"</span>
+</span></code></pre>
+       </div>
+       <hr/>
+       <h2 id="footnotes">
+        Footnotes
+       </h2>
+       <ol>
+        <li>
+         PGP vs. SSH Encryption:
+         <a href="https://en.wikipedia.org/wiki/Web_of_trust#Simplified_Explanation">
+          Link to Wikipedia
          </a>
         </li>
-       </ul>
+        <li>
+         SOPS GitHub Repo:
+         <a href="https://github.com/mozilla/sops/tree/0494bc41911bc6e050ddd8a5da2bbb071a79a5b7#up-and-running-in-60-seconds">
+          SOPS on GitHub
+         </a>
+        </li>
+        <li>
+         Here's a great info-graphic of all the ways sops can be used by the good
+   folks at GitGuardian
+         <ol>
+          <li>
+           <a href="https://www.gitguardian.com/files/securityzines-sops?ref=blog.gitguardian.com">
+            Infographic
+           </a>
+          </li>
+          <li>
+           <a href="https://blog.gitguardian.com/a-comprehensive-guide-to-sops/">
+            Blog post
+           </a>
+          </li>
+         </ol>
+        </li>
+       </ol>
+       <hr/>
+       <!-- # Public Dot-files with Private Secrets
+
+<!-- WRITING INSTRUCTION -->
+       <!-- - First - study the comments, instructions thoroghly atleast three times. This is important. -->
+       <!-- - Research the links provided with the context given for why the link was included.  Use tools to get webpages or youtube transcripts always. -->
+       <!-- - Reason about a high level narrative structure and flow for the blog.  We have included the title and the footnotes.  Everything else needs to be fleshed out. -->
+       <!-- - Start by writing a Table of Content. Use H2 and h3 only.  We don't want too many levels of nesting. -->
+       <!-- - Review if the Table of content flows well. Titles need to be short to medium, and don't make them boring.  A bit of wit is good to have but don't try too hard. -->
+       <!-- - Start writing the sections one at a time. Write, review the section,  check if the section flows well from the previous section. Follow the following directions for writing sections -->
+       <!--    - Introductions shouldn't be too long.  Explain why you are writing this, tell the person why its important, how you've laid out the blog and whats in it for the reader. You need to have the first paragraph engaging and something which hooks a reader and keeps them from bouncing off the page. -->
+       <!--    - Each section should use proper emphasis like bold/italics, urls,  and footnotes where appropriate. -->
+       <!--    - If something can be represented concisely in ordered or unordered lists, please do so. -->
+       <!--    - Use code snippets for technical topics. This isn't necessary, use wisely. For programming topics do use code examples. -->
+       <!--    - In between sections  you can use markdown comments to write down rough notes about what you intend to add in those sections. This will guide you in getting feedback from me, as well as save us iterations when we go into the whole content writing. -->
+       <!-- BLOG DESCRIPTION -->
+       <!-- We want to write an instructional blog about how we can manage sensitive data like API keys in our publicly hosted dotfiles. -->
+       <!-- Problem should talk about why this is important,  simply explain the security risk but dont preach too much. our readers aren't dumb. -->
+       <!-- -   Openai keys, anthropic keys, whole bunch of other knick knacks. -->
+       <!-- -   Google credentials json file. -->
+       <!-- -   Can't litter them in public dotfiles -->
+       <!-- ## Functional Requirements -->
+       <!-- NOTE: Requirements of our solution  both functional and non functional.  Keep this to the point and in bullet points. -->
+       <!-- -   Can work as early as .profile and .bashrc. -->
+       <!-- -   Should be able to share the same setup across machines. -->
+       <!-- -   As unixy as possible. This isn't supposed to solve for desktop password -->
+       <!--     management and key sharing. -->
+       <!-- ## Solutions Considered -->
+       <!-- <!-- -->
+       <!-- Options or Solution Space -->
+       <!-- Explain what each solution is in 1 small para.  then have a list of upto 3 pros and 3 cons. -->
+       <!-- -   Big guns - Hashcorp vault, Azure KMS, yada yada. -->
+       <!-- -   Some form of password / secret manager. -->
+       <!-- -   Good old pgp? + something. -->
+       <!-- We conclue we want to use simple pgp + sops. Unix way of doing things. easy to reason about, no running cost. encryption at rest. -->
+       <!-- ## Solution Blueprint -->
+       <!-- <!-- NOTE -->
+       <!-- I have laid out the solution steps.  covert this into a markdown checklist which people can visually follow. -->
+       <!-- Also add a mermaid diagram which shows how each component of the solution works -->
+       <!-- -   Install pgp -->
+       <!-- -   Install mozilla sops -->
+       <!-- -   Generate a pgp key. side channel it to a secure cloud vault. or into a -->
+       <!--     separate non-git folder on your pc. -->
+       <!-- -   create a secrets file ~/secrets.env OUTSIDE the git repo. -->
+       <!-- -   Use this pgp key to Sops encrypt files in place and commit it in -->
+       <!--     ~/dot-files/secrets.gpg.env -->
+       <!-- -   Commit the files to github. Just a bunch of mubled mess with some structure. -->
+       <!-- -   ~/.profile will use the key + sops to decrypt the file and immediately -->
+       <!--     source it with a pipe. No temp files, no disk writing. straigt to process -->
+       <!--     memory. depending on how the .env file was you may have to do some bash -->
+       <!--     magic to load it properly -->
+       <!--     -   `export $(cat ~/ai-keys.env | xargs) ` -->
+       <!-- -   Profit. Lets get into the hairy details -->
+       <!-- # PGP -->
+       <!-- It’s security mechanism is that we (i.e. client) use a PUBLIC key from the -->
+       <!-- receiver (i.e. server) and encode it with a random key (I’m saying nonce but it -->
+       <!-- could be reused) -->
+       <!-- This varies from RSA and SSH because the server uses a PUBLIC key to identify -->
+       <!-- the client. -->
+       <!-- This means the recipient will initially decrypt via our (i.e. client’s) public -->
+       <!-- key (verifying the source) and then decrypting via their (i.e. server’s) private -->
+       <!-- key to get the data. -->
+       <!-- To reiterate, the data we send is twice encrypted source’s private key outer -->
+       <!-- shell, recipient’s public key inner shell. -->
+       <!-- https://en.wikipedia.org/wiki/Web_of_trust#Simplified_Explanation -->
+       <!-- # SOPS -->
+       <!-- <!-- -->
+       <!-- For a PGP setup, development machine must have the same public/private PGP key. -->
+       <!-- Technically, we only need the public key to write content but for -->
+       <!-- reading/editing we need the private key. -->
+       <!-- The production server will have the private key for decryption. -->
+       <!-- We can share the same PGP key for all services or make it per-service (obviously -->
+       <!-- 1 is easier to maintain). -->
+       <!-- As an alternative to this sensitive setup, we can use AWS’ KMS which will manage -->
+       <!-- these public/private keys for us. To access said keys, we can use AWS -->
+       <!-- credentials and their access control policy. -->
+       <!-- The benefit of using KMS is it decouples the encryption key from access -->
+       <!-- credentials. Great job by Mozilla here :100: -->
+       <!-- # Setting up SOPS with PGP -->
+       <!-- First, get SOPS installed by following its instructions: -->
+       <!-- https://github.com/mozilla/sops/tree/0494bc41911bc6e050ddd8a5da2bbb071a79a5b7#up-and-running-in-60-seconds -->
+       <!-- To delete their PGP key (although you likely don’t need to; GPG is more of a -->
+       <!-- credential manager): -->
+       <!-- -   List installed keys via `gpg --list-keys` -->
+       <!-- ``` -->
+       <!-- /home/todd/.gnupg/pubring.gpg -->
+       <!-- ----------------------------- -->
+       <!-- pub   1024R/07FB1A0A 2015-10-08 -->
+       <!-- uid                  SOPS Functional Tests (https://github.com/mozilla/sops/) <ulfr+sopstests@mozilla.com> -->
+       <!-- sub   1024R/7CD79CC0 2015-10-08 -->
+       <!-- ``` -->
+       <!-- -   Delete desired key via `gpg --delete-keys {{fingerprint}}` and -->
+       <!--     `gpg --delete-secret-keys {{fingerprint}}` -->
+       <!--     -   In the example above, public fingerprint is `07FB1A0A` and private is -->
+       <!--         `7CD79CC0` -->
+       <!-- -   Verify empty files at `~/.gnupg/pubring.gpg` and `~/.gnupg/secring.gpg` -->
+       <!-- GPG cheatsheet here: http://irtfweb.ifa.hawaii.edu/~lockhart/gpg/gpg-cs.html -->
+       <!-- Now that we have SOPS installed, let’s set it up in our repo: -->
+       <!-- 1. Generate a GPG key for the repo -->
+       <!--     1. Use `gpg --gen-key`. For configuration, I chose: -->
+       <!--         1. Key type: RSA and RSA -->
+       <!--         2. Keysize: 2048 -->
+       <!--         3. Expiration: 0 (never expires, otherwise we will have to re-set up -->
+       <!--            configs) -->
+       <!--         4. Real name: {{repo}} PGP (e.g. “twolfson.com PGP”) -->
+       <!--         5. Email address: {{email}} -->
+       <!--         6. Comment: PGP credentials for {{repo}} secrets -->
+       <!--         7. Password: Empty password -->
+       <!--             - You may use a password but all developers and scripts performing -->
+       <!--               decryption will need to know that password -->
+       <!--             - This effectively makes the password useless since we are more -->
+       <!--               concerned about compromising our secrets than the RSA key -->
+       <!-- 2. Find full fingerprint for keys via `gpg --fingerprint` -->
+       <!--     - This will be `740D DBFA...` in `Key fingerprint = 740D DBFA...` -->
+       <!-- 3. Create our file via `sops --pgp '{{full_fingerprint}}' secret.enc.yml` -->
+       <!--     - For JSON, we can use a non-YAML extension -->
+       <!--     - For future edits of the file, we can use `sops secret.enc.yml` (our PGP -->
+       <!--       fingerprint has been stored inside of the file) -->
+       <!-- 4. Extract private key to file via -->
+       <!--    `gpg --export-secret-keys --armor {{fingerprint}} > private.rsa` -->
+       <!--     - `--armor` exports a human-friendly ASCII format instead of binary -->
+       <!-- 5. Upload private key to our server via -->
+       <!--    `rsync private.rsa {{server}}:private.rsa` -->
+       <!-- 6. SSH onto our machine -->
+       <!-- 7. Import private key into `gpg` keychain via `gpg --import private.rsa` -->
+       <!-- 8. During deployment, decrypt `secret.enc.yml` to its plaintext variant via -->
+       <!--    `sops --decrypt secret.enc.yml > secret.yml` -->
+       <!-- 9. Run server using plaintext `secret.yml` -->
+       <!-- ## Conclusion -->
+       <!-- While we have laid out a solution using gpg, sops supports a lot more key -->
+       <!-- management systems. You can easily scale it to be used in small to medium sized -->
+       <!-- organizations while keeping the workflow almost similar. The only difference -->
+       <!-- comes in how we provide sops with its signing/unsigning keys.   -->
+       <!-- Sops also works well with k8s and the cncf tool chain in general so if you are -->
+       <!-- revamping your devsecops definitely dig deeper into sops or reach out to an -->
+       <!-- expert and get things done properly at the get go. -->
       </article>
      </div>
      <script>
@@ -2631,7 +2640,7 @@
    </main>
    <footer class="md-footer mt-16">
     <nav aria-label="footer.title" class="md-footer__inner md-grid">
-     <a aria-label="Previous: Home" class="md-footer__link md-footer__link--prev" href=".." rel="prev">
+     <a aria-label="Previous: Bike Shedding and the Law of Triviality - Lessons from the Linux Kernel Conflict" class="md-footer__link md-footer__link--prev" href="../../10/bike-shedding-and-the-law-of-triviality---lessons-from-the-linux-kernel-conflict/" rel="prev">
       <div class="md-footer__button md-icon">
        <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
         <path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z">
@@ -2643,24 +2652,8 @@
         <span class="md-footer__direction">
          Previous
         </span>
-        Home
+        Bike Shedding and the Law of Triviality - Lessons from the Linux Kernel Conflict
        </div>
-      </div>
-     </a>
-     <a aria-label="Next: Business" class="md-footer__link md-footer__link--next" href="../category/business/" rel="next">
-      <div class="md-footer__title">
-       <div class="md-ellipsis">
-        <span class="md-footer__direction">
-         Next
-        </span>
-        Business
-       </div>
-      </div>
-      <div class="md-footer__button md-icon">
-       <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z">
-        </path>
-       </svg>
       </div>
      </a>
     </nav>
@@ -2764,11 +2757,11 @@
   <div class="md-progress" data-md-component="progress" role="progressbar">
   </div>
   <script id="__config" type="application/json">
-   {"base": "..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.path", "navigation.indexes", "toc.follow", "content.code.copy"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}
+   {"base": "../../../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.path", "navigation.indexes", "toc.follow", "content.code.copy"], "search": "../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}
   </script>
-  <script src="../assets/javascripts/bundle.081f42fc.min.js">
+  <script src="../../../../assets/javascripts/bundle.081f42fc.min.js">
   </script>
-  <script async="" src="../assets/javascripts/toggle-sidebar.js">
+  <script async="" src="../../../../assets/javascripts/toggle-sidebar.js">
   </script>
  </body>
 </html>
