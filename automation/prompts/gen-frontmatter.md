@@ -1,11 +1,11 @@
-I want to generate the metadata for the markdown file. I will provide you with
-the format. This is gonna be the frontmatter for my blog. Use the file context
-to come up with the front matter Sample frontmatter. Should be appended at the
-top of the file
+Generate the metadata for the markdown file. I will provide you with the format.
+This is gonna be the frontmatter for my blog. Use the file context to come up
+with the front matter Sample frontmatter. Should be appended at the top of the
+file
 
 ```
 ---
-title: Tech Tip - My WSL2 devsetup for terminal productivity
+title: Tech Tip  My WSL2 devsetup for terminal productivity <!-- needs to be windows and unix path safe and yaml safe. be careful with special characters. quote if necessary -->
 created: 2024-08-14 16:27
 date: 2024-08-14
 public: true
@@ -19,7 +19,7 @@ tags:
     - topic/wsl2
 topic:
     - techtips
-description:
+description: <!-- SEO optimized, should target niche high interest keywords specially for linkedin/twitter/hackernews audience -->
     Here are some tips to make your Windows devloper machine experience as close
     to a linux box. We cover terminal, neovim, Xserver applications and
     networking in WSL2 to make your life easy.

@@ -26,15 +26,26 @@ no bucket underneath it. This early capture, even if not harnessed immediately,
 could reap dividends if its harvested and stored with a bit of love and care. We
 will dive into some challenges in data storage later in this series.
 
-Now for the issues I want to bring your attention to,
+Now for the issues I want to bring your attention to and the goals I have in
+mind
 
--   Solving the basic skill gap and creating a desire to explore.
-    -   This can only be done by breaking down guarded knowledge silos.
--   Learning Path to get upto speed with different aspects of IIoT.
-    -   I want to create a simple path which covers different technologies and
-        shares insights about how these get used in the industry.
+-   Solving the basic skill gap and creating a desire to explore. This can only
+    be done by breaking down guarded knowledge silos.
+-   Learning Path to get upto speed with different aspects of IIoT. I want to
+    create a simple path which covers different technologies and shares insights
+    about how these get used in the industry.
 -   Common architecture patterns.
--   State of Security in IIoT.
+-   Finally State of Security in IIoT.
+
+Based on these goals here is the learning path I have in mind
+
+-   [ ] History of Industrial Automation
+-   [ ] State of IIoT and its applications
+-   [ ] Data collections
+-   [ ] Data transport and Ingestion
+-   [ ] Data Warehousing
+-   [ ] Command and Control
+-   [ ] Building User facing applications
 
 ## History of Industrial Machines
 
@@ -136,9 +147,9 @@ doing two things.
 -   Putting it into some meaningful computer protocol which can be sent over the
     "wire"
 
-# 🤖 Protocols in Industrial IoT
+## 🤖 Protocols in Industrial IoT
 
-## 🌐 Protocols Used in Industrial Automation
+### 🌐 Industrial Automation
 
 -   Industrial automation relies on various protocols to enable communication
     between devices and systems.
@@ -156,7 +167,7 @@ doing two things.
     -   Profinet: A protocol that enables real-time communication between
         devices in industrial automation systems [^2^].
 
-## 🌞 Protocols Used in Commercial Solar/Wind Farms
+### 🌞 Commercial Solar/Wind Farms
 
 -   Commercial solar/wind farms also utilize protocols to facilitate
     communication and control of the equipment.
@@ -231,6 +242,58 @@ doing two things.
         data access, alarms and events, and complex data types, which are not
         supported in the MODBUS protocol [^4^].
 
+## From Edge to Cloud data warehouses
+
+### Understanding data ingestion
+
+<!--
+
+Data Ingestion != Data collection.  Collection teaches us how to talk industrial protocols.  Ingestion defines when and how much to collect and where to send/store it afterwards.
+
+
+sampling of data requirement.  Nyquist-Shannon sampling theorem and its impact on datapoints recorded based on application
+
+
+- Constant rate collection at low frequency - energy consumption
+- High freq collection  for short duration  at  repeating intervals.  For eg motor/gearbox rotational wear/tear
+- event triggered collection.
+
+Tradeoffs and impact on network bandwidth/storage.
+
+Storage/transport considerations
+- Tackling collector failures/power outages.  How much are we ok with loosing data points.  mission critical [for alerts] or vanity/accounting metric [like kwh in 10mins]
+- Edge caching on collector, on edge server or fire-and-forget to cloud.
+- FS at collector is always a good place to write first.  Many a slip between the cup and the lip.
+- Compression, batching and transmission.  Transmission requires network and consumes power. the lesser times we emit, and the more compact our emission, the more efficient our pipeline
+- Energy consumption becomes vitally important when your collector runs on battery, or needs to use battery as a backup power source.
+
+
+Retransmission and ACKS - Protocol to glue cloud and device.
+- protocol level retries and acknowledges. MQTT QoS, or use Kafka/RabbitMQ/Cloud PubSub.
+- Mqtt gives flexibility, support even on embedded devices and OTB support in lots of industrial Iot equipment.
+- Other MQs your milege may wary.
+- Don't sweat this detail out, protocol conversion is possible, off the shelf components can handle workable scales. like telegraph, fluentd, etc.
+- Message queues on the cloud-receiving end.
+  - Can take large throughput, offer acks on receive, have different guarantees that can be enforces, atmost once, atleast once delivery.  Can be sharded and scaled
+  - Same data, multiple consumers - for eg. data warehouse writer + alerts engine +  live dashboards could use the same stream but for different outcomes.
+
+
+This phaase ends at colleciton and one key decision is the protocol used for transmission between edge and cloud. and possibly a message queue to spread incoming messages to your consumers.
+MQTT is a good starting point. Don't sweat this too much.   MQTT between edge/cloud,  Dumb Protocol conversion and routing on cloud boundary to a Pub/Sub message queue,  Datawarehouse writers as consumers of PubSub channels.
+-->
+
+### Build vs Buy
+
+<!-- talk about complexity of building all these components inhouse. atleast an edge collector, a receiving infra, and a datawarehouse consumer.
+
+Cloud offerings by  Public cloud players.
+- Cloud IoT offerings - ties you to the product spec. Good to launch quickly, can be constraining if you have niche collection requirements.
+- Custom edge collection with Cloud MessageQueue + DataWarehouse ala-carte. Best of both worlds.  Use something like Google PubSub with Google BigQuery/Cloud Storage.  You control ingestion and storage schema, Cloud gives you scale.  Can outlast most companies 3-5 year requirements if done right.
+- Custom everything - You better have a good development as well as devops teams. Preferable if you are in your post PMF, scaling phase.
+-
+
+-->
+
 ## 🤖 Advantages and Disadvantages of Using MQTT in Industrial Automation
 
 -   MQTT (Message Queuing Telemetry Transport) is a lightweight messaging
@@ -256,6 +319,8 @@ doing two things.
         authentication mechanisms, so additional security measures must be
         implemented to ensure secure communication.
 
+## Footnotes
+
 🔖 References [^1^]: [Modbus - Wikipedia](https://en.wikipedia.org/wiki/Modbus)
 [^2^]:
 [What is Modbus and How does it work? | Schneider Electric USA](https://www.se.com/us/en/faqs/FA168406/)
@@ -265,8 +330,6 @@ doing two things.
 [OPC-UA vs Modbus - What's the difference? | Matrikon](https://www.matrikonopc.com/opc-ua-versus-modbus.aspx)
 [^5^]:
 [Vladimir Romanov on LinkedIn: #software #automation #mqtt ...](https://www.linkedin.com/posts/vladromanov_software-automation-mqtt-activity-7100461748494704640-Ju-l)
-
-[^X^]: []()
 
 [^1^]:
     [Programmable Logic Controller : Wikipedia ](https://en.wikipedia.org/wiki/Programmable_logic_controller)
